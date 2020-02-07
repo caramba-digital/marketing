@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_marketing_consumer_trend_canvas_marketing_consumer_trend_canvas,marketing_consumer_trend_canvas.marketing_consumer_trend_canvas,model_marketing_consumer_trend_canvas_marketing_consumer_trend_canvas,base.group_user,1,1,1,1
