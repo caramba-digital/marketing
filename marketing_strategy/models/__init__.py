@@ -1,3 +1,3 @@
 # -*- coding: utf-8 -*-
 
-from . import marketing_consumer_trend
+from . import marketing_strategy

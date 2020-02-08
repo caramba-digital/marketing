@@ -1,12 +1,9 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "Marketing Consumer Trend Canvas",
+    'name': "Marketing Strategy",
 
-    'summary': "Consumer trend canvas implementation as the basis of marketing strategy design",
+    'summary': "Marketing Strategy Framework",
 
-    'description': """
-        Long description of module's purpose
-    """,
 
     'author': "Antonio Fregoso",
     'website': "https://antoniofregoso.com",
@@ -15,8 +12,9 @@
     'depends': ['base'],
     'license': 'AGPL-3',
     'data': [
-        # 'security/ir.model.access.csv',
-        'views/views.xml',
+        'security/marketing_strategy_security.xml',
+        'security/ir.model.access.csv',
+        'views/marketing_strategy_views.xml',
         'views/templates.xml',
     ],
     'demo': [

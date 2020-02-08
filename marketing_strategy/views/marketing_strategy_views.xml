@@ -1,60 +1,96 @@
 <odoo>
   <data>
-    <!-- explicit list view definition -->
-<!--
-    <record model="ir.ui.view" id="marketing_consumer_trend_canvas.list">
-      <field name="name">marketing_consumer_trend_canvas list</field>
-      <field name="model">marketing_consumer_trend_canvas.marketing_consumer_trend_canvas</field>
-      <field name="arch" type="xml">
-        <tree>
-          <field name="name"/>
-          <field name="value"/>
-          <field name="value2"/>
-        </tree>
-      </field>
-    </record>
--->
+  
+          <!-- Menu items -->
+          
 
-    <!-- actions opening views on models -->
-<!--
-    <record model="ir.actions.act_window" id="marketing_consumer_trend_canvas.action_window">
-      <field name="name">marketing_consumer_trend_canvas window</field>
-      <field name="res_model">marketing_consumer_trend_canvas.marketing_consumer_trend_canvas</field>
-      <field name="view_mode">tree,form</field>
-    </record>
--->
+        <menuitem name="Marketing Strategy"
+            id="marketing_stretegy_menu_root"
+            sequence="9"
+            groups="base.group_user"
+            web_icon="marketing_strategy,static/description/icon.png"/>
+            
+          <menuitem
+            id="marketing_stretegy__menu"
+            name="Strategy"
+            parent="marketing_stretegy_menu_root"
+            sequence="1" groups="group_marketing_strategy_user"/>
+            
+        <menuitem
+            id="marketing_stretegy__menu_assets"
+            name="Assets"
+            parent="marketing_stretegy_menu_root"
+            sequence="3" groups="group_marketing_strategy_user"/>
+            
+		 <menuitem
+            id="marketing_stretegy__menu_solution"
+            name="Solutions"
+            parent="marketing_stretegy_menu_root"
+            sequence="2" groups="group_marketing_strategy_manager"/>
+            
+		
 
-    <!-- server action to the one above -->
-<!--
-    <record model="ir.actions.server" id="marketing_consumer_trend_canvas.action_server">
-      <field name="name">marketing_consumer_trend_canvas server</field>
-      <field name="model_id" ref="model_marketing_consumer_trend_canvas_marketing_consumer_trend_canvas"/>
-      <field name="state">code</field>
-      <field name="code">
-        action = {
-          "type": "ir.actions.act_window",
-          "view_mode": "tree,form",
-          "res_model": model._name,
-        }
-      </field>
+        <menuitem
+            id="marketing_stretegy_menu_config"
+            name="Configuration"
+            parent="marketing_stretegy_menu_root"
+            sequence="80" groups="group_marketing_strategy_manager"/>
+            
+            
+            <record id="marketing_stretegy_consumer_trend_view_form" model="ir.ui.view">
+            <field name="name">marketing_stretegy.consumer_trend.form</field>
+            <field name="model">marketing_strategy.consumer_trend</field>
+            <field name="arch" type="xml">
+                <form string="Consumer Trend Canvas">
+                	 <sheet>
+                	 <div class="oe_title">
+                        <h1><field name="name" placeholder="Name" nolabel="1"/></h1>
+                       </div>
+                       <div class="row">
+                       		<div class="col-8">
+                       			<h2 class="text-center">ANALYZE</h2>
+                       			<div class="row">
+                       				<div class="col-9">
+                       				
+                       				</div>
+                       				<div class="col-3">
+                       				
+                       				</div>
+                       			</div>
+                       		</div>
+                       		<div class="col-4">
+                       			<h2 class="text-center">APPLY</h2>
+                       		</div>
+                	 </div>
+                	 </sheet>
+                </form>
+            </field>
+         </record>
+         
+       <record id='marketing_stretegy_consumer_trend_view_tree' model='ir.ui.view'>
+        <field name="name">marketing_stretegy.consumer_trend.tree</field>
+        <field name="model">marketing_strategy.consumer_trend</field>
+        <field name="arch" type="xml">
+            <tree string="Brand">
+                <field name="name" />
+            </tree>
+        </field>
     </record>
--->
+    
+       <record id='marketing_stretegy_consumer_trend_action' model='ir.actions.act_window'>
+        <field name="name">Consumer Trend</field>
+        <field name="res_model">marketing_strategy.consumer_trend</field>
+        <field name="view_mode">kanban,tree,form</field>
+        <field name="help" type="html">
+          <p class="o_view_nocontent_smiling_face">
+            Create a new consumer trend canvas
+          </p>
+        </field>
+    </record>
 
-    <!-- Top menu item -->
-<!--
-    <menuitem name="marketing_consumer_trend_canvas" id="marketing_consumer_trend_canvas.menu_root"/>
--->
-    <!-- menu categories -->
-<!--
-    <menuitem name="Menu 1" id="marketing_consumer_trend_canvas.menu_1" parent="marketing_consumer_trend_canvas.menu_root"/>
-    <menuitem name="Menu 2" id="marketing_consumer_trend_canvas.menu_2" parent="marketing_consumer_trend_canvas.menu_root"/>
--->
-    <!-- actions -->
-<!--
-    <menuitem name="List" id="marketing_consumer_trend_canvas.menu_1_list" parent="marketing_consumer_trend_canvas.menu_1"
-              action="marketing_consumer_trend_canvas.action_window"/>
-    <menuitem name="Server to list" id="marketing_consumer_trend_canvas" parent="marketing_consumer_trend_canvas.menu_2"
-              action="marketing_consumer_trend_canvas.action_server"/>
--->
+    <menuitem action="marketing_stretegy_consumer_trend_action" parent="marketing_stretegy__menu" id="Marketing_stretegy_consumer_trend_action_menu" sequence="2"/>
+         
+  
+  
   </data>
 </odoo>
