@@ -9,7 +9,7 @@
     'website': "https://antoniofregoso.com",
     'category': 'Marketing/Strategy',
     'version': '13.0.0.0.0',
-    'depends': ['base'],
+    'depends': ['base','mail','project','crm','sale'],
     'license': 'AGPL-3',
     'data': [
         'security/marketing_strategy_security.xml',
