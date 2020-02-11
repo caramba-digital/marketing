@@ -46,20 +46,70 @@
                 	 <div class="oe_title">
                         <h1><field name="name" placeholder="Name" nolabel="1"/></h1>
                        </div>
-                       <div class="row">
-                       		<div class="col-8">
+                       <div class="row mt-5 mx-2" style="font-size: xx-small;">
+                       		<div class="col-8 bg-dark pt-4 " >
                        			<h2 class="text-center">ANALYZE</h2>
                        			<div class="row">
-                       				<div class="col-9">
-                       				
+                       				<div class="col-9">  
+                       					<div class="row">
+                       						<div class="col-4  border bg-light">
+                       							<h5>Trend</h5>
+                       						</div>
+                       						<div class="col-8  border bg-light" style="height: 160px;">
+                       							<h5>Inspiration</h5>
+                       							<p>How are other businesses applying this trend?</p>
+                       						</div>                       						
+                       					</div> 
+                       					<div class="row">
+                       						<div class="col-4 border bg-light" style="height: 320px;">
+                       							<h5>Basic Needs</h5>
+                       								<p>Which deep consumer needs &amp; desires does this trend address? </p>
+                       						</div>
+                       						<div class="col-8 border bg-light" style="height: 320px;">
+                       							<h5>Drivers of Change</h5>
+                       								<p>Why is this trend emerging now? What’s changing?</p>
+                       							<div class="row">
+                       								<div class="col-6">
+                       									<h6>Shifts (long-term)</h6>
+                       									<p>Widespread macro changes</p>
+                       								</div>
+                       								<div class="col-6">                       									
+                       									<h6>Triggers (short-term)</h6>
+                       									<p> Recent changes or technologies</p>
+                       								</div>
+                       							</div>
+                       						</div>
+                       					
+                       					</div>
                        				</div>
-                       				<div class="col-3">
-                       				
+                       				<div class="col-3  border bg-light" style="height: 480px;" >
+                       					<h5>Emerging<br/> 
+                       					Expectations                    						
+                       					</h5>
+                       					<p style="width: 90%">What new consumer needs, wants and expectations are created by the changes identified above?<br />
+										Where and how does this trend satisfy them?</p>
                        				</div>
                        			</div>
                        		</div>
-                       		<div class="col-4">
+                       		<div class="col-4 pt-4 bg-success">
                        			<h2 class="text-center">APPLY</h2>
+                       			<div class="row">
+                       				<div class="col-12 border bg-light" style="height: 180px;">
+                       					<h5>Innovation Potential</h5>
+                       					<p>How and where could you apply this trend to your business?</p>
+                       				</div>
+                       			</div>
+                       			<div class="row">
+                       				<div class="col-12 border bg-light" style="height: 80px;">
+                       					<h5>YOUR INNOVATION</h5>
+                       				</div>
+                       			</div>
+                       			<div class="row border bg-light">
+                       				<div class="col-12" style="height: 220px;">
+                       					<h5>Who</h5>
+                       					<p>Which (new) customer groups could you apply this trend to? What would you have to change?</p>
+                       				</div>
+                       			</div>
                        		</div>
                 	 </div>
                 	 </sheet>
@@ -553,14 +603,14 @@
                     	<page string="Business Model Canvas">
                     			
         		<div class="row">
-        			<div class="card  border border-dark rounded bg-light p-1" style="width:20%">
+        			<div class="card -dark rounded bg-light p-1" style="width:20%">
         				<h5 class="card-title">Key Partners</h5>
         				<field name="key_partners_ids"  widget="many2many_tags" options="{'color_field': 'color'}" placeholder="Tags" nolabel="1"/>
         			</div>
-        			<div class="card w-20 border border-dark rounded bg-light p-1" style="width:20%">
+        			<div class="card w-20-dark rounded bg-light p-1" style="width:20%">
         				<h5 class="card-title">Key Activities</h5>
         				<field name="key_activities_ids"  widget="many2many_tags" options="{'color_field': 'color'}" placeholder="Tags" nolabel="1"/>
-        				<h5 class="card-title border-top border-dark">Key Resources</h5>
+        				<h5 class="card-title-top-dark">Key Resources</h5>
         				<h6 class="text-muted">Physical</h6>
         				<field name="key_physical_resource_tag_ids"  widget="many2many_tags" options="{'color_field': 'color'}" placeholder="Tags" nolabel="1"/>
         				<h6 class="text-muted">Physical in Warehouse</h6>
@@ -574,17 +624,17 @@
         				<h6 class="text-muted">Another Resources</h6>
         				<field name="key_resources_ids"  widget="many2many_tags" options="{'color_field': 'color'}" placeholder="Tags" nolabel="1"/>
         			</div>
-        			<div class="card w-20 border border border-info bg-light rounded p-1" style="width:20%">
+        			<div class="card w-20-info bg-light rounded p-1" style="width:20%">
         				<h5 class="card-title">Value Propositions</h5>
         				<field name="value_propositions"  widget="many2many_tags" options="{'color_field': 'color'}" placeholder="Tags" nolabel="1"/>
         			</div>
-        			<div class="card w-20 border border-dark rounded bg-light p-1" style="width:20%">
+        			<div class="card w-20-dark rounded bg-light p-1" style="width:20%">
         				<h5 class="card-title">Customer Relationship</h5>
         				<field name="relationship_ids"  widget="many2many_tags" options="{'color_field': 'color'}" placeholder="Tags" nolabel="1"/>
-        				<h5 class="card-title border-top border-dark">Channels</h5>
+        				<h5 class="card-title-top-dark">Channels</h5>
         				<field name="channel_ids"  widget="many2many_tags" options="{'color_field': 'color'}" placeholder="Tags" nolabel="1"/>
         			</div>
-        			<div class="card w-20 border border-dark rounded bg-light p-1" style="width:20%">
+        			<div class="card w-20-dark rounded bg-light p-1" style="width:20%">
         				<h5 class="card-title">Customer Segments</h5>
         				<field name="buyers_persona_ids" widget="many2many_kanban" nolabel="1">
         			 <kanban>				        
@@ -622,11 +672,11 @@
         		
         		</div>
         		<div class="row">
-        			<div class="card w-50 border border-danger rounded bg-light p-1">
+        			<div class="card w-50-danger rounded bg-light p-1">
         				<h5 class="card-title">Costs Structure</h5>
         				<field name="cost_structure_ids"  widget="many2many_tags" options="{'color_field': 'color'}" placeholder="Tags" nolabel="1"/>
         			</div>
-        			<div class="card w-50 border border-success rounded bg-light p-1">
+        			<div class="card w-50-success rounded bg-light p-1">
         				<h5 class="card-title">Revenue Streams</h5>
         				<field name="revenue_streams_ids"  widget="many2many_tags" options="{'color_field': 'color'}" placeholder="Tags" nolabel="1"/>
         			</div>
@@ -739,7 +789,7 @@
         </field>
     </record>
     
-          <menuitem id="menu_marketing_strategy_plan" name="Plans"
+          <menuitem id="menu_marketing_strategy_plan" name="Marketing Plans"
             parent="marketing_strategy_menu"
             action="marketing_strategy_plan_action" sequence="2"/>	
             

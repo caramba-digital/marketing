@@ -1015,7 +1015,7 @@
             <field name="view_id" ref="marketing_strategy_business_model_canvas_channels_tree"/>
             <field name="help" type="html">
               <p class="o_view_nocontent_smiling_face">
-                Create a new another chanel
+                Create a new another channel
               </p><p>
                 Create tags that fit your brands to better manage.
               </p>
@@ -1028,6 +1028,51 @@
             action="marketing_strategy__business_model_canvas_channels_action"
             parent="menu_marketing_strategy_business_model_canvas_config"
             sequence="5"/>     
+            
+            
+         <record id="marketing_strategy_business_model_canvas_custumer_relationship_form" model="ir.ui.view">
+            <field name="name">marketing_strategy.custumer_relationship.form</field>
+            <field name="model">marketing_strategy.custumer_relationship</field>
+            <field name="arch" type="xml">
+                <form string="Custumer Relationship">
+                    <group>
+                        <field name="name"/>
+                        <field name="color" groups="base.group_no_one"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record id="marketing_strategy_business_model_canvas_custumer_relationship_tree" model="ir.ui.view">
+            <field name="name">marketing_strategy.custumer_relationship.tree</field>
+            <field name="model">marketing_strategy.custumer_relationship</field>
+            <field name="arch" type="xml">
+                <tree string="Custumer Relationship">
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+        
+        <record id="marketing_strategy__business_model_canvas_custumer_relationship_action" model="ir.actions.act_window">
+            <field name="name">Custumer Relationship</field>
+            <field name="res_model">marketing_strategy.custumer_relationship</field>
+            <field name="view_id" ref="marketing_strategy_business_model_canvas_custumer_relationship_tree"/>
+            <field name="help" type="html">
+              <p class="o_view_nocontent_smiling_face">
+                Create a new another Custumer Relationship
+              </p><p>
+                Create tags that fit your brands to better manage.
+              </p>
+            </field>
+        </record>
+
+        <menuitem
+            id="menu_marketing_strategy_business_model_canvas_custumer_relationship"
+            name="Custumer Relationship"
+            action="marketing_strategy__business_model_canvas_custumer_relationship_action"
+            parent="menu_marketing_strategy_business_model_canvas_config"
+            sequence="6"/>     
+       
        
        
          
