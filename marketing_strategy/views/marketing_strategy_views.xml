@@ -5,40 +5,40 @@
           
 
         <menuitem name="Marketing Strategy"
-            id="marketing_stretegy_menu_root"
+            id="marketing_strategy_menu_root"
             sequence="9"
             groups="base.group_user"
             web_icon="marketing_strategy,static/description/icon.png"/>
             
           <menuitem
-            id="marketing_stretegy__menu"
+            id="marketing_strategy_menu"
             name="Strategy"
-            parent="marketing_stretegy_menu_root"
+            parent="marketing_strategy_menu_root"
             sequence="1" groups="group_marketing_strategy_user"/>
             
         <menuitem
-            id="marketing_stretegy__menu_assets"
+            id="marketing_strategy_menu_assets"
             name="Assets"
-            parent="marketing_stretegy_menu_root"
+            parent="marketing_strategy_menu_root"
             sequence="3" groups="group_marketing_strategy_user"/>
             
 		 <menuitem
-            id="marketing_stretegy__menu_solution"
+            id="marketing_strategy_menu_solutions"
             name="Solutions"
-            parent="marketing_stretegy_menu_root"
+            parent="marketing_strategy_menu_root"
             sequence="2" groups="group_marketing_strategy_manager"/>
             
 		
 
         <menuitem
-            id="marketing_stretegy_menu_config"
+            id="marketing_strategy_menu_config"
             name="Configuration"
-            parent="marketing_stretegy_menu_root"
+            parent="marketing_strategy_menu_root"
             sequence="80" groups="group_marketing_strategy_manager"/>
             
             
-            <record id="marketing_stretegy_consumer_trend_view_form" model="ir.ui.view">
-            <field name="name">marketing_stretegy.consumer_trend.form</field>
+            <record id="marketing_strategy_consumer_trend_view_form" model="ir.ui.view">
+            <field name="name">marketing_strategy.consumer_trend.form</field>
             <field name="model">marketing_strategy.consumer_trend</field>
             <field name="arch" type="xml">
                 <form string="Consumer Trend Canvas">
@@ -67,8 +67,8 @@
             </field>
          </record>
          
-       <record id='marketing_stretegy_consumer_trend_view_tree' model='ir.ui.view'>
-        <field name="name">marketing_stretegy.consumer_trend.tree</field>
+       <record id='marketing_strategy_consumer_trend_view_tree' model='ir.ui.view'>
+        <field name="name">marketing_strategy.consumer_trend.tree</field>
         <field name="model">marketing_strategy.consumer_trend</field>
         <field name="arch" type="xml">
             <tree string="Brand">
@@ -77,7 +77,7 @@
         </field>
     </record>
     
-       <record id='marketing_stretegy_consumer_trend_action' model='ir.actions.act_window'>
+       <record id='marketing_strategy_consumer_trend_action' model='ir.actions.act_window'>
         <field name="name">Consumer Trend</field>
         <field name="res_model">marketing_strategy.consumer_trend</field>
         <field name="view_mode">kanban,tree,form</field>
@@ -88,9 +88,1007 @@
         </field>
     </record>
 
-    <menuitem action="marketing_stretegy_consumer_trend_action" parent="marketing_stretegy__menu" id="Marketing_stretegy_consumer_trend_action_menu" sequence="2"/>
+    <menuitem action="marketing_strategy_consumer_trend_action" parent="marketing_strategy_menu" id="Marketing_strategy_consumer_trend_action_menu" sequence="2"/>
          
-  
+         <record id='marketing_strategy_brand_view_tree' model='ir.ui.view'>
+        <field name="name">marketing_strategy.brand.tree</field>
+        <field name="model">marketing_strategy.brand</field>
+        <field name="arch" type="xml">
+            <tree string="Brand">
+                <field name="name" />
+            </tree>
+        </field>
+    </record>
+
+    <record id='marketing_strategy_brand_view_form' model='ir.ui.view'>
+        <field name="name">marketing_strategy.brand.form</field>
+        <field name="model">marketing_strategy.brand</field>
+        <field name="arch" type="xml">
+            <form string="Brand">
+            	<sheet>
+            		<field name="image" widget='image' class="oe_avatar" options='{"preview_image": "image_medium", "size": [90, 90]}'/>
+                    <div class="oe_title">
+                    	<h1><field name="name"/></h1>
+                    	<field name="tag_ids" widget="many2many_tags" options="{'color_field': 'color'}" placeholder="Tags"/>
+                      </div>
+                    <group>
+                    	<group>
+                    		<field name="partner_id"/>
+                    	</group>
+                    	<group>
+                    		<field name="url" widget="url" placeholder="e.g. www.odoo.com"/>
+                    	</group>
+                    </group>
+                    <group string="Social">
+                    	<group>
+                    		<field name="twitter"/>
+                    		<field name="facebook"/>
+                    		<field name="linkedin"/>
+                    	</group>
+                    	<group>
+                    		<field name="youtube"/>
+                    		<field name="blog"/>
+                    	</group>
+                    </group>
+            	</sheet>
+                
+            </form>
+        </field>
+    </record>
+
+    <record id='marketing_strategy_brand_view_kanban' model='ir.ui.view'>
+        <field name="name">marketing_strategy.brand.kanban</field>
+        <field name="model">marketing_strategy.brand</field>
+        <field name="arch" type="xml">
+            <kanban>
+                <field name="id"/>
+                <field name="name" />
+                <field name="partner_id" />
+                <field name="image" />
+                <field name="color" />
+               <templates>
+                    <t t-name="kanban-box">
+                       <div t-attf-class="#{kanban_color(record.color.raw_value)} oe_kanban_global_click">
+                        	<field name="tag_ids" widget="many2many_tags" options="{'color_field': 'color'}"/>
+                        	<div class="o_dropdown_kanban dropdown">
+
+                                    <a class="dropdown-toggle o-no-caret btn" role="button" data-toggle="dropdown" href="#" aria-label="Dropdown menu" title="Dropdown menu">
+                                        <span class="fa fa-ellipsis-v"/>
+                                    </a>
+                                    <div class="dropdown-menu" role="menu">
+                                        <t t-if="widget.editable"><a role="menuitem" type="edit" class="dropdown-item">Edit</a></t>
+                                        <t t-if="widget.deletable"><a role="menuitem" type="delete" class="dropdown-item">Delete</a></t>
+                                        <ul class="oe_kanban_colorpicker" data-field="color"/>
+                                    </div>
+                                </div>
+                                <a type="open" href="#" class="o_kanban_image oe_kanban_action">
+                                <img alt="Open" t-att-src="kanban_image('marketing_strategy.brand', 'image_medium', record.id.raw_value)" class="img-fluid" style="width:100px;"/>
+                            </a>
+                            <div class="oe_kanban_details">
+                                 <h4 class="oe_partner_heading">
+                                    <a type="open" class="o_kanban_record_title">
+                                        <field name="name"/>
+                                    </a>
+                                </h4> 
+                                <ul>
+                                 <li><field name="partner_id"/></li>
+                                 </ul>
+                                 </div>                             
+                        		<div class="oe_clear"/>
+                            </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <record id='marketing_strategy_brand_action' model='ir.actions.act_window'>
+        <field name="name">Brands</field>
+        <field name="res_model">marketing_strategy.brand</field>
+        <field name="view_mode">kanban,tree,form</field>
+        <field name="help" type="html">
+          <p class="o_view_nocontent_smiling_face">
+            Create a new brand
+          </p>
+        </field>
+    </record>
+
+    <menuitem action="marketing_strategy_brand_action" parent="marketing_strategy_menu_assets" id="marketing_strategy_brand_menu" sequence="2"/>
+    
+	<menuitem id="menu_marketing_strategy_touchpoints" name="Touchpoints" parent="marketing_strategy_menu_assets" sequence="20"/>
+ 
+ 	        <!-- Touchpoint -->
+        <record id="view_touchpoint_tree" model="ir.ui.view">
+            <field name="name">marketing_strategy.touchpoint.tree</field>
+            <field name="model">marketing_strategy.touchpoint</field>
+            <field name="arch" type="xml">
+                <tree string="Touchpoints">
+                    <field name="name" string="Name"/>
+                    <field name="type" />
+                    <field name="url"/>
+                    <field name="hub_id"/>
+                    <field name="state"/>
+	            	<field name="buyer_journey_stage" invisible="1"/>
+	            	<field name="plan_id" invisible="1"/>
+                </tree>
+            </field>
+        </record>
+        
+      <record id="touchpoint_form_view" model="ir.ui.view">
+        <field name="name">marketing_strategy.touchpoint.form</field>
+        <field name="model">marketing_strategy.touchpoint</field>
+        <field name="arch" type="xml">
+            <form string="Leads Form">
+                <header>
+                		 <field name="tag_ids" widget="many2many_tags" options="{'color_field': 'color'}" placeholder="Tags"/>
+                      <field name="state" widget="statusbar" options="{'clickable': '1'}"/>
+                </header>
+                <sheet>
+                <div class="oe_button_box" name="button_box" groups="base.group_user">            		 	
+                        <button name="toggle_active" type="object"
+                                confirm="(Un)archiving a project automatically (un)archives its tasks. Do you want to proceed?"
+                                class="oe_stat_button" icon="fa-archive">
+                            <field name="active" widget="boolean_button"
+                                options='{"terminology": "archive"}'/>
+                        </button>
+                        </div>
+                <div class="oe_title">
+                        <h1><field name="name" placeholder="Name of the Touchpoint" nolabel="1"/></h1>
+                    </div>   
+                	<group>
+                		<group>
+                			<field name="ref" />
+                			<field name="type" />                 
+                   			<field name="responsible_id" />
+                			<field name="buyer_journey_stage" />
+                		</group>
+                		<group>
+                			<field name="url" widget="url" placeholder="Online Touchpoint Location"/>
+                			<field name="hub_id" />
+                			<field name="plan_id" />
+                		</group>
+                	</group>
+                	<notebook colspan="4">
+                		<page string="Description" autofocus="autofocus">
+                		<field name="description" widget="html" nolabel="1"/>
+                		</page>
+                		<page string="View" >
+                		<field name="image" widget="image" class="img-fluid" nolabel="1"/>
+                		</page>
+                	</notebook>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="activity_ids" widget="mail_activity"/>
+                    <field name="message_ids" widget="mail_thread" options="{'post_refresh': 'recipients'}"/>
+                </div>
+              </form>
+              </field>
+         </record>
+        
+       <record id='marketing_strategy_touchpoint_view_kanban' model='ir.ui.view'>
+        <field name="name">marketing_strategy.touchpoint.kanban</field>
+        <field name="model">marketing_strategy.touchpoint</field>
+        <field name="arch" type="xml">
+            <kanban default_group_by="state" class="o_kanban_small_column">
+            	<field name="state"/>
+            	<field name="buyer_journey_stage"/>
+            	<field name="plan_id"/>
+                <field name="id"/>
+                <field name="name" />
+                <field name="type" />
+                <field name="hub_id" />
+                <field name="image" />
+                <field name="color"/>
+                <templates>
+                    <t t-name="kanban-box">
+                        <div t-attf-class="#{kanban_color(record.color.raw_value)} oe_kanban_global_click">
+                        	<field name="tag_ids" widget="many2many_tags" options="{'color_field': 'color'}"/>
+                        	<div class="o_dropdown_kanban dropdown">
+
+                                    <a class="dropdown-toggle o-no-caret btn" role="button" data-toggle="dropdown" href="#" aria-label="Dropdown menu" title="Dropdown menu">
+                                        <span class="fa fa-ellipsis-v"/>
+                                    </a>
+                                    <div class="dropdown-menu" role="menu">
+                                        <t t-if="widget.editable"><a role="menuitem" type="edit" class="dropdown-item">Edit</a></t>
+                                        <t t-if="widget.deletable"><a role="menuitem" type="delete" class="dropdown-item">Delete</a></t>
+                                        <ul class="oe_kanban_colorpicker" data-field="color"/>
+                                    </div>
+                                </div>
+                                <a type="open" href="#" class="o_kanban_image oe_kanban_action">
+                                <img alt="Open" t-att-src="kanban_image('marketing_strategy.touchpoint', 'image_medium', record.id.raw_value)" class="img-fluid" style="width:100px;"/>
+                            </a>
+                                 <div class="oe_kanban_details">
+                                 <h4 class="oe_partner_heading">
+                                    <a type="open" class="o_kanban_record_title">
+                                        <field name="name"/>
+                                    </a>
+                                </h4> 
+                                <ul>
+                                 <li><field name="type"/></li>
+                                 <li><field name="hub_id"/></li>
+                                 </ul>
+                                 </div>                             
+                        		<div class="oe_clear"/>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+    
+    <record id="view_marketing_strategy_touchpoints_select" model="ir.ui.view">
+            <field name="name">marketing_strategy.touchpoint.select</field>
+            <field name="model">marketing_strategy.touchpoint</field>
+            <field name="arch" type="xml">
+            	<search string="Search Touchpoints">
+            		<filter string="Online" name="type_online" domain="[('type','=','online')]"/>
+            		<filter string="Offline" name="type_offline" domain="[('type','=','offline')]"/>
+           		<group expand="0" name="group_by" string="Group By">
+           			<filter name="group_type" string="Type" context="{'group_by': 'type'}"/>
+           			<filter name="group_hub" string="Hub" context="{'group_by': 'hub_id'}"/>
+           			<filter name="group_responsible" string="Responsible" context="{'group_by': 'responsible_id'}"/>
+           			<filter name="group_buyer_journey_stage" string="Buyer's Journey Stage" context="{'group_by': 'buyer_journey_stage'}"/>
+           			<filter name="group_plan" string="Marketing Strategy Plan" context="{'group_by': 'plan_id'}"/>
+           		</group>
+            </search>
+            </field>
+      </record>
+             
+    	 <record id="action_marketing_strategy_touchpoints_form" model="ir.actions.act_window">
+            <field name="name">Touchpoints</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">marketing_strategy.touchpoint</field>
+            <field name="domain">[]</field>
+            <field name="view_mode">kanban,tree,form</field>
+            <field name="filter" eval="True"/>
+             <field name="view_id" ref="marketing_strategy_touchpoint_view_kanban"/>
+            <field name="help" type="html">
+              <p class="o_view_nocontent_smiling_face">
+                Create a new touchpoint
+              </p><p>
+                Odoo helps you easily track all activities related to a touchpoint.
+              </p>
+            </field>
+        </record>
+    
+    <menuitem id="menu_marketing_strategy_touchpoint" name="Touchpoints"
+            parent="menu_marketing_strategy_touchpoints"
+            action="action_marketing_strategy_touchpoints_form" sequence="1"/>	
+            
+<!-- Value Propositions -->
+
+  <record id='marketing_strategy_value_proposition_view_tree' model='ir.ui.view'>
+        <field name="name">marketing_strategy.value_proposition.tree</field>
+        <field name="model">marketing_strategy.value_proposition</field>
+        <field name="arch" type="xml">
+            <tree string="Value Propositions">
+                <field name="name" />
+                 <field name="type" />
+            </tree>
+        </field>
+    </record>
+ 
+     <record id='marketing_strategy_value_proposition_view_form' model='ir.ui.view'>
+        <field name="name">marketing_strategy.value_proposition.form</field>
+        <field name="model">marketing_strategy.value_proposition</field>
+        <field name="arch" type="xml">
+            <form string="Value Proposition">
+            	<sheet>
+                    <div class="oe_title">
+                    	<h1><field name="name"/></h1>
+                     </div>
+                    <group>
+                    	<group>
+                    		<field name="type"/>
+                    	</group>
+                    	<group>
+                    		<field name="ref"/>
+                    	</group>
+                    </group>
+                    
+                    <notebook colspan="4">
+                    	<page string="Value Proposition Canvas" autofocus="autofocus">
+                    		<group>
+                    			<group col="1">                    				
+	                    			<group string="Gain Creator">
+	                    				<field name="gain_creator_ids"  widget="many2many_tags" options="{'color_field': 'color'}" placeholder="Tags" nolabel="1"/>
+	                    			</group>
+                    				<group string="Products or Services">
+                    					<field name="products_ids"  widget="many2many_tags" options="{'color_field': 'color'}" placeholder="Tags" nolabel="1"/>
+                    				</group>
+	                    			<group string="Pain Reliever">
+	                    				<field name="pain_reliever_ids"  widget="many2many_tags" options="{'color_field': 'color'}" placeholder="Tags" nolabel="1"/>
+	                    			</group>
+                    			</group>
+                    			<group col="1">
+	                    			<group string="Customer Gains">
+	                    				<field name="customer_gain_ids"  widget="many2many_tags" options="{'color_field': 'color'}" placeholder="Tags" nolabel="1"/>
+	                    			</group>
+	                    			<group string="Customer Jobs">
+	                    				<field name="customer_job_ids"  widget="many2many_tags" options="{'color_field': 'color'}" placeholder="Tags" nolabel="1"/>
+	                    			</group>
+                    				<group string="Customer Pains">
+                    				<field name="customer_pain_ids"  widget="many2many_tags" options="{'color_field': 'color'}" placeholder="Tags" nolabel="1"/>
+                    			</group>
+                    			</group>
+                    		</group>
+                    	</page>
+                    	<page string="Description" >
+                    		<field name="description" widget="html" nolabel="1"/>
+                    	</page>
+                    	<page string="View" >
+                    		<field name="image" widget="image" class="img-fluid" nolabel="1"/>
+                    	</page>                    
+                    </notebook>
+            	</sheet>
+            </form>
+         </field>
+      </record>
+      
+     <record id='marketing_strategy_value_proposition_view_kanban' model='ir.ui.view'>
+        <field name="name">marketing_strategy.value_proposition.kanban</field>
+        <field name="model">marketing_strategy.value_proposition</field>
+        <field name="arch" type="xml">
+            <kanban  class="o_kanban_small_column">
+                <field name="id"/>
+                <field name="name" />
+                <field name="type" />
+                <field name="image" />
+                <field name="color"/>
+                <templates>
+                    <t t-name="kanban-box">
+                        <div t-attf-class="#{kanban_color(record.color.raw_value)} oe_kanban_global_click">
+                        	<div class="o_dropdown_kanban dropdown">
+
+                                    <a class="dropdown-toggle o-no-caret btn" role="button" data-toggle="dropdown" href="#" aria-label="Dropdown menu" title="Dropdown menu">
+                                        <span class="fa fa-ellipsis-v"/>
+                                    </a>
+                                    <div class="dropdown-menu" role="menu">
+                                        <t t-if="widget.editable"><a role="menuitem" type="edit" class="dropdown-item">Edit</a></t>
+                                        <t t-if="widget.deletable"><a role="menuitem" type="delete" class="dropdown-item">Delete</a></t>
+                                        <ul class="oe_kanban_colorpicker" data-field="color"/>
+                                    </div>
+                                </div>
+                                <a type="open" href="#" class="o_kanban_image oe_kanban_action">
+                                <img alt="Open" t-att-src="kanban_image('marketing_strategy.value_proposition', 'image_medium', record.id.raw_value)" class="img-fluid" style="width:100px;"/>
+                            </a>
+                                 <div class="oe_kanban_details">
+                                 <h4 class="oe_partner_heading">
+                                    <a type="open" class="o_kanban_record_title">
+                                        <field name="name"/>
+                                    </a>
+                                </h4> 
+                                <ul>
+                                 <li><field name="type"/></li>
+                                 </ul>
+                                 </div>                             
+                        		<div class="oe_clear"/>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+    
+    <record id='marketing_strategy_value_proposition_action' model='ir.actions.act_window'>
+        <field name="name">Value Propositions</field>
+        <field name="res_model">marketing_strategy.value_proposition</field>
+        <field name="view_mode">kanban,tree,form</field>
+        <field name="help" type="html">
+          <p class="o_view_nocontent_smiling_face">
+            Create a new Value Proposition
+          </p>
+        </field>
+    </record>
+    
+      <menuitem id="menu_marketing_strategy_value_proposition_dev" name="Value Propositios"
+            parent="marketing_strategy_menu_solutions"
+            action="marketing_strategy_value_proposition_action" sequence="1"/>	
+            
+ 	        <!-- Marketing Strategy Plan -->
+        <record id="view_marketing_strategy_plan_tree" model="ir.ui.view">
+            <field name="name">marketing_strategy.plan.tree</field>
+            <field name="model">marketing_strategy.plan</field>
+            <field name="arch" type="xml">
+                <tree string="Marketing Strategy Plans">
+                    <field name="name" string="Name"/>
+                    <field name="value_proposition_id" />
+                    <field name="date_start"/>
+                    <field name="date_end"/>
+                    <field name="target"/>
+                </tree>
+            </field>
+        </record>
+        
+       <record id='marketing_strategy_plan_view_form' model='ir.ui.view'>
+        <field name="name">marketing_strategy.plan.form</field>
+        <field name="model">marketing_strategy.plan</field>
+        <field name="arch" type="xml">
+            <form string="Marketing Strategy Plan">
+            <header>
+              <field name="state" widget="statusbar" options="{'clickable': '1'}"/>
+                </header>
+            	<sheet>
+            		 <div class="oe_button_box" name="button_box" groups="base.group_user">            		 	
+                        <button name="toggle_active" type="object"
+                                confirm="(Un)archiving a project automatically (un)archives its tasks. Do you want to proceed?"
+                                class="oe_stat_button" icon="fa-archive">
+                            <field name="active" widget="boolean_button"
+                                options='{"terminology": "archive"}'/>
+                        </button>
+            		 </div>
+                    <div class="oe_title">
+                    	<h1><field name="name"/></h1>
+                     </div>
+                     <group>
+                     	<group>
+                     		<field name="value_proposition_id"/>
+                     		<field name="user_id"/>
+                     		<field name="project_id"/>
+                     	</group>
+                     	<group>
+                     		<field name="target" widget="monetary"/>
+                     		<field name="date_start"/>
+                     		<field name="date_end"/>
+                     	</group>
+                     	<group string="Related campaigns">
+                     		<field name="campaigns_ids" widget="many2many" nolabel="1" >
+                     			 <tree string="Campaigns">
+                     			 	<field name="name" />
+                     			 </tree>   
+                     			  <form>
+        						  	<field name="name"   />
+        						  </form>                  		
+                     		</field>
+                     	</group>
+                     	<group>
+                     		
+                     	</group>
+                     </group>
+                     <notebook colspan="4">
+                    	<page string="Mission" name="mission" autofocus="autofocus">
+                    		<field name="mission" nolabel="1"/>
+                    	</page>
+                    	<page string="Business Model Canvas">
+                    			
+        		<div class="row">
+        			<div class="card  border border-dark rounded bg-light p-1" style="width:20%">
+        				<h5 class="card-title">Key Partners</h5>
+        				<field name="key_partners_ids"  widget="many2many_tags" options="{'color_field': 'color'}" placeholder="Tags" nolabel="1"/>
+        			</div>
+        			<div class="card w-20 border border-dark rounded bg-light p-1" style="width:20%">
+        				<h5 class="card-title">Key Activities</h5>
+        				<field name="key_activities_ids"  widget="many2many_tags" options="{'color_field': 'color'}" placeholder="Tags" nolabel="1"/>
+        				<h5 class="card-title border-top border-dark">Key Resources</h5>
+        				<h6 class="text-muted">Physical</h6>
+        				<field name="key_physical_resource_tag_ids"  widget="many2many_tags" options="{'color_field': 'color'}" placeholder="Tags" nolabel="1"/>
+        				<h6 class="text-muted">Physical in Warehouse</h6>
+        				<field name="key_physical_resource_ids"  widget="many2many_tags" options="{'color_field': 'color'}" placeholder="Tags" nolabel="1"/>
+        				<h6 class="text-muted" >Human</h6>
+        				<field name="key_human_resources_ids"  widget="many2many_tags" options="{'color_field': 'color'}" placeholder="Tags" nolabel="1"/>
+        				<h6 class="text-muted">Intellectual</h6>
+        				<field name="key_resources_intellectual_ids"  widget="many2many_tags" options="{'color_field': 'color'}" placeholder="Tags" nolabel="1"/>
+        				<h6 class="text-muted">Financial</h6>
+        				<field name="key_resources_financial_ids"  widget="many2many_tags" options="{'color_field': 'color'}" placeholder="Tags" nolabel="1"/>
+        				<h6 class="text-muted">Another Resources</h6>
+        				<field name="key_resources_ids"  widget="many2many_tags" options="{'color_field': 'color'}" placeholder="Tags" nolabel="1"/>
+        			</div>
+        			<div class="card w-20 border border border-info bg-light rounded p-1" style="width:20%">
+        				<h5 class="card-title">Value Propositions</h5>
+        				<field name="value_propositions"  widget="many2many_tags" options="{'color_field': 'color'}" placeholder="Tags" nolabel="1"/>
+        			</div>
+        			<div class="card w-20 border border-dark rounded bg-light p-1" style="width:20%">
+        				<h5 class="card-title">Customer Relationship</h5>
+        				<field name="relationship_ids"  widget="many2many_tags" options="{'color_field': 'color'}" placeholder="Tags" nolabel="1"/>
+        				<h5 class="card-title border-top border-dark">Channels</h5>
+        				<field name="channel_ids"  widget="many2many_tags" options="{'color_field': 'color'}" placeholder="Tags" nolabel="1"/>
+        			</div>
+        			<div class="card w-20 border border-dark rounded bg-light p-1" style="width:20%">
+        				<h5 class="card-title">Customer Segments</h5>
+        				<field name="buyers_persona_ids" widget="many2many_kanban" nolabel="1">
+        			 <kanban>				        
+                	<field name="id"/>
+                    <field name="color"/>
+                    <field name="name"/>
+	                <field name="tribe_id" />
+	                <field name="status" />
+                    <field name="image_medium"/>
+				        <templates>
+				        	 <t t-name="kanban-box">
+				        	 	<div t-attf-class="#{kanban_color(record.color.raw_value)} oe_kanban_global_click">
+				        	 		 <a type="open" href="#" class="o_kanban_image oe_kanban_action">
+                                <img alt="Open" t-att-src="kanban_image('lean_marketing.buyer_persona', 'image_medium', record.id.raw_value)" class="img-fluid" style="width:100px;"/>
+                            </a>
+					        	 	<div class="oe_kanban_details">
+		                            	<h4 class="oe_partner_heading">
+		                                    <a type="open" class="o_kanban_record_title">
+		                                        <field name="name"/>
+		                                    </a>
+		                                </h4> 
+		                                <ul>
+			                                 <li>Tribe: <field name="tribe_id"/></li>
+			                                 <li>Status: <field name="status"/></li>
+		                                 </ul>
+	                                 </div>                             
+	                        		<div class="oe_clear"/>
+				        	 	
+				        	 	</div>	
+				             </t>
+				        </templates>
+				    </kanban>
+               </field> 	         	
+        			</div>
+        		
+        		</div>
+        		<div class="row">
+        			<div class="card w-50 border border-danger rounded bg-light p-1">
+        				<h5 class="card-title">Costs Structure</h5>
+        				<field name="cost_structure_ids"  widget="many2many_tags" options="{'color_field': 'color'}" placeholder="Tags" nolabel="1"/>
+        			</div>
+        			<div class="card w-50 border border-success rounded bg-light p-1">
+        				<h5 class="card-title">Revenue Streams</h5>
+        				<field name="revenue_streams_ids"  widget="many2many_tags" options="{'color_field': 'color'}" placeholder="Tags" nolabel="1"/>
+        			</div>
+        		</div>
+                    	
+                    	</page>
+                    	<page string="Buyers Persona" name="buyer_persona">
+        		<field name="buyers_persona_ids" widget="many2many_kanban" nolabel="1">
+        			 <kanban>				        
+                	<field name="id"/>
+                    <field name="color"/>
+                    <field name="name"/>
+	                <field name="tribe_id" />
+	                <field name="status" />
+                    <field name="image_medium"/>
+				        <templates>
+				        	 <t t-name="kanban-box">
+				        	 	<div t-attf-class="#{kanban_color(record.color.raw_value)} oe_kanban_global_click">
+				        	 		 <a type="open" href="#" class="o_kanban_image oe_kanban_action">
+                                <img alt="Open" t-att-src="kanban_image('marketing_strategy.buyer_persona', 'image_medium', record.id.raw_value)" class="img-fluid" style="width:100px;"/>
+                            </a>
+					        	 	<div class="oe_kanban_details">
+		                            	<h4 class="oe_partner_heading">
+		                                    <a type="open" class="o_kanban_record_title">
+		                                        <field name="name"/>
+		                                    </a>
+		                                </h4> 
+		                                <ul>
+			                                 <li>Tribe: <field name="tribe_id"/></li>
+			                                 <li>Status: <field name="status"/></li>
+		                                 </ul>
+	                                 </div>                             
+	                        		<div class="oe_clear"/>
+				        	 	
+				        	 	</div>	
+				             </t>
+				        </templates>
+				    </kanban>
+               </field> 	 
+        	</page>
+                    	<page string="Touchpoints" name="touchpoints">
+                    		<field name="touchpoints_ids" widget="one2many_list" nolabel="1" >
+                     			 <tree string="Touchpoints" editable="bottom">
+                     			 	<field name="name" />
+                     			 	<field name="type" />
+                     			 	<field name="buyer_journey_stage" />                     			 	
+                     			 	<field name="state" />
+                     			 </tree>                     		
+                     		</field>
+                    	</page>
+                    	</notebook>
+                 </sheet>
+                  <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="activity_ids" widget="mail_activity"/>
+                    <field name="message_ids" widget="mail_thread" options="{'post_refresh': 'recipients'}"/>
+                </div>
+             </form>
+             </field>
+         </record>
+         
+        <record id='marketing_strategy_plan_view_kanban' model='ir.ui.view'>
+        <field name="name">marketing_strategy.plan.kanban</field>
+        <field name="model">marketing_strategy.plan</field>
+        <field name="arch" type="xml">
+            <kanban  default_group_by="state" class="o_kanban_small_column">
+                <field name="id"/>
+                <field name="name" />
+                <field name="color"/>
+            	<field name="state"/>
+                 <templates>
+                    <t t-name="kanban-box">
+                        <div t-attf-class="#{kanban_color(record.color.raw_value)} oe_kanban_global_click">
+                        	<div class="o_dropdown_kanban dropdown">
+
+                                    <a class="dropdown-toggle o-no-caret btn" role="button" data-toggle="dropdown" href="#" aria-label="Dropdown menu" title="Dropdown menu">
+                                        <span class="fa fa-ellipsis-v"/>
+                                    </a>
+                                    <div class="dropdown-menu" role="menu">
+                                        <t t-if="widget.editable"><a role="menuitem" type="edit" class="dropdown-item">Edit</a></t>
+                                        <t t-if="widget.deletable"><a role="menuitem" type="delete" class="dropdown-item">Delete</a></t>
+                                        <ul class="oe_kanban_colorpicker" data-field="color"/>
+                                    </div>
+                                </div>
+                                 <div class="oe_kanban_details">
+                                 <h4 class="oe_partner_heading">
+                                    <a type="open" class="o_kanban_record_title">
+                                        <field name="name"/>
+                                    </a>
+                                </h4> 
+                                </div>
+                                <div class="oe_clear"/>
+                                </div>
+                                </t>
+                                </templates>
+            </kanban>
+        </field>
+        </record>
+        
+      <record id='marketing_strategy_plan_action' model='ir.actions.act_window'>
+        <field name="name">Marketing Strategy Plans</field>
+        <field name="res_model">marketing_strategy.plan</field>
+        <field name="view_mode">kanban,tree,form</field>
+        <field name="help" type="html">
+          <p class="o_view_nocontent_smiling_face">
+            Create a new Marketing Strategy Plan
+          </p><p>
+                Odoo helps you easily track all activities related to a lean marketing plan.
+              </p>
+        </field>
+    </record>
+    
+          <menuitem id="menu_marketing_strategy_plan" name="Plans"
+            parent="marketing_strategy_menu"
+            action="marketing_strategy_plan_action" sequence="2"/>	
+            
+       <record id='marketing_strategy_buyer_journey_view_kanban' model='ir.ui.view'>
+        <field name="name">marketing_strategy.buyer_journey.kanban</field>
+        <field name="model">marketing_strategy.touchpoint</field>
+        <field name="arch" type="xml">
+            <kanban default_group_by="buyer_journey_stage" class="o_kanban_small_column">
+            	<field name="buyer_journey_stage"/>
+            	<field name="state"/>
+            	<field name="plan_id"/>
+                <field name="id"/>
+                <field name="name" />
+                <field name="type" />
+                <field name="hub_id" />
+                <field name="image" />
+                <field name="color"/>
+                <templates>
+                    <t t-name="kanban-box">
+                        <div t-attf-class="#{kanban_color(record.color.raw_value)} oe_kanban_global_click">
+                        	<field name="tag_ids" widget="many2many_tags" options="{'color_field': 'color'}"/>
+                        	<div class="o_dropdown_kanban dropdown">
+
+                                    <a class="dropdown-toggle o-no-caret btn" role="button" data-toggle="dropdown" href="#" aria-label="Dropdown menu" title="Dropdown menu">
+                                        <span class="fa fa-ellipsis-v"/>
+                                    </a>
+                                    <div class="dropdown-menu" role="menu">
+                                        <t t-if="widget.editable"><a role="menuitem" type="edit" class="dropdown-item">Edit</a></t>
+                                        <t t-if="widget.deletable"><a role="menuitem" type="delete" class="dropdown-item">Delete</a></t>
+                                        <ul class="oe_kanban_colorpicker" data-field="color"/>
+                                    </div>
+                                </div>
+                                <a type="open" href="#" class="o_kanban_image oe_kanban_action">
+                                <img alt="Open" t-att-src="kanban_image('marketing_strategy.touchpoint', 'image_medium', record.id.raw_value)" class="img-fluid" style="width:100px;"/>
+                            </a>
+                                 <div class="oe_kanban_details">
+                                 <h4 class="oe_partner_heading">
+                                    <a type="open" class="o_kanban_record_title">
+                                        <field name="name"/>
+                                    </a>
+                                </h4> 
+                                <ul>
+                                 <li><field name="type"/></li>
+                                 <li><field name="hub_id"/></li>
+                                 </ul>
+                                 </div>                             
+                        		<div class="oe_clear"/>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+    
+     <record id='marketing_strategy_buyer_journey_action' model='ir.actions.act_window'>
+        <field name="name">Marketing Strategy Buyer Journey</field>
+        <field name="res_model">marketing_strategy.touchpoint</field>
+        <field name="view_mode">kanban,tree,form</field>
+        <field name="domain">[('state','=','operating')]</field>
+        <field name="view_id" ref="marketing_strategy_buyer_journey_view_kanban"/>
+        <field name="help" type="html">
+          <p class="o_view_nocontent_smiling_face">
+            Create a new touchpoint
+          </p>
+        </field>
+    </record>
+    
+        <menuitem id="menu_lean_buyer_journey" name="Buyer's Journey"
+            parent="marketing_strategy_menu"
+            action="marketing_strategy_buyer_journey_action" sequence="4"/>
+            
+            
+         <menuitem id="menu_marketing_strategy_buyers_persona_hub" 
+    name="Buyers Persona" 
+    parent="marketing_strategy.marketing_strategy_menu_assets" 
+    sequence="8"/>
+    
+
+   
+    
+    <record id='marketing_strategy_tribe_view_tree' model='ir.ui.view'>
+        <field name="name">marketing_strategy.tribe.tree</field>
+        <field name="model">marketing_strategy.tribe</field>
+        <field name="arch" type="xml">
+            <tree string="Tribe">
+                <field name="name" />
+                <field name="category_id" />
+            </tree>
+        </field>
+    </record>
+    
+    <record id='marketing_strategy_tribe_view_form' model='ir.ui.view'>
+        <field name="name">marketing_strategy.tribe.form</field>
+        <field name="model">marketing_strategy.tribe</field>
+        <field name="arch" type="xml">
+            <form string="Tribe">
+            	<sheet>
+            		 <div class="oe_title">
+                        <h1><field name="name" placeholder="Name of the Tribe" nolabel="1"/></h1>
+                    </div>
+                    <group>
+                    	<group><field name="category_id" /></group>
+                    	<group><field name="meeting_place_ids"  widget="many2many_tags" options="{'color_field': 'color'}" placeholder="Meeting Places" /></group>
+                    </group>
+                    <group string="description">
+                     <field name="description" nolabel="1" />
+                    </group>
+                    <group string="Members">
+                    	<field name="members_ids" mode="kanban" nolabel="1">
+                    		<kanban>
+                    			<field name="id"/>
+                                <field name="color"/>
+                                <field name="name"/>
+                                 <field name="image_small"/>
+                                <templates>
+                                	<t t-name="kanban-box">
+                                        <div t-attf-class="#{kanban_color(record.color.raw_value)} oe_kanban_global_click">
+                                        <div class="o_kanban_image">
+                                        <a type="open" href="#" class="o_kanban_image oe_kanban_action">
+                                <img alt="Open" t-att-src="kanban_image('marketing_strategy.buyer_persona', 'image_small', record.id.raw_value)" />
+                            </a>
+                            </div>
+                                        <div class="oe_kanban_details">
+                                 <h4 class="oe_partner_heading">
+                                    <a type="open" class="o_kanban_record_title">
+                                        <field name="name"/>
+                                    </a>
+                                </h4> 
+                               
+                                 </div>                             
+                        		<div class="oe_clear"/>
+                                        </div>         
+                                	</t>
+                                </templates>                                            
+                    		</kanban>
+                    	</field>                    
+                    </group>
+            	</sheet>
+           </form>
+       </field>
+   </record>
+   
+       <record id='marketing_strategy_tribe_view_kanban' model='ir.ui.view'>
+        <field name="name">marketing_strategy.tribe.kanban</field>
+        <field name="model">marketing_strategy.tribe</field>
+        <field name="arch" type="xml">
+            <kanban>
+                <field name="id"/>
+                <field name="name" />
+                <field name="color" />
+               <templates>
+                    <t t-name="kanban-box">
+                       <div t-attf-class="#{kanban_color(record.color.raw_value)} oe_kanban_global_click">
+                        	<div class="o_dropdown_kanban dropdown">
+
+                                    <a class="dropdown-toggle o-no-caret btn" role="button" data-toggle="dropdown" href="#" aria-label="Dropdown menu" title="Dropdown menu">
+                                        <span class="fa fa-ellipsis-v"/>
+                                    </a>
+                                    <div class="dropdown-menu" role="menu">
+                                        <t t-if="widget.editable"><a role="menuitem" type="edit" class="dropdown-item">Edit</a></t>
+                                        <t t-if="widget.deletable"><a role="menuitem" type="delete" class="dropdown-item">Delete</a></t>
+                                        <ul class="oe_kanban_colorpicker" data-field="color"/>
+                                    </div>
+                                </div>
+                               
+                            <div class="oe_kanban_details">
+                                 <h4 class="oe_partner_heading">
+                                    <a type="open" class="o_kanban_record_title">
+                                        <field name="name"/>
+                                    </a>
+                                </h4> 
+                                
+                                 </div>                             
+                        		<div class="oe_clear"/>
+                            </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+   
+       	 <record id="action_marketing_strategy_tribe_form" model="ir.actions.act_window">
+            <field name="name">Tribes</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">marketing_strategy.tribe</field>
+            <field name="domain">[]</field>
+            <field name="view_mode">kanban,tree,form</field>
+            <field name="filter" eval="True"/>
+            <field name="help" type="html">
+              <p class="o_view_nocontent_smiling_face">
+                Create a new tribe
+              </p>
+            </field>
+        </record>
+
+    <menuitem id="menu_marketing_strategy_tribe" name="Tribes"
+            parent="menu_marketing_strategy_buyers_persona_hub"
+            action="action_marketing_strategy_tribe_form" sequence="2"/>
+            
+         <record id='marketing_strategy_buyer_persona_view_tree' model='ir.ui.view'>
+        <field name="name">marketing_strategy.buyer_persona.tree</field>
+        <field name="model">marketing_strategy.buyer_persona</field>
+        <field name="arch" type="xml">
+            <tree string="Buyers Persona">
+                <field name="name" />
+                <field name="tribe_id" />
+                <field name="gender" />
+                <field name="status" />
+                <field name="income" />
+            </tree>
+        </field>
+    </record>
+    
+        <record id='marketing_strategy_buyer_persona_view_form' model='ir.ui.view'>
+        <field name="name">marketing_strategy.buyer_persona.form</field>
+        <field name="model">marketing_strategy.buyer_persona</field>
+        <field name="arch" type="xml">
+            <form string="Buyer Persona">
+            	<sheet>
+            		<field name="image" widget='image' class="oe_avatar" options='{"preview_image": "image_medium", "size": [90, 90]}'/>
+            		 <div class="oe_title">
+                        <h1><field name="name" placeholder="Name of the Buyer Persona" nolabel="1"/></h1>                    
+                    </div>
+                    <group name="profile">
+                    	<group string="Background">
+                    		<field name="tribe_id" />
+                    		<field name="title" />
+                    		<field name="function" />   
+                    		<field name="competence_ids" />   
+                    		<field name="preference_ids" />   
+                    		<field name="status" />
+                    		<field name="children" />                 	
+                    	</group>
+                    	<group  string="Demographics">
+                    		<field name="gender" />
+                    		<field name="age_min" />
+                    		<field name="age_max" />
+                    		<field name="income" />
+                    		<field name="lang" />                    		
+                    	</group>
+                    	<group   string="Location">
+                    		<field name="country_id" />
+                    		<field name="state_id" />
+                    		<field name="city" />
+                    		<field name="zip" />
+                    	</group>
+                    	<group  string="Preferences">
+                    		<field name="content_type_ids" widget="many2many_tags" options="{'color_field': 'color'}" placeholder="Content Preferences" />
+                    		<field name="social_media_ids" widget="many2many_tags" options="{'color_field': 'color'}" placeholder="Social Media Preferences" />
+                    		<field name="objection_ids" widget="many2many_tags" options="{'color_field': 'color'}" placeholder="Objections" />
+                    		<field name="goal_ids" widget="many2many_tags" options="{'color_field': 'color'}" placeholder="Personal Goals" />
+                    	</group>
+                    </group>
+                     <notebook colspan="4">
+                    	<page string="Bio" autofocus="autofocus">
+                    		<field name="bio" widget="html" nolabel="1"/>
+                    	</page>
+                    </notebook>
+                  </sheet>
+              </form>
+        </field>
+        </record>
+        
+               
+        <record model="ir.ui.view" id="marketing_strategy_buyer_persona_view_kanban">
+            <field name="name">marketing_strategy.buyer_persona.kanban</field>
+            <field name="model">marketing_strategy.buyer_persona</field>
+            <field name="arch" type="xml">
+                <kanban class="o_res_partner_kanban">
+                	<field name="id"/>
+                    <field name="color"/>
+                    <field name="name"/>
+	                <field name="tribe_id" />
+	                <field name="gender" />
+	                <field name="status" />
+                    <field name="image_medium"/>
+                    <templates>
+	                    <t t-name="kanban-box">
+	                     <div t-attf-class="#{kanban_color(record.color.raw_value)} oe_kanban_global_click">
+	                    	<div class="o_dropdown_kanban dropdown">
+                            	<a class="dropdown-toggle o-no-caret btn" role="button" data-toggle="dropdown" href="#" aria-label="Dropdown menu" title="Dropdown menu">
+                                 	<span class="fa fa-ellipsis-v"/>
+                                </a>
+                                <div class="dropdown-menu" role="menu">
+                                	<t t-if="widget.editable"><a role="menuitem" type="edit" class="dropdown-item">Edit</a></t>
+                                    <t t-if="widget.deletable"><a role="menuitem" type="delete" class="dropdown-item">Delete</a></t>
+                                    <ul class="oe_kanban_colorpicker" data-field="color"/>
+                                </div>
+                            </div>
+                            <a type="open" href="#" class="o_kanban_image oe_kanban_action">
+                                <img alt="Open" t-att-src="kanban_image('marketing_strategy.buyer_persona', 'image_medium', record.id.raw_value)" class="img-fluid" style="width:100px;"/>
+                            </a>
+                            <div class="oe_kanban_details">
+                            	<h4 class="oe_partner_heading">
+                                    <a type="open" class="o_kanban_record_title">
+                                        <field name="name"/>
+                                    </a>
+                                </h4> 
+                                <ul>
+                                 <li>Tribe: <field name="tribe_id"/></li>
+                                 <li>Status: <field name="status"/></li>
+                                 </ul>
+                                 </div>                             
+                        		<div class="oe_clear"/>
+                        		</div>
+	                    </t>  
+                    </templates>              
+                </kanban>
+            </field>
+        </record>
+        
+        <record id="view_marketing_strategy_buyer_persona_select" model="ir.ui.view">
+            <field name="name">marketing_strategy.buyer_persona.select</field>
+            <field name="model">marketing_strategy.buyer_persona</field>
+            <field name="arch" type="xml">
+            	<search string="Search Buyers Persona">
+            		<filter string="Female" name="gender_female" domain="[('gender','=','female')]"/>
+            		<filter string="Male" name="gender_male" domain="[('gender','=','male')]"/>
+           		<group expand="0" name="group_by" string="Group By">
+           			<filter name="group_tribe_id" string="Tribe" context="{'group_by': 'tribe_id'}"/>
+           			<filter name="group_gender" string="Gender" context="{'group_by': 'gender'}"/>
+           			<filter name="group_status" string="Status" context="{'group_by': 'status'}"/>
+           			<filter name="group_lang" string="Language" context="{'group_by': 'lang'}"/>
+           		</group>
+            </search>
+            </field>
+      </record>
+        
+        <record id="action_marketing_strategy_buyer_persona_form" model="ir.actions.act_window">
+            <field name="name">Buyers Persona</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">marketing_strategy.buyer_persona</field>
+            <field name="domain">[]</field>
+            <field name="view_mode">kanban,tree,form</field>
+            <field name="filter" eval="True"/>
+            <field name="help" type="html">
+              <p class="o_view_nocontent_smiling_face">
+                Create a new buyer persona
+              </p>
+            </field>
+        </record>
+        
+        <menuitem id="menu_marketing_strategy_buyer_persona" name="Buyers Persona"
+            parent="menu_marketing_strategy_buyers_persona_hub"
+            action="action_marketing_strategy_buyer_persona_form" sequence="3"/>
+            
+
+            
+            
   
   </data>
 </odoo>

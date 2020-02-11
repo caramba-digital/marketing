@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+  	<record id="view_partner_marketing_strategy_form" model="ir.ui.view">
+		<field name="name">res.partner.res_partner_marketing_strategy.form.inherit</field>
+		<field name="model">res.partner</field>
+		<field name="priority">2</field>
+		<field name="inherit_id" ref="base.view_partner_form"/>
+		<field name="arch" type="xml">
+			<xpath expr="//group[@name='purchase']" position="after">
+				<group string="Marketing" name="marketing" priority="3" groups="marketing_strategy.group_marketing_strategy_product_owner,marketing_strategy.group_marketing_strategy_manager">
+                	<field name="influencer"/>
+                    <field name="evangelist"/>
+                    <field name="touchpoint_hub"/>
+                </group>			
+			</xpath>
+		</field>
+	</record>
+
+	<record id="view_res_partner_marketing_strategy_filter" model="ir.ui.view">
+		<field name="name">res.partner_marketing_strategy.select.inherit</field>
+		<field name="model">res.partner</field>
+		<field name="priority">2</field>
+		<field name="inherit_id" ref="base.view_res_partner_filter"/>
+		<field name="arch" type="xml">
+			<xpath expr="//filter[@name='inactive']" position="before">
+				<filter string="Influencer" name="influencer" domain="[('influencer','=',True), ('parent_id', '=', False)]"/>
+				<filter string="Evangelist" name="evangelist" domain="[('evangelist','=',True), ('parent_id', '=', False)]"/>
+				<filter string="Touchpoint Hub" name="touchpoint_hub" domain="[('touchpoint_hub','=',True)]"/>
+			</xpath>
+		</field>
+	</record>
+	
+	 <record id="action_marketing_strategy_influencer_form" model="ir.actions.act_window">
+            <field name="name">Influencers</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">res.partner</field>
+            <field name="domain">[]</field>
+            <field name="view_mode">kanban,tree,form</field>
+            <field name="context">{'search_default_influencer': 1,'default_customer': 0,'default_supplier': 0, 'default_influencer':1, 'default_is_company': False}</field>
+            <field name="filter" eval="True"/>
+            <field name="help" type="html">
+              <p class="o_view_nocontent_smiling_face">
+                Create a new influencer in your address book
+              </p><p>
+                Odoo helps you easily track all activities related to a influencer.
+              </p>
+            </field>
+        </record>
+    
+    <menuitem id="menu_marketing_strategy_influencer" name="Influencers"
+            parent="marketing_strategy_menu_assets"
+            action="action_marketing_strategy_influencer_form" sequence="4"/>
+            
+     	
+	 <record id="action_marketing_strategy_evangelist_form" model="ir.actions.act_window">
+            <field name="name">Evangelists</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">res.partner</field>
+            <field name="domain">[]</field>
+            <field name="view_mode">kanban,tree,form</field>
+            <field name="context">{'search_default_evangelist': 1,'default_customer': 0,'default_supplier': 0, 'default_evangelist':1, 'default_is_company': False}</field>
+            <field name="filter" eval="True"/>
+            <field name="help" type="html">
+              <p class="o_view_nocontent_smiling_face">
+                Create a new evangelist in your address book
+              </p><p>
+                Odoo helps you easily track all activities related to a evangelist.
+              </p>
+            </field>
+        </record>
+    
+    <menuitem id="menu_marketing_strategy_evangelist" name="Evangelists"
+            parent="marketing_strategy_menu_assets"
+            action="action_marketing_strategy_evangelist_form" sequence="6"/>
+            
+    	 <record id="action_marketing_strategy_touchpoints_hub_form" model="ir.actions.act_window">
+            <field name="name">Touchpoints Hubs</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">res.partner</field>
+            <field name="domain">[]</field>
+            <field name="view_mode">kanban,tree,form</field>
+            <field name="context">{'search_default_touchpoint_hub': 1,'default_customer': 0,'default_supplier': 0, 'default_touchpoint_hub':1, 'default_is_company': True}</field>
+            <field name="filter" eval="True"/>
+            <field name="help" type="html">
+              <p class="o_view_nocontent_smiling_face">
+                Create a new touchpoins hub in your address book
+              </p><p>
+                Odoo helps you easily track all activities related to a touchpoint hub.
+              </p>
+            </field>
+        </record>
+    
+    <menuitem id="menu_marketing_strategy_touchpoint_hub" name="Touchpoints hubs"
+            parent="menu_marketing_strategy_touchpoints"
+            action="action_marketing_strategy_touchpoints_hub_form" sequence="3"/>
+
+</odoo>
