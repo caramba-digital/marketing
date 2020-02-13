@@ -112,6 +112,22 @@
                        			</div>
                        		</div>
                 	 </div>
+                	 <field name="internal_factor_ids" mode="tree">
+                     	<tree string="Internal Factors" editable="bottom">
+                        	<field name="p1"/>
+                          	<field name="p2"/>
+                            <field name="p3"/>
+                            <field name="p4"/>
+                        </tree>
+                     </field>
+                     <field name="external_factor_ids" mode="tree"  widget="section_and_note_one2many">
+                     	<tree string="External Factors" editable="bottom">
+                        	<field name="p1"/>
+                          	<field name="p2"/>
+                            <field name="p3"/>
+                            <field name="p4"/>
+                      	</tree>
+                      </field>  
                 	 </sheet>
                 </form>
             </field>
