@@ -3,8 +3,8 @@
 
 <template id="footer_pinterest" inherit_id="website.footer_custom" name="Pinterest">
     <xpath expr="//div[@id='connect']/p" position="inside">
-    	<a t-if="website.social_pinterest" t-att-href="website.social_instagram" class="btn btn-sm btn-link"><i class="fa fa-2x fa-pinterest"/></a>
-    </xpath>
+    	<a t-if="website.social_pinterest" t-att-href="website.social_pinterest" class="btn btn-sm btn-link"><i class="fa fa-2x fa-pinterest"/></a>
+   	</xpath>
  </template>
 
 </odoo>
