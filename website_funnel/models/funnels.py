@@ -13,14 +13,14 @@ class Funnel(models.Model):
     _inherit = ['mail.thread', 'website.seo.metadata', 'website.multi.mixin']
     _order = 'name'
     
-    name = fields.Char('Blog Name', required=True, translate=True)
-    subtitle = fields.Char('Blog Subtitle', translate=True)
+    name = fields.Char('Funnel Name', required=True, translate=True)
+    subtitle = fields.Char('Funnel Subtitle', translate=True)
     active = fields.Boolean('Active', default=True)
     description = fields.Text(string='Description')
     user_id = fields.Many2one('res.users', string='Responsible', index=True, tracking=True, default=lambda self: self.env.user)
     
 class FunnelPage(models.Model):
-    _name = 'website.funnel'
+    _name = 'funnel.page'
     _inherit = ['mail.thread', 'website.seo.metadata', 'website.published.multi.mixin']
     _order = 'name'
     
@@ -58,7 +58,6 @@ class FunnelPage(models.Model):
     create_uid = fields.Many2one('res.users', 'Created by', index=True, readonly=True)
     write_date = fields.Datetime('Last Updated on', index=True, readonly=True)
     write_uid = fields.Many2one('res.users', 'Last Contributor', index=True, readonly=True)
-    author_avatar = fields.Binary(related='author_id.image_128', string="Avatar", readonly=False)
     visits = fields.Integer('No of Views', copy=False)
-    website_id = fields.Many2one(related='blog_id.website_id', readonly=True)
+    website_id = fields.Many2one(related='funnel_id.website_id', readonly=True)
  
