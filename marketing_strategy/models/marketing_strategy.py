@@ -385,60 +385,7 @@ class Tribe(models.Model):
     meeting_place_ids = fields.Many2many('marketing_strategy.meeting_place', 'tribe_buyer_rel', 'tribe_id', 'meeting_place_id', string='Meeting Places')
     description = fields.Html('Description')
     members_ids = fields.One2many('marketing_strategy.buyer_persona', 'tribe_id', string='Members') 
- 
-class HeuristicQ1(models.Model):
-    _name = "marketing_strategy.heuristc_q1"
-    _description = "Heuristic Question 1"
-    
-    name = fields.Char('Name', required=True)    
-    
-class HeuristicQ2(models.Model):
-    _name = "marketing_strategy.heuristc_q2"
-    _description = "Heuristic Question 2"
-    
-    name = fields.Char('Area Name', required=True)   
-    
-class HeuristicQ3(models.Model):
-    _name = "marketing_strategy.heuristc_q3"
-    _description = "Heuristic Question 3"
-    
-    name = fields.Char('Area Name', required=True)   
-    
-    
-class InternalFactor(models.Model):
-    _name = "marketing_strategy.internal_factor"
-    _description = "Internal Factor"
-    
-    name = fields.Char('Area Name', required=True)
-    
-class ExternalFactor(models.Model):
-    _name = "marketing_strategy.external_factor"
-    _description = "External Factor"
-    
-    name = fields.Char('Area Name', required=True)
-    
-class InternalFactorQuestion(models.Model):
-    _name = "marketing_strategy.internal_factor_question"
-    _description = "Internal Factor Question"
-    
-    p1: fields.Many2one('marketing_strategy.heuristc_q1', string='P1', required=True)
-    p2: fields.Many2one('marketing_strategy.heuristc_q2', string='P2', required=True)
-    p3: fields.Many2one('marketing_strategy.heuristc_q3', string='P3', required=True)
-    p4: fields.Many2one('marketing_strategy.internal_factor', string='P4', required=True)
-    consumer_trend_id = fields.Many2one('marketing_strategy.consumer_trend', string='Consumer Trend', required=True, ondelete='cascade', copy=False)
-    
-class ExternalFactorQuestion(models.Model):
-    _name = "marketing_strategy.external_factor_question"
-    _description = "External Factor Question"
-    
-    p1: fields.Many2one('marketing_strategy.heuristc_q1', string='P1', required=True)
-    p2: fields.Many2one('marketing_strategy.heuristc_q2', string='P2', required=True)
-    p3: fields.Many2one('marketing_strategy.heuristc_q3', string='P3', required=True)
-    p4: fields.Many2one('marketing_strategy.external_factor', string='P4', required=True)
-    consumer_trend_id = fields.Many2one('marketing_strategy.consumer_trend', string='Consumer Trend', required=True, ondelete='cascade', copy=False)
-    
-    
-    
+   
 
 class ConsumerTrend(models.Model):
     _name = "marketing_strategy.consumer_trend"

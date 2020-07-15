@@ -9,7 +9,11 @@ class Partner(models.Model):
     
     influencer = fields.Boolean(string='Is a Influencer', default=False,
                                help="Check this box if this contact is a influencer.")
-    evangelist = fields.Boolean(string='Is a Evangelist', default=False,
+    ambassador = fields.Boolean(string='Is a Ambassador', default=False,
+                               help="Check this box if this contact is a brand evangelist.")
+    ambassador = fields.Boolean(string='Is a Ambassador', default=False,
+                               help="Check this box if this contact is a brand evangelist.")
+    ambassador = fields.Boolean(string='Is a Ambassador', default=False,
                                help="Check this box if this contact is a brand evangelist.")
     touchpoint_hub = fields.Boolean(string='Is a Touchpoints Hub', default=False,
                                help="Check this box if this locationt is a touchpoint.")
