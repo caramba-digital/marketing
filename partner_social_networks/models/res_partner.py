@@ -18,6 +18,7 @@ class ResPartner(models.Model):
     github_profile = fields.Char()
     blog = fields.Char()
     blog_2 = fields.Char()
+    podcast_channel = fields.Char()
     facebook_page = fields.Char()
     linkedin_page = fields.Char()
     google_my_business = fields.Char()

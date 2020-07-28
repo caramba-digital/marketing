@@ -24,6 +24,7 @@
             <field name="youtube_channel"/>
             <field name="facebook_page"/>
             <field name="linkedin_page"/>
+            <field name="podcast_channel"/>
             <field name="google_my_business"/>
             <field name="whatsapp_businnes"/>  
             <field name="messenger"/>  

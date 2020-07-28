@@ -714,13 +714,13 @@
             sequence="5"/>
 
             
-                  <!-- Social Buyer Preference -->
+                  <!-- Social Buyer LifeStyle -->
          
-          <record id="marketing_strategy_buyer_preferences_form" model="ir.ui.view">
-            <field name="name">marketing_strategy.buyer_preferences.form</field>
-            <field name="model">marketing_strategy.buyer_preference</field>
+          <record id="marketing_strategy_buyer_lifestyle_form" model="ir.ui.view">
+            <field name="name">marketing_strategy.buyer_lifestyle.form</field>
+            <field name="model">marketing_strategy.buyer_lifestyle</field>
             <field name="arch" type="xml">
-                <form string="Buyer Preference">
+                <form string="Buyer Lifestyle">
                     <group>
                         <field name="name"/>
                         <field name="color" groups="base.group_no_one"/>
@@ -729,20 +729,20 @@
             </field>
         </record>
 
-        <record id="marketing_strategy_buyer_preferences_tree" model="ir.ui.view">
-            <field name="name">marketing_strategy.buyer_preference.tree</field>
-            <field name="model">marketing_strategy.buyer_preference</field>
+        <record id="marketing_strategy_buyer_lifestyle_tree" model="ir.ui.view">
+            <field name="name">marketing_strategy.buyer_lifestyle.tree</field>
+            <field name="model">marketing_strategy.buyer_lifestyle</field>
             <field name="arch" type="xml">
-                <tree string="Buyer Preferences">
+                <tree string="Buyer Lifestyle">
                     <field name="name"/>
                 </tree>
             </field>
         </record>
         
-        <record id="marketing_strategy_buyer_preferences_action" model="ir.actions.act_window">
-            <field name="name">Buyer Preferences</field>
-            <field name="res_model">marketing_strategy.buyer_preference</field>
-            <field name="view_id" ref="marketing_strategy_buyer_preferences_tree"/>
+        <record id="marketing_strategy_buyer_lifestyle_action" model="ir.actions.act_window">
+            <field name="name">Buyer Lifestyle</field>
+            <field name="res_model">marketing_strategy.buyer_lifestyle</field>
+            <field name="view_id" ref="marketing_strategy_buyer_lifestyle_tree"/>
             <field name="help" type="html">
               <p class="o_view_nocontent_smiling_face">
                 Create a new buyer preference
@@ -753,9 +753,9 @@
         </record>
 
         <menuitem
-            id="menu_marketing_strategy_buyer_preferences"
-            name="Buyer Preferences"
-            action="marketing_strategy_buyer_preferences_action"
+            id="menu_marketing_strategy_buyer_lifestyle"
+            name="Buyer Lifestyle"
+            action="marketing_strategy_buyer_lifestyle_action"
             parent="menu_marketing_strategy_buyer persona_config"
             sequence="6"/>
             

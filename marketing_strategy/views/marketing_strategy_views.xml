@@ -60,23 +60,31 @@
                       </div>
                     <group>
                     	<group>
+                            <field name="related_brand_id"/>
                     		<field name="partner_id"/>
                     	</group>
                     	<group>
                     		<field name="url" widget="url" placeholder="e.g. www.odoo.com"/>
                     	</group>
                     </group>
-                    <group string="Social">
+                    <notebook colspan="4">
+                        <page string="Social" autofocus="autofocus">
+                        <group>
                     	<group>
                     		<field name="twitter"/>
                     		<field name="facebook"/>
                     		<field name="linkedin"/>
+                            <field name="tiktok"/>
                     	</group>
                     	<group>
                     		<field name="youtube"/>
                     		<field name="blog"/>
+                            <field name="podcast_channel"/>
                     	</group>
                     </group>
+                        </page>
+                    </notebook>
+                    
             	</sheet>
                 
             </form>
@@ -324,6 +332,7 @@
             	<sheet>
                     <div class="oe_title">
                     	<h1><field name="name"/></h1>
+                        <h4><field name="brand_id"/></h4>
                      </div>
                     <group>
                     	<group>
@@ -798,8 +807,8 @@
                     		<field name="tribe_id" />
                     		<field name="title" />
                     		<field name="function" />   
-                    		<field name="competence_ids" />   
-                    		<field name="preference_ids" />   
+                    		<field name="competence_ids"  widget="many2many_tags" options="{'color_field': 'color'}"/>   
+                    		<field name="lifestyle_ids"  widget="many2many_tags" options="{'color_field': 'color'}"/>   
                     		<field name="status" />
                     		<field name="children" />                 	
                     	</group>
