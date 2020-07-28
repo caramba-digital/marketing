@@ -638,7 +638,7 @@
     </record>
     
         <menuitem id="menu_lean_buyer_journey" name="Buyer's Journey"
-            parent="marketing_strategy_menu"
+            parent="marketing_strategy_menu_solutions"
             action="marketing_strategy_buyer_journey_action" sequence="4"/>
             
             
