@@ -2,3 +2,6 @@ eclipse.preferences.version=1
 encoding//marketing_strategy/__init__.py=utf-8
 encoding//marketing_strategy/__manifest__.py=utf-8
 encoding//marketing_strategy/models/__init__.py=utf-8
+encoding//marketing_strategy/models/crm_lead.py=utf-8
+encoding//marketing_strategy/models/marketing_strategy.py=utf-8
+encoding//marketing_strategy/models/res_partner.py=utf-8
