@@ -22,6 +22,7 @@ class MarketingBrand(models.Model):
 
     name = fields.Char('Brand', required=True)
     partner_id = fields.Many2one('res.partner', string='Partner')
+    related_brand_id = fields.Many2one('marketing_strategy.brand', string='Related Brand')
     tag_ids = fields.Many2many('marketing_strategy.brand.tag', 'marketing_strategy_brand_tags_rel', 'brand_id', 'tag_id', string='Tags') 
     color = fields.Integer('Kanban Color Index')
     image = fields.Binary("Logo", attachment=True,
@@ -39,19 +40,11 @@ class MarketingBrand(models.Model):
     facebook = fields.Char('Facebook Page')
     linkedin = fields.Char('Linkedin Page')
     youtube = fields.Char('Youtube Channel')
+    tiktok =  fields.Char('TikTok')
     blog = fields.Char('Blog')
     url = fields.Char('Website')
+    podcast_channel = fields.Char('Podcast Channel')
     
-    @api.model_create_multi
-    def create(self, vals_list):
-        for vals in vals_list:
-            tools.image_resize_images(vals)
-        return super(MarketingBrand, self).create(vals_list)
-
-
-    def write(self, vals):
-        tools.image_resize_images(vals)
-        return super(MarketingBrand, self).write(vals)
     
     
 class TouchpointTag(models.Model):
@@ -96,7 +89,7 @@ class Touchpoint(models.Model):
         help="Small-sized touchpoint. It is automatically "
              "resized as a 64x64px image, with aspect ratio preserved. "
              "Use this field anywhere a small image is required.")
-    plan_id = fields.Many2one('marketing_strategy.plan', string='Lean Marketing Plan')
+    plan_id = fields.Many2one('marketing_strategy.plan', string='Marketing Plan')
     buyer_journey_stage = fields.Selection([('awareness','Awareness'),('consideration','Consideration'),('purchase','Purchase'),('service','Service'),('loyalty','Loyalty')], string="Buyer's Journey Stage", default='awareness', required=True, copy=False, track_visibility='onchange', group_expand='_expand_buyer_journey')
     responsible_id = fields.Many2one('res.users', string='Responsible', required=False, default=lambda self: self.env.user)
     
@@ -106,17 +99,6 @@ class Touchpoint(models.Model):
     def _expand_buyer_journey(self, states, domain, order):
         return ['awareness','consideration','purchase','service', 'loyalty']
         
-    @api.model_create_multi
-    def create(self, vals_list):
-        for vals in vals_list:
-            tools.image_resize_images(vals)
-        return super(Touchpoint, self).create(vals_list)
-    
-    
-    
-    def write(self, vals):
-        tools.image_resize_images(vals)
-        return super(Touchpoint, self).write(vals)
     
 class CustomerJob(models.Model):
 
@@ -180,7 +162,7 @@ class GainCreator(models.Model):
 
 class ValueProposition(models.Model):
     _name = 'marketing_strategy.value_proposition'
-    _description = 'Lean Marketing ValuePropositions'
+    _description = 'Marketing ValuePropositions'
     _order = 'name asc'
     _inherit = ['mail.thread', 'mail.activity.mixin']
     
@@ -188,6 +170,7 @@ class ValueProposition(models.Model):
     color = fields.Integer('Kanban Color Index')
     description = fields.Html('Description')
     type = fields.Selection([('product','Product'),('service','Service')], string='Type')
+    brand_id = fields.Many2one('marketing_strategy.brand', string='Brand')
     ref = fields.Char(string='Internal Reference')
     customer_job_ids = fields.Many2many('marketing_strategy.value_proposition.customer_job', 'marketing_strategy_value_propositiont_customer_job_rel', 'value_proposition_id', 'customer_job_id', string='Custumer Jobs')
     customer_pain_ids = fields.Many2many('marketing_strategy.value_proposition.customer_pain', 'marketing_strategy_value_propositiont_customer_pain_rel', 'value_proposition_id', 'customer_pain_id', string='Custumer Pains')
@@ -207,17 +190,6 @@ class ValueProposition(models.Model):
              "resized as a 64x64px image, with aspect ratio preserved. "
              "Use this field anywhere a small image is required.")
     
-    @api.model_create_multi
-    def create(self, vals_list):
-        for vals in vals_list:
-            tools.image_resize_images(vals)
-        return super(ValueProposition, self).create(vals_list)
-    
-    
-    
-    def write(self, vals):
-        tools.image_resize_images(vals)
-        return super(ValueProposition, self).write(vals)
     
 
  
@@ -281,16 +253,16 @@ class BuyerGoal(models.Model):
         ('name_uniq', 'unique (name)', "Goal name already exists !"),
     ]
     
-class Preference(models.Model):
+class Lifestyle(models.Model):
 
-    _name = "marketing_strategy.buyer_preference"
-    _description = "Buyer Preference"
+    _name = "marketing_strategy.buyer_lifestyle"
+    _description = "Buyer Lifestyle"
 
     name = fields.Char('Name', required=True, translate=True)
     color = fields.Integer('Color Index')
 
     _sql_constraints = [
-        ('name_uniq', 'unique (name)', "Buyer preference name already exists !"),
+        ('name_uniq', 'unique (name)', "Buyer lifestyle name already exists !"),
     ]
     
 class Competence(models.Model):
@@ -347,23 +319,14 @@ class BuyerPersona(models.Model):
              "resized as a 64x64px image, with aspect ratio preserved. "\
              "Use this field anywhere a small image is required.")
     competence_ids = fields.Many2many('marketing_strategy.buyer_competence', 'buyer_competence_rel', 'buyer_id', 'competence_id', string='Competences')
-    preference_ids = fields.Many2many('marketing_strategy.buyer_preference', 'buyer_preference_rel', 'buyer_id', 'cpreference_id', string='Preferences')
-    content_type_ids = fields.Many2many('marketing_strategy.content_type', 'buyer_content_rel', 'buyer_id', 'content_type_id', string='Content Type Preferences')
-    social_media_ids = fields.Many2many('marketing_strategy.social_media_preference', 'buyer_social_media_preferences_rel', 'buyer_id', 'social_media_id', string='Social Media Preferences')
+    lifestyle_ids = fields.Many2many('marketing_strategy.buyer_lifestyle', 'buyer_buyer_lifestyle_rel', 'buyer_id', 'buyer_lifestyle_id', string='Lifestyle')
+    content_type_ids = fields.Many2many('marketing_strategy.content_type', 'buyer_content_rel', 'buyer_id', 'content_type_id', string='Content Type')
+    social_media_ids = fields.Many2many('marketing_strategy.social_media_preference', 'buyer_social_media_preferences_rel', 'buyer_id', 'social_media_id', string='Social Media')
     objection_ids = fields.Many2many('marketing_strategy.buyer_objection', 'buyer_objection_rel', 'buyer_id', 'objection_id', string='Objections')
     goal_ids = fields.Many2many('marketing_strategy.buyer_goal', 'buyer_goal_rel', 'buyer_id', 'goal_id', string='Goals')    
     company_id = fields.Many2one('res.company', string='Company', index=True, default=lambda self: self.env.user.company_id.id)
     company_currency = fields.Many2one(string='Currency', related='company_id.currency_id', readonly=True, relation="res.currency")
     
-    @api.model_create_multi
-    def create(self, vals_list):
-        for vals in vals_list:
-            tools.image_resize_images(vals)
-        return super(BuyerPersona, self).create(vals_list)
-
-    def write(self, vals):
-        tools.image_resize_images(vals)
-        return super(BuyerPersona, self).write(vals)
     
 
     
@@ -391,7 +354,7 @@ class Tribe(models.Model):
 
 class Plan(models.Model):
     _name = 'marketing_strategy.plan'
-    _description = 'Lean Marketing Plan'
+    _description = 'Marketing Plan'
     _order = 'name asc'
     _inherit = ['mail.thread', 'mail.activity.mixin']
     
