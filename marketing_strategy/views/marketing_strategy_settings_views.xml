@@ -805,9 +805,7 @@
             parent="menu_marketing_strategy_buyer persona_config"
             sequence="7"/>
             
-             <menuitem id="menu_marketing_strategy_business_model_canvas_config" name="Business Model Canvas"
-            parent="marketing_strategy.marketing_strategy_menu_config"
-            sequence="4"/>
+
             
                 
          
