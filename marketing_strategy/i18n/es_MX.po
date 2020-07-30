@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: Odoo Server 13.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-07-29 18:43+0000\n"
-"PO-Revision-Date: 2020-07-29 14:47-0500\n"
+"PO-Revision-Date: 2020-07-30 16:37-0500\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -99,7 +99,7 @@ msgstr "Annual Income"
 #. module: marketing_strategy
 #: model:ir.ui.menu,name:marketing_strategy.marketing_strategy_menu_assets
 msgid "Assets"
-msgstr "Bienes"
+msgstr "Activos"
 
 #. module: marketing_strategy
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_plan__message_attachment_count
@@ -163,7 +163,7 @@ msgstr "Etiquetas de marca"
 #: model:ir.actions.act_window,name:marketing_strategy.marketing_strategy_brand_action
 #: model:ir.ui.menu,name:marketing_strategy.marketing_strategy_brand_menu
 msgid "Brands"
-msgstr "Brands"
+msgstr "Marcas"
 
 #. module: marketing_strategy
 #: model:ir.ui.menu,name:marketing_strategy.menu_marketing_strategy_business_model_canvas_config
@@ -424,73 +424,73 @@ msgstr "Crear una nueva preferencia de comprador"
 #. module: marketing_strategy
 #: model_terms:ir.actions.act_window,help:marketing_strategy.marketing_strategy_content_type_action
 msgid "Create a new content type"
-msgstr ""
+msgstr "Crea un nuevo tipo de contenido"
 
 #. module: marketing_strategy
 #: model_terms:ir.actions.act_window,help:marketing_strategy.marketing_strategy_customer_gain_action
 msgid "Create a new custumer gain"
-msgstr ""
+msgstr "Crear una nueva ganancia de cliente"
 
 #. module: marketing_strategy
 #: model_terms:ir.actions.act_window,help:marketing_strategy.marketing_strategy_custumer_job_action
 msgid "Create a new custumer job"
-msgstr ""
+msgstr "Crear un nuevo trabajo de cliente"
 
 #. module: marketing_strategy
 #: model_terms:ir.actions.act_window,help:marketing_strategy.marketing_strategy_customer_pain_action
 msgid "Create a new custumer pain"
-msgstr ""
+msgstr "Crea un nuevo dolor de cliente"
 
 #. module: marketing_strategy
 #: model_terms:ir.actions.act_window,help:marketing_strategy.marketing_strategy_gain_creator_action
 msgid "Create a new gain creator"
-msgstr ""
+msgstr "Crear una nueva creadora de ganancia"
 
 #. module: marketing_strategy
 #: model_terms:ir.actions.act_window,help:marketing_strategy.marketing_strategy_meeting_place_action
 msgid "Create a new meeting place"
-msgstr ""
+msgstr "Crea un nuevo lugar de encuentro"
 
 #. module: marketing_strategy
 #: model_terms:ir.actions.act_window,help:marketing_strategy.marketing_strategy_pain_reliever_action
 msgid "Create a new pain reliever"
-msgstr ""
+msgstr "Crea un nuevo analgésico"
 
 #. module: marketing_strategy
 #: model_terms:ir.actions.act_window,help:marketing_strategy.marketing_strategy_social_media_preference_action
 msgid "Create a new social media preference"
-msgstr ""
+msgstr "Crear una nueva preferencia de redes sociales"
 
 #. module: marketing_strategy
 #: model_terms:ir.actions.act_window,help:marketing_strategy.marketing_strategy_brand_tag_action
 msgid "Create a new tag for brands"
-msgstr ""
+msgstr "Crear una nueva etiqueta para marcas"
 
 #. module: marketing_strategy
 #: model_terms:ir.actions.act_window,help:marketing_strategy.marketing_strategy_touchpoint_tag_action
 msgid "Create a new tag for touchpoints"
-msgstr ""
+msgstr "Crear una nueva etiqueta para puntos de contacto"
 
 #. module: marketing_strategy
 #: model_terms:ir.actions.act_window,help:marketing_strategy.action_marketing_strategy_touchpoints_hub_form
 msgid "Create a new touchpoins hub in your address book"
-msgstr ""
+msgstr "Cree un nuevo centro de puntos táctiles en su libreta de direcciones"
 
 #. module: marketing_strategy
 #: model_terms:ir.actions.act_window,help:marketing_strategy.action_marketing_strategy_touchpoints_form
 #: model_terms:ir.actions.act_window,help:marketing_strategy.marketing_strategy_buyer_journey_action
 msgid "Create a new touchpoint"
-msgstr ""
+msgstr "Crea un nuevo punto de contacto"
 
 #. module: marketing_strategy
 #: model_terms:ir.actions.act_window,help:marketing_strategy.action_marketing_strategy_tribe_form
 msgid "Create a new tribe"
-msgstr ""
+msgstr "Crea una nueva tribu"
 
 #. module: marketing_strategy
 #: model_terms:ir.actions.act_window,help:marketing_strategy.marketing_strategy_tribe_category_action
 msgid "Create a new tribe category"
-msgstr ""
+msgstr "Crea una nueva categoría de tribu"
 
 #. module: marketing_strategy
 #: model_terms:ir.actions.act_window,help:marketing_strategy.marketing_strategy_brand_tag_action
@@ -503,12 +503,14 @@ msgstr ""
 #: model_terms:ir.actions.act_window,help:marketing_strategy.marketing_strategy_social_media_preference_action
 #: model_terms:ir.actions.act_window,help:marketing_strategy.marketing_strategy_tribe_category_action
 msgid "Create tags that fit your brands to better manage."
-msgstr ""
+msgstr "Cree etiquetas que se ajusten a sus marcas para gestionarlas mejor."
 
 #. module: marketing_strategy
 #: model_terms:ir.actions.act_window,help:marketing_strategy.marketing_strategy_touchpoint_tag_action
 msgid "Create tags that fit your touchpoints to better manage."
 msgstr ""
+"Cree etiquetas que se ajusten a sus puntos de contacto para administrarlas "
+"mejor."
 
 #. module: marketing_strategy
 #: model_terms:ir.actions.act_window,help:marketing_strategy.marketing_strategy_customer_gain_action
@@ -518,6 +520,7 @@ msgstr ""
 #: model_terms:ir.actions.act_window,help:marketing_strategy.marketing_strategy_pain_reliever_action
 msgid "Create tags that fit your value_proposition to better manage."
 msgstr ""
+"Cree etiquetas que se ajusten a su valor_proposición para administrar mejor."
 
 #. module: marketing_strategy
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_brand__create_uid
@@ -544,7 +547,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:marketing_strategy.field_utm_content__create_uid
 #: model:ir.model.fields,field_description:marketing_strategy.field_utm_term__create_uid
 msgid "Created by"
-msgstr ""
+msgstr "Creado por"
 
 #. module: marketing_strategy
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_brand__create_date
@@ -571,24 +574,24 @@ msgstr ""
 #: model:ir.model.fields,field_description:marketing_strategy.field_utm_content__create_date
 #: model:ir.model.fields,field_description:marketing_strategy.field_utm_term__create_date
 msgid "Created on"
-msgstr ""
+msgstr "Creado en"
 
 #. module: marketing_strategy
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_buyer_persona__company_currency
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_plan__company_currency
 msgid "Currency"
-msgstr ""
+msgstr "Moneda"
 
 #. module: marketing_strategy
 #: model:ir.model.fields.selection,name:marketing_strategy.selection__res_partner__brand_advocacy__customer_advocate
 msgid "Customer Advocate"
-msgstr ""
+msgstr "Cliente Defensor"
 
 #. module: marketing_strategy
 #: model:ir.model,name:marketing_strategy.model_marketing_strategy_value_proposition_customer_gain
 #: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_customer_gain_form
 msgid "Customer Gain"
-msgstr ""
+msgstr "Ganancia del cliente"
 
 #. module: marketing_strategy
 #: model:ir.actions.act_window,name:marketing_strategy.marketing_strategy_customer_gain_action
@@ -596,12 +599,12 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_customer_gain_tree
 #: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_value_proposition_view_form
 msgid "Customer Gains"
-msgstr ""
+msgstr "Ganancias del cliente"
 
 #. module: marketing_strategy
 #: model:ir.model,name:marketing_strategy.model_marketing_strategy_value_proposition_customer_job
 msgid "Customer Job"
-msgstr ""
+msgstr "Tarea del cliente"
 
 #. module: marketing_strategy
 #: model:ir.actions.act_window,name:marketing_strategy.marketing_strategy_custumer_job_action
@@ -609,13 +612,13 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_custumer_job_tree
 #: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_value_proposition_view_form
 msgid "Customer Jobs"
-msgstr ""
+msgstr "Tareas para clientes"
 
 #. module: marketing_strategy
 #: model:ir.model,name:marketing_strategy.model_marketing_strategy_value_proposition_customer_pain
 #: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_customer_pain_form
 msgid "Customer Pain"
-msgstr ""
+msgstr "Dolor del cliente"
 
 #. module: marketing_strategy
 #: model:ir.actions.act_window,name:marketing_strategy.marketing_strategy_customer_pain_action
@@ -623,43 +626,43 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_customer_pain_tree
 #: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_value_proposition_view_form
 msgid "Customer Pains"
-msgstr ""
+msgstr "Dolores del cliente"
 
 #. module: marketing_strategy
 #: model:ir.model.constraint,message:marketing_strategy.constraint_marketing_strategy_value_proposition_customer_pain_name_uniq
 msgid "Customer pain name already exists !"
-msgstr ""
+msgstr "¡El nombre del cliente ya existe!"
 
 #. module: marketing_strategy
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_value_proposition__customer_gain_ids
 msgid "Custumer Gain"
-msgstr ""
+msgstr "Ganancia del cliente"
 
 #. module: marketing_strategy
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_value_proposition__customer_job_ids
 msgid "Custumer Jobs"
-msgstr ""
+msgstr "Empleos para clientes"
 
 #. module: marketing_strategy
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_value_proposition__customer_pain_ids
 msgid "Custumer Pains"
-msgstr ""
+msgstr "Dolores del cliente"
 
 #. module: marketing_strategy
 #: model:ir.model.constraint,message:marketing_strategy.constraint_marketing_strategy_value_proposition_customer_gain_name_uniq
 msgid "Custumer gain name already exists !"
-msgstr ""
+msgstr "¡El nombre de ganancia del cliente ya existe!"
 
 #. module: marketing_strategy
 #: model:ir.model.constraint,message:marketing_strategy.constraint_marketing_strategy_value_proposition_customer_job_name_uniq
 msgid "Custumer job name already exists !"
-msgstr ""
+msgstr "¡El nombre del trabajo del cliente ya existe!"
 
 #. module: marketing_strategy
 #: model_terms:ir.actions.act_window,help:marketing_strategy.utm_content_action
 #: model_terms:ir.actions.act_window,help:marketing_strategy.utm_term_action
 msgid "Define a new content"
-msgstr ""
+msgstr "Definir un nuevo contenido"
 
 #. module: marketing_strategy
 #: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_brand_view_kanban
@@ -670,12 +673,12 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_tribe_view_kanban
 #: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_value_proposition_view_kanban
 msgid "Delete"
-msgstr ""
+msgstr "Eliminar"
 
 #. module: marketing_strategy
 #: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_buyer_persona_view_form
 msgid "Demographics"
-msgstr ""
+msgstr "Demografía"
 
 #. module: marketing_strategy
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_plan__mission
@@ -685,7 +688,7 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_value_proposition_view_form
 #: model_terms:ir.ui.view,arch_db:marketing_strategy.touchpoint_form_view
 msgid "Description"
-msgstr ""
+msgstr "Descripción"
 
 #. module: marketing_strategy
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_brand__display_name
@@ -712,23 +715,23 @@ msgstr ""
 #: model:ir.model.fields,field_description:marketing_strategy.field_utm_content__display_name
 #: model:ir.model.fields,field_description:marketing_strategy.field_utm_term__display_name
 msgid "Display Name"
-msgstr ""
+msgstr "Nombre para mostrar"
 
 #. module: marketing_strategy
 #: model:ir.model.fields.selection,name:marketing_strategy.selection__marketing_strategy_buyer_persona__status__divorced
 msgid "Divorced"
-msgstr ""
+msgstr "Divorciado"
 
 #. module: marketing_strategy
 #: model:ir.model.fields.selection,name:marketing_strategy.selection__res_partner__brand_advocacy__does_not_apply
 msgid "Does not apply"
-msgstr ""
+msgstr "No aplica"
 
 #. module: marketing_strategy
 #: model:ir.model.fields.selection,name:marketing_strategy.selection__marketing_strategy_plan__state__draft
 #: model:ir.model.fields.selection,name:marketing_strategy.selection__marketing_strategy_touchpoint__state__draft
 msgid "Draft"
-msgstr ""
+msgstr "Borrador"
 
 #. module: marketing_strategy
 #: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_brand_view_kanban
@@ -739,7 +742,7 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_tribe_view_kanban
 #: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_value_proposition_view_kanban
 msgid "Dropdown menu"
-msgstr ""
+msgstr "Menú desplegable"
 
 #. module: marketing_strategy
 #: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_brand_view_kanban
@@ -750,49 +753,49 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_tribe_view_kanban
 #: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_value_proposition_view_kanban
 msgid "Edit"
-msgstr ""
+msgstr "Editar"
 
 #. module: marketing_strategy
 #: model:ir.model.fields.selection,name:marketing_strategy.selection__res_partner__brand_advocacy__employee_advocate
 msgid "Employee Advocate"
-msgstr ""
+msgstr "Empleado Defensor"
 
 #. module: marketing_strategy
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_plan__date_end
 msgid "End Date"
-msgstr ""
+msgstr "Fecha final"
 
 #. module: marketing_strategy
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_brand__facebook
 msgid "Facebook Page"
-msgstr ""
+msgstr "Pagina de Facebook"
 
 #. module: marketing_strategy
 #: model:ir.model.fields.selection,name:marketing_strategy.selection__marketing_strategy_buyer_persona__gender__female
 #: model_terms:ir.ui.view,arch_db:marketing_strategy.view_marketing_strategy_buyer_persona_select
 msgid "Female"
-msgstr ""
+msgstr "Femenino"
 
 #. module: marketing_strategy
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_plan__message_follower_ids
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_touchpoint__message_follower_ids
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_value_proposition__message_follower_ids
 msgid "Followers"
-msgstr ""
+msgstr "Seguidores"
 
 #. module: marketing_strategy
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_plan__message_channel_ids
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_touchpoint__message_channel_ids
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_value_proposition__message_channel_ids
 msgid "Followers (Channels)"
-msgstr ""
+msgstr "Seguidores (Canales)"
 
 #. module: marketing_strategy
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_plan__message_partner_ids
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_touchpoint__message_partner_ids
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_value_proposition__message_partner_ids
 msgid "Followers (Partners)"
-msgstr ""
+msgstr "Seguidores (Socios)"
 
 #. module: marketing_strategy
 #: model:ir.model,name:marketing_strategy.model_marketing_strategy_value_proposition_gain_creator
@@ -800,46 +803,46 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_gain_creator_form
 #: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_value_proposition_view_form
 msgid "Gain Creator"
-msgstr ""
+msgstr "Creador de Ganancia"
 
 #. module: marketing_strategy
 #: model:ir.actions.act_window,name:marketing_strategy.marketing_strategy_gain_creator_action
 #: model:ir.ui.menu,name:marketing_strategy.menu_marketing_strategy_gain_creator_tag
 #: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_gain_creator_tree
 msgid "Gain Creators"
-msgstr ""
+msgstr "Creadores de ganancia"
 
 #. module: marketing_strategy
 #: model:ir.model.constraint,message:marketing_strategy.constraint_marketing_strategy_value_proposition_gain_creator_name_uniq
 msgid "Gain creator name already exists !"
-msgstr ""
+msgstr "¡El nombre del creador de ganancia ya existe!"
 
 #. module: marketing_strategy
 #: model:ir.model.fields.selection,name:marketing_strategy.selection__marketing_strategy_buyer_persona__gender__gay
 msgid "Gay"
-msgstr ""
+msgstr "Gay"
 
 #. module: marketing_strategy
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_buyer_persona__gender
 #: model_terms:ir.ui.view,arch_db:marketing_strategy.view_marketing_strategy_buyer_persona_select
 msgid "Gender"
-msgstr ""
+msgstr "Género"
 
 #. module: marketing_strategy
 #: model:ir.model.constraint,message:marketing_strategy.constraint_marketing_strategy_buyer_goal_name_uniq
 msgid "Goal name already exists !"
-msgstr ""
+msgstr "¡El nombre del objetivo ya existe!"
 
 #. module: marketing_strategy
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_buyer_persona__goal_ids
 msgid "Goals"
-msgstr ""
+msgstr "Metas"
 
 #. module: marketing_strategy
 #: model_terms:ir.ui.view,arch_db:marketing_strategy.view_marketing_strategy_buyer_persona_select
 #: model_terms:ir.ui.view,arch_db:marketing_strategy.view_marketing_strategy_touchpoints_select
 msgid "Group By"
-msgstr ""
+msgstr "Agrupar por"
 
 #. module: marketing_strategy
 #: model_terms:ir.ui.view,arch_db:marketing_strategy.view_marketing_strategy_touchpoints_select
@@ -878,19 +881,19 @@ msgstr ""
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_touchpoint__activity_exception_icon
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_value_proposition__activity_exception_icon
 msgid "Icon"
-msgstr ""
+msgstr "Icono"
 
 #. module: marketing_strategy
 #: model:ir.model.fields,help:marketing_strategy.field_marketing_strategy_plan__activity_exception_icon
 #: model:ir.model.fields,help:marketing_strategy.field_marketing_strategy_touchpoint__activity_exception_icon
 #: model:ir.model.fields,help:marketing_strategy.field_marketing_strategy_value_proposition__activity_exception_icon
 msgid "Icon to indicate an exception activity."
-msgstr ""
+msgstr "Icono para indicar una actividad de excepción."
 
 #. module: marketing_strategy
 #: model:ir.model.fields,help:marketing_strategy.field_crm_lead__content_id
 msgid "Identifies search terms."
-msgstr ""
+msgstr "Identifica los términos de búsqueda."
 
 #. module: marketing_strategy
 #: model:ir.model.fields,help:marketing_strategy.field_crm_lead__term_id
@@ -899,6 +902,9 @@ msgid ""
 "such as a banner ad or a text link. It is often used for A/B testing and "
 "content-targeted ads."
 msgstr ""
+"Identifica en qué se hizo clic específicamente para atraer al usuario al "
+"sitio, como un banner publicitario o un enlace de texto. A menudo se usa "
+"para pruebas A / B y anuncios orientados al contenido."
 
 #. module: marketing_strategy
 #: model:ir.model.fields,help:marketing_strategy.field_marketing_strategy_plan__message_needaction
@@ -908,14 +914,14 @@ msgstr ""
 #: model:ir.model.fields,help:marketing_strategy.field_marketing_strategy_value_proposition__message_needaction
 #: model:ir.model.fields,help:marketing_strategy.field_marketing_strategy_value_proposition__message_unread
 msgid "If checked, new messages require your attention."
-msgstr ""
+msgstr "Si está marcado, los nuevos mensajes requieren su atención."
 
 #. module: marketing_strategy
 #: model:ir.model.fields,help:marketing_strategy.field_marketing_strategy_plan__message_has_error
 #: model:ir.model.fields,help:marketing_strategy.field_marketing_strategy_touchpoint__message_has_error
 #: model:ir.model.fields,help:marketing_strategy.field_marketing_strategy_value_proposition__message_has_error
 msgid "If checked, some messages have a delivery error."
-msgstr ""
+msgstr "Si está marcado, algunos mensajes tienen un error de entrega."
 
 #. module: marketing_strategy
 #: model:ir.model.fields,help:marketing_strategy.field_marketing_strategy_plan__active
@@ -923,11 +929,13 @@ msgid ""
 "If the active field is set to False, it will allow you to hide the project "
 "without removing it."
 msgstr ""
+"Si el campo activo se establece en False, le permitirá ocultar el proyecto "
+"sin eliminarlo."
 
 #. module: marketing_strategy
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_buyer_persona__image
 msgid "Image"
-msgstr ""
+msgstr "Imagen"
 
 #. module: marketing_strategy
 #: model:ir.model.fields.selection,name:marketing_strategy.selection__res_partner__brand_advocacy__influencer
@@ -938,25 +946,25 @@ msgstr ""
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_touchpoint__ref
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_value_proposition__ref
 msgid "Internal Reference"
-msgstr ""
+msgstr "Referencia interna"
 
 #. module: marketing_strategy
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_plan__message_is_follower
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_touchpoint__message_is_follower
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_value_proposition__message_is_follower
 msgid "Is Follower"
-msgstr ""
+msgstr "Es seguidor"
 
 #. module: marketing_strategy
 #: model:ir.model.fields,field_description:marketing_strategy.field_res_partner__touchpoint_hub
 #: model:ir.model.fields,field_description:marketing_strategy.field_res_users__touchpoint_hub
 msgid "Is a Touchpoints Hub"
-msgstr ""
+msgstr "Es un hub de puntos de contacto"
 
 #. module: marketing_strategy
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_buyer_persona__function
 msgid "Job Position"
-msgstr ""
+msgstr "Puesto de trabajo"
 
 #. module: marketing_strategy
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_brand__color
@@ -969,7 +977,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_buyer_persona__lang
 #: model_terms:ir.ui.view,arch_db:marketing_strategy.view_marketing_strategy_buyer_persona_select
 msgid "Language"
-msgstr ""
+msgstr "Idioma"
 
 #. module: marketing_strategy
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_brand____last_update
@@ -996,7 +1004,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:marketing_strategy.field_utm_content____last_update
 #: model:ir.model.fields,field_description:marketing_strategy.field_utm_term____last_update
 msgid "Last Modified on"
-msgstr ""
+msgstr "Última modificación el"
 
 #. module: marketing_strategy
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_brand__write_uid
@@ -1023,7 +1031,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:marketing_strategy.field_utm_content__write_uid
 #: model:ir.model.fields,field_description:marketing_strategy.field_utm_term__write_uid
 msgid "Last Updated by"
-msgstr ""
+msgstr "Última actualización por"
 
 #. module: marketing_strategy
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_brand__write_date
@@ -1050,7 +1058,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:marketing_strategy.field_utm_content__write_date
 #: model:ir.model.fields,field_description:marketing_strategy.field_utm_term__write_date
 msgid "Last Updated on"
-msgstr ""
+msgstr "Ultima actualización en"
 
 #. module: marketing_strategy
 #: model:ir.model,name:marketing_strategy.model_crm_lead
@@ -1060,103 +1068,103 @@ msgstr "Iniciativa/Oportunidad"
 #. module: marketing_strategy
 #: model_terms:ir.ui.view,arch_db:marketing_strategy.touchpoint_form_view
 msgid "Leads Form"
-msgstr ""
+msgstr "Formulario de clientes potenciales"
 
 #. module: marketing_strategy
 #: model:ir.model.fields.selection,name:marketing_strategy.selection__marketing_strategy_buyer_persona__gender__lesbian
 msgid "Lesbian"
-msgstr ""
+msgstr "Lesbiana"
 
 #. module: marketing_strategy
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_buyer_persona__lifestyle_ids
 msgid "Lifestyle"
-msgstr ""
+msgstr "Estilo de vida"
 
 #. module: marketing_strategy
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_brand__linkedin
 msgid "Linkedin Page"
-msgstr ""
+msgstr "Página de Linkedin"
 
 #. module: marketing_strategy
 #: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_buyer_persona_view_form
 msgid "Location"
-msgstr ""
+msgstr "Ubicación"
 
 #. module: marketing_strategy
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_brand__image
 msgid "Logo"
-msgstr ""
+msgstr "Logo"
 
 #. module: marketing_strategy
 #: model:ir.model.fields.selection,name:marketing_strategy.selection__marketing_strategy_touchpoint__buyer_journey_stage__loyalty
 msgid "Loyalty"
-msgstr ""
+msgstr "Lealtad"
 
 #. module: marketing_strategy
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_plan__message_main_attachment_id
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_touchpoint__message_main_attachment_id
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_value_proposition__message_main_attachment_id
 msgid "Main Attachment"
-msgstr ""
+msgstr "Adjunto principal"
 
 #. module: marketing_strategy
 #: model:ir.model.fields.selection,name:marketing_strategy.selection__marketing_strategy_touchpoint__state__maintenance
 msgid "Maintenance"
-msgstr ""
+msgstr "Maintenance"
 
 #. module: marketing_strategy
 #: model:ir.model.fields.selection,name:marketing_strategy.selection__marketing_strategy_buyer_persona__gender__male
 #: model_terms:ir.ui.view,arch_db:marketing_strategy.view_marketing_strategy_buyer_persona_select
 msgid "Male"
-msgstr ""
+msgstr "Masculino"
 
 #. module: marketing_strategy
 #: model_terms:ir.ui.view,arch_db:marketing_strategy.view_partner_marketing_strategy_form
 msgid "Marketing"
-msgstr ""
+msgstr "Márketing"
 
 #. module: marketing_strategy
 #: model:ir.model,name:marketing_strategy.model_marketing_strategy_plan
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_touchpoint__plan_id
 msgid "Marketing Plan"
-msgstr ""
+msgstr "Plan de Marketing"
 
 #. module: marketing_strategy
 #: model:ir.ui.menu,name:marketing_strategy.menu_marketing_strategy_plan
 msgid "Marketing Plans"
-msgstr ""
+msgstr "Planes de Mercado"
 
 #. module: marketing_strategy
 #: model:ir.ui.menu,name:marketing_strategy.marketing_strategy_menu_root
 msgid "Marketing Strategy"
-msgstr ""
+msgstr "Estrategia de Mercado"
 
 #. module: marketing_strategy
 #: model:res.groups,name:marketing_strategy.group_marketing_strategy_user
 msgid "Marketing Strategy / User"
-msgstr ""
+msgstr "Estrategia de marketing / Usuario"
 
 #. module: marketing_strategy
 #: model:ir.actions.act_window,name:marketing_strategy.marketing_strategy_buyer_journey_action
 msgid "Marketing Strategy Buyer Journey"
-msgstr ""
+msgstr "Estrategia de marketing Viaje del comprador"
 
 #. module: marketing_strategy
 #: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_plan_view_form
 #: model_terms:ir.ui.view,arch_db:marketing_strategy.view_marketing_strategy_touchpoints_select
 msgid "Marketing Strategy Plan"
-msgstr ""
+msgstr "Plan de Márketing"
 
 #. module: marketing_strategy
 #: model:ir.actions.act_window,name:marketing_strategy.marketing_strategy_plan_action
 #: model_terms:ir.ui.view,arch_db:marketing_strategy.view_marketing_strategy_plan_tree
 msgid "Marketing Strategy Plans"
-msgstr ""
+msgstr "Planes de Márketing"
 
 #. module: marketing_strategy
 #: model:res.groups,name:marketing_strategy.group_marketing_strategy_manager
 msgid "Marketing Strategy/ Manager"
-msgstr ""
+msgstr "Estrategia de marketing / Gerente"
 
 #. module: marketing_strategy
 #: model:ir.model,name:marketing_strategy.model_marketing_strategy_value_proposition
@@ -1166,7 +1174,7 @@ msgstr ""
 #. module: marketing_strategy
 #: model:ir.model.fields.selection,name:marketing_strategy.selection__marketing_strategy_buyer_persona__status__married
 msgid "Married"
-msgstr ""
+msgstr "Casado"
 
 #. module: marketing_strategy
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_brand__image_medium
@@ -1204,12 +1212,12 @@ msgstr ""
 #. module: marketing_strategy
 #: model:ir.ui.menu,name:marketing_strategy.menu_marketing_strategy_utm_medium
 msgid "Mediums"
-msgstr ""
+msgstr "Medio"
 
 #. module: marketing_strategy
 #: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_meeting_place_form
 msgid "Meeting Place"
-msgstr ""
+msgstr "Punto de reunión"
 
 #. module: marketing_strategy
 #: model:ir.actions.act_window,name:marketing_strategy.marketing_strategy_meeting_place_action
@@ -1218,42 +1226,42 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_meeting_place_tree
 #: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_tribe_view_form
 msgid "Meeting Places"
-msgstr ""
+msgstr "Lugares de reunión"
 
 #. module: marketing_strategy
 #: model:ir.model,name:marketing_strategy.model_marketing_strategy_meeting_place
 msgid "Meeting place"
-msgstr ""
+msgstr "Punto de reunión"
 
 #. module: marketing_strategy
 #: model:ir.model.constraint,message:marketing_strategy.constraint_marketing_strategy_meeting_place_name_uniq
 msgid "Meeting place name already exists !"
-msgstr ""
+msgstr "¡El nombre del lugar de reunión ya existe!"
 
 #. module: marketing_strategy
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_tribe__members_ids
 #: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_tribe_view_form
 msgid "Members"
-msgstr ""
+msgstr "Miembros"
 
 #. module: marketing_strategy
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_plan__message_has_error
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_touchpoint__message_has_error
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_value_proposition__message_has_error
 msgid "Message Delivery error"
-msgstr ""
+msgstr "Mensaje de entrega de error"
 
 #. module: marketing_strategy
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_plan__message_ids
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_touchpoint__message_ids
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_value_proposition__message_ids
 msgid "Messages"
-msgstr ""
+msgstr "Mensajes"
 
 #. module: marketing_strategy
 #: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_plan_view_form
 msgid "Mission"
-msgstr ""
+msgstr "Misión"
 
 #. module: marketing_strategy
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_buyer_competence__name
@@ -1274,123 +1282,129 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:marketing_strategy.view_marketing_strategy_plan_tree
 #: model_terms:ir.ui.view,arch_db:marketing_strategy.view_touchpoint_tree
 msgid "Name"
-msgstr ""
+msgstr "Nombre"
 
 #. module: marketing_strategy
 #: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_buyer_persona_view_form
 msgid "Name of the Buyer Persona"
-msgstr ""
+msgstr "Nombre de la Persona Compradora"
 
 #. module: marketing_strategy
 #: model_terms:ir.ui.view,arch_db:marketing_strategy.touchpoint_form_view
 msgid "Name of the Touchpoint"
-msgstr ""
+msgstr "Nombre del punto de contacto"
 
 #. module: marketing_strategy
 #: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_tribe_view_form
 msgid "Name of the Tribe"
-msgstr ""
+msgstr "Nombre de la tribu"
 
 #. module: marketing_strategy
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_plan__activity_date_deadline
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_touchpoint__activity_date_deadline
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_value_proposition__activity_date_deadline
 msgid "Next Activity Deadline"
-msgstr ""
+msgstr "Fecha límite de actividad siguiente"
 
 #. module: marketing_strategy
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_plan__activity_summary
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_touchpoint__activity_summary
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_value_proposition__activity_summary
 msgid "Next Activity Summary"
-msgstr ""
+msgstr "Resumen de actividad siguiente"
 
 #. module: marketing_strategy
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_plan__activity_type_id
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_touchpoint__activity_type_id
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_value_proposition__activity_type_id
 msgid "Next Activity Type"
-msgstr ""
+msgstr "Siguiente tipo de actividad"
 
 #. module: marketing_strategy
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_plan__message_needaction_counter
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_touchpoint__message_needaction_counter
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_value_proposition__message_needaction_counter
 msgid "Number of Actions"
-msgstr ""
+msgstr "Numero de acciones"
 
 #. module: marketing_strategy
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_plan__message_has_error_counter
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_touchpoint__message_has_error_counter
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_value_proposition__message_has_error_counter
 msgid "Number of errors"
-msgstr ""
+msgstr "Numero de errores"
 
 #. module: marketing_strategy
 #: model:ir.model.fields,help:marketing_strategy.field_marketing_strategy_plan__message_needaction_counter
 #: model:ir.model.fields,help:marketing_strategy.field_marketing_strategy_touchpoint__message_needaction_counter
 #: model:ir.model.fields,help:marketing_strategy.field_marketing_strategy_value_proposition__message_needaction_counter
 msgid "Number of messages which requires an action"
-msgstr ""
+msgstr "Número de mensajes que requieren una acción"
 
 #. module: marketing_strategy
 #: model:ir.model.fields,help:marketing_strategy.field_marketing_strategy_plan__message_has_error_counter
 #: model:ir.model.fields,help:marketing_strategy.field_marketing_strategy_touchpoint__message_has_error_counter
 #: model:ir.model.fields,help:marketing_strategy.field_marketing_strategy_value_proposition__message_has_error_counter
 msgid "Number of messages with delivery error"
-msgstr ""
+msgstr "Número de mensajes con error de entrega"
 
 #. module: marketing_strategy
 #: model:ir.model.fields,help:marketing_strategy.field_marketing_strategy_plan__message_unread_counter
 #: model:ir.model.fields,help:marketing_strategy.field_marketing_strategy_touchpoint__message_unread_counter
 #: model:ir.model.fields,help:marketing_strategy.field_marketing_strategy_value_proposition__message_unread_counter
 msgid "Number of unread messages"
-msgstr ""
+msgstr "Número de mensajes no leídos"
 
 #. module: marketing_strategy
 #: model:ir.model.constraint,message:marketing_strategy.constraint_marketing_strategy_buyer_objection_name_uniq
 msgid "Objection name already exists !"
-msgstr ""
+msgstr "Número de mensajes no leídos!"
 
 #. module: marketing_strategy
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_buyer_persona__objection_ids
 #: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_buyer_persona_view_form
 msgid "Objections"
-msgstr ""
+msgstr "Objeciones"
 
 #. module: marketing_strategy
 #: model_terms:ir.actions.act_window,help:marketing_strategy.marketing_strategy_plan_action
 msgid ""
 "Odoo helps you easily track all activities related to a lean marketing plan."
 msgstr ""
+"Odoo lo ayuda a rastrear fácilmente todas las actividades relacionadas con "
+"un plan de marketing lean."
 
 #. module: marketing_strategy
 #: model_terms:ir.actions.act_window,help:marketing_strategy.action_marketing_strategy_touchpoints_hub_form
 msgid ""
 "Odoo helps you easily track all activities related to a touchpoint hub."
 msgstr ""
+"Odoo lo ayuda a rastrear fácilmente todas las actividades relacionadas con "
+"un centro de puntos de contacto."
 
 #. module: marketing_strategy
 #: model_terms:ir.actions.act_window,help:marketing_strategy.action_marketing_strategy_touchpoints_form
 msgid "Odoo helps you easily track all activities related to a touchpoint."
 msgstr ""
+"Odoo te ayuda a rastrear fácilmente todas las actividades relacionadas con "
+"un punto de contacto."
 
 #. module: marketing_strategy
 #: model:ir.model.fields.selection,name:marketing_strategy.selection__marketing_strategy_touchpoint__type__offline
 #: model_terms:ir.ui.view,arch_db:marketing_strategy.view_marketing_strategy_touchpoints_select
 msgid "Offline"
-msgstr ""
+msgstr "Desconectado"
 
 #. module: marketing_strategy
 #: model:ir.model.fields.selection,name:marketing_strategy.selection__marketing_strategy_touchpoint__type__online
 #: model_terms:ir.ui.view,arch_db:marketing_strategy.view_marketing_strategy_touchpoints_select
 msgid "Online"
-msgstr ""
+msgstr "En línea"
 
 #. module: marketing_strategy
 #: model_terms:ir.ui.view,arch_db:marketing_strategy.touchpoint_form_view
 msgid "Online Touchpoint Location"
-msgstr ""
+msgstr "Ubicación del punto de contacto en línea"
 
 #. module: marketing_strategy
 #: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_brand_view_kanban
@@ -1400,12 +1414,12 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_tribe_view_form
 #: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_value_proposition_view_kanban
 msgid "Open"
-msgstr ""
+msgstr "Abierto"
 
 #. module: marketing_strategy
 #: model:ir.model.fields.selection,name:marketing_strategy.selection__marketing_strategy_touchpoint__state__operating
 msgid "Operating"
-msgstr ""
+msgstr "Operando"
 
 #. module: marketing_strategy
 #: model:ir.model,name:marketing_strategy.model_marketing_strategy_value_proposition_pain_reliever
@@ -1413,98 +1427,98 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_pain_reliever_form
 #: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_value_proposition_view_form
 msgid "Pain Reliever"
-msgstr ""
+msgstr "Analgésico"
 
 #. module: marketing_strategy
 #: model:ir.actions.act_window,name:marketing_strategy.marketing_strategy_pain_reliever_action
 #: model:ir.ui.menu,name:marketing_strategy.menu_marketing_strategy_pain_reliever_tag
 #: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_pain_reliever_tree
 msgid "Pain Relievers"
-msgstr ""
+msgstr "Analgésicos"
 
 #. module: marketing_strategy
 #: model:ir.model.constraint,message:marketing_strategy.constraint_marketing_strategy_value_proposition_pain_reliever_name_uniq
 msgid "Pain reliever name already exists !"
-msgstr ""
+msgstr "¡Ya existe el nombre del analgésico!"
 
 #. module: marketing_strategy
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_brand__partner_id
 msgid "Partner"
-msgstr ""
+msgstr "Compañero"
 
 #. module: marketing_strategy
 #: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_buyer_persona_view_form
 msgid "Personal Goals"
-msgstr ""
+msgstr "Personal Goals"
 
 #. module: marketing_strategy
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_touchpoint__image
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_value_proposition__image
 msgid "Photo"
-msgstr ""
+msgstr "Foto"
 
 #. module: marketing_strategy
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_buyer_persona__name
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_meeting_place__name
 msgid "Place Name"
-msgstr ""
+msgstr "Ponga su nombre"
 
 #. module: marketing_strategy
 #: model:ir.model.fields,field_description:marketing_strategy.field_utm_campaign__plan_id
 msgid "Plan"
-msgstr ""
+msgstr "Plan"
 
 #. module: marketing_strategy
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_brand__podcast_channel
 msgid "Podcast Channel"
-msgstr ""
+msgstr "Canal de podcast"
 
 #. module: marketing_strategy
 #: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_buyer_persona_view_form
 msgid "Preferences"
-msgstr ""
+msgstr "Preferencias"
 
 #. module: marketing_strategy
 #: model:ir.model.fields.selection,name:marketing_strategy.selection__marketing_strategy_value_proposition__type__product
 msgid "Product"
-msgstr ""
+msgstr "Producto"
 
 #. module: marketing_strategy
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_plan__user_id
 msgid "Product owner"
-msgstr ""
+msgstr "Dueña del producto"
 
 #. module: marketing_strategy
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_value_proposition__products_ids
 #: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_value_proposition_view_form
 msgid "Products or Services"
-msgstr ""
+msgstr "Productos o servicios"
 
 #. module: marketing_strategy
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_plan__project_id
 msgid "Project"
-msgstr ""
+msgstr "Proyecto"
 
 #. module: marketing_strategy
 #: model:ir.model.fields.selection,name:marketing_strategy.selection__marketing_strategy_touchpoint__buyer_journey_stage__purchase
 msgid "Purchase"
-msgstr ""
+msgstr "Compra"
 
 #. module: marketing_strategy
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_brand__related_brand_id
 msgid "Related Brand"
-msgstr ""
+msgstr "Marca relacionada"
 
 #. module: marketing_strategy
 #: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_plan_view_form
 msgid "Related campaigns"
-msgstr ""
+msgstr "Campañas relacionadas"
 
 #. module: marketing_strategy
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_touchpoint__responsible_id
 #: model_terms:ir.ui.view,arch_db:marketing_strategy.view_marketing_strategy_touchpoints_select
 msgid "Responsible"
-msgstr ""
+msgstr "Responsable"
 
 #. module: marketing_strategy
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_plan__activity_user_id
@@ -1516,29 +1530,29 @@ msgstr ""
 #. module: marketing_strategy
 #: model_terms:ir.ui.view,arch_db:marketing_strategy.view_marketing_strategy_buyer_persona_select
 msgid "Search Buyers Persona"
-msgstr ""
+msgstr "Buscar compradores Persona"
 
 #. module: marketing_strategy
 #: model_terms:ir.ui.view,arch_db:marketing_strategy.view_marketing_strategy_touchpoints_select
 msgid "Search Touchpoints"
-msgstr ""
+msgstr "Buscar puntos de contacto"
 
 #. module: marketing_strategy
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_plan__sequence
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_touchpoint__sequence
 msgid "Sequence"
-msgstr ""
+msgstr "Secuencia"
 
 #. module: marketing_strategy
 #: model:ir.model.fields.selection,name:marketing_strategy.selection__marketing_strategy_touchpoint__buyer_journey_stage__service
 #: model:ir.model.fields.selection,name:marketing_strategy.selection__marketing_strategy_value_proposition__type__service
 msgid "Service"
-msgstr ""
+msgstr "Servicio"
 
 #. module: marketing_strategy
 #: model:ir.model.fields.selection,name:marketing_strategy.selection__marketing_strategy_buyer_persona__status__single
 msgid "Single"
-msgstr ""
+msgstr "Soltero"
 
 #. module: marketing_strategy
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_brand__image_small
@@ -1576,18 +1590,18 @@ msgstr ""
 #. module: marketing_strategy
 #: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_brand_view_form
 msgid "Social"
-msgstr ""
+msgstr "Social"
 
 #. module: marketing_strategy
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_buyer_persona__social_media_ids
 msgid "Social Media"
-msgstr ""
+msgstr "Social Media"
 
 #. module: marketing_strategy
 #: model:ir.model,name:marketing_strategy.model_marketing_strategy_social_media_preference
 #: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_social_media_preference_form
 msgid "Social Media Preference"
-msgstr ""
+msgstr "Preferencia de redes sociales"
 
 #. module: marketing_strategy
 #: model:ir.actions.act_window,name:marketing_strategy.marketing_strategy_social_media_preference_action
@@ -1595,32 +1609,32 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_buyer_persona_view_form
 #: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_social_media_preference_tree
 msgid "Social Media Preferences"
-msgstr ""
+msgstr "Preferencias de redes sociales"
 
 #. module: marketing_strategy
 #: model:ir.model.constraint,message:marketing_strategy.constraint_marketing_strategy_social_media_preference_name_uniq
 msgid "Social Media name already exists !"
-msgstr ""
+msgstr "Nombre de redes sociales ya existe!"
 
 #. module: marketing_strategy
 #: model:ir.ui.menu,name:marketing_strategy.marketing_strategy_menu_solutions
 msgid "Solutions"
-msgstr ""
+msgstr "Soluciones"
 
 #. module: marketing_strategy
 #: model:ir.ui.menu,name:marketing_strategy.menu_marketing_strategy_utm_source
 msgid "Sources"
-msgstr ""
+msgstr "Fuentes"
 
 #. module: marketing_strategy
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_plan__date_start
 msgid "Start Date"
-msgstr ""
+msgstr "Fecha de inicio"
 
 #. module: marketing_strategy
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_buyer_persona__state_id
 msgid "State"
-msgstr ""
+msgstr "Estado"
 
 #. module: marketing_strategy
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_buyer_persona__status
@@ -1628,7 +1642,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_touchpoint__state
 #: model_terms:ir.ui.view,arch_db:marketing_strategy.view_marketing_strategy_buyer_persona_select
 msgid "Status"
-msgstr ""
+msgstr "Estado"
 
 #. module: marketing_strategy
 #: model:ir.model.fields,help:marketing_strategy.field_marketing_strategy_plan__activity_state
@@ -1640,28 +1654,32 @@ msgid ""
 "Today: Activity date is today\n"
 "Planned: Future activities."
 msgstr ""
+"Estado basado en actividades\n"
+"Atrasado: la fecha de vencimiento ya pasó\n"
+"Hoy: la fecha de la actividad es hoy\n"
+"Planificado: Actividades futuras."
 
 #. module: marketing_strategy
 #: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_buyer_persona_view_kanban
 msgid "Status:"
-msgstr ""
+msgstr "Estado:"
 
 #. module: marketing_strategy
 #: model:ir.ui.menu,name:marketing_strategy.marketing_strategy_menu
 msgid "Strategy"
-msgstr ""
+msgstr "Estratégia"
 
 #. module: marketing_strategy
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_brand_tag__name
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_touchpoint_tag__name
 msgid "Tag Name"
-msgstr ""
+msgstr "Nombre de etiqueta"
 
 #. module: marketing_strategy
 #: model:ir.model.constraint,message:marketing_strategy.constraint_marketing_strategy_brand_tag_name_uniq
 #: model:ir.model.constraint,message:marketing_strategy.constraint_marketing_strategy_touchpoint_tag_name_uniq
 msgid "Tag name already exists !"
-msgstr ""
+msgstr "¡El nombre de la etiqueta ya existe!"
 
 #. module: marketing_strategy
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_brand__tag_ids
@@ -1671,35 +1689,35 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_value_proposition_view_form
 #: model_terms:ir.ui.view,arch_db:marketing_strategy.touchpoint_form_view
 msgid "Tags"
-msgstr ""
+msgstr "Etiquetas"
 
 #. module: marketing_strategy
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_plan__target
 msgid "Target"
-msgstr ""
+msgstr "Objetivo"
 
 #. module: marketing_strategy
 #: model:ir.model.fields,field_description:marketing_strategy.field_crm_lead__term_id
 #: model_terms:ir.ui.view,arch_db:marketing_strategy.utm_term_view_form
 #: model_terms:ir.ui.view,arch_db:marketing_strategy.utm_term_view_tree
 msgid "Term"
-msgstr ""
+msgstr "Término"
 
 #. module: marketing_strategy
 #: model:ir.model.fields,field_description:marketing_strategy.field_utm_term__name
 msgid "Term Name"
-msgstr ""
+msgstr "Nombre del plazo"
 
 #. module: marketing_strategy
 #: model:ir.actions.act_window,name:marketing_strategy.utm_term_action
 #: model:ir.ui.menu,name:marketing_strategy.menu_marketing_strategy_utm_term
 msgid "Terms"
-msgstr ""
+msgstr "Condiciones"
 
 #. module: marketing_strategy
 #: model:ir.model.fields.selection,name:marketing_strategy.selection__marketing_strategy_touchpoint__state__testing
 msgid "Testing"
-msgstr ""
+msgstr "Testing"
 
 #. module: marketing_strategy
 #: model:ir.model.fields,help:marketing_strategy.field_marketing_strategy_buyer_persona__image
@@ -1729,25 +1747,25 @@ msgstr ""
 #. module: marketing_strategy
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_buyer_persona__title
 msgid "Title"
-msgstr ""
+msgstr "Título"
 
 #. module: marketing_strategy
 #: model:ir.model,name:marketing_strategy.model_marketing_strategy_touchpoint
 #: model:ir.model.fields,field_description:marketing_strategy.field_utm_medium__touchpoint_id
 msgid "Touchpoint"
-msgstr ""
+msgstr "Punto de contacto"
 
 #. module: marketing_strategy
 #: model:ir.model,name:marketing_strategy.model_marketing_strategy_touchpoint_tag
 msgid "Touchpoint Tag"
-msgstr ""
+msgstr "Etiqueta de punto de contacto"
 
 #. module: marketing_strategy
 #: model:ir.actions.act_window,name:marketing_strategy.marketing_strategy_touchpoint_tag_action
 #: model:ir.ui.menu,name:marketing_strategy.menu_marketing_strategy_touchpoint_tag
 #: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_touchpoint_tag_tree
 msgid "Touchpoint Tags"
-msgstr ""
+msgstr "Etiquetas de punto de contacto"
 
 #. module: marketing_strategy
 #: model:ir.actions.act_window,name:marketing_strategy.action_marketing_strategy_touchpoints_form
@@ -1757,7 +1775,7 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_plan_view_form
 #: model_terms:ir.ui.view,arch_db:marketing_strategy.view_touchpoint_tree
 msgid "Touchpoints"
-msgstr ""
+msgstr "Puntos de contacto"
 
 #. module: marketing_strategy
 #: model:ir.actions.act_window,name:marketing_strategy.action_marketing_strategy_touchpoints_hub_form
@@ -1782,7 +1800,7 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_tribe_view_tree
 #: model_terms:ir.ui.view,arch_db:marketing_strategy.view_marketing_strategy_buyer_persona_select
 msgid "Tribe"
-msgstr ""
+msgstr "Tribu"
 
 #. module: marketing_strategy
 #: model:ir.actions.act_window,name:marketing_strategy.marketing_strategy_tribe_category_action
@@ -1791,42 +1809,42 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_tribe_category_form
 #: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_tribe_category_tree
 msgid "Tribe Category"
-msgstr ""
+msgstr "Categoría de tribu"
 
 #. module: marketing_strategy
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_tribe__name
 msgid "Tribe Name"
-msgstr ""
+msgstr "Nombre de la tribu"
 
 #. module: marketing_strategy
 #: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_buyer_persona_view_kanban
 msgid "Tribe:"
-msgstr ""
+msgstr "Tribu:"
 
 #. module: marketing_strategy
 #: model:ir.actions.act_window,name:marketing_strategy.action_marketing_strategy_tribe_form
 #: model:ir.ui.menu,name:marketing_strategy.menu_marketing_strategy_tribe
 msgid "Tribes"
-msgstr ""
+msgstr "Tribus"
 
 #. module: marketing_strategy
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_brand__twitter
 msgid "Twitter Account"
-msgstr ""
+msgstr "Cuenta de Twitter"
 
 #. module: marketing_strategy
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_touchpoint__type
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_value_proposition__type
 #: model_terms:ir.ui.view,arch_db:marketing_strategy.view_marketing_strategy_touchpoints_select
 msgid "Type"
-msgstr ""
+msgstr "Tipo"
 
 #. module: marketing_strategy
 #: model:ir.model.fields,help:marketing_strategy.field_marketing_strategy_plan__activity_exception_decoration
 #: model:ir.model.fields,help:marketing_strategy.field_marketing_strategy_touchpoint__activity_exception_decoration
 #: model:ir.model.fields,help:marketing_strategy.field_marketing_strategy_value_proposition__activity_exception_decoration
 msgid "Type of the exception activity on record."
-msgstr ""
+msgstr "Tipo de actividad de excepción registrada."
 
 #. module: marketing_strategy
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_touchpoint__url
@@ -1868,40 +1886,40 @@ msgstr ""
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_touchpoint__message_unread
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_value_proposition__message_unread
 msgid "Unread Messages"
-msgstr ""
+msgstr "Mensajes no leídos"
 
 #. module: marketing_strategy
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_plan__message_unread_counter
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_touchpoint__message_unread_counter
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_value_proposition__message_unread_counter
 msgid "Unread Messages Counter"
-msgstr ""
+msgstr "Contador de mensajes no leídos"
 
 #. module: marketing_strategy
 #: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_value_proposition_view_form
 msgid "Value Proposition"
-msgstr ""
+msgstr "Value Proposition"
 
 #. module: marketing_strategy
 #: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_value_proposition_view_form
 msgid "Value Proposition Canvas"
-msgstr ""
+msgstr "Canvas de Propuesta de Valor"
 
 #. module: marketing_strategy
 #: model:ir.ui.menu,name:marketing_strategy.menu_marketing_strategy_value_proposition_config
 msgid "Value Proposition Parameters"
-msgstr ""
+msgstr "Parámetros de propuesta de valor"
 
 #. module: marketing_strategy
 #: model:ir.actions.act_window,name:marketing_strategy.marketing_strategy_value_proposition_action
 #: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_value_proposition_view_tree
 msgid "Value Propositions"
-msgstr ""
+msgstr "Propuesta de Valor"
 
 #. module: marketing_strategy
 #: model:ir.ui.menu,name:marketing_strategy.menu_marketing_strategy_value_proposition_dev
 msgid "Value Propositios"
-msgstr ""
+msgstr "Propuestas de Valor"
 
 #. module: marketing_strategy
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_plan__value_proposition_id
@@ -1912,46 +1930,46 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_value_proposition_view_form
 #: model_terms:ir.ui.view,arch_db:marketing_strategy.touchpoint_form_view
 msgid "View"
-msgstr ""
+msgstr "Ver"
 
 #. module: marketing_strategy
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_brand__url
 msgid "Website"
-msgstr ""
+msgstr "Sitio web"
 
 #. module: marketing_strategy
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_plan__website_message_ids
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_touchpoint__website_message_ids
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_value_proposition__website_message_ids
 msgid "Website Messages"
-msgstr ""
+msgstr "Mensajes del sitio web"
 
 #. module: marketing_strategy
 #: model:ir.model.fields,help:marketing_strategy.field_marketing_strategy_plan__website_message_ids
 #: model:ir.model.fields,help:marketing_strategy.field_marketing_strategy_touchpoint__website_message_ids
 #: model:ir.model.fields,help:marketing_strategy.field_marketing_strategy_value_proposition__website_message_ids
 msgid "Website communication history"
-msgstr ""
+msgstr "Historial de comunicación del sitio web"
 
 #. module: marketing_strategy
 #: model:ir.model.fields.selection,name:marketing_strategy.selection__marketing_strategy_buyer_persona__status__widower
 msgid "Widower"
-msgstr ""
+msgstr "Viudo"
 
 #. module: marketing_strategy
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_brand__youtube
 msgid "Youtube Channel"
-msgstr ""
+msgstr "Youtube Channel"
 
 #. module: marketing_strategy
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_buyer_persona__zip
 msgid "Zip"
-msgstr ""
+msgstr "C.P."
 
 #. module: marketing_strategy
 #: model_terms:ir.ui.view,arch_db:marketing_strategy.res_partner_brand_advocacy_kanban_view
 msgid "at"
-msgstr ""
+msgstr "a"
 
 #. module: marketing_strategy
 #: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_custumer_job_form

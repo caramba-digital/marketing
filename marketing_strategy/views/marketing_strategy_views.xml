@@ -207,7 +207,7 @@
                 		<page string="Description" autofocus="autofocus">
                 		<field name="description" widget="html" nolabel="1"/>
                 		</page>
-                		<page string="View" >
+                		<page string="Image" >
                 		<field name="image" widget="image" class="img-fluid" nolabel="1"/>
                 		</page>
                 	</notebook>
@@ -383,7 +383,7 @@
                     	<page string="Description" >
                     		<field name="description" widget="html" nolabel="1"/>
                     	</page>
-                    	<page string="View" >
+                    	<page string="Image" >
                     		<field name="image" widget="image" class="img-fluid" nolabel="1"/>
                     	</page>                    
                     </notebook>

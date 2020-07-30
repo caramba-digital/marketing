@@ -162,7 +162,7 @@ class GainCreator(models.Model):
 
 class ValueProposition(models.Model):
     _name = 'marketing_strategy.value_proposition'
-    _description = 'Marketing ValuePropositions'
+    _description = 'Value Propositions'
     _order = 'name asc'
     _inherit = ['mail.thread', 'mail.activity.mixin']
     
