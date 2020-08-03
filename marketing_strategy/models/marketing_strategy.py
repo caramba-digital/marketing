@@ -18,6 +18,7 @@ class BrandTag(models.Model):
 class MarketingBrand(models.Model):
     _name = 'marketing_strategy.brand'
     _description = 'Brand'
+    _inherit = ['image.mixin']
     _order = 'name asc'
 
     name = fields.Char('Brand', required=True)
@@ -25,16 +26,6 @@ class MarketingBrand(models.Model):
     related_brand_id = fields.Many2one('marketing_strategy.brand', string='Related Brand')
     tag_ids = fields.Many2many('marketing_strategy.brand.tag', 'marketing_strategy_brand_tags_rel', 'brand_id', 'tag_id', string='Tags') 
     color = fields.Integer('Kanban Color Index')
-    image = fields.Binary("Logo", attachment=True,
-        help="This field holds the image used as logo for the brand, limited to 1024x1024px.")
-    image_medium = fields.Binary("Medium-sized image", attachment=True,
-        help="Medium-sized logo of the brand. It is automatically "
-             "resized as a 128x128px image, with aspect ratio preserved. "
-             "Use this field in form views or some kanban views.")
-    image_small = fields.Binary("Small-sized image", attachment=True,
-        help="Small-sized logo of the brand. It is automatically "
-             "resized as a 64x64px image, with aspect ratio preserved. "
-             "Use this field anywhere a small image is required.")
     partner_id = fields.Many2one('res.partner', string='Partner')
     twitter = fields.Char('Twitter Account')
     facebook = fields.Char('Facebook Page')
@@ -63,7 +54,7 @@ class Touchpoint(models.Model):
     _name = 'marketing_strategy.touchpoint'
     _description = 'Touchpoint'
     _order = 'name asc'
-    _inherit = ['mail.thread', 'mail.activity.mixin']
+    _inherit = ['mail.thread', 'mail.activity.mixin', 'image.mixin']
     
     name = fields.Char('Name', required=True)
     active = fields.Boolean(default=True)
@@ -79,16 +70,6 @@ class Touchpoint(models.Model):
     hub_id = fields.Many2one('res.partner', string='Touchpoints hub', required=True, domain=[('touchpoint_hub','=',True)])
     description = fields.Html('Description')
     tag_ids = fields.Many2many('marketing_strategy.touchpoint.tag', 'marketing_strategy_touchpoint_tags_rel', 'touchpoint_id', 'tag_id', string='Tags')
-    image = fields.Binary("Photo", attachment=True,
-        help="This field holds the image used as big, limited to 1024x1024px.")
-    image_medium = fields.Binary("Medium-sized image", attachment=True,
-        help="Medium-sized touchpoint. It is automatically "
-             "resized as a 128x128px image, with aspect ratio preserved. "
-             "Use this field in form views or some kanban views.")
-    image_small = fields.Binary("Small-sized image", attachment=True,
-        help="Small-sized touchpoint. It is automatically "
-             "resized as a 64x64px image, with aspect ratio preserved. "
-             "Use this field anywhere a small image is required.")
     plan_id = fields.Many2one('marketing_strategy.plan', string='Marketing Plan')
     buyer_journey_stage = fields.Selection([('awareness','Awareness'),('consideration','Consideration'),('purchase','Purchase'),('service','Service'),('loyalty','Loyalty')], string="Buyer's Journey Stage", default='awareness', required=True, copy=False, track_visibility='onchange', group_expand='_expand_buyer_journey')
     responsible_id = fields.Many2one('res.users', string='Responsible', required=False, default=lambda self: self.env.user)
@@ -166,11 +147,21 @@ class ValueProposition(models.Model):
     _order = 'name asc'
     _inherit = ['mail.thread', 'mail.activity.mixin']
     
-    name = fields.Char('Name', required=True)
+    def _expand_states(self, states, domain, order):
+        return ['draft', 'active', 'done', 'cancel']
+    
+    name = fields.Char('Name', required=True)    
+    state = fields.Selection([
+        ('draft', 'Draft'),
+        ('active', 'Active'),
+        ('done', 'Completed'),
+        ('cancel', 'Cancelled'),
+        ],
+        string='Status', default='draft', required=True, copy=False, track_visibility='onchange', group_expand='_expand_states')
     color = fields.Integer('Kanban Color Index')
     description = fields.Html('Description')
     type = fields.Selection([('product','Product'),('service','Service')], string='Type')
-    brand_id = fields.Many2one('marketing_strategy.brand', string='Brand')
+    brand_id = fields.Many2one('marketing_strategy.brand', string='Brand', required=True)
     ref = fields.Char(string='Internal Reference')
     customer_job_ids = fields.Many2many('marketing_strategy.value_proposition.customer_job', 'marketing_strategy_value_propositiont_customer_job_rel', 'value_proposition_id', 'customer_job_id', string='Custumer Jobs')
     customer_pain_ids = fields.Many2many('marketing_strategy.value_proposition.customer_pain', 'marketing_strategy_value_propositiont_customer_pain_rel', 'value_proposition_id', 'customer_pain_id', string='Custumer Pains')
@@ -178,7 +169,6 @@ class ValueProposition(models.Model):
     pain_reliever_ids = fields.Many2many('marketing_strategy.value_proposition.pain_reliever', 'marketing_strategy_value_propositiont_pain_reliever_rel', 'value_proposition_id', 'pain_reliever_id', string='Pain Reliever')
     gain_creator_ids = fields.Many2many('marketing_strategy.value_proposition.gain_creator', 'marketing_strategy_value_propositiont_gain_creator_rel', 'value_proposition_id', 'gain_creator_id', string='Gain Creator')
     products_ids = fields.Many2many('product.product',  'marketing_strategy_value_propositiont_product_rel', 'value_proposition_id', 'product_id', string='Products or Services')
-    
     image = fields.Binary("Photo", attachment=True,
         help="This field holds the image used as big, limited to 1024x1024px.")
     image_medium = fields.Binary("Medium-sized image", attachment=True,
@@ -284,6 +274,7 @@ class Competence(models.Model):
 class BuyerPersona(models.Model):
     _name = "marketing_strategy.buyer_persona"
     _description = "Buyer Persona"
+    _inherit = ['image.mixin']
     
     @api.model
     def _lang_get(self):
@@ -293,8 +284,7 @@ class BuyerPersona(models.Model):
     tribe_id = fields.Many2one('marketing_strategy.tribe', string='Tribe',  required=True)
     color = fields.Integer(string='Color Index', default=0)
     bio = fields.Html('Bio', translate=True)
-    age_min = fields.Integer('Age Min')
-    age_max = fields.Integer('Age Max')
+    age = fields.Integer('Age')
     gender = fields.Selection([('female','Female'),('male','Male'), ('gay','Gay'),('lesbian','Lesbian')], string='Gender')
     status = fields.Selection([('married','Married'),('single','Single'), ('divorced','Divorced'),('widower','Widower')])
     children = fields.Integer('# Children')
@@ -308,16 +298,6 @@ class BuyerPersona(models.Model):
     lang = fields.Selection(_lang_get, string='Language', default=lambda self: self.env.lang,
                             help="All the emails and documents sent to this contact will be translated in this language.")
     
-    image = fields.Binary("Image", attachment=True,
-        help="This field holds the image used as avatar for this contact, limited to 1024x1024px",)
-    image_medium = fields.Binary("Medium-sized image", attachment=True,
-        help="Medium-sized image of this contact. It is automatically "\
-             "resized as a 128x128px image, with aspect ratio preserved. "\
-             "Use this field in form views or some kanban views.")
-    image_small = fields.Binary("Small-sized image", attachment=True,
-        help="Small-sized image of this contact. It is automatically "\
-             "resized as a 64x64px image, with aspect ratio preserved. "\
-             "Use this field anywhere a small image is required.")
     competence_ids = fields.Many2many('marketing_strategy.buyer_competence', 'buyer_competence_rel', 'buyer_id', 'competence_id', string='Competences')
     lifestyle_ids = fields.Many2many('marketing_strategy.buyer_lifestyle', 'buyer_buyer_lifestyle_rel', 'buyer_id', 'buyer_lifestyle_id', string='Lifestyle')
     content_type_ids = fields.Many2many('marketing_strategy.content_type', 'buyer_content_rel', 'buyer_id', 'content_type_id', string='Content Type')
@@ -341,12 +321,15 @@ class TribeCategory(models.Model):
 class Tribe(models.Model):
     _name = "marketing_strategy.tribe"
     _description = "Tribe"
+    _inherit = ['image.mixin']
     
     name = fields.Char('Tribe Name', required=True, translate=True) 
     category_id = fields.Many2one('marketing_strategy.tribe.category',  string='Category')   
     color = fields.Integer(string='Color Index', default=0)
     meeting_place_ids = fields.Many2many('marketing_strategy.meeting_place', 'tribe_buyer_rel', 'tribe_id', 'meeting_place_id', string='Meeting Places')
     description = fields.Html('Description')
+    age_min = fields.Integer('Age Min')
+    age_max = fields.Integer('Age Max')
     members_ids = fields.One2many('marketing_strategy.buyer_persona', 'tribe_id', string='Members') 
    
     
