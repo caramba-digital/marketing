@@ -9,6 +9,11 @@ class Partner(models.Model):
     
     touchpoint_hub = fields.Boolean(string='Is a Touchpoints Hub', default=False,
                                help="Check this box if this locationt is a touchpoint.")
-    brand_advocacy = fields.Selection([('does_not_apply','Does not apply'), ('employee_advocate','Employee Advocate'), ('customer_advocate','Customer Advocate'), ('ambassador','Ambassador'), ('influencer','Influencer')], default='does_not_apply')
+    evangelist = fields.Boolean(string='Is a Evangelist', default=False,
+                               help="Check this box if this locationt is a brand evangelist.")
+    brand_advocacy = fields.Selection([('does_not_apply','Does not apply'), ('employee_advocate','Employee Advocate'), ('customer_advocate','Customer Advocate'), ('ambassador','Ambassador'), ('influencer','Influencer')], default='does_not_apply', group_expand='_expand_brand_advocacy')
+
+    def _expand_brand_advocacy(self, brand_advocacy, domain, order):
+        return ['employee_advocate', 'customer_advocate', 'ambassador', 'influencer']
     
     

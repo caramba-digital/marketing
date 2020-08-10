@@ -1,7 +1,10 @@
 # -*- coding: utf-8 -*-
 from odoo import api, fields, models, tools, _
  
- 
+
+PRODUCT_TYPE = [('good','Good'), ('service','Service'), ('event','Event'), ('experience','Experiences'), ('','People'), ('pleace','Place'), ('property_right','Property right'), ('institution','Institution'), ('information','Information'), ('idea','Idea')]
+PERSONALITY = [('average', 'Average'), ('reserved', 'Reserved'), ('self_centered', 'Self-centered'), ('role_model', 'Role model')]
+
 class BrandTag(models.Model):
 
     _name = "marketing_strategy.brand.tag"
@@ -22,6 +25,8 @@ class MarketingBrand(models.Model):
     _order = 'name asc'
 
     name = fields.Char('Brand', required=True)
+    product_type = fields.Selection(PRODUCT_TYPE)
+    relation = fields.Selection([('main','Main'),('competitor','Competitor'),('collaborator','Collaborator'),('family','Family')])
     partner_id = fields.Many2one('res.partner', string='Partner')
     related_brand_id = fields.Many2one('marketing_strategy.brand', string='Related Brand')
     tag_ids = fields.Many2many('marketing_strategy.brand.tag', 'marketing_strategy_brand_tags_rel', 'brand_id', 'tag_id', string='Tags') 
@@ -35,6 +40,14 @@ class MarketingBrand(models.Model):
     blog = fields.Char('Blog')
     url = fields.Char('Website')
     podcast_channel = fields.Char('Podcast Channel')
+    openness = fields.Float(default=50, readonly=True)
+    conscientiousness = fields.Float(default=50, readonly=True)
+    extraversion = fields.Float(default=50, readonly=True)
+    agreeableness = fields.Float(default=50, readonly=True)
+    neuroticism = fields.Float(default=50, readonly=True)
+    personality = fields.Selection(PERSONALITY)
+    customer_relationship = fields.Selection([('unknown','Unknown'),('friends','Friends'),('colleagues','Colleagues'),('marriage','Marriage'),('partners','Partners'),('parents','Parents'),('lovers','Lovers'),('guru-disciple','Guru-Disciple'),('','star-fan'),('neighbors','Neighbors'),('teammates','Teammates')])
+    image_1920 = fields.Image()
     
     
     
@@ -73,7 +86,8 @@ class Touchpoint(models.Model):
     plan_id = fields.Many2one('marketing_strategy.plan', string='Marketing Plan')
     buyer_journey_stage = fields.Selection([('awareness','Awareness'),('consideration','Consideration'),('purchase','Purchase'),('service','Service'),('loyalty','Loyalty')], string="Buyer's Journey Stage", default='awareness', required=True, copy=False, track_visibility='onchange', group_expand='_expand_buyer_journey')
     responsible_id = fields.Many2one('res.users', string='Responsible', required=False, default=lambda self: self.env.user)
-    
+    image_1920 = fields.Image()
+
     def _expand_states(self, states, domain, order):
         return ['draft', 'testing', 'operating', 'maintenance', 'cancel']
         
@@ -145,12 +159,12 @@ class ValueProposition(models.Model):
     _name = 'marketing_strategy.value_proposition'
     _description = 'Value Propositions'
     _order = 'name asc'
-    _inherit = ['mail.thread', 'mail.activity.mixin']
+    _inherit = ['mail.thread', 'mail.activity.mixin', 'image.mixin']
     
     def _expand_states(self, states, domain, order):
         return ['draft', 'active', 'done', 'cancel']
     
-    name = fields.Char('Name', required=True)    
+    name = fields.Char('Name', required=True)   
     state = fields.Selection([
         ('draft', 'Draft'),
         ('active', 'Active'),
@@ -159,8 +173,9 @@ class ValueProposition(models.Model):
         ],
         string='Status', default='draft', required=True, copy=False, track_visibility='onchange', group_expand='_expand_states')
     color = fields.Integer('Kanban Color Index')
+    brand_owner = fields.Many2one('res.partner', required=True)
     description = fields.Html('Description')
-    type = fields.Selection([('product','Product'),('service','Service')], string='Type')
+    product_type = fields.Selection(PRODUCT_TYPE)
     brand_id = fields.Many2one('marketing_strategy.brand', string='Brand', required=True)
     ref = fields.Char(string='Internal Reference')
     customer_job_ids = fields.Many2many('marketing_strategy.value_proposition.customer_job', 'marketing_strategy_value_propositiont_customer_job_rel', 'value_proposition_id', 'customer_job_id', string='Custumer Jobs')
@@ -168,18 +183,11 @@ class ValueProposition(models.Model):
     customer_gain_ids = fields.Many2many('marketing_strategy.value_proposition.customer_gain', 'marketing_strategy_value_propositiont_custumer_gain_rel', 'value_proposition_id', 'custumer_gain_id', string='Custumer Gain')
     pain_reliever_ids = fields.Many2many('marketing_strategy.value_proposition.pain_reliever', 'marketing_strategy_value_propositiont_pain_reliever_rel', 'value_proposition_id', 'pain_reliever_id', string='Pain Reliever')
     gain_creator_ids = fields.Many2many('marketing_strategy.value_proposition.gain_creator', 'marketing_strategy_value_propositiont_gain_creator_rel', 'value_proposition_id', 'gain_creator_id', string='Gain Creator')
-    products_ids = fields.Many2many('product.product',  'marketing_strategy_value_propositiont_product_rel', 'value_proposition_id', 'product_id', string='Products or Services')
-    image = fields.Binary("Photo", attachment=True,
-        help="This field holds the image used as big, limited to 1024x1024px.")
-    image_medium = fields.Binary("Medium-sized image", attachment=True,
-        help="Medium-sized touchpoint. It is automatically "
-             "resized as a 128x128px image, with aspect ratio preserved. "
-             "Use this field in form views or some kanban views.")
-    image_small = fields.Binary("Small-sized image", attachment=True,
-        help="Small-sized touchpoint. It is automatically "
-             "resized as a 64x64px image, with aspect ratio preserved. "
-             "Use this field anywhere a small image is required.")
-    
+    product_l1_id = fields.Many2one('product.product', string='Lebel 1')
+    product_l2_id = fields.Many2one('product.product', string='Lebel 2')
+    product_l3_id = fields.Many2one('product.product', string='Lebel 3')
+    product_l4_id = fields.Many2one('product.product', string='Lebel 4')
+    image_1920 = fields.Image()
     
 
  
@@ -286,7 +294,7 @@ class BuyerPersona(models.Model):
     bio = fields.Html('Bio', translate=True)
     age = fields.Integer('Age')
     gender = fields.Selection([('female','Female'),('male','Male'), ('gay','Gay'),('lesbian','Lesbian')], string='Gender')
-    status = fields.Selection([('married','Married'),('single','Single'), ('divorced','Divorced'),('widower','Widower')])
+    status = fields.Selection([('married','Married'),('single','Single'), ('divorced','Divorced'),('widower','Widower')], string='Civil Status')
     children = fields.Integer('# Children')
     income = fields.Monetary('Annual Income', currency_field='company_currency')
     title = fields.Many2one('res.partner.title')
@@ -306,7 +314,7 @@ class BuyerPersona(models.Model):
     goal_ids = fields.Many2many('marketing_strategy.buyer_goal', 'buyer_goal_rel', 'buyer_id', 'goal_id', string='Goals')    
     company_id = fields.Many2one('res.company', string='Company', index=True, default=lambda self: self.env.user.company_id.id)
     company_currency = fields.Many2one(string='Currency', related='company_id.currency_id', readonly=True, relation="res.currency")
-    
+    personality = fields.Selection(PERSONALITY)
     
 
     
