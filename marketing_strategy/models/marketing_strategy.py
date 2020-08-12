@@ -18,6 +18,21 @@ class BrandTag(models.Model):
     _sql_constraints = [
         ('name_uniq', 'unique (name)', "Tag name already exists !"),
     ]
+
+class MarketingNeed(models.Model):
+
+    _name = "marketing_strategy.need"
+    _description = "Needs"
+
+    name = fields.Char('Name', required=True, translate=True)
+
+
+class MarketingValue(models.Model):
+
+    _name = "marketing_strategy.value"
+    _description = "Values"
+
+    name = fields.Char('Name', required=True, translate=True)
        
        
 class MarketingBrand(models.Model):
@@ -47,7 +62,9 @@ class MarketingBrand(models.Model):
     conscientiousness = fields.Float(default=50, readonly=True)
     extraversion = fields.Float(default=50, readonly=True)
     agreeableness = fields.Float(default=50, readonly=True)
-    neuroticism = fields.Float(default=50, readonly=True)
+    emotional_range = fields.Float(default=50, readonly=True)
+    needs_ids = fields.Many2many('marketing_strategy.needs')
+    values_ids = fields.Many2many('marketing_strategy.values')
     personality = fields.Selection(PERSONALITY)
     customer_relationship = fields.Selection([('unknown','Unknown'),('friends','Friends'),('colleagues','Colleagues'),('marriage','Marriage'),('partners','Partners'),('parents','Parents'),('lovers','Lovers'),('guru-disciple','Guru-Disciple'),('star-fan','Star-Fan'),('neighbors','Neighbors'),('teammates','Teammates')])
     image_1920 = fields.Image()

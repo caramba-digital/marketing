@@ -122,14 +122,15 @@
                             <group>
                                 <group>
                                     <field name="personality"/>
-                                     <field name="customer_relationship"/>
+                                    <field name="values_ids" widget="many2many_tags"  placeholder="Values"/>
+                                    <field name="customer_relationship"/>
                                 </group>
                                 <group>
                                 <field name="openness" widget="progressbar" />
                                 <field name="conscientiousness" widget="progressbar"/>
                                 <field name="extraversion" widget="progressbar"/>
                                 <field name="agreeableness" widget="progressbar"/>
-                                <field name="neuroticism" widget="progressbar"/>                                   
+                                <field name="emotional_range" widget="progressbar"/>                                   
                                 </group>
                             </group>
                         </page>		
