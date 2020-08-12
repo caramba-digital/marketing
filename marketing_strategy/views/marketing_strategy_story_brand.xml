@@ -1,0 +1,695 @@
+<odoo>
+  <data>
+
+    <menuitem id="menu_marketing_strategy_story_brand" name="Story Brand" parent="marketing_strategy_menu_assets" sequence="15"/>
+    
+<!-- Themes -->
+    
+    <record id='marketing_strategy_story_brand_theme_view_tree' model='ir.ui.view'>
+        <field name="name">story_brand.theme.tree</field>
+        <field name="model">marketing_strategy.story_brand.theme</field>
+        <field name="arch" type="xml">
+            <tree string="Themes">
+                <field name="name" />
+                <field name="story_brand_id" />
+                <field name="content_type" />
+                <field name="value" />
+            </tree>
+        </field>
+    </record>
+
+    <record id='marketing_strategy_story_brand_theme_view_form' model='ir.ui.view'>
+        <field name="name">story_brand.theme.form</field>
+        <field name="model">marketing_strategy.story_brand.theme</field>
+        <field name="arch" type="xml">
+            <form string="Theme">
+            	<sheet>
+                    <div class="oe_title">
+                            <h1><field name="name"/></h1>
+                        </div>
+                    <group>
+                        <group>
+                            <field name="value" />
+                            <field name="description"/>
+                        </group>
+                        <group>
+                            <field name="story_brand_id"/>
+                            <field name="content_type" />
+                        </group>
+                    </group>
+                    <notebook colspan="4">
+                        <page string="Concept" autofocus="autofocus">
+                            <field name="concept" widget="html" nolabel="1"/>
+                        </page>
+                        <page string="Contents">
+                            <field name="contents_ids" mode="kanban" nolabel="1">
+                                <kanban>
+                                    <field name="id"/>
+                                    <field name="name"/>
+                                    <field name="format"/>
+                                    <field name="mode"/>
+                                    <templates>
+                                        <t t-name="kanban-box">
+                                            <div class="oe_kanban_global_click">
+                                                <div class="oe_kanban_details">
+                                                    <h4 class="oe_partner_heading">
+                                                        <a type="open" class="o_kanban_record_title">
+                                                            <field name="name"/>
+                                                        </a>
+                                                    </h4> 
+                                                    <ul>
+                                                        <li>Format:  <field name="format"/></li>
+                                                        <li>Mode: <field name="mode"/></li>
+                                                    </ul>
+                                                </div>
+                                                <div class="oe_clear"/>
+                                            </div>
+                                        </t>
+                                    </templates>
+                                </kanban>
+                    	    </field>  
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id='marketing_strategy_story_brand_theme_view_kanban' model='ir.ui.view'>
+        <field name="name">story_brand.theme.kanban</field>
+        <field name="model">marketing_strategy.story_brand.theme</field>
+        <field name="arch" type="xml">
+            <kanban class="o_kanban_small_column">
+                <field name="name" />
+                <field name="story_brand_id"/>
+                <templates>
+                    <t t-name="kanban-box">
+                         <div class="oe_kanban_global_click">
+                             <div class="oe_kanban_details">
+                                <h4 class="oe_partner_heading">
+                                    <a type="open" class="o_kanban_record_title">
+                                        <field name="name"/>
+                                    </a>
+                                </h4> 
+                                <ul>
+                                    <li><field name="story_brand_id"/></li>
+                                 </ul>
+                            </div>
+                                <div class="oe_clear"/>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <record id='marketing_strategy_story_brand_theme_action' model='ir.actions.act_window'>
+        <field name="name">Themes</field>
+        <field name="res_model">marketing_strategy.story_brand.theme</field>
+        <field name="view_mode">kanban,tree,form</field>
+        <field name="help" type="html">
+          <p class="o_view_nocontent_smiling_face">
+            Create a new Theme
+          </p>
+        </field>
+    </record>
+
+    <menuitem action="marketing_strategy_story_brand_theme_action" name="Themes"
+            parent="menu_marketing_strategy_story_brand" id="marketing_strategy_brand_theme_menu" sequence="1"/>
+
+  <!-- Contetns -->
+    
+    <record id='marketing_strategy_story_brand_content_view_tree' model='ir.ui.view'>
+        <field name="name">story_brand.content.tree</field>
+        <field name="model">marketing_strategy.story_brand.content</field>
+        <field name="arch" type="xml">
+            <tree string="Contents">
+                <field name="name" />
+                <field name="theme_id"/>
+                <field name="format"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id='marketing_strategy_story_brand_content_view_form' model='ir.ui.view'>
+        <field name="name">story_brand.content.form</field>
+        <field name="model">marketing_strategy.story_brand.content</field>
+        <field name="arch" type="xml">
+            <form string="Content">
+            	<sheet>
+                    <div class="oe_title">
+                        <h1><field name="name"/></h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="theme_id"/>
+                        </group>
+                        <group>
+                            <field name="mode"/>
+                            <field name="format"/>
+                        </group>
+                    </group>
+                    <notebook colspan="4">
+                        <page string="Content" autofocus="autofocus">
+                            <field name="content" widget="html" nolabel="1"/>
+                        </page>
+                        <page string="Touchpoints">
+                            <field name="touch_point_ids" mode="kanban" nolabel="1">
+                                    <kanban>
+                                        <field name="id"/>
+                                        <field name="name"/>
+                                        <field name="type"/>
+                                        <field name="name"/>
+                                        <templates>
+                                            <t t-name="kanban-box">
+                                                <div class="oe_kanban_global_click">
+                                                    <div class="oe_kanban_details">
+                                                        <h4 class="oe_partner_heading">
+                                                            <a type="open" class="o_kanban_record_title">
+                                                                <field name="name"/>
+                                                            </a>
+                                                        </h4> 
+                                                        <ul>
+                                                            <li>Type:  <field name="type" /></li>
+                                                            <li>Source: <field name="utm_source_id"/></li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="oe_clear"/>
+                                                </div>
+                                            </t>
+                                        </templates>
+                                    </kanban>
+                                </field>  
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id='marketing_strategy_story_brand_content_view_kanban' model='ir.ui.view'>
+        <field name="name">story_brand.content.kanban</field>
+        <field name="model">marketing_strategy.story_brand.content</field>
+        <field name="arch" type="xml">
+            <kanban class="o_kanban_small_column">
+                <field name="name" />
+                <field name="theme_id" />
+                <field name="mode" />
+                <templates>
+                    <t t-name="kanban-box">
+                         <div class="oe_kanban_global_click">
+                             <div class="oe_kanban_details">
+                                <h4 class="oe_partner_heading">
+                                    <a type="open" class="o_kanban_record_title">
+                                        <field name="name"/>
+                                    </a>
+                                </h4> 
+                                <ul>
+                                    <li><field name="theme_id"/></li>
+                                    <li><field name="mode"/></li>
+                                 </ul>
+                            </div>
+                                <div class="oe_clear"/>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <record id='marketing_strategy_story_brand_content_action' model='ir.actions.act_window'>
+        <field name="name">Contents</field>
+        <field name="res_model">marketing_strategy.story_brand.content</field>
+        <field name="view_mode">kanban,tree,form</field>
+        <field name="help" type="html">
+          <p class="o_view_nocontent_smiling_face">
+            Create a new Content
+          </p>
+        </field>
+    </record>
+
+    <menuitem action="marketing_strategy_story_brand_content_action" name="Contents"
+            parent="menu_marketing_strategy_story_brand" id="marketing_strategy_brand_content_menu" sequence="2"/>
+
+<!--Story Brand-->
+
+    <record id='marketing_strategy_story_brand_view_tree' model='ir.ui.view'>
+        <field name="name">story_brand.tree</field>
+        <field name="model">marketing_strategy.story_brand</field>
+        <field name="arch" type="xml">
+            <tree string="Stories Brands">
+                <field name="name" />
+                <field name="value_proposition_id" />
+                <field name="brand_id" />
+                <field name="brand_owner_id" />
+            </tree>
+        </field>
+    </record>
+
+    <record id='marketing_strategy_story_brand_view_form' model='ir.ui.view'>
+        <field name="name">story_brand.form</field>
+        <field name="model">marketing_strategy.story_brand</field>
+        <field name="arch" type="xml">
+            <form string="Story Brand">
+            	<sheet>
+                    <div class="oe_title">
+                        <h1><field name="name"/></h1>
+                    </div>
+                    <group>
+                        <group string="Brand">
+                            <field name="brand_id" />
+                            <field name="brand_owner_id" />
+                            <field name="value_proposition_id" />
+                     		<field name="user_id"/>
+                        </group>
+                        <group string="Heroes">
+                             <field name="buyers_id"  widget="many2many" nolabel="1"/>
+                        </group>
+                    </group>
+                    <notebook colspan="4">
+                        <page string="Summary" autofocus="autofocus">
+                            <field name="summary" widget="html" nolabel="1"/>
+                        </page>
+                        <page string="Awareness" >
+                            <h4>Status Quo</h4>
+                                <p>
+                                    The hero is introduced in their ordinary world. Complacent, but lacking something.
+                                </p>
+                                <field name="chapter_1" mode="kanban" nolabel="1">
+                                    <kanban>
+                                        <field name="id"/>
+                                        <field name="name"/>
+                                        <field name="content_type" />
+                                        <field name="value" />
+                                        <templates>
+                                            <t t-name="kanban-box">
+                                                <div class="oe_kanban_global_click">
+                                                    <div class="oe_kanban_details">
+                                                        <h4 class="oe_partner_heading">
+                                                            <a type="open" class="o_kanban_record_title">
+                                                                <field name="name"/>
+                                                            </a>
+                                                        </h4> 
+                                                        <ul>
+                                                            <li>Type:  <field name="content_type" /></li>
+                                                            <li>Value: <field name="value"/></li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="oe_clear"/>
+                                                </div>
+                                            </t>
+                                        </templates>
+                                    </kanban>
+                                </field>  
+                                 <h4>Call to Adventure</h4>
+                                <p>
+                                    The hero is called to go out and achieve the thing she wants the most.
+                                </p>
+                                <field name="chapter_2" mode="kanban" nolabel="1">
+                                    <kanban>
+                                        <field name="id"/>
+                                        <field name="name"/>
+                                        <field name="content_type" />
+                                        <field name="value" />
+                                        <templates>
+                                            <t t-name="kanban-box">
+                                                <div class="oe_kanban_global_click">
+                                                    <div class="oe_kanban_details">
+                                                        <h4 class="oe_partner_heading">
+                                                            <a type="open" class="o_kanban_record_title">
+                                                                <field name="name"/>
+                                                            </a>
+                                                        </h4> 
+                                                        <ul>
+                                                            <li>Type:  <field name="content_type" /></li>
+                                                            <li>Value: <field name="value"/></li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="oe_clear"/>
+                                                </div>
+                                            </t>
+                                        </templates>
+                                    </kanban>
+                                </field>  
+                            <h4>Refusal of the call</h4>
+                            <p>
+                                But he hero scared of change and ignores her calling.
+                            </p>
+                                <field name="chapter_3" mode="kanban" nolabel="1">
+                                    <kanban>
+                                        <field name="id"/>
+                                        <field name="name"/>
+                                        <field name="content_type" />
+                                        <field name="value" />
+                                        <templates>
+                                            <t t-name="kanban-box">
+                                                <div class="oe_kanban_global_click">
+                                                    <div class="oe_kanban_details">
+                                                        <h4 class="oe_partner_heading">
+                                                            <a type="open" class="o_kanban_record_title">
+                                                                <field name="name"/>
+                                                            </a>
+                                                        </h4> 
+                                                        <ul>
+                                                            <li>Type:  <field name="content_type" /></li>
+                                                            <li>Value: <field name="value"/></li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="oe_clear"/>
+                                                </div>
+                                            </t>
+                                        </templates>
+                                    </kanban>
+                                </field>  
+                            <h4>Meeting with the mentor</h4>
+                            <p>
+                                The hero meets a sage or is given a special tool that convinces her that she can succeed.
+                            </p>
+                                <field name="chapter_4" mode="kanban" nolabel="1">
+                                    <kanban>
+                                        <field name="id"/>
+                                        <field name="name"/>
+                                        <field name="content_type" />
+                                        <field name="value" />
+                                        <templates>
+                                            <t t-name="kanban-box">
+                                                <div class="oe_kanban_global_click">
+                                                    <div class="oe_kanban_details">
+                                                        <h4 class="oe_partner_heading">
+                                                            <a type="open" class="o_kanban_record_title">
+                                                                <field name="name"/>
+                                                            </a>
+                                                        </h4> 
+                                                        <ul>
+                                                            <li>Type:  <field name="content_type" /></li>
+                                                            <li>Value: <field name="value"/></li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="oe_clear"/>
+                                                </div>
+                                            </t>
+                                        </templates>
+                                    </kanban>
+                                </field>  
+                        </page>
+                        <page string="Consideration" >
+                            <h4>Crossing the threshold</h4>
+                            <p>
+                               The hero enters the adventure to a point of no return.
+                            </p>
+                                <field name="chapter_5" mode="kanban" nolabel="1">
+                                    <kanban>
+                                        <field name="id"/>
+                                        <field name="name"/>
+                                        <field name="content_type" />
+                                        <field name="value" />
+                                        <templates>
+                                            <t t-name="kanban-box">
+                                                <div class="oe_kanban_global_click">
+                                                    <div class="oe_kanban_details">
+                                                        <h4 class="oe_partner_heading">
+                                                            <a type="open" class="o_kanban_record_title">
+                                                                <field name="name"/>
+                                                            </a>
+                                                        </h4> 
+                                                        <ul>
+                                                            <li>Type:  <field name="content_type" /></li>
+                                                            <li>Value: <field name="value"/></li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="oe_clear"/>
+                                                </div>
+                                            </t>
+                                        </templates>
+                                    </kanban>
+                                </field>  
+                            <h4>Trials and Allies</h4>
+                            <p>
+                               The hero undergoes tests and makes new friends all in a montage that trains her to overcome the biggest test yet to come.
+                            </p>
+                                <field name="chapter_6" mode="kanban" nolabel="1">
+                                    <kanban>
+                                        <field name="id"/>
+                                        <field name="name"/>
+                                        <field name="content_type" />
+                                        <field name="value" />
+                                        <templates>
+                                            <t t-name="kanban-box">
+                                                <div class="oe_kanban_global_click">
+                                                    <div class="oe_kanban_details">
+                                                        <h4 class="oe_partner_heading">
+                                                            <a type="open" class="o_kanban_record_title">
+                                                                <field name="name"/>
+                                                            </a>
+                                                        </h4> 
+                                                        <ul>
+                                                            <li>Type:  <field name="content_type" /></li>
+                                                            <li>Value: <field name="value"/></li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="oe_clear"/>
+                                                </div>
+                                            </t>
+                                        </templates>
+                                    </kanban>
+                                </field>  
+                            <h4>Approaching the cave</h4>
+                            <p>
+                               The hero is ready to face her biggest fear.
+                            </p>
+                                <field name="chapter_7" mode="kanban" nolabel="1">
+                                    <kanban>
+                                        <field name="id"/>
+                                        <field name="name"/>
+                                        <field name="content_type" />
+                                        <field name="value" />
+                                        <templates>
+                                            <t t-name="kanban-box">
+                                                <div class="oe_kanban_global_click">
+                                                    <div class="oe_kanban_details">
+                                                        <h4 class="oe_partner_heading">
+                                                            <a type="open" class="o_kanban_record_title">
+                                                                <field name="name"/>
+                                                            </a>
+                                                        </h4> 
+                                                        <ul>
+                                                            <li>Type:  <field name="content_type" /></li>
+                                                            <li>Value: <field name="value"/></li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="oe_clear"/>
+                                                </div>
+                                            </t>
+                                        </templates>
+                                    </kanban>
+                                </field> 
+                        </page>
+                        <page string="Purchase" >
+                            <h4>The Ordeal</h4>
+                            <p>
+                               The hero faces the biggest fear and, whether successful or not, gains something and loses something in return.
+                            </p>
+                                <field name="chapter_8" mode="kanban" nolabel="1">
+                                    <kanban>
+                                        <field name="id"/>
+                                        <field name="name"/>
+                                        <field name="content_type" />
+                                        <field name="value" />
+                                        <templates>
+                                            <t t-name="kanban-box">
+                                                <div class="oe_kanban_global_click">
+                                                    <div class="oe_kanban_details">
+                                                        <h4 class="oe_partner_heading">
+                                                            <a type="open" class="o_kanban_record_title">
+                                                                <field name="name"/>
+                                                            </a>
+                                                        </h4> 
+                                                        <ul>
+                                                            <li>Type:  <field name="content_type" /></li>
+                                                            <li>Value: <field name="value"/></li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="oe_clear"/>
+                                                </div>
+                                            </t>
+                                        </templates>
+                                    </kanban>
+                                </field>  
+                            <h4>The Reward</h4>
+                            <p>
+                               The hero receives some kind of reward for facing her fears.
+                            </p>
+                                <field name="chapter_9" mode="kanban" nolabel="1">
+                                    <kanban>
+                                        <field name="id"/>
+                                        <field name="name"/>
+                                        <field name="content_type" />
+                                        <field name="value" />
+                                        <templates>
+                                            <t t-name="kanban-box">
+                                                <div class="oe_kanban_global_click">
+                                                    <div class="oe_kanban_details">
+                                                        <h4 class="oe_partner_heading">
+                                                            <a type="open" class="o_kanban_record_title">
+                                                                <field name="name"/>
+                                                            </a>
+                                                        </h4> 
+                                                        <ul>
+                                                            <li>Type:  <field name="content_type" /></li>
+                                                            <li>Value: <field name="value"/></li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="oe_clear"/>
+                                                </div>
+                                            </t>
+                                        </templates>
+                                    </kanban>
+                                </field>  
+                        </page>
+                        <page string="Service" >
+                            <h4>The Road Back</h4>
+                            <p>
+                                The hero crosses the threshold to return to the ordinary world, but is being chased by the unresolved conflict with her fears.
+                            </p>
+                                <field name="chapter_10" mode="kanban" nolabel="1">
+                                    <kanban>
+                                        <field name="id"/>
+                                        <field name="name"/>
+                                        <field name="content_type" />
+                                        <field name="value" />
+                                        <templates>
+                                            <t t-name="kanban-box">
+                                                <div class="oe_kanban_global_click">
+                                                    <div class="oe_kanban_details">
+                                                        <h4 class="oe_partner_heading">
+                                                            <a type="open" class="o_kanban_record_title">
+                                                                <field name="name"/>
+                                                            </a>
+                                                        </h4> 
+                                                        <ul>
+                                                            <li>Type:  <field name="content_type" /></li>
+                                                            <li>Value: <field name="value"/></li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="oe_clear"/>
+                                                </div>
+                                            </t>
+                                        </templates>
+                                    </kanban>
+                                </field>  
+                            <h4>Resurrection</h4>
+                            <p>
+                                The threat is at its highest and the hero pulls out all of the knowledge and skills that she gained earlier in her trials, reaching into the darkest depths of herself and transcending into a more powerful version of herself.
+                            </p>
+                                <field name="chapter_11" mode="kanban" nolabel="1">
+                                    <kanban>
+                                        <field name="id"/>
+                                        <field name="name"/>
+                                        <field name="content_type" />
+                                        <field name="value" />
+                                        <templates>
+                                            <t t-name="kanban-box">
+                                                <div class="oe_kanban_global_click">
+                                                    <div class="oe_kanban_details">
+                                                        <h4 class="oe_partner_heading">
+                                                            <a type="open" class="o_kanban_record_title">
+                                                                <field name="name"/>
+                                                            </a>
+                                                        </h4> 
+                                                        <ul>
+                                                            <li>Type:  <field name="content_type" /></li>
+                                                            <li>Value: <field name="value"/></li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="oe_clear"/>
+                                                </div>
+                                            </t>
+                                        </templates>
+                                    </kanban>
+                                </field>  
+                        </page>
+                        <page string="Loyalty" >
+                            <h4>Return with the Elixir</h4>
+                            <p>
+                                After defeating the big bad, the hero returns to her ordinary life, having changed and now with the ability to share her new knowledge with the world.
+                            </p>
+                                <field name="chapter_12" mode="kanban" nolabel="1">
+                                    <kanban>
+                                        <field name="id"/>
+                                        <field name="name"/>
+                                        <field name="content_type" />
+                                        <field name="value" />
+                                        <templates>
+                                            <t t-name="kanban-box">
+                                                <div class="oe_kanban_global_click">
+                                                    <div class="oe_kanban_details">
+                                                        <h4 class="oe_partner_heading">
+                                                            <a type="open" class="o_kanban_record_title">
+                                                                <field name="name"/>
+                                                            </a>
+                                                        </h4> 
+                                                        <ul>
+                                                            <li>Type:  <field name="content_type" /></li>
+                                                            <li>Value: <field name="value"/></li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="oe_clear"/>
+                                                </div>
+                                            </t>
+                                        </templates>
+                                    </kanban>
+                                </field>  
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id='marketing_strategy_story_brand_view_kanban' model='ir.ui.view'>
+        <field name="name">story_brand.kanban</field>
+        <field name="model">marketing_strategy.story_brand</field>
+        <field name="arch" type="xml">
+            <kanban class="o_kanban_small_column">
+                <field name="name" />
+                <field name="brand_owner_id" />
+                <field name="value_proposition_id" />
+                <templates>
+                    <t t-name="kanban-box">
+                         <div class="oe_kanban_global_click">
+                             <div class="oe_kanban_details">
+                                <h4 class="oe_partner_heading">
+                                    <a type="open" class="o_kanban_record_title">
+                                        <field name="name"/>
+                                    </a>
+                                </h4> 
+                                <ul>
+                                    <li><field name="brand_owner_id"/></li>
+                                    <li><field name="value_proposition_id"/></li>
+                                 </ul>
+                            </div>
+                                <div class="oe_clear"/>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <record id='marketing_strategy_story_brand_action' model='ir.actions.act_window'>
+        <field name="name">Stories Brands</field>
+        <field name="res_model">marketing_strategy.story_brand</field>
+        <field name="view_mode">kanban,tree,form</field>
+        <field name="help" type="html">
+          <p class="o_view_nocontent_smiling_face">
+            Create a new Story Brand
+          </p>
+        </field>
+    </record>
+
+    <menuitem action="marketing_strategy_story_brand_action" name="Stories Brand"
+            parent="marketing_strategy_menu_solutions" id="marketing_strategy_brand_menu" sequence="4"/>
+
+
+  </data>
+</odoo>

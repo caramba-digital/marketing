@@ -27,10 +27,6 @@ class UtmSource(models.Model):
     _name = 'utm.source'
     _inherit  = 'utm.source'
     
-    hub_id = fields.Many2one('res.partner', string='Touchpoints hub', domain=[('touchpoint_hub','=',True)])
+
     
-class UtmMedium(models.Model):
-    _name = 'utm.medium'
-    _inherit  = 'utm.medium'
-    
-    touchpoint_id = fields.Many2one('marketing_strategy.touchpoint', string='Touchpoint')
+

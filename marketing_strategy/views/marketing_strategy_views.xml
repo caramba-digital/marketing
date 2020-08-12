@@ -236,7 +236,7 @@
         </field>
     </record>
 
-<menuitem id="marketing_strategy_brand_personality_action" name="Brands Persona"
+<menuitem id="marketing_strategy_brand_personality_menu" name="Brands Persona"
             parent="marketing_strategy_menu_solutions"
             action="marketing_strategy_brand_personality_action" sequence="2"/>	
 
@@ -292,6 +292,7 @@
                 		<group>
                 			<field name="url" widget="url" placeholder="Online Touchpoint Location"/>
                 			<field name="hub_id" />
+                            <field name="utm_source_id" />
                 			<field name="plan_id" />
                 		</group>
                 	</group>
@@ -350,6 +351,7 @@
                                 </h4> 
                                 <ul>
                                  <li><field name="type"/></li>
+                                 <li><field name="utm_source_id"/></li>
                                  <li><field name="hub_id"/></li>
                                  </ul>
                                  </div>                             
@@ -589,6 +591,7 @@
                      <group>
                      	<group>
                      		<field name="value_proposition_id"/>
+                             <field name="story_brand_id"/>
                      		<field name="user_id"/>
                      		<field name="project_id"/>
                      	</group>
@@ -753,12 +756,12 @@
         </field>
     </record>
     
-        <menuitem id="menu_lean_buyer_journey" name="Buyer's Journey"
+        <menuitem id="menu_buyer_journey" name="Buyer's Journey"
             parent="marketing_strategy_menu_solutions"
             action="marketing_strategy_buyer_journey_action" sequence="6"/>
             
             
-         <menuitem id="menu_marketing_strategy_buyers_persona_hub" 
+    <menuitem id="menu_marketing_strategy_buyers_persona_hub" 
     name="Buyers Persona" 
     parent="marketing_strategy.marketing_strategy_menu_assets" 
     sequence="8"/>
@@ -868,7 +871,7 @@
         </field>
     </record>
    
-       	 <record id="action_marketing_strategy_tribe_form" model="ir.actions.act_window">
+       	 <record id="action_marketing_strategy_tribe" model="ir.actions.act_window">
             <field name="name">Tribes</field>
             <field name="res_model">marketing_strategy.tribe</field>
             <field name="domain">[]</field>
@@ -882,7 +885,7 @@
 
     <menuitem id="menu_marketing_strategy_tribe" name="Tribes"
             parent="menu_marketing_strategy_buyers_persona_hub"
-            action="action_marketing_strategy_tribe_form" sequence="2"/>
+            action="action_marketing_strategy_tribe" sequence="2"/>
             
          <record id='marketing_strategy_buyer_persona_view_tree' model='ir.ui.view'>
         <field name="name">marketing_strategy.buyer_persona.tree</field>

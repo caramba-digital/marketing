@@ -28,7 +28,8 @@ class MarketingBrand(models.Model):
 
     name = fields.Char('Brand', required=True)
     product_type = fields.Selection(PRODUCT_TYPE)
-    relation = fields.Selection([('main','Main'),('competitor','Competitor'),('collaborator','Collaborator'),('family','Family')])
+    relation = fields.Selection([('main','Main'),('competitor','Competitor'),('collaborator','Collaborator'),('family','Family')], 
+    required=True, default='competitor')
     partner_id = fields.Many2one('res.partner', string='Partner')
     related_brand_id = fields.Many2one('marketing_strategy.brand', string='Related Brand')
     tag_ids = fields.Many2many('marketing_strategy.brand.tag', 'marketing_strategy_brand_tags_rel', 'brand_id', 'tag_id', string='Tags') 
@@ -48,7 +49,7 @@ class MarketingBrand(models.Model):
     agreeableness = fields.Float(default=50, readonly=True)
     neuroticism = fields.Float(default=50, readonly=True)
     personality = fields.Selection(PERSONALITY)
-    customer_relationship = fields.Selection([('unknown','Unknown'),('friends','Friends'),('colleagues','Colleagues'),('marriage','Marriage'),('partners','Partners'),('parents','Parents'),('lovers','Lovers'),('guru-disciple','Guru-Disciple'),('','star-fan'),('neighbors','Neighbors'),('teammates','Teammates')])
+    customer_relationship = fields.Selection([('unknown','Unknown'),('friends','Friends'),('colleagues','Colleagues'),('marriage','Marriage'),('partners','Partners'),('parents','Parents'),('lovers','Lovers'),('guru-disciple','Guru-Disciple'),('star-fan','Star-Fan'),('neighbors','Neighbors'),('teammates','Teammates')])
     image_1920 = fields.Image()
     
     
@@ -89,6 +90,7 @@ class Touchpoint(models.Model):
     buyer_journey_stage = fields.Selection([('awareness','Awareness'),('consideration','Consideration'),('purchase','Purchase'),('service','Service'),('loyalty','Loyalty')], string="Buyer's Journey Stage", default='awareness', required=True, copy=False, track_visibility='onchange', group_expand='_expand_buyer_journey')
     responsible_id = fields.Many2one('res.users', string='Responsible', required=False, default=lambda self: self.env.user)
     image_1920 = fields.Image()
+    utm_source_id = fields.Many2one('utm.source')
 
     def _expand_states(self, states, domain, order):
         return ['draft', 'testing', 'operating', 'maintenance', 'cancel']
@@ -366,11 +368,12 @@ class Plan(models.Model):
     active = fields.Boolean(default=True,
         help="If the active field is set to False, it will allow you to hide the project without removing it.")
     mission = fields.Html('Description')
-    value_proposition_id = fields.Many2one('marketing_strategy.value_proposition', string='ValueProposition', required=True)
+    value_proposition_id = fields.Many2one('marketing_strategy.value_proposition', string='Value Proposition', required=True)
+    story_brand_id = fields.Many2one('marketing_strategy.story_brand')
     target = fields.Monetary('Target', currency_field='company_currency', track_visibility='always')
     date_start = fields.Date(string='Start Date')
     date_end = fields.Date(string='End Date')
-    user_id = fields.Many2one('res.users', string='Product owner', default=lambda self: self.env.user, track_visibility="onchange")
+    user_id = fields.Many2one('res.users', string='Responsible', default=lambda self: self.env.user, track_visibility="onchange")
     project_id = fields.Many2one('project.project', string='Project', ondelete='cascade')
     campaigns_ids = fields.One2many('utm.campaign', 'plan_id', string="Campaigns", ondelete='cascade')
     color = fields.Integer(string='Color Index')
