@@ -122,8 +122,15 @@
                             <group>
                                 <group>
                                     <field name="personality"/>
-                                    <field name="values_ids" widget="many2many_tags"  placeholder="Values"/>
+                                </group>
+                                <group>
                                     <field name="customer_relationship"/>
+                                </group>
+                            </group>
+                            <group>
+                                <group>                                    
+                                    <field name="values_ids" widget="many2many_tags" />
+                                    <field name="needs_ids" widget="many2many_tags" />
                                 </group>
                                 <group>
                                 <field name="openness" widget="progressbar" />
@@ -790,7 +797,7 @@
                 <field name="image_1920" widget='image' class="oe_avatar" options='{"preview_image": "image_128"}'/>
             		 <div class="oe_title">
                         <h1><field name="name" placeholder="Name of the Tribe" nolabel="1"/></h1>
-                        <h3><field name="category_id" /></h3>
+                        <h3>Category: <field name="category_id" /></h3>
                     </div>
                     <group>
                     	<group>
@@ -911,22 +918,20 @@
             		<field name="image_1920" widget='image' class="oe_avatar" options='{"preview_image": "image_128"}'/>
             		 <div class="oe_title">
                         <h1><field name="name" placeholder="Name of the Buyer Persona" nolabel="1"/></h1> 
-                        <h3>Personality: <field name="personality" /></h3>                   
                     </div>
                     <group name="profile">
                     	<group string="Background">
                     		<field name="tribe_id" />
                     		<field name="title" />
                     		<field name="function" />   
-                    		<field name="competence_ids"  widget="many2many_tags" options="{'color_field': 'color'}"/>   
-                    		<field name="lifestyle_ids"  widget="many2many_tags" options="{'color_field': 'color'}"/>   
-                    		<field name="status" />
-                    		<field name="children" />                 	
-                    	</group>
-                    	<group  string="Demographics">
-                    		<field name="gender" />
-                    		<field name="age" />
                     		<field name="income" />
+                    		<field name="competence_ids"  widget="many2many_tags" options="{'color_field': 'color'}"/>   
+                    	</group>
+                    	<group  string="Demographics">              	
+                    		<field name="age" />
+                    		<field name="gender" />
+                    		<field name="status" />
+                    		<field name="children" />   
                     		<field name="lang" />                    		
                     	</group>
                     	<group   string="Location">
@@ -936,6 +941,7 @@
                     		<field name="zip" />
                     	</group>
                     	<group  string="Preferences">
+                    		<field name="lifestyle_ids"  widget="many2many_tags" options="{'color_field': 'color'}"/>   
                     		<field name="content_type_ids" widget="many2many_tags" options="{'color_field': 'color'}" placeholder="Content Preferences" />
                     		<field name="social_media_ids" widget="many2many_tags" options="{'color_field': 'color'}" placeholder="Social Media Preferences" />
                     		<field name="objection_ids" widget="many2many_tags" options="{'color_field': 'color'}" placeholder="Objections" />
@@ -946,6 +952,24 @@
                     	<page string="Bio" autofocus="autofocus">
                     		<field name="bio" widget="html" nolabel="1"/>
                     	</page>
+                        
+                        <page string="Personality" >
+                            <group> 
+                                <group>   
+                                        <field name="personality"/>                               
+                                        <field name="values_ids" widget="many2many_tags" />
+                                        <field name="needs_ids" widget="many2many_tags" />
+                                    </group>
+                                    <group>
+                                    <field name="openness" widget="progressbar" />
+                                    <field name="conscientiousness" widget="progressbar"/>
+                                    <field name="extraversion" widget="progressbar"/>
+                                    <field name="agreeableness" widget="progressbar"/>
+                                    <field name="emotional_range" widget="progressbar"/>                                   
+                                    </group>
+                                </group> 
+                        </page>
+                        
                     </notebook>
                   </sheet>
               </form>

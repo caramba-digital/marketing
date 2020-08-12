@@ -19,7 +19,8 @@
         'views/utm_views.xml',
         'views/crm_lead_views.xml',
         'views/res_partner_views.xml',
-        'views/marketing_strategy_story_brand.xml'
+        'views/marketing_strategy_story_brand.xml',
+        'data/marketing_strategy_data.xml'
         
     ],
     'demo': [

@@ -24,7 +24,7 @@ class MarketingNeed(models.Model):
     _name = "marketing_strategy.need"
     _description = "Needs"
 
-    name = fields.Char('Name', required=True, translate=True)
+    name = fields.Char('Name', required=True, translate=True, readonly=True)
 
 
 class MarketingValue(models.Model):
@@ -32,7 +32,7 @@ class MarketingValue(models.Model):
     _name = "marketing_strategy.value"
     _description = "Values"
 
-    name = fields.Char('Name', required=True, translate=True)
+    name = fields.Char('Name', required=True, translate=True, readonly=True)
        
        
 class MarketingBrand(models.Model):
@@ -63,8 +63,8 @@ class MarketingBrand(models.Model):
     extraversion = fields.Float(default=50, readonly=True)
     agreeableness = fields.Float(default=50, readonly=True)
     emotional_range = fields.Float(default=50, readonly=True)
-    needs_ids = fields.Many2many('marketing_strategy.needs')
-    values_ids = fields.Many2many('marketing_strategy.values')
+    needs_ids = fields.Many2many('marketing_strategy.need', 'marketing_strategy_brand_needs_rel', 'brand_id', 'need_id')
+    values_ids = fields.Many2many('marketing_strategy.value', 'marketing_strategy_brand_needs_rel', 'brand_id', 'value_id')
     personality = fields.Selection(PERSONALITY)
     customer_relationship = fields.Selection([('unknown','Unknown'),('friends','Friends'),('colleagues','Colleagues'),('marriage','Marriage'),('partners','Partners'),('parents','Parents'),('lovers','Lovers'),('guru-disciple','Guru-Disciple'),('star-fan','Star-Fan'),('neighbors','Neighbors'),('teammates','Teammates')])
     image_1920 = fields.Image()
@@ -336,6 +336,14 @@ class BuyerPersona(models.Model):
     company_id = fields.Many2one('res.company', string='Company', index=True, default=lambda self: self.env.user.company_id.id)
     company_currency = fields.Many2one(string='Currency', related='company_id.currency_id', readonly=True, relation="res.currency")
     personality = fields.Selection(PERSONALITY)
+    openness = fields.Float(default=50, readonly=True)
+    conscientiousness = fields.Float(default=50, readonly=True)
+    extraversion = fields.Float(default=50, readonly=True)
+    agreeableness = fields.Float(default=50, readonly=True)
+    emotional_range = fields.Float(default=50, readonly=True)
+    needs_ids = fields.Many2many('marketing_strategy.need', 'marketing_strategy_buyer_persona_needs_rel', 'brand_id', 'need_id')
+    values_ids = fields.Many2many('marketing_strategy.value', 'marketing_strategy_buyer_persona_rel', 'brand_id', 'value_id')
+    
     
 
     
