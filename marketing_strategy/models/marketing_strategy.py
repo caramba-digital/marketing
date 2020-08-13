@@ -323,7 +323,6 @@ class BuyerPersona(models.Model):
     def _lang_get(self):
         return self.env['res.lang'].get_installed()
     
-    
     name = fields.Char('Name', required=True, translate=True)
     tribe_id = fields.Many2one('marketing_strategy.tribe', string='Tribe',  required=True)
     color = fields.Integer(string='Color Index', default=0)
