@@ -6,6 +6,7 @@ from odoo import api, fields, models, tools, _
 class MarketingStrategyStoryBrandTheme(models.Model):
     _name = "marketing_strategy.story_brand.theme"
     _description = "Story Brand Theme"
+    _inherit = ['mail.thread', 'mail.activity.mixin']
 
     name = fields.Char('Name', required=True)
     description = fields.Char()
@@ -20,6 +21,7 @@ class MarketingStrategyStoryBrandTheme(models.Model):
 class MarketingStrategyStoryBrandContent(models.Model):
     _name = "marketing_strategy.story_brand.content"
     _description = "Story Brand Content"
+    _inherit = ['mail.thread', 'mail.activity.mixin']
 
     name = fields.Char('Name', required=True)
     content = fields.Html()
@@ -33,14 +35,27 @@ class MarketingStrategyStoryBrandContent(models.Model):
 class MarketingStrategyStoryBrand(models.Model):
     _name = "marketing_strategy.story_brand"
     _description = "Story Brand"
+    _inherit = ['mail.thread', 'mail.activity.mixin','image.mixin']
+
+    def _expand_states(self, states, domain, order):
+        return ['draft', 'active', 'done', 'cancel']
+    
 
     name = fields.Char('Name', required=True)
+    state = fields.Selection([
+        ('draft', 'Draft'),
+        ('active', 'Active'),
+        ('done', 'Completed'),
+        ('cancel', 'Cancelled'),
+        ],
+        string='Status', default='draft', required=True, copy=False, track_visibility='onchange', group_expand='_expand_states')
+    color = fields.Integer('Kanban Color Index')
     summary = fields.Html()
     brand_owner_id = fields.Many2one('res.partner', required=True)
     value_proposition_id = fields.Many2one('marketing_strategy.value_proposition', required=True)
     user_id = fields.Many2one('res.users', string='Responsible', default=lambda self: self.env.user, track_visibility="onchange")
     brand_id = fields.Many2one('marketing_strategy.brand', domain = [('relation','=', 'main')], string='Mentor', required=True)
-    buyers_id = fields.Many2many('marketing_strategy.buyer_persona', 'Heroes')    
+    buyers_id = fields.Many2many('marketing_strategy.buyer_persona', 'marketing_strategy_story_brand_heroes', 'story_brand_id', 'buyer_persona_id', string='Heroes')    
     chapter_1 = fields.One2many('marketing_strategy.story_brand.theme', 'story_brand_id', string="Status Quo", help="The hero is introduced in their ordinary world. Complacent, but lacking something.")
     chapter_2 = fields.One2many('marketing_strategy.story_brand.theme', 'story_brand_id', string="Call to Adventure", help="The hero is called to go out and achieve the thing she wants the most.")
     chapter_3 = fields.One2many('marketing_strategy.story_brand.theme', 'story_brand_id', string="Refusal of the call", help="But the hero scared of change and ignores her calling.")

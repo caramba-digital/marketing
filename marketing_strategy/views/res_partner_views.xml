@@ -8,9 +8,10 @@
 		<field name="inherit_id" ref="base.view_partner_form"/>
 		<field name="arch" type="xml">
 			<xpath expr="//group[@name='purchase']" position="after">
-				<group string="Marketing" name="marketing" priority="3" groups="marketing_strategy.group_marketing_strategy_product_owner,marketing_strategy.group_marketing_strategy_manager">
+				<group string="Marketing" name="marketing" priority="3" groups="marketing_strategy.group_marketing_strategy_user">
                 	<field name="brand_advocacy"/>
                     <field name="evangelist"/>
+                    <field name="heater"/>
                     <field name="touchpoint_hub"/>
                 </group>			
 			</xpath>
@@ -117,14 +118,14 @@
         </field>
     </record>
 
-    <menuitem action="marketing_strategy_brand_advocacy_action" parent="marketing_strategy_menu_assets" id="marketing_strategy.brand_advocacy_menu" sequence="4"/>
+    <menuitem action="marketing_strategy_brand_advocacy_action" parent="menu_marketing_strategy_actors" id="marketing_strategy.brand_advocacy_menu" sequence="2"/>
 
     <record id='marketing_strategy_evangelist_action' model='ir.actions.act_window'>
         <field name="name">Evangelists</field>
         <field name="res_model">res.partner</field>
         <field name="view_mode">kanban,tree,form</field>
         <field name="domain">[('evangelist','=',True)]</field>
-        <field name="context">{'search_default_evangelist': 1,'default_customer': 1,'default_supplier': 0, 'default_touchpoint_hub':0, 'default_is_company': 1, 'default_evangelist':1}</field>
+        <field name="context">{'search_default_evangelist': 1,'default_customer': 1,'default_evangelist':1}</field>
         <field name="help" type="html">
           <p class="o_view_nocontent_smiling_face">
             Create a new evangelist
@@ -132,6 +133,22 @@
         </field>
     </record>
  
-     <menuitem action="marketing_strategy_evangelist_action" parent="marketing_strategy_menu_assets" id="marketing_strategy.evangelist" sequence="6"/>
+     <menuitem action="marketing_strategy_evangelist_action" parent="menu_marketing_strategy_actors" id="marketing_strategy.evangelist" sequence="3"/>
+
+    <record id='marketing_strategy_heater_action' model='ir.actions.act_window'>
+        <field name="name">Heaters</field>
+        <field name="res_model">res.partner</field>
+        <field name="view_mode">kanban,tree,form</field>
+        <field name="domain">[('heater','=',True)]</field>
+        <field name="context">{'search_default_heater': 1, 'default_heater':1}</field>
+        <field name="help" type="html">
+          <p class="o_view_nocontent_smiling_face">
+            Create a new heater
+          </p>
+        </field>
+    </record>
+ 
+     <menuitem action="marketing_strategy_heater_action" parent="menu_marketing_strategy_actors" id="marketing_strategy.heater" sequence="4"/>
+
 
 </odoo>

@@ -71,6 +71,11 @@
                         </page>
                     </notebook>
                 </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="activity_ids" widget="mail_activity"/>
+                    <field name="message_ids" widget="mail_thread" options="{'post_refresh': 'recipients'}"/>
+                </div>
             </form>
         </field>
     </record>
@@ -183,6 +188,11 @@
                         </page>
                     </notebook>
                 </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="activity_ids" widget="mail_activity"/>
+                    <field name="message_ids" widget="mail_thread" options="{'post_refresh': 'recipients'}"/>
+                </div>
             </form>
         </field>
     </record>
@@ -267,7 +277,10 @@
                         </group>
                     </group>
                     <notebook colspan="4">
-                        <page string="Summary" autofocus="autofocus">
+                    	<page string="Image"  autofocus="autofocus">
+                    		<field name="image_1920" widget="image" class="img-fluid" nolabel="1"/>
+                    	</page>   
+                        <page string="Summary">
                             <field name="summary" widget="html" nolabel="1"/>
                         </page>
                         <page string="Awareness" >
@@ -642,6 +655,11 @@
                         </page>
                     </notebook>
                 </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="activity_ids" widget="mail_activity"/>
+                    <field name="message_ids" widget="mail_thread" options="{'post_refresh': 'recipients'}"/>
+                </div>
             </form>
         </field>
     </record>
@@ -650,13 +668,27 @@
         <field name="name">story_brand.kanban</field>
         <field name="model">marketing_strategy.story_brand</field>
         <field name="arch" type="xml">
-            <kanban class="o_kanban_small_column">
+            <kanban  default_group_by="state" class="o_kanban_small_column">
                 <field name="name" />
                 <field name="brand_owner_id" />
                 <field name="value_proposition_id" />
+                <field name="user_id"/>
+                <field name="image_128" />
+                <field name="color"/>
                 <templates>
                     <t t-name="kanban-box">
-                         <div class="oe_kanban_global_click">
+                         <div class="#{kanban_color(record.color.raw_value)}  oe_kanban_global_click o_kanban_record_has_image_fill">
+                            <div class="o_dropdown_kanban dropdown">
+                                    <a class="dropdown-toggle o-no-caret btn" role="button" data-toggle="dropdown" href="#" aria-label="Dropdown menu" title="Dropdown menu">
+                                        <span class="fa fa-ellipsis-v"/>
+                                    </a>
+                                    <div class="dropdown-menu" role="menu">
+                                        <t t-if="widget.editable"><a role="menuitem" type="edit" class="dropdown-item">Edit</a></t>
+                                        <t t-if="widget.deletable"><a role="menuitem" type="delete" class="dropdown-item">Delete</a></t>
+                                        <ul class="oe_kanban_colorpicker" data-field="color"/>
+                                    </div>
+                                </div>
+                             <field name="image_128" widget="image" class="o_kanban_image_fill_left" options="{'zoom': true, 'zoom_delay': 1000, 'background': true, 'preventClicks': false}"/>
                              <div class="oe_kanban_details">
                                 <h4 class="oe_partner_heading">
                                     <a type="open" class="o_kanban_record_title">
@@ -666,6 +698,7 @@
                                 <ul>
                                     <li><field name="brand_owner_id"/></li>
                                     <li><field name="value_proposition_id"/></li>
+                                    <li><field name="user_id"/></li>
                                  </ul>
                             </div>
                                 <div class="oe_clear"/>

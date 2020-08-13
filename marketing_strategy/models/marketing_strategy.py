@@ -19,6 +19,18 @@ class BrandTag(models.Model):
         ('name_uniq', 'unique (name)', "Tag name already exists !"),
     ]
 
+class BrandTopic(models.Model):
+
+    _name = "marketing_strategy.brand.topic"
+    _description = "Topics of Conversation"
+
+    name = fields.Char('Topics of Conversation', required=True, translate=True)
+    color = fields.Integer('Color Index')
+
+    _sql_constraints = [
+        ('name_uniq', 'unique (name)', "Tag name already exists !"),
+    ]
+
 class MarketingNeed(models.Model):
 
     _name = "marketing_strategy.need"
@@ -37,8 +49,8 @@ class MarketingValue(models.Model):
        
 class MarketingBrand(models.Model):
     _name = 'marketing_strategy.brand'
-    _description = 'Brand'
-    _inherit = ['image.mixin']
+    _description = 'Brand'    
+    _inherit = ['mail.thread', 'mail.activity.mixin','image.mixin']
     _order = 'name asc'
 
     name = fields.Char('Brand', required=True)
@@ -63,11 +75,13 @@ class MarketingBrand(models.Model):
     extraversion = fields.Float(default=50, readonly=True)
     agreeableness = fields.Float(default=50, readonly=True)
     emotional_range = fields.Float(default=50, readonly=True)
-    needs_ids = fields.Many2many('marketing_strategy.need', 'marketing_strategy_brand_needs_rel', 'brand_id', 'need_id')
+    needs_ids = fields.Many2many('marketing_strategy.need')
     values_ids = fields.Many2many('marketing_strategy.value', 'marketing_strategy_brand_needs_rel', 'brand_id', 'value_id')
+    topics_ids = fields.Many2many('marketing_strategy.brand.topic')
     personality = fields.Selection(PERSONALITY)
     customer_relationship = fields.Selection([('unknown','Unknown'),('friends','Friends'),('colleagues','Colleagues'),('marriage','Marriage'),('partners','Partners'),('parents','Parents'),('lovers','Lovers'),('guru-disciple','Guru-Disciple'),('star-fan','Star-Fan'),('neighbors','Neighbors'),('teammates','Teammates')])
     image_1920 = fields.Image()
+
     
     
     
@@ -309,7 +323,8 @@ class BuyerPersona(models.Model):
     def _lang_get(self):
         return self.env['res.lang'].get_installed()
     
-    name = fields.Char('Place Name', required=True, translate=True)
+    
+    name = fields.Char('Name', required=True, translate=True)
     tribe_id = fields.Many2one('marketing_strategy.tribe', string='Tribe',  required=True)
     color = fields.Integer(string='Color Index', default=0)
     bio = fields.Html('Bio', translate=True)

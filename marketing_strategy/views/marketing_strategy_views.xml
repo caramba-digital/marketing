@@ -35,7 +35,12 @@
             name="Configuration"
             parent="marketing_strategy_menu_root"
             sequence="80" groups="group_marketing_strategy_manager"/>
-            
+
+
+
+<menuitem id="menu_marketing_strategy_actors" name="Actors" parent="marketing_strategy_menu_assets" sequence="1"/>
+ 
+             
             
       <record id='marketing_strategy_brand_view_tree' model='ir.ui.view'>
         <field name="name">marketing_strategy.brand.tree</field>
@@ -95,8 +100,8 @@
         </field>
     </record>
 
-        <record id='marketing_strategy_brand_personality_view_form' model='ir.ui.view'>
-        <field name="name">marketing_strategy.brand.form</field>
+        <record id='marketing_strategy_brand_persona_view_form' model='ir.ui.view'>
+        <field name="name">marketing_strategy.brand_persona.form</field>
         <field name="model">marketing_strategy.brand</field>
         <field name="arch" type="xml">
             <form string="Brand">
@@ -131,6 +136,7 @@
                                 <group>                                    
                                     <field name="values_ids" widget="many2many_tags" />
                                     <field name="needs_ids" widget="many2many_tags" />
+                                    <field name="topics_ids" widget="many2many_tags" options="{'color_field': 'color'}"  placeholder="Topics of Conversation"/>
                                 </group>
                                 <group>
                                 <field name="openness" widget="progressbar" />
@@ -156,18 +162,16 @@
                     	</group>
                     </group>
                         </page>
-                    </notebook>
-                    
+                    </notebook>                    
             	</sheet>
-                
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="activity_ids" widget="mail_activity"/>
+                    <field name="message_ids" widget="mail_thread" options="{'post_refresh': 'recipients'}"/>
+                </div>
             </form>
         </field>
     </record>
-
-
-
-
-
 
 
     <record id='marketing_strategy_brand_view_kanban' model='ir.ui.view'>
@@ -183,10 +187,8 @@
                 <field name="color" />
                <templates>
                     <t t-name="kanban-box">
-                       <div t-attf-class="#{kanban_color(record.color.raw_value)} oe_kanban_global_click">
-                        	<field name="tag_ids" widget="many2many_tags" options="{'color_field': 'color'}"/>
+                       <div t-attf-class="#{kanban_color(record.color.raw_value)} oe_kanban_global_click  o_kanban_record_has_image_fill">
                         	<div class="o_dropdown_kanban dropdown">
-
                                     <a class="dropdown-toggle o-no-caret btn" role="button" data-toggle="dropdown" href="#" aria-label="Dropdown menu" title="Dropdown menu">
                                         <span class="fa fa-ellipsis-v"/>
                                     </a>
@@ -198,6 +200,7 @@
                                 </div>
                              <field name="image_128" widget="image" class="o_kanban_image_fill_left" options="{'zoom': true, 'zoom_delay': 1000, 'background': true, 'preventClicks': false}"/>
                             <div class="oe_kanban_details">
+                            	<field name="tag_ids" widget="many2many_tags" options="{'color_field': 'color'}"/>
                                  <h4 class="oe_partner_heading">
                                     <a type="open" class="o_kanban_record_title">
                                         <field name="name"/>
@@ -216,27 +219,17 @@
         </field>
     </record>
 
-    <record id='marketing_strategy_brand_action' model='ir.actions.act_window'>
+
+
+
+    <record id='marketing_strategy_brand_related_action' model='ir.actions.act_window'>
         <field name="name">Brands</field>
         <field name="res_model">marketing_strategy.brand</field>
         <field name="view_mode">kanban,tree,form</field>
-        <field name="help" type="html">
-          <p class="o_view_nocontent_smiling_face">
-            Create a new brand
-          </p>
-        </field>
-    </record>
-
-    <menuitem action="marketing_strategy_brand_action" name="Brands"
-            parent="marketing_strategy_menu_assets" id="marketing_strategy_brand_menu" sequence="2"/>
-    
-    <record id='marketing_strategy_brand_personality_action' model='ir.actions.act_window'>
-        <field name="name">Brands Persona</field>
-        <field name="res_model">marketing_strategy.brand</field>
-        <field name="view_mode">kanban,tree,form</field>
-         <field name="domain">[('relation','=','main')]</field>
-         <field name="context">{'search_default_relation': 'main','default_relation': 'main'}</field>
-         <field name="view_id" ref="marketing_strategy_brand_personality_view_form"/>
+         <field name="view_ids" eval="[(5, 0, 0), 
+        (0, 0, {'view_mode': 'kanban'}), 
+        (0, 0, {'view_mode': 'form', 'view_id': ref('marketing_strategy_brand_view_form')}),                           
+        (0, 0, {'view_mode': 'tree'})]"/>
         <field name="help" type="html">
           <p class="o_view_nocontent_smiling_face">
             Create a new brand persona
@@ -244,9 +237,30 @@
         </field>
     </record>
 
-<menuitem id="marketing_strategy_brand_personality_menu" name="Brands Persona"
+<menuitem id="marketing_strategy_brand_related_menu" name="Brands"
+            parent="menu_marketing_strategy_actors"
+            action="marketing_strategy_brand_related_action" sequence="1"/>	
+
+    <record id='marketing_strategy_brand_persona_action' model='ir.actions.act_window'>
+        <field name="name">Brands Persona</field>
+        <field name="res_model">marketing_strategy.brand</field>
+        <field name="view_mode">kanban,tree,form</field>
+         <field name="domain">[('relation','=','main')]</field>
+         <field name="context">{'search_default_relation': 'main','default_relation': 'main'}</field>
+         <field name="view_ids" eval="[(5, 0, 0), 
+        (0, 0, {'view_mode': 'kanban'}), 
+        (0, 0, {'view_mode': 'form', 'view_id': ref('marketing_strategy_brand_persona_view_form')}),                           
+        (0, 0, {'view_mode': 'tree'})]"/>
+        <field name="help" type="html">
+          <p class="o_view_nocontent_smiling_face">
+            Create a new brand persona
+          </p>
+        </field>
+    </record>
+
+<menuitem id="marketing_strategy_brand_persona_menu" name="Brands Persona"
             parent="marketing_strategy_menu_solutions"
-            action="marketing_strategy_brand_personality_action" sequence="2"/>	
+            action="marketing_strategy_brand_persona_action" sequence="2"/>	
 
      <!-- Touchpoint -->
 
@@ -274,9 +288,7 @@
         <field name="model">marketing_strategy.touchpoint</field>
         <field name="arch" type="xml">
             <form string="Leads Form">
-                <header>
-                		 <field name="tag_ids" widget="many2many_tags" options="{'color_field': 'color'}" placeholder="Tags"/>
-                      <field name="state" widget="statusbar" options="{'clickable': '1'}"/>
+                <header><field name="state" widget="statusbar" options="{'clickable': '1'}"/>
                 </header>
                 <sheet>
                 <div class="oe_button_box" name="button_box" groups="base.group_user">            		 	
@@ -289,6 +301,8 @@
                         </div>
                 <div class="oe_title">
                         <h1><field name="name" placeholder="Name of the Touchpoint" nolabel="1"/></h1>
+                		 <field name="tag_ids" widget="many2many_tags" options="{'color_field': 'color'}" placeholder="Tags"/>
+                      
                     </div>   
                 	<group>
                 		<group>
@@ -332,6 +346,7 @@
             	<field name="plan_id"/>
                 <field name="id"/>
                 <field name="name" />
+                 <field name="tag_ids" />
                 <field name="type" />
                 <field name="hub_id" />
                 <field name="image_128" />
@@ -432,7 +447,7 @@
                 </header>
             	<sheet>
                     <div class="oe_title">
-                    	<h1><field name="name"/></h1>
+                    	<h1><field name="name" placeholder="Name"/></h1>
                      </div>
                     <group>
                     	<group>
@@ -448,7 +463,7 @@
                     <notebook colspan="4">
                     	<page string="Value Proposition Canvas" autofocus="autofocus">
                             <group>
-                                <group string="Gain Creator">
+                                <group string="Gain Creators">
                                     <field name="gain_creator_ids"  widget="many2many"  nolabel="1"/>
                                 </group>
                                 <group string="Customer Gains">
@@ -457,19 +472,19 @@
                             </group>
                             <group>
                                 <group>
-                                    <group string="Products or services by level (1, 2, 3, 4)" >
+                                    <group string="Proposition (1, 2, 3, 4)" >
                                     <field name="product_l1_id" nolabel="1" colspan="2"/>
                                     <field name="product_l2_id"   nolabel="1" colspan="2"/>
                                     <field name="product_l3_id" nolabel="1"  colspan="2"/>
                                     <field name="product_l4_id"  nolabel="1" colspan="2"/>
                                     </group>
-                                    <group class="text-center align-middle">
-                                        <i class="fa fa-5x fa-gift" ></i>
+                                    <group class="text-center">
+                                        <i class="fa fa-5x fa-gift mt-5 text-muted" ></i>
                                     </group>
                                 </group>                                    
                                 <group>
-                                    <group class="text-center align-middle">
-                                        <i class="fa fa-5x fa-user" ></i>
+                                    <group class="text-center">
+                                        <i class="fa fa-5x fa-user mt-5 text-muted" ></i>
                                     </group>
                                     <group string="Customer Jobs">
                                         <field name="customer_job_ids"  widget="many2many" nolabel="1"/>
@@ -477,7 +492,7 @@
                                 </group>
                             </group>
                             <group>
-                                <group string="Pain Reliever">
+                                <group string="Pain Relievers">
                                     <field name="pain_reliever_ids"  widget="many2many" nolabel="1"/>
                                 </group>
                                 <group string="Customer Pains">
@@ -514,7 +529,7 @@
                 <field name="color"/>
                 <templates>
                     <t t-name="kanban-box">
-                        <div t-attf-class="#{kanban_color(record.color.raw_value)} oe_kanban_global_click">
+                        <div t-attf-class="#{kanban_color(record.color.raw_value)} oe_kanban_global_click o_kanban_record_has_image_fill">
                         	<div class="o_dropdown_kanban dropdown">
 
                                     <a class="dropdown-toggle o-no-caret btn" role="button" data-toggle="dropdown" href="#" aria-label="Dropdown menu" title="Dropdown menu">
@@ -534,7 +549,11 @@
                                     </a>
                                 </h4> 
                                 <ul>
-                                 <li><field name="product_type"/></li>
+                                    <li><field name="product_type"/></li>
+                                    <li><field name="product_l1_id"/></li>
+                                    <li><field name="product_l2_id"/></li>
+                                    <li><field name="product_l3_id"/></li>
+                                    <li><field name="product_l4_id"/></li>
                                  </ul>
                                  </div>                             
                         		<div class="oe_clear"/>
@@ -608,7 +627,7 @@
                      		<field name="date_start"/>
                      		<field name="date_end"/>
                      	</group>
-                     	<group string="Related campaigns">
+                     	<group string="Related Campaigns">
                      		<field name="campaigns_ids" widget="many2many" nolabel="1" >
                      			 <tree string="Campaigns">
                      			 	<field name="name" />
@@ -752,7 +771,7 @@
     </record>
     
      <record id='marketing_strategy_buyer_journey_action' model='ir.actions.act_window'>
-        <field name="name">Marketing Strategy Buyer Journey</field>
+        <field name="name">Buyer's Journey</field>
         <field name="res_model">marketing_strategy.touchpoint</field>
         <field name="view_mode">kanban,tree,form</field>
         <field name="domain">[('state','=','operating')]</field>
@@ -1016,7 +1035,7 @@
                                  </ul>
                                  </div>                             
                         		<div class="oe_clear"/>
-                        		</div>
+                        </div>
 	                    </t>  
                     </templates>              
                 </kanban>

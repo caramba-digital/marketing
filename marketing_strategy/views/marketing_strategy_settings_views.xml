@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 
-    <menuitem id="menu_marketing_strategy_tags_config" name="Tags"
+    <menuitem id="menu_marketing_strategy_brand_config" name="Brands"
             parent="marketing_strategy_menu_config"
             sequence="1"/>	
             
@@ -12,6 +12,14 @@
          <menuitem id="menu_marketing_strategy_value_proposition_config" name="Value Proposition Parameters"
             parent="marketing_strategy_menu_config"
             sequence="3"/>
+
+        <menuitem id="menu_marketing_strategy_buyer persona_config" name="Buyers Persona"
+            parent="marketing_strategy_menu_config"
+            sequence="4"/>
+
+        <menuitem id="menu_marketing_strategy_touch_point_config" name="Touch Points"
+            parent="marketing_strategy_menu_config"
+            sequence="5"/>
             
          
         <menuitem
@@ -65,8 +73,54 @@
             id="menu_marketing_strategy_brand_tag"
             name="Brand Tags"
             action="marketing_strategy_brand_tag_action"
-            parent="menu_marketing_strategy_tags_config"
+            parent="menu_marketing_strategy_brand_config"
             sequence="1"/>
+
+           <!--
+            leam_marketing.brand.topic views
+        -->
+        <record id="marketing_strategy_brand_topic_form" model="ir.ui.view">
+            <field name="name">marketing_strategy.brand.topic.form</field>
+            <field name="model">marketing_strategy.brand.topic</field>
+            <field name="arch" type="xml">
+                <form string="Conversation Topics">
+                    <group>
+                        <field name="name"/>
+                        <field name="color" groups="base.group_no_one"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record id="marketing_strategy_brand_topic_tree" model="ir.ui.view">
+            <field name="name">marketing_strategy.brand.topic.tree</field>
+            <field name="model">marketing_strategy.brand.topic</field>
+            <field name="arch" type="xml">
+                <tree string="Conversation Topics">
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+        
+        <record id="marketing_strategy_brand_topic_action" model="ir.actions.act_window">
+            <field name="name">Conversation Topics</field>
+            <field name="res_model">marketing_strategy.brand.topic</field>
+            <field name="view_id" ref="marketing_strategy_brand_topic_tree"/>
+            <field name="help" type="html">
+              <p class="o_view_nocontent_smiling_face">
+                Create a new conversation topics for brands
+              </p><p>
+                Create conversation topics that fit your brands to better manage.
+              </p>
+            </field>
+        </record>
+
+        <menuitem
+            id="menu_marketing_strategy_brand_topic"
+            name="Conversation Topics"
+            action="marketing_strategy_brand_topic_action"
+            parent="menu_marketing_strategy_brand_config"
+            sequence="2"/>
             
                         <!--
             leam_marketing.touchcontact.tag views
@@ -111,8 +165,8 @@
             id="menu_marketing_strategy_touchpoint_tag"
             name="Touchpoint Tags"
             action="marketing_strategy_touchpoint_tag_action"
-            parent="menu_marketing_strategy_tags_config"
-            sequence="2"/>
+            parent="menu_marketing_strategy_touch_point_config"
+            sequence="1"/>
             
             
          <menuitem
@@ -438,9 +492,7 @@
             sequence="5"/>  
             
             
-       <menuitem id="menu_marketing_strategy_buyer persona_config" name="Buyers Persona"
-            parent="marketing_strategy_menu_config"
-            sequence="4"/>
+
             
                     <!-- Tribe Category-->
          
