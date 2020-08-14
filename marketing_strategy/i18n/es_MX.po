@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 13.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-13 22:22+0000\n"
-"PO-Revision-Date: 2020-08-13 17:31-0500\n"
+"POT-Creation-Date: 2020-08-14 04:39+0000\n"
+"PO-Revision-Date: 2020-08-13 23:43-0500\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: \n"
 "Language: es_MX\n"
-"X-Generator: Poedit 2.3\n"
+"X-Generator: Poedit 2.4.1\n"
 
 #. module: marketing_strategy
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_buyer_persona__children
@@ -89,6 +89,11 @@ msgstr "Estado de actividad"
 #: model:ir.ui.menu,name:marketing_strategy.menu_marketing_strategy_actors
 msgid "Actors"
 msgstr "Actores"
+
+#. module: marketing_strategy
+#: model:res.groups,name:marketing_strategy.group_marketing_strategy_manager
+msgid "Administrator"
+msgstr "Administrador"
 
 #. module: marketing_strategy
 #: model:ir.model.fields,help:marketing_strategy.field_marketing_strategy_story_brand__chapter_12
@@ -632,7 +637,7 @@ msgstr "Crea un nuevo tipo de contenido"
 #. module: marketing_strategy
 #: model_terms:ir.actions.act_window,help:marketing_strategy.marketing_strategy_brand_topic_action
 msgid "Create a new conversation topics for brands"
-msgstr "Crear nuevos temas de conversación para marcas."
+msgstr "Crear nuevos temas de conversación para marcas"
 
 #. module: marketing_strategy
 #: model_terms:ir.actions.act_window,help:marketing_strategy.marketing_strategy_customer_gain_action
@@ -1311,12 +1316,12 @@ msgstr "Icono para indicar una actividad de excepción."
 #: model:ir.model.fields.selection,name:marketing_strategy.selection__marketing_strategy_brand__product_type__idea
 #: model:ir.model.fields.selection,name:marketing_strategy.selection__marketing_strategy_value_proposition__product_type__idea
 msgid "Idea"
-msgstr "Idea"
+msgstr ""
 
 #. module: marketing_strategy
 #: model:marketing_strategy.need,name:marketing_strategy.marketing_strategy_need_opt_4
 msgid "Ideal"
-msgstr "Ideal"
+msgstr ""
 
 #. module: marketing_strategy
 #: model:ir.model.fields,help:marketing_strategy.field_crm_lead__content_id
@@ -1733,11 +1738,6 @@ msgid "Marketing Strategy"
 msgstr "Estrategia de Márketing"
 
 #. module: marketing_strategy
-#: model:res.groups,name:marketing_strategy.group_marketing_strategy_user
-msgid "Marketing Strategy / User"
-msgstr "Estrategia de marketing / Usuario"
-
-#. module: marketing_strategy
 #: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_plan_view_form
 #: model_terms:ir.ui.view,arch_db:marketing_strategy.view_marketing_strategy_touchpoints_select
 msgid "Marketing Strategy Plan"
@@ -1748,11 +1748,6 @@ msgstr "Plan de Márketing"
 #: model_terms:ir.ui.view,arch_db:marketing_strategy.view_marketing_strategy_plan_tree
 msgid "Marketing Strategy Plans"
 msgstr "Planes de Márketing"
-
-#. module: marketing_strategy
-#: model:res.groups,name:marketing_strategy.group_marketing_strategy_manager
-msgid "Marketing Strategy/ Manager"
-msgstr "Estrategia de marketing / Gerente"
 
 #. module: marketing_strategy
 #: model:ir.model.fields.selection,name:marketing_strategy.selection__marketing_strategy_brand__customer_relationship__marriage
@@ -1852,6 +1847,7 @@ msgstr "Modo:"
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_buyer_goal__name
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_buyer_lifestyle__name
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_buyer_objection__name
+#: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_buyer_persona__name
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_content_type__name
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_need__name
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_plan__name
@@ -2138,7 +2134,6 @@ msgid "Place"
 msgstr "Lugar"
 
 #. module: marketing_strategy
-#: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_buyer_persona__name
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_meeting_place__name
 msgid "Place Name"
 msgstr "Nombre del Lugar"
@@ -2458,7 +2453,7 @@ msgstr "Temas de Historias de Marca"
 #. module: marketing_strategy
 #: model:ir.ui.menu,name:marketing_strategy.marketing_strategy_menu
 msgid "Strategy"
-msgstr "Estratégia"
+msgstr "Estrategia"
 
 #. module: marketing_strategy
 #: model:marketing_strategy.need,name:marketing_strategy.marketing_strategy_need_opt_12
@@ -2861,6 +2856,11 @@ msgstr "Mensajes no leídos"
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_value_proposition__message_unread_counter
 msgid "Unread Messages Counter"
 msgstr "Contador de mensajes no leídos"
+
+#. module: marketing_strategy
+#: model:res.groups,name:marketing_strategy.group_marketing_strategy_user
+msgid "User"
+msgstr "Usuario"
 
 #. module: marketing_strategy
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_touchpoint__utm_source_id
