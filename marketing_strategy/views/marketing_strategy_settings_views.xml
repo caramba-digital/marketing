@@ -26,7 +26,7 @@
             id="marketing_strategy_menu_config"
             name="Configuration"
             parent="marketing_strategy_menu_root"
-            sequence="80" groups="group_marketing_strategy_manager"/>
+            sequence="80" groups="group_strategy_manager"/>
             
   
             
@@ -108,7 +108,7 @@
             <field name="view_id" ref="marketing_strategy_brand_topic_tree"/>
             <field name="help" type="html">
               <p class="o_view_nocontent_smiling_face">
-                Create a new conversation topics for brands
+                Create a new conversation topics for brands.
               </p><p>
                 Create conversation topics that fit your brands to better manage.
               </p>
@@ -276,7 +276,7 @@
             <field name="name">marketing_strategy.value_proposition.customer_job.form</field>
             <field name="model">marketing_strategy.value_proposition.customer_job</field>
             <field name="arch" type="xml">
-                <form string="customer Job">
+                <form string="Customer Job">
                     <group>
                         <field name="name"/>
                         <field name="color" groups="base.group_no_one"/>

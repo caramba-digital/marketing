@@ -15,7 +15,7 @@ class MarketingStrategyStoryBrandTheme(models.Model):
     concept = fields.Html()
     contents_ids = fields.One2many('marketing_strategy.story_brand.content', 'theme_id')
     story_brand_id = fields.Many2one('marketing_strategy.story_brand') 
-    
+    company_id = fields.Many2one('res.company', 'Company', required=True, index=True, default=lambda self: self.env.company)
 
 
 class MarketingStrategyStoryBrandContent(models.Model):
@@ -27,9 +27,9 @@ class MarketingStrategyStoryBrandContent(models.Model):
     content = fields.Html()
     mode = fields.Selection([('search','Search'),('display','Display'),('organic','Organic'), ('opt_in','Opt-in')])
     format = fields.Selection([('blog','Blog'),('longform_content','Longform Content'),('case_study','Case Study'),('white_paper','White Paper'),('ebook','Ebook'),('infographic','Infographic'),('survey','Survey'),('video','Video'),('short_video','Short Video'),('webinar','Webinar'),('online_curse','Online Course'),('email','email')])
-    theme_id = fields.Many2one('marketing_strategy.story_brand.theme')
+    theme_id = fields.Many2one('marketing_strategy.story_brand.theme', required=True)
     touch_point_ids = fields.Many2many('marketing_strategy.touchpoint', 'marketing_strategy_content_touchpoint_rel', 'touchpoint_id', 'content_id')
-    
+    company_id = fields.Many2one('res.company', 'Company', required=True, index=True, default=lambda self: self.env.company)
 
 
 class MarketingStrategyStoryBrand(models.Model):
@@ -68,3 +68,4 @@ class MarketingStrategyStoryBrand(models.Model):
     chapter_10 = fields.One2many('marketing_strategy.story_brand.theme', 'story_brand_id', string="The Road Back", help="The hero crosses the threshold to return to the ordinary world, but is being chased by the unresolved conflict with her fears.")
     chapter_11 = fields.One2many('marketing_strategy.story_brand.theme', 'story_brand_id', string="Resurrection", help="The threat is at its highest and the hero pulls out all of the knowledge and skills that she gained earlier in her trials, reaching into the darkest depths of herself and transcending into a more powerful version of herself.")
     chapter_12 = fields.One2many('marketing_strategy.story_brand.theme', 'story_brand_id', string="Return with the Elixir", help="After defeating the big bad, the hero returns to her ordinary life, having changed and now with the ability to share her new knowledge with the world.")
+    company_id = fields.Many2one('res.company', 'Company', required=True, index=True, default=lambda self: self.env.company)

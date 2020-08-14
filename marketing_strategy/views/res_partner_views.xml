@@ -8,7 +8,7 @@
 		<field name="inherit_id" ref="base.view_partner_form"/>
 		<field name="arch" type="xml">
 			<xpath expr="//group[@name='purchase']" position="after">
-				<group string="Marketing" name="marketing" priority="3" groups="marketing_strategy.group_marketing_strategy_user">
+				<group string="Marketing" name="marketing" priority="3" groups="marketing_strategy.group_strategy_user">
                 	<field name="brand_advocacy"/>
                     <field name="evangelist"/>
                     <field name="heater"/>

@@ -14,6 +14,7 @@
                 <field name="story_brand_id" />
                 <field name="content_type" />
                 <field name="value" />
+                <field name="company_id" options="{'no_create': True}" groups="base.group_multi_company"/>
             </tree>
         </field>
     </record>
@@ -31,6 +32,7 @@
                         <group>
                             <field name="value" />
                             <field name="description"/>
+                            <field name="company_id" options="{'no_create': True}" groups="base.group_multi_company"/>
                         </group>
                         <group>
                             <field name="story_brand_id"/>
@@ -42,7 +44,7 @@
                             <field name="concept" widget="html" nolabel="1"/>
                         </page>
                         <page string="Contents">
-                            <field name="contents_ids" mode="kanban" nolabel="1">
+                            <field name="contents_ids" context="{'default_theme_id': active_id}" mode="kanban" nolabel="1">
                                 <kanban>
                                     <field name="id"/>
                                     <field name="name"/>
@@ -148,6 +150,7 @@
                     <group>
                         <group>
                             <field name="theme_id"/>
+                            <field name="company_id" options="{'no_create': True}" groups="base.group_multi_company"/>
                         </group>
                         <group>
                             <field name="mode"/>
@@ -252,6 +255,7 @@
                 <field name="value_proposition_id" />
                 <field name="brand_id" />
                 <field name="brand_owner_id" />
+                <field name="company_id" options="{'no_create': True}" groups="base.group_multi_company"/>
             </tree>
         </field>
     </record>
@@ -271,6 +275,7 @@
                             <field name="brand_owner_id" />
                             <field name="value_proposition_id" />
                      		<field name="user_id"/>
+                             <field name="company_id" options="{'no_create': True}" groups="base.group_multi_company"/>
                         </group>
                         <group string="Heroes">
                              <field name="buyers_id"  widget="many2many" nolabel="1"/>
