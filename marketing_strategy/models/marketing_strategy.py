@@ -53,10 +53,13 @@ class MarketingBrand(models.Model):
     _inherit = ['mail.thread', 'mail.activity.mixin','image.mixin']
     _order = 'name asc'
 
+    def _expand_relation(self, states, domain, order):
+        return ['main', 'competitor', 'collaborator', 'family']
+
     name = fields.Char('Brand', required=True)
     product_type = fields.Selection(PRODUCT_TYPE)
     relation = fields.Selection([('main','Main'),('competitor','Competitor'),('collaborator','Collaborator'),('family','Family')], 
-    required=True, default='competitor')
+    required=True, default='competitor', group_expand='_expand_relation')
     partner_id = fields.Many2one('res.partner', string='Partner')
     related_brand_id = fields.Many2one('marketing_strategy.brand', string='Related Brand')
     tag_ids = fields.Many2many('marketing_strategy.brand.tag', 'marketing_strategy_brand_tags_rel', 'brand_id', 'tag_id', string='Tags') 

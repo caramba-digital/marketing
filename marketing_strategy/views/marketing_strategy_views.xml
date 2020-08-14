@@ -180,7 +180,7 @@
         <field name="name">marketing_strategy.brand.kanban</field>
         <field name="model">marketing_strategy.brand</field>
         <field name="arch" type="xml">
-            <kanban>
+            <kanban default_group_by="relation" class="o_kanban_small_column">
                 <field name="id"/>
                 <field name="name" />
                 <field name="relation" />   
@@ -234,7 +234,7 @@
         (0, 0, {'view_mode': 'tree'})]"/>
         <field name="help" type="html">
           <p class="o_view_nocontent_smiling_face">
-            Create a new brand persona
+            Create a new Brand
           </p>
         </field>
     </record>
@@ -255,7 +255,7 @@
         (0, 0, {'view_mode': 'tree'})]"/>
         <field name="help" type="html">
           <p class="o_view_nocontent_smiling_face">
-            Create a new brand persona
+            Create a new Brand Persona
           </p>
         </field>
     </record>
