@@ -313,7 +313,8 @@
                 			<field name="type" />                 
                    			<field name="responsible_id" />
                             <field name="company_id" options="{'no_create': True}" groups="base.group_multi_company"/>
-                			<field name="buyer_journey_stage" />
+                			<field name="story_brand_id" />
+                            <field name="buyer_journey_stage" />
                 		</group>
                 		<group>
                 			<field name="url" widget="url" placeholder="Online Touchpoint Location"/>
@@ -564,10 +565,6 @@
                                 </h4> 
                                 <ul>
                                     <li><field name="product_type"/></li>
-                                    <li><field name="product_l1_id"/></li>
-                                    <li><field name="product_l2_id"/></li>
-                                    <li><field name="product_l3_id"/></li>
-                                    <li><field name="product_l4_id"/></li>
                                  </ul>
                                  </div>                             
                         		<div class="oe_clear"/>
@@ -728,14 +725,14 @@
           <p class="o_view_nocontent_smiling_face">
             Create a new Marketing Strategy Plan
           </p><p>
-                Odoo helps you easily track all activities related to a lean marketing plan.
+                Odoo helps you easily track all activities related to a Marketing Plan.
               </p>
         </field>
     </record>
     
           <menuitem id="menu_marketing_strategy_plan" name="Marketing Plans"
             parent="marketing_strategy_menu"
-            action="marketing_strategy_plan_action" sequence="2"/>	
+            action="marketing_strategy_plan_action" sequence="1"/>	
             
        <record id='marketing_strategy_buyer_journey_view_kanban' model='ir.ui.view'>
         <field name="name">marketing_strategy.buyer_journey.kanban</field>

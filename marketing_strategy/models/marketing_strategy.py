@@ -120,6 +120,7 @@ class Touchpoint(models.Model):
     hub_id = fields.Many2one('res.partner', string='Touchpoints hub', required=True, domain=[('touchpoint_hub','=',True)])
     description = fields.Html('Description')
     tag_ids = fields.Many2many('marketing_strategy.touchpoint.tag', 'marketing_strategy_touchpoint_tags_rel', 'touchpoint_id', 'tag_id', string='Tags')
+    story_brand_id = fields.Many2one('marketing_strategy.story_brand')
     plan_id = fields.Many2one('marketing_strategy.plan', string='Marketing Plan')
     buyer_journey_stage = fields.Selection([('awareness','Awareness'),('consideration','Consideration'),('purchase','Purchase'),('service','Service'),('loyalty','Loyalty')], string="Buyer's Journey Stage", default='awareness', required=True, copy=False, track_visibility='onchange', group_expand='_expand_buyer_journey')
     responsible_id = fields.Many2one('res.users', string='Responsible', required=False, default=lambda self: self.env.user)

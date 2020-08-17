@@ -7,13 +7,12 @@
     'author': "Antonio Fregoso",
     'website': "https://antoniofregoso.com",
     'category': 'Marketing/Strategy',
-    'version': '13.0.0.2.0',
+    'version': '13.0.0.0.0',
     'license': 'AGPL-3',
     'depends': ['marketing_strategy'],
     'data': [
-        # 'security/ir.model.access.csv',
-        'views/views.xml',
-        'views/templates.xml',
+        'security/ir.model.access.csv',
+        'views/marketing_strategy_views.xml',
     ],
     'demo': [
         'demo/demo.xml',
