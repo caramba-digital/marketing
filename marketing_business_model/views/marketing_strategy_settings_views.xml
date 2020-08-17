@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <menuitem id="menu_marketing_strategy_business_model_config" name="Business Model"
+        parent="marketing_strategy.marketing_strategy_menu_config"
+        sequence="6"/>
+
+    <!-- Channel -->
+        <record id="marketing_strategy_channel_form" model="ir.ui.view">
+            <field name="name">marketing_strategy.bm.channel.form</field>
+            <field name="model">marketing_strategy.channel</field>
+            <field name="arch" type="xml">
+                <form string="Channel">
+                    <group>
+                        <field name="name"/>
+                        <field name="color" groups="base.group_no_one"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record id="marketing_strategy_channel_tree" model="ir.ui.view">
+            <field name="name">marketing_strategy.brand.topic.tree</field>
+            <field name="model">marketing_strategy.channel</field>
+            <field name="arch" type="xml">
+                <tree string="Channels">
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+        
+        <record id="marketing_strategy_channel_action" model="ir.actions.act_window">
+            <field name="name">Channels</field>
+            <field name="res_model">marketing_strategy.channel</field>
+            <field name="view_id" ref="marketing_strategy_channel_tree"/>
+            <field name="help" type="html">
+              <p class="o_view_nocontent_smiling_face">
+                Create a new conversation Channel.
+              </p><p>
+                Create channel for Business Model.
+              </p>
+            </field>
+        </record>
+
+        <menuitem
+            id="menu_marketing_strategy_channel"
+            name="Channels"
+            action="marketing_strategy_channel_action"
+            parent="menu_marketing_strategy_business_model_config"
+            sequence="1"/>
+            
+
+    <!-- Key Activity -->
+        <record id="marketing_strategy_key_activity_form" model="ir.ui.view">
+            <field name="name">marketing_strategy.key_activity.form</field>
+            <field name="model">marketing_strategy.key_activity</field>
+            <field name="arch" type="xml">
+                <form string="Key Activity">
+                    <group>
+                        <field name="name"/>
+                        <field name="color" groups="base.group_no_one"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record id="marketing_strategy_key_activity_tree" model="ir.ui.view">
+            <field name="name">marketing_strategy.key_activity.tree</field>
+            <field name="model">marketing_strategy.key_activity</field>
+            <field name="arch" type="xml">
+                <tree string="Key Activities">
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+        
+        <record id="marketing_strategy_key_activity_action" model="ir.actions.act_window">
+            <field name="name">Key Activities</field>
+            <field name="res_model">marketing_strategy.key_activity</field>
+            <field name="view_id" ref="marketing_strategy_key_activity_tree"/>
+            <field name="help" type="html">
+              <p class="o_view_nocontent_smiling_face">
+                Create a new Key Activity.
+              </p><p>
+                Create Key Activity for Business Model.
+              </p>
+            </field>
+        </record>
+
+        <menuitem
+            id="menu_marketing_strategy_key_activity"
+            name="Key Activities"
+            action="marketing_strategy_key_activity_action"
+            parent="menu_marketing_strategy_business_model_config"
+            sequence="2"/>
+            
+
+    <!-- Key Resource -->
+        <record id="marketing_strategy_key_resource_physical_form" model="ir.ui.view">
+            <field name="name">marketing_strategy.key_resource_physical.form</field>
+            <field name="model">marketing_strategy.key_resource_physical</field>
+            <field name="arch" type="xml">
+                <form string="Key Physical Resource">
+                    <group>
+                        <field name="name"/>
+                        <field name="color" groups="base.group_no_one"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record id="marketing_strategy_key_resource_physical_tree" model="ir.ui.view">
+            <field name="name">marketing_strategy.key_resource_physical.tree</field>
+            <field name="model">marketing_strategy.key_resource_physical</field>
+            <field name="arch" type="xml">
+                <tree string="Conversation Topics">
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+        
+        <record id="marketing_strategy_key_resource_physical_action" model="ir.actions.act_window">
+            <field name="name">Key Physical Resources</field>
+            <field name="res_model">marketing_strategy.key_resource_physical</field>
+            <field name="view_id" ref="marketing_strategy_key_resource_physical_tree"/>
+            <field name="help" type="html">
+              <p class="o_view_nocontent_smiling_face">
+                Create a new Key Physical Resources.
+              </p><p>
+                Create Key Physical Resources for Business Model.
+              </p>
+            </field>
+        </record>
+
+        <menuitem
+            id="menu_marketing_strategy_key_resource_physical"
+            name="Key Physical Resources"
+            action="marketing_strategy_key_resource_physical_action"
+            parent="menu_marketing_strategy_business_model_config"
+            sequence="3"/>
+            
+
+    <!-- Key Financial Resource -->
+        <record id="marketing_strategy_key_resource_financial_form" model="ir.ui.view">
+            <field name="name">marketing_strategy.key_resource_financial.form</field>
+            <field name="model">marketing_strategy.key_resource_financial</field>
+            <field name="arch" type="xml">
+                <form string="Key Financial Resource">
+                    <group>
+                        <field name="name"/>
+                        <field name="color" groups="base.group_no_one"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record id="marketing_strategy_key_resource_financial_tree" model="ir.ui.view">
+            <field name="name">marketing_strategy.key_resource_financial.tree</field>
+            <field name="model">marketing_strategy.key_resource_financial</field>
+            <field name="arch" type="xml">
+                <tree string="Key Financial Resource">
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+        
+        <record id="marketing_strategy_key_resource_financial_action" model="ir.actions.act_window">
+            <field name="name">Conversation Topics</field>
+            <field name="res_model">marketing_strategy.key_resource_financial</field>
+            <field name="view_id" ref="marketing_strategy_key_resource_financial_tree"/>
+            <field name="help" type="html">
+              <p class="o_view_nocontent_smiling_face">
+                Create a Key Financial Resource.
+              </p><p>
+                Create Key Financial Resource for Business Model.
+              </p>
+            </field>
+        </record>
+
+        <menuitem
+            id="menu_marketing_strategy_key_resource_financial"
+            name="Key Financial Resource"
+            action="marketing_strategy_key_resource_financial_action"
+            parent="menu_marketing_strategy_business_model_config"
+            sequence="4"/>
+            
+
+    <!-- Key Intellectual Resource -->
+        <record id="marketing_strategy_key_resource_intellectual_form" model="ir.ui.view">
+            <field name="name">marketing_strategy.key_resource_intellectual.form</field>
+            <field name="model">marketing_strategy.key_resource_intellectual</field>
+            <field name="arch" type="xml">
+                <form string="Key Intellectual Resource">
+                    <group>
+                        <field name="name"/>
+                        <field name="color" groups="base.group_no_one"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record id="marketing_strategy_key_resource_intellectual_tree" model="ir.ui.view">
+            <field name="name">marketing_strategy.key_resource_intellectual.tree</field>
+            <field name="model">marketing_strategy.key_resource_intellectual</field>
+            <field name="arch" type="xml">
+                <tree string="Key Intellectual Resources">
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+        
+        <record id="marketing_strategy_key_resource_intellectual_action" model="ir.actions.act_window">
+            <field name="name">Key Intellectual Resources</field>
+            <field name="res_model">marketing_strategy.key_resource_intellectual</field>
+            <field name="view_id" ref="marketing_strategy_key_resource_intellectual_tree"/>
+            <field name="help" type="html">
+              <p class="o_view_nocontent_smiling_face">
+                Create a new Key Intellectual Resources.
+              </p><p>
+                Create Key Intellectual Resources for Business Model.
+              </p>
+            </field>
+        </record>
+
+        <menuitem
+            id="menu_marketing_strategy_key_resource_intellectual"
+            name="Key Intellectual Resources"
+            action="marketing_strategy_key_resource_intellectual_action"
+            parent="menu_marketing_strategy_business_model_config"
+            sequence="5"/>
+            
+
+    <!-- Key Resource -->
+        <record id="marketing_strategy_key_resource_form" model="ir.ui.view">
+            <field name="name">marketing_strategy.brand.topic.form</field>
+            <field name="model">marketing_strategy.brand.topic</field>
+            <field name="arch" type="xml">
+                <form string="Key Resource">
+                    <group>
+                        <field name="name"/>
+                        <field name="color" groups="base.group_no_one"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record id="marketing_strategy_key_resource_tree" model="ir.ui.view">
+            <field name="name">marketing_strategy.brand.topic.tree</field>
+            <field name="model">marketing_strategy.brand.topic</field>
+            <field name="arch" type="xml">
+                <tree string="Key Resources">
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+        
+        <record id="marketing_strategy_key_resource_action" model="ir.actions.act_window">
+            <field name="name">Key Resources</field>
+            <field name="res_model">marketing_strategy.brand.topic</field>
+            <field name="view_id" ref="marketing_strategy_key_resource_tree"/>
+            <field name="help" type="html">
+              <p class="o_view_nocontent_smiling_face">
+                Create a new Key Resources.
+              </p><p>
+                Create Key Resources for Business Model.
+              </p>
+            </field>
+        </record>
+
+        <menuitem
+            id="menu_marketing_strategy_key_resource"
+            name="Another Key Resources"
+            action="marketing_strategy_key_resource_action"
+            parent="menu_marketing_strategy_business_model_config"
+            sequence="6"/>
+            
+
+</odoo>

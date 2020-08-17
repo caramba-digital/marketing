@@ -74,7 +74,7 @@
                     	</group>
                     	<group>
                     		<field name="url" widget="url" placeholder="e.g. www.odoo.com"/>
-                    		<field name="partner_id"/>
+                    		<field name="brand_owner_id"/>
                             <field name="company_id" options="{'no_create': True}" groups="base.group_multi_company"/>
                     	</group>
                     </group>
@@ -121,7 +121,7 @@
                     	</group>
                     	<group>
                     		<field name="url" widget="url" placeholder="e.g. www.odoo.com"/>
-                    		<field name="partner_id"/>
+                    		<field name="brand_owner_id"/>
                     	</group>
                     </group>
                     <notebook colspan="4">
@@ -184,9 +184,12 @@
                 <field name="id"/>
                 <field name="name" />
                 <field name="relation" />   
-                <field name="partner_id" />             
-                    <field name="image_128"/>
+                <field name="brand_owner_id" />             
+                <field name="image_128"/>
                 <field name="color" />
+                <field name="activity_state"/>
+                <field name="message_needaction_counter"/>
+                <field name="activity_ids"/>
                <templates>
                     <t t-name="kanban-box">
                        <div t-attf-class="#{kanban_color(record.color.raw_value)} oe_kanban_global_click  o_kanban_record_has_image_fill">
@@ -200,7 +203,7 @@
                                         <ul class="oe_kanban_colorpicker" data-field="color"/>
                                     </div>
                                 </div>
-                             <field name="image_128" widget="image" class="o_kanban_image_fill_left" options="{'zoom': true, 'zoom_delay': 1000, 'background': true, 'preventClicks': false}"/>
+                             <field name="image_128" widget="image" class="o_kanban_image_fill_left o_kanban_image_full" options="{'zoom': true, 'zoom_delay': 1000, 'background': true, 'preventClicks': false}"/>
                             <div class="oe_kanban_details">
                             	<field name="tag_ids" widget="many2many_tags" options="{'color_field': 'color'}"/>
                                  <h4 class="oe_partner_heading">
@@ -209,12 +212,24 @@
                                     </a>
                                 </h4> 
                                 <ul>
-                                <li><field name="relation"/></li>
-                                 <li><field name="partner_id"/></li>
+                                <li>Relation: <field name="relation"/></li>
+                                 <li>Owner: <field name="brand_owner_id"/></li>
                                  </ul>
-                                 </div>                             
-                        		<div class="oe_clear"/>
-                            </div>
+                                  <div class="o_kanban_record_bottom">
+                                    <div class="oe_kanban_bottom_left">
+                                        <t t-if="record.message_needaction_counter.raw_value">
+                                        <span role="alert" class="oe_kanban_mail_new" title="Unread Messages"><i class="fa fa-comments" aria-label="Messages" role="img"/><t t-raw="record.message_needaction_counter.raw_value"/></span>
+                                        </t>
+                                        <div class="o_kanban_inline_block">
+                                        <field name="activity_ids" widget="kanban_activity"/>
+                                        </div>   
+                                    </div>
+                                    <div class="oe_kanban_bottom_right">
+                                        
+                                    </div>
+                                 </div>
+                                </div> 
+                        </div>
                     </t>
                 </templates>
             </kanban>
@@ -294,14 +309,6 @@
                 <header><field name="state" widget="statusbar" options="{'clickable': '1'}"/>
                 </header>
                 <sheet>
-                <div class="oe_button_box" name="button_box" groups="base.group_user">            		 	
-                        <button name="toggle_active" type="object"
-                                confirm="(Un)archiving a project automatically (un)archives its tasks. Do you want to proceed?"
-                                class="oe_stat_button" icon="fa-archive">
-                            <field name="active" widget="boolean_button"
-                                options='{"terminology": "archive"}'/>
-                        </button>
-                        </div>
                 <div class="oe_title">
                         <h1><field name="name" placeholder="Name of the Touchpoint" nolabel="1"/></h1>
                 		 <field name="tag_ids" widget="many2many_tags" options="{'color_field': 'color'}" placeholder="Tags"/>
@@ -356,6 +363,10 @@
                 <field name="hub_id" />
                 <field name="image_128" />
                 <field name="color"/>
+                <field name="responsible_id"/>
+                <field name="message_needaction_counter"/>
+                <field name="activity_ids"/>
+                <field name="activity_state"/>
                 <templates>
                     <t t-name="kanban-box">
                         <div t-attf-class="#{kanban_color(record.color.raw_value)} oe_kanban_global_click">
@@ -378,12 +389,24 @@
                                     </a>
                                 </h4> 
                                 <ul>
-                                 <li><field name="type"/></li>
-                                 <li><field name="utm_source_id"/></li>
-                                 <li><field name="hub_id"/></li>
+                                 <li>Type: <field name="type"/></li>
+                                 <li>UTM Source: <field name="utm_source_id"/></li>
+                                 <li>Hub: <field name="hub_id"/></li>
                                  </ul>
-                                 </div>                             
-                        		<div class="oe_clear"/>
+                                 </div>  
+                                <div class="o_kanban_record_bottom">
+                                <div class="oe_kanban_bottom_left">
+                                    <t t-if="record.message_needaction_counter.raw_value">
+                                    <span role="alert" class="oe_kanban_mail_new" title="Unread Messages"><i class="fa fa-comments" aria-label="Messages" role="img"/><t t-raw="record.message_needaction_counter.raw_value"/></span>
+                                    </t>
+                                    <div class="o_kanban_inline_block">
+                                    <field name="activity_ids" widget="kanban_activity"/>
+                                    </div>   
+                                </div>
+                                <div class="oe_kanban_bottom_right">
+                                    <img t-att-src="kanban_image('res.users', 'image_128', record.responsible_id.raw_value)" t-att-title="record.responsible_id.value" t-att-alt="record.responsible_id.value" class="oe_kanban_avatar float-right"/>
+                                </div>
+                                </div>
                         </div>
                     </t>
                 </templates>
@@ -458,7 +481,7 @@
                     <group>
                     	<group>
                         	<field name="brand_id"/>
-                            <field name="brand_owner"/>
+                            <field name="brand_owner_id"/>
                             <field name="company_id" options="{'no_create': True}" groups="base.group_multi_company"/>
                     	</group>
                     	<group>                    	
@@ -540,8 +563,13 @@
                 <field name="id"/>
                 <field name="name" />
                 <field name="product_type" />
+                <field name="brand_id"/>
                 <field name="image_128" />
                 <field name="color"/>
+                <field name="brand_owner_id"/>
+                <field name="message_needaction_counter"/>
+                <field name="activity_ids"/>
+                <field name="activity_state"/>
                 <templates>
                     <t t-name="kanban-box">
                         <div t-attf-class="#{kanban_color(record.color.raw_value)} oe_kanban_global_click o_kanban_record_has_image_fill">
@@ -564,10 +592,24 @@
                                     </a>
                                 </h4> 
                                 <ul>
-                                    <li><field name="product_type"/></li>
-                                 </ul>
-                                 </div>                             
-                        		<div class="oe_clear"/>
+                                    <li>Type: <field name="product_type"/></li>
+                                    <li>Brand: <field name="brand_id"/></li>
+                                     <li>Owner: <field name="brand_owner_id"/></li>
+                                 </ul>                          
+                        		<div class="o_kanban_record_bottom">
+                                    <div class="oe_kanban_bottom_left">
+                                        <t t-if="record.message_needaction_counter.raw_value">
+                                        <span role="alert" class="oe_kanban_mail_new" title="Unread Messages"><i class="fa fa-comments" aria-label="Messages" role="img"/><t t-raw="record.message_needaction_counter.raw_value"/></span>
+                                        </t>
+                                        <div class="o_kanban_inline_block">
+                                        <field name="activity_ids" widget="kanban_activity"/>
+                                        </div>   
+                                    </div>
+                                    <div class="oe_kanban_bottom_right">
+                                       
+                                    </div>
+                                </div>
+                                 </div>   
                         </div>
                     </t>
                 </templates>
@@ -616,14 +658,6 @@
               <field name="state" widget="statusbar" options="{'clickable': '1'}"/>
                 </header>
             	<sheet>
-            		 <div class="oe_button_box" name="button_box" groups="base.group_user">            		 	
-                        <button name="toggle_active" type="object"
-                                confirm="(Un)archiving a project automatically (un)archives its tasks. Do you want to proceed?"
-                                class="oe_stat_button" icon="fa-archive">
-                            <field name="active" widget="boolean_button"
-                                options='{"terminology": "archive"}'/>
-                        </button>
-            		 </div>
                     <div class="oe_title">
                     	<h1><field name="name"/></h1>
                      </div>
@@ -688,6 +722,10 @@
                 <field name="name" />
                 <field name="color"/>
             	<field name="state"/>
+                <field name="user_id"/>
+                <field name="message_needaction_counter"/>
+                <field name="activity_ids"/>
+                <field name="activity_state"/>
                  <templates>
                     <t t-name="kanban-box">
                         <div t-attf-class="#{kanban_color(record.color.raw_value)} oe_kanban_global_click">
@@ -709,7 +747,19 @@
                                     </a>
                                 </h4> 
                                 </div>
-                                <div class="oe_clear"/>
+                                 <div class="o_kanban_record_bottom">
+                                    <div class="oe_kanban_bottom_left">
+                                        <t t-if="record.message_needaction_counter.raw_value">
+                                        <span role="alert" class="oe_kanban_mail_new" title="Unread Messages"><i class="fa fa-comments" aria-label="Messages" role="img"/><t t-raw="record.message_needaction_counter.raw_value"/></span>
+                                        </t>
+                                        <div class="o_kanban_inline_block">
+                                        <field name="activity_ids" widget="kanban_activity"/>
+                                        </div>   
+                                    </div>
+                                    <div class="oe_kanban_bottom_right">
+                                        <img t-att-src="kanban_image('res.users', 'image_128', record.user_id.raw_value)" t-att-title="record.user_id.value" t-att-alt="record.user_id.value" class="oe_kanban_avatar float-right"/>
+                                    </div>
+                                </div>
                                 </div>
                                 </t>
                                 </templates>
@@ -748,9 +798,13 @@
                 <field name="hub_id" />
                 <field name="image_128" />
                 <field name="color"/>
+                <field name="responsible_id"/>
+                <field name="message_needaction_counter"/>
+                <field name="activity_ids"/>
+                <field name="activity_state"/>
                 <templates>
                     <t t-name="kanban-box">
-                        <div t-attf-class="#{kanban_color(record.color.raw_value)} oe_kanban_global_click">
+                        <div t-attf-class="#{kanban_color(record.color.raw_value)} oe_kanban_global_click  o_kanban_record_has_image_fill">
                         	<field name="tag_ids" widget="many2many_tags" options="{'color_field': 'color'}"/>
                         	<div class="o_dropdown_kanban dropdown">
 
@@ -774,8 +828,20 @@
                                  <li><field name="type"/></li>
                                  <li><field name="hub_id"/></li>
                                  </ul>
-                                 </div>                             
-                        		<div class="oe_clear"/>
+                                 </div>  
+                                <div class="o_kanban_record_bottom">
+                                <div class="oe_kanban_bottom_left">
+                                    <t t-if="record.message_needaction_counter.raw_value">
+                                    <span role="alert" class="oe_kanban_mail_new" title="Unread Messages"><i class="fa fa-comments" aria-label="Messages" role="img"/><t t-raw="record.message_needaction_counter.raw_value"/></span>
+                                    </t>
+                                    <div class="o_kanban_inline_block">
+                                    <field name="activity_ids" widget="kanban_activity"/>
+                                    </div>   
+                                </div>
+                                <div class="oe_kanban_bottom_right">
+                                    <img t-att-src="kanban_image('res.users', 'image_128', record.responsible_id.raw_value)" t-att-title="record.responsible_id.value" t-att-alt="record.responsible_id.value" class="oe_kanban_avatar float-right"/>
+                                </div>
+                                </div>
                         </div>
                     </t>
                 </templates>

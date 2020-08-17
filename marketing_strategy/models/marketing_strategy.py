@@ -60,11 +60,10 @@ class MarketingBrand(models.Model):
     product_type = fields.Selection(PRODUCT_TYPE)
     relation = fields.Selection([('main','Main'),('competitor','Competitor'),('collaborator','Collaborator'),('family','Family')], 
     required=True, default='competitor', group_expand='_expand_relation')
-    partner_id = fields.Many2one('res.partner', string='Partner')
+    brand_owner_id = fields.Many2one('res.partner', required=True)
     related_brand_id = fields.Many2one('marketing_strategy.brand', string='Related Brand')
     tag_ids = fields.Many2many('marketing_strategy.brand.tag', 'marketing_strategy_brand_tags_rel', 'brand_id', 'tag_id', string='Tags') 
     color = fields.Integer('Kanban Color Index')
-    partner_id = fields.Many2one('res.partner', string='Partner')
     twitter = fields.Char('Twitter Account')
     facebook = fields.Char('Facebook Page')
     linkedin = fields.Char('Linkedin Page')
@@ -212,7 +211,7 @@ class ValueProposition(models.Model):
         ],
         string='Status', default='draft', required=True, copy=False, track_visibility='onchange', group_expand='_expand_states')
     color = fields.Integer('Kanban Color Index')
-    brand_owner = fields.Many2one('res.partner', required=True)
+    brand_owner_id = fields.Many2one('res.partner', required=True)
     description = fields.Html('Description')
     product_type = fields.Selection(PRODUCT_TYPE)
     brand_id = fields.Many2one('marketing_strategy.brand', string='Brand', required=True)

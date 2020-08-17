@@ -2,16 +2,28 @@
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).#
 from odoo import api, fields, models
 
-class KeyActivities(models.Model):
+class CustomerChannel(models.Model):
 
-    _name = "marketing_strategy.key_activity"
-    _description = "Key Activities"
+    _name = "marketing_strategy.channel"
+    _description = "Channel"
 
     name = fields.Char('Name', required=True, translate=True)
     color = fields.Integer('Color Index')
 
     _sql_constraints = [
-        ('name_uniq', 'unique (name)', "Aativitie already exists !"),
+        ('name_uniq', 'unique (name)', "Channel already exists !"),
+    ]
+
+class KeyActivities(models.Model):
+
+    _name = "marketing_strategy.key_activity"
+    _description = "Key Activity"
+
+    name = fields.Char('Name', required=True, translate=True)
+    color = fields.Integer('Color Index')
+
+    _sql_constraints = [
+        ('name_uniq', 'unique (name)', "Ativity already exists !"),
     ]
     
 class KeyResourcePhysical(models.Model):
@@ -83,12 +95,14 @@ class BusinessModel(models.Model):
         ],
         string='Status', default='draft', required=True, copy=False, track_visibility='onchange', group_expand='_expand_states')
     active = fields.Boolean(default=True)
+    user_id = fields.Many2one('res.users', string='Responsible', default=lambda self: self.env.user, track_visibility="onchange")
     color = fields.Integer('Kanban Color Index')
     date_begin = fields.Date()
     date_end = fields.Date()
     buyers_persona_ids = fields.Many2many('marketing_strategy.buyer_persona', 'marketing_strategy_business_model_buyer_persona_rel', 'business_plan_id', 'buyer_persona_id')
     value_proposition_ids = fields.Many2many('marketing_strategy.value_proposition', 'marketing_strategy_business_plan_value_proposition_rel', 'business_plan_id', 'value_proposition_id')
     story_brand_ids = fields.Many2many('marketing_strategy.story_brand', 'marketing_strategy_business_plan_story_brand_rel', 'busoness_plan_id', 'story_brand_id')
+    channels_ids = fields.Many2many('marketing_strategy.channel', 'marketing_strategy_business_plan_channel_rel', 'model_id', 'channel_id')
     key_partners_ids = fields.Many2many('res.partner')
     key_activities_ids = fields.Many2many('marketing_strategy.key_activity','marketing_strategy_business_model__activity_rel','business_model_id','activity_id')
     key_resource_physical_ids = fields.Many2many('marketing_strategy.key_resource_physical', 'marketing_strategy_business_model_resource_physical_rel', 'business_model_id', 'resource_id')

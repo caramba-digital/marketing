@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 13.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-17 04:28+0000\n"
-"PO-Revision-Date: 2020-08-16 23:31-0500\n"
+"POT-Creation-Date: 2020-08-17 23:20+0000\n"
+"PO-Revision-Date: 2020-08-17 18:23-0500\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: \n"
 "Language: es_MX\n"
-"X-Generator: Poedit 2.4.1\n"
+"X-Generator: Poedit 2.3\n"
 
 #. module: marketing_strategy
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_buyer_persona__children
@@ -23,14 +23,16 @@ msgid "# Children"
 msgstr "#Hijos"
 
 #. module: marketing_strategy
-#: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_plan_view_form
-#: model_terms:ir.ui.view,arch_db:marketing_strategy.touchpoint_form_view
-msgid ""
-"(Un)archiving a project automatically (un)archives its tasks. Do you want "
-"to proceed?"
-msgstr ""
-"(Des) archivar un proyecto automáticamente (des) archiva sus tareas. "
-"Quieres proceder?"
+#: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_brand_view_kanban
+#: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_buyer_journey_view_kanban
+#: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_plan_view_kanban
+#: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_story_brand_content_view_kanban
+#: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_story_brand_theme_view_kanban
+#: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_story_brand_view_kanban
+#: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_touchpoint_view_kanban
+#: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_value_proposition_view_kanban
+msgid "<i class=\"fa fa-comments\" aria-label=\"Messages\" role=\"img\"/>"
+msgstr "<i class=\"fa fa-comments\" aria-label=\"Mensajess\" role=\"img\"/>"
 
 #. module: marketing_strategy
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_brand__message_needaction
@@ -195,7 +197,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_brand__blog
 #: model:ir.model.fields.selection,name:marketing_strategy.selection__marketing_strategy_story_brand_content__format__blog
 msgid "Blog"
-msgstr ""
+msgstr "Blog"
 
 #. module: marketing_strategy
 #: model:ir.model,name:marketing_strategy.model_marketing_strategy_brand
@@ -217,8 +219,9 @@ msgid "Brand Advocacy"
 msgstr "Defensa de Marca"
 
 #. module: marketing_strategy
+#: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_brand__brand_owner_id
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_story_brand__brand_owner_id
-#: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_value_proposition__brand_owner
+#: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_value_proposition__brand_owner_id
 msgid "Brand Owner"
 msgstr "Dueño de la marca"
 
@@ -234,6 +237,12 @@ msgstr "Etiqueta de marca"
 #: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_brand_tag_tree
 msgid "Brand Tags"
 msgstr "Etiquetas de marca"
+
+#. module: marketing_strategy
+#: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_story_brand_view_kanban
+#: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_value_proposition_view_kanban
+msgid "Brand:"
+msgstr "Marca: "
 
 #. module: marketing_strategy
 #: model:ir.actions.act_window,name:marketing_strategy.marketing_strategy_brand_related_action
@@ -1271,6 +1280,11 @@ msgid "Hub Content"
 msgstr "Hub de Contenido"
 
 #. module: marketing_strategy
+#: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_touchpoint_view_kanban
+msgid "Hub:"
+msgstr ""
+
+#. module: marketing_strategy
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_brand__id
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_brand_tag__id
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_brand_topic__id
@@ -1816,7 +1830,7 @@ msgstr "Miembros"
 #. module: marketing_strategy
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_story_brand__brand_id
 msgid "Mentor"
-msgstr ""
+msgstr "Mentor"
 
 #. module: marketing_strategy
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_brand__message_has_error
@@ -1851,6 +1865,7 @@ msgid "Mode"
 msgstr "Modo"
 
 #. module: marketing_strategy
+#: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_story_brand_content_view_kanban
 #: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_story_brand_theme_view_form
 msgid "Mode:"
 msgstr "Modo:"
@@ -1891,7 +1906,7 @@ msgstr "Nombre de la Persona Compradora"
 #. module: marketing_strategy
 #: model_terms:ir.ui.view,arch_db:marketing_strategy.touchpoint_form_view
 msgid "Name of the Touchpoint"
-msgstr "Nombre del Ounto de Contacto"
+msgstr "Nombre del Punto de Contacto"
 
 #. module: marketing_strategy
 #: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_tribe_view_form
@@ -2012,7 +2027,7 @@ msgstr "Objeciones"
 #. module: marketing_strategy
 #: model_terms:ir.actions.act_window,help:marketing_strategy.marketing_strategy_plan_action
 msgid ""
-"Odoo helps you easily track all activities related to a lean marketing plan."
+"Odoo helps you easily track all activities related to a Marketing Plan."
 msgstr ""
 "Odoo lo ayuda a rastrear fácilmente todas las actividades relacionadas con "
 "un plan de marketing lean."
@@ -2081,6 +2096,13 @@ msgid "Organic"
 msgstr "Orgánico"
 
 #. module: marketing_strategy
+#: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_brand_view_kanban
+#: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_story_brand_view_kanban
+#: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_value_proposition_view_kanban
+msgid "Owner:"
+msgstr "Dueño: "
+
+#. module: marketing_strategy
 #: model:ir.model,name:marketing_strategy.model_marketing_strategy_value_proposition_pain_reliever
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_value_proposition__pain_reliever_ids
 #: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_pain_reliever_form
@@ -2104,11 +2126,6 @@ msgstr "¡Ya existe el nombre del analgésico!"
 #: model:ir.model.fields.selection,name:marketing_strategy.selection__marketing_strategy_brand__customer_relationship__parents
 msgid "Parents"
 msgstr "Padres"
-
-#. module: marketing_strategy
-#: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_brand__partner_id
-msgid "Partner"
-msgstr "Dueño de la Marca"
 
 #. module: marketing_strategy
 #: model:ir.model.fields.selection,name:marketing_strategy.selection__marketing_strategy_brand__customer_relationship__partners
@@ -2221,6 +2238,11 @@ msgid "Relation"
 msgstr "Relación"
 
 #. module: marketing_strategy
+#: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_brand_view_kanban
+msgid "Relation:"
+msgstr "Relación: "
+
+#. module: marketing_strategy
 #: model:ir.model.fields.selection,name:marketing_strategy.selection__marketing_strategy_brand__personality__reserved
 #: model:ir.model.fields.selection,name:marketing_strategy.selection__marketing_strategy_buyer_persona__personality__reserved
 msgid "Reserved"
@@ -2282,7 +2304,7 @@ msgstr "Pedido de venta"
 #. module: marketing_strategy
 #: model:ir.model.fields.selection,name:marketing_strategy.selection__marketing_strategy_story_brand_content__mode__search
 msgid "Search"
-msgstr "Buscar"
+msgstr "Buscador"
 
 #. module: marketing_strategy
 #: model_terms:ir.ui.view,arch_db:marketing_strategy.view_marketing_strategy_buyer_persona_select
@@ -2338,7 +2360,7 @@ msgstr "Soltero"
 #: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_brand_persona_view_form
 #: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_brand_view_form
 msgid "Social"
-msgstr ""
+msgstr "Social"
 
 #. module: marketing_strategy
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_buyer_persona__social_media_ids
@@ -2653,6 +2675,11 @@ msgid "Theme"
 msgstr "Tema"
 
 #. module: marketing_strategy
+#: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_story_brand_content_view_kanban
+msgid "Theme:"
+msgstr "Tema: "
+
+#. module: marketing_strategy
 #: model:ir.actions.act_window,name:marketing_strategy.marketing_strategy_story_brand_theme_action
 #: model:ir.ui.menu,name:marketing_strategy.marketing_strategy_brand_theme_menu
 #: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_story_brand_theme_view_tree
@@ -2662,7 +2689,7 @@ msgstr "Temas"
 #. module: marketing_strategy
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_brand__tiktok
 msgid "TikTok"
-msgstr ""
+msgstr "TikTok"
 
 #. module: marketing_strategy
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_buyer_persona__title
@@ -2811,6 +2838,8 @@ msgstr "Tipo de actividad de excepción registrada."
 #. module: marketing_strategy
 #: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_story_brand_content_view_form
 #: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_story_brand_view_form
+#: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_touchpoint_view_kanban
+#: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_value_proposition_view_kanban
 msgid "Type:"
 msgstr "Tipo:"
 
@@ -2835,6 +2864,11 @@ msgid "UTM Source"
 msgstr "Fuente UTM"
 
 #. module: marketing_strategy
+#: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_touchpoint_view_kanban
+msgid "UTM Source:"
+msgstr ""
+
+#. module: marketing_strategy
 #: model:ir.model,name:marketing_strategy.model_utm_term
 msgid "UTM Term"
 msgstr "Término UTM"
@@ -2857,6 +2891,14 @@ msgstr "Desconocido"
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_story_brand_theme__message_unread
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_touchpoint__message_unread
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_value_proposition__message_unread
+#: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_brand_view_kanban
+#: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_buyer_journey_view_kanban
+#: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_plan_view_kanban
+#: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_story_brand_content_view_kanban
+#: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_story_brand_theme_view_kanban
+#: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_story_brand_view_kanban
+#: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_touchpoint_view_kanban
+#: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_value_proposition_view_kanban
 msgid "Unread Messages"
 msgstr "Mensajes no leídos"
 
@@ -2917,6 +2959,7 @@ msgstr "Propuestas de Valor"
 
 #. module: marketing_strategy
 #: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_story_brand_view_form
+#: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_story_brand_view_kanban
 msgid "Value:"
 msgstr "Valor:"
 
