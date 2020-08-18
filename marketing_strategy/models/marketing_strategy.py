@@ -211,7 +211,7 @@ class ValueProposition(models.Model):
         ],
         string='Status', default='draft', required=True, copy=False, track_visibility='onchange', group_expand='_expand_states')
     color = fields.Integer('Kanban Color Index')
-    brand_owner_id = fields.Many2one('res.partner', required=True)
+    brand_owner_id = fields.Many2one('res.partner')
     description = fields.Html('Description')
     product_type = fields.Selection(PRODUCT_TYPE)
     brand_id = fields.Many2one('marketing_strategy.brand', string='Brand', required=True)
