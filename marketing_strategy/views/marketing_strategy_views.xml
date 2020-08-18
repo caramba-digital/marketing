@@ -213,7 +213,6 @@
                                 </h4> 
                                 <ul>
                                 <li>Relation: <field name="relation"/></li>
-                                 <li>Owner: <field name="brand_owner_id"/></li>
                                  </ul>
                                   <div class="o_kanban_record_bottom">
                                     <div class="oe_kanban_bottom_left">
