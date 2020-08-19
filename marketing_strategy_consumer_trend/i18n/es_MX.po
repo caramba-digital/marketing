@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: Odoo Server 13.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-08-18 05:23+0000\n"
-"PO-Revision-Date: 2020-08-18 00:34-0500\n"
+"PO-Revision-Date: 2020-08-18 23:14-0500\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -130,7 +130,7 @@ msgstr "Creado en"
 #. module: marketing_strategy_consumer_trend
 #: model:marketing_strategy.consumer_trend.innovation_type,name:marketing_strategy_consumer_trend.consumer_trend_innovation_type_opt_10
 msgid "Customer Engagement"
-msgstr ""
+msgstr "Customer Engagement"
 
 #. module: marketing_strategy_consumer_trend
 #: model_terms:ir.ui.view,arch_db:marketing_strategy_consumer_trend.marketing_strategy_consumer_trend_view_kanban
@@ -141,32 +141,32 @@ msgstr "Eliminar"
 #: model:ir.model.fields,field_description:marketing_strategy_consumer_trend.field_marketing_strategy_consumer_trend__display_name
 #: model:ir.model.fields,field_description:marketing_strategy_consumer_trend.field_marketing_strategy_consumer_trend_innovation_type__display_name
 msgid "Display Name"
-msgstr ""
+msgstr "Nombre para Mostrar"
 
 #. module: marketing_strategy_consumer_trend
 #: model:ir.model.fields.selection,name:marketing_strategy_consumer_trend.selection__marketing_strategy_consumer_trend__mode__disruptive
 msgid "Disruptive"
-msgstr ""
+msgstr "Disruptive"
 
 #. module: marketing_strategy_consumer_trend
 #: model:ir.model.fields.selection,name:marketing_strategy_consumer_trend.selection__marketing_strategy_consumer_trend__state__draft
 msgid "Draft"
-msgstr ""
+msgstr "Borrador"
 
 #. module: marketing_strategy_consumer_trend
 #: model_terms:ir.ui.view,arch_db:marketing_strategy_consumer_trend.marketing_strategy_consumer_trend_view_form
 msgid "Drivers of Change"
-msgstr ""
+msgstr "Impulsores del cambio"
 
 #. module: marketing_strategy_consumer_trend
 #: model_terms:ir.ui.view,arch_db:marketing_strategy_consumer_trend.marketing_strategy_consumer_trend_view_kanban
 msgid "Dropdown menu"
-msgstr ""
+msgstr "Menú desplegable"
 
 #. module: marketing_strategy_consumer_trend
 #: model_terms:ir.ui.view,arch_db:marketing_strategy_consumer_trend.marketing_strategy_consumer_trend_view_kanban
 msgid "Edit"
-msgstr ""
+msgstr "Editar"
 
 #. module: marketing_strategy_consumer_trend
 #: model_terms:ir.ui.view,arch_db:marketing_strategy_consumer_trend.marketing_strategy_consumer_trend_view_form
@@ -174,36 +174,38 @@ msgid ""
 "Emerging<br/> \n"
 "                       \t\t\t\t\tExpectations"
 msgstr ""
+"Expectativas<br/> \n"
+"                       \t\t\t\t\tEmergentes"
 
 #. module: marketing_strategy_consumer_trend
 #: model:ir.model.fields,field_description:marketing_strategy_consumer_trend.field_marketing_strategy_consumer_trend__end
 msgid "End"
-msgstr ""
+msgstr "Final"
 
 #. module: marketing_strategy_consumer_trend
 #: model:ir.model.fields,field_description:marketing_strategy_consumer_trend.field_marketing_strategy_consumer_trend__message_follower_ids
 msgid "Followers"
-msgstr ""
+msgstr "Seguidores"
 
 #. module: marketing_strategy_consumer_trend
 #: model:ir.model.fields,field_description:marketing_strategy_consumer_trend.field_marketing_strategy_consumer_trend__message_channel_ids
 msgid "Followers (Channels)"
-msgstr ""
+msgstr "Seguidores (Canales)"
 
 #. module: marketing_strategy_consumer_trend
 #: model:ir.model.fields,field_description:marketing_strategy_consumer_trend.field_marketing_strategy_consumer_trend__message_partner_ids
 msgid "Followers (Partners)"
-msgstr ""
+msgstr "Seguidores (Socios)"
 
 #. module: marketing_strategy_consumer_trend
 #: model_terms:ir.ui.view,arch_db:marketing_strategy_consumer_trend.marketing_strategy_consumer_trend_view_form
 msgid "How and where could you apply this trend to your business?"
-msgstr ""
+msgstr "How and where could you apply this trend to your business?"
 
 #. module: marketing_strategy_consumer_trend
 #: model_terms:ir.ui.view,arch_db:marketing_strategy_consumer_trend.marketing_strategy_consumer_trend_view_form
 msgid "How are other businesses applying this trend?"
-msgstr ""
+msgstr "¿Cómo están aplicando otras empresas esta tendencia?"
 
 #. module: marketing_strategy_consumer_trend
 #: model:ir.model.fields,field_description:marketing_strategy_consumer_trend.field_marketing_strategy_consumer_trend__id
@@ -214,240 +216,240 @@ msgstr ""
 #. module: marketing_strategy_consumer_trend
 #: model:ir.model.fields,field_description:marketing_strategy_consumer_trend.field_marketing_strategy_consumer_trend__activity_exception_icon
 msgid "Icon"
-msgstr ""
+msgstr "Icono"
 
 #. module: marketing_strategy_consumer_trend
 #: model:ir.model.fields,help:marketing_strategy_consumer_trend.field_marketing_strategy_consumer_trend__activity_exception_icon
 msgid "Icon to indicate an exception activity."
-msgstr ""
+msgstr "Icon to indicate an exception activity."
 
 #. module: marketing_strategy_consumer_trend
 #: model:ir.model.fields,help:marketing_strategy_consumer_trend.field_marketing_strategy_consumer_trend__message_needaction
 #: model:ir.model.fields,help:marketing_strategy_consumer_trend.field_marketing_strategy_consumer_trend__message_unread
 msgid "If checked, new messages require your attention."
-msgstr ""
+msgstr "Si está marcado, los mensajes nuevos requieren su atención."
 
 #. module: marketing_strategy_consumer_trend
 #: model:ir.model.fields,help:marketing_strategy_consumer_trend.field_marketing_strategy_consumer_trend__message_has_error
 #: model:ir.model.fields,help:marketing_strategy_consumer_trend.field_marketing_strategy_consumer_trend__message_has_sms_error
 msgid "If checked, some messages have a delivery error."
-msgstr ""
+msgstr "Si está marcado, algunos mensajes tienen un error de entrega."
 
 #. module: marketing_strategy_consumer_trend
 #: model:ir.model.fields,field_description:marketing_strategy_consumer_trend.field_marketing_strategy_consumer_trend__image_1920
 msgid "Image"
-msgstr ""
+msgstr "Imagen"
 
 #. module: marketing_strategy_consumer_trend
 #: model:ir.model.fields,field_description:marketing_strategy_consumer_trend.field_marketing_strategy_consumer_trend__image_1024
 msgid "Image 1024"
-msgstr ""
+msgstr "Imagen 1024"
 
 #. module: marketing_strategy_consumer_trend
 #: model:ir.model.fields,field_description:marketing_strategy_consumer_trend.field_marketing_strategy_consumer_trend__image_128
 msgid "Image 128"
-msgstr ""
+msgstr "Imagen 128"
 
 #. module: marketing_strategy_consumer_trend
 #: model:ir.model.fields,field_description:marketing_strategy_consumer_trend.field_marketing_strategy_consumer_trend__image_256
 msgid "Image 256"
-msgstr ""
+msgstr "Imagen 256"
 
 #. module: marketing_strategy_consumer_trend
 #: model:ir.model.fields,field_description:marketing_strategy_consumer_trend.field_marketing_strategy_consumer_trend__image_512
 msgid "Image 512"
-msgstr ""
+msgstr "Imagen 512"
 
 #. module: marketing_strategy_consumer_trend
 #: model:ir.model.fields.selection,name:marketing_strategy_consumer_trend.selection__marketing_strategy_consumer_trend__mode__incremental
 msgid "Incremental"
-msgstr ""
+msgstr "Incremental"
 
 #. module: marketing_strategy_consumer_trend
 #: model:ir.model.fields,field_description:marketing_strategy_consumer_trend.field_marketing_strategy_consumer_trend__innovation
 msgid "Innovation"
-msgstr ""
+msgstr "Innovation"
 
 #. module: marketing_strategy_consumer_trend
 #: model:ir.model.fields,field_description:marketing_strategy_consumer_trend.field_marketing_strategy_consumer_trend__innovation_type
 #: model_terms:ir.ui.view,arch_db:marketing_strategy_consumer_trend.marketing_strategy_consumer_trend_view_form
 msgid "Innovation Type"
-msgstr ""
+msgstr "Tipo de Innovación"
 
 #. module: marketing_strategy_consumer_trend
 #: model_terms:ir.ui.view,arch_db:marketing_strategy_consumer_trend.marketing_strategy_consumer_trend_view_form
 msgid "Innovation Types"
-msgstr ""
+msgstr "Tipos de Innovación"
 
 #. module: marketing_strategy_consumer_trend
 #: model_terms:ir.ui.view,arch_db:marketing_strategy_consumer_trend.marketing_strategy_consumer_trend_view_form
 msgid "Inspiration"
-msgstr ""
+msgstr "Inspiración"
 
 #. module: marketing_strategy_consumer_trend
 #: model:ir.model.fields,field_description:marketing_strategy_consumer_trend.field_marketing_strategy_consumer_trend__message_is_follower
 msgid "Is Follower"
-msgstr ""
+msgstr "Es seguidor"
 
 #. module: marketing_strategy_consumer_trend
 #: model:ir.model.fields,field_description:marketing_strategy_consumer_trend.field_marketing_strategy_consumer_trend__color
 msgid "Kanban Color Index"
-msgstr ""
+msgstr "Índice de color Kanban"
 
 #. module: marketing_strategy_consumer_trend
 #: model:ir.model.fields,field_description:marketing_strategy_consumer_trend.field_marketing_strategy_consumer_trend____last_update
 #: model:ir.model.fields,field_description:marketing_strategy_consumer_trend.field_marketing_strategy_consumer_trend_innovation_type____last_update
 msgid "Last Modified on"
-msgstr ""
+msgstr "Última modificación el"
 
 #. module: marketing_strategy_consumer_trend
 #: model:ir.model.fields,field_description:marketing_strategy_consumer_trend.field_marketing_strategy_consumer_trend__write_uid
 #: model:ir.model.fields,field_description:marketing_strategy_consumer_trend.field_marketing_strategy_consumer_trend_innovation_type__write_uid
 msgid "Last Updated by"
-msgstr ""
+msgstr "Última actualización por"
 
 #. module: marketing_strategy_consumer_trend
 #: model:ir.model.fields,field_description:marketing_strategy_consumer_trend.field_marketing_strategy_consumer_trend__write_date
 #: model:ir.model.fields,field_description:marketing_strategy_consumer_trend.field_marketing_strategy_consumer_trend_innovation_type__write_date
 msgid "Last Updated on"
-msgstr ""
+msgstr "Ultima actualización en"
 
 #. module: marketing_strategy_consumer_trend
 #: model:ir.model.fields,field_description:marketing_strategy_consumer_trend.field_marketing_strategy_consumer_trend__message_main_attachment_id
 msgid "Main Attachment"
-msgstr ""
+msgstr "Accesorio principal"
 
 #. module: marketing_strategy_consumer_trend
 #: model:ir.model.fields,field_description:marketing_strategy_consumer_trend.field_marketing_strategy_consumer_trend__message_has_error
 msgid "Message Delivery error"
-msgstr ""
+msgstr "Message Delivery error"
 
 #. module: marketing_strategy_consumer_trend
 #: model:ir.model.fields,field_description:marketing_strategy_consumer_trend.field_marketing_strategy_consumer_trend__message_ids
 msgid "Messages"
-msgstr ""
+msgstr "Messages"
 
 #. module: marketing_strategy_consumer_trend
 #: model:ir.model.fields,field_description:marketing_strategy_consumer_trend.field_marketing_strategy_consumer_trend__mode
 msgid "Mode"
-msgstr ""
+msgstr "Mode"
 
 #. module: marketing_strategy_consumer_trend
 #: model:ir.model.fields,field_description:marketing_strategy_consumer_trend.field_marketing_strategy_consumer_trend__name
 #: model:ir.model.fields,field_description:marketing_strategy_consumer_trend.field_marketing_strategy_consumer_trend_innovation_type__name
 #: model_terms:ir.ui.view,arch_db:marketing_strategy_consumer_trend.marketing_strategy_consumer_trend_view_form
 msgid "Name"
-msgstr ""
+msgstr "Nombre"
 
 #. module: marketing_strategy_consumer_trend
 #: model:ir.model,name:marketing_strategy_consumer_trend.model_marketing_strategy_consumer_trend_innovation_type
 msgid "Needs"
-msgstr ""
+msgstr "Necesidades"
 
 #. module: marketing_strategy_consumer_trend
 #: model:marketing_strategy.consumer_trend.innovation_type,name:marketing_strategy_consumer_trend.consumer_trend_innovation_type_opt_2
 msgid "Network"
-msgstr ""
+msgstr "Red"
 
 #. module: marketing_strategy_consumer_trend
 #: model:ir.model.fields,field_description:marketing_strategy_consumer_trend.field_marketing_strategy_consumer_trend__activity_date_deadline
 msgid "Next Activity Deadline"
-msgstr ""
+msgstr "Next Activity Deadline"
 
 #. module: marketing_strategy_consumer_trend
 #: model:ir.model.fields,field_description:marketing_strategy_consumer_trend.field_marketing_strategy_consumer_trend__activity_summary
 msgid "Next Activity Summary"
-msgstr ""
+msgstr "Next Activity Summary"
 
 #. module: marketing_strategy_consumer_trend
 #: model:ir.model.fields,field_description:marketing_strategy_consumer_trend.field_marketing_strategy_consumer_trend__activity_type_id
 msgid "Next Activity Type"
-msgstr ""
+msgstr "Next Activity Type"
 
 #. module: marketing_strategy_consumer_trend
 #: model:ir.model.fields,field_description:marketing_strategy_consumer_trend.field_marketing_strategy_consumer_trend__message_needaction_counter
 msgid "Number of Actions"
-msgstr ""
+msgstr "Number of Actions"
 
 #. module: marketing_strategy_consumer_trend
 #: model:ir.model.fields,field_description:marketing_strategy_consumer_trend.field_marketing_strategy_consumer_trend__message_has_error_counter
 msgid "Number of errors"
-msgstr ""
+msgstr "Number of errors"
 
 #. module: marketing_strategy_consumer_trend
 #: model:ir.model.fields,help:marketing_strategy_consumer_trend.field_marketing_strategy_consumer_trend__message_needaction_counter
 msgid "Number of messages which requires an action"
-msgstr ""
+msgstr "Number of messages which requires an action"
 
 #. module: marketing_strategy_consumer_trend
 #: model:ir.model.fields,help:marketing_strategy_consumer_trend.field_marketing_strategy_consumer_trend__message_has_error_counter
 msgid "Number of messages with delivery error"
-msgstr ""
+msgstr "Número de mensajes con error de entrega"
 
 #. module: marketing_strategy_consumer_trend
 #: model:ir.model.fields,help:marketing_strategy_consumer_trend.field_marketing_strategy_consumer_trend__message_unread_counter
 msgid "Number of unread messages"
-msgstr ""
+msgstr "Número de mensajes no leídos"
 
 #. module: marketing_strategy_consumer_trend
 #: model:marketing_strategy.consumer_trend.innovation_type,name:marketing_strategy_consumer_trend.consumer_trend_innovation_type_opt_4
 msgid "Process"
-msgstr ""
+msgstr "Proceso"
 
 #. module: marketing_strategy_consumer_trend
 #: model:marketing_strategy.consumer_trend.innovation_type,name:marketing_strategy_consumer_trend.consumer_trend_innovation_type_opt_5
 msgid "Product Performance"
-msgstr ""
+msgstr "Rendimiento del Producto"
 
 #. module: marketing_strategy_consumer_trend
 #: model:marketing_strategy.consumer_trend.innovation_type,name:marketing_strategy_consumer_trend.consumer_trend_innovation_type_opt_6
 msgid "Product System"
-msgstr ""
+msgstr "Sistema de Producto"
 
 #. module: marketing_strategy_consumer_trend
 #: model:marketing_strategy.consumer_trend.innovation_type,name:marketing_strategy_consumer_trend.consumer_trend_innovation_type_opt_1
 msgid "Profit Model"
-msgstr ""
+msgstr "Modelo de Beneficios"
 
 #. module: marketing_strategy_consumer_trend
 #: model:ir.model.fields.selection,name:marketing_strategy_consumer_trend.selection__marketing_strategy_consumer_trend__mode__radical
 msgid "Radical"
-msgstr ""
+msgstr "Radical"
 
 #. module: marketing_strategy_consumer_trend
 #: model_terms:ir.ui.view,arch_db:marketing_strategy_consumer_trend.marketing_strategy_consumer_trend_view_form
 msgid "Recent changes or technologies"
-msgstr ""
+msgstr "Cambios o tecnologías recientes"
 
 #. module: marketing_strategy_consumer_trend
 #: model:ir.model.fields,field_description:marketing_strategy_consumer_trend.field_marketing_strategy_consumer_trend__activity_user_id
 msgid "Responsible User"
-msgstr ""
+msgstr "Usuario Responsable"
 
 #. module: marketing_strategy_consumer_trend
 #: model:ir.model.fields,field_description:marketing_strategy_consumer_trend.field_marketing_strategy_consumer_trend__message_has_sms_error
 msgid "SMS Delivery error"
-msgstr ""
+msgstr "Error de entrega de SMS"
 
 #. module: marketing_strategy_consumer_trend
 #: model:marketing_strategy.consumer_trend.innovation_type,name:marketing_strategy_consumer_trend.consumer_trend_innovation_type_opt_7
 msgid "Service"
-msgstr ""
+msgstr "Servicio"
 
 #. module: marketing_strategy_consumer_trend
 #: model_terms:ir.ui.view,arch_db:marketing_strategy_consumer_trend.marketing_strategy_consumer_trend_view_form
 msgid "Shifts (long-term)"
-msgstr ""
+msgstr "Turnos (a largo plazo)"
 
 #. module: marketing_strategy_consumer_trend
 #: model:ir.model.fields,field_description:marketing_strategy_consumer_trend.field_marketing_strategy_consumer_trend__start
 msgid "Start"
-msgstr ""
+msgstr "Comienzo"
 
 #. module: marketing_strategy_consumer_trend
 #: model:ir.model.fields,field_description:marketing_strategy_consumer_trend.field_marketing_strategy_consumer_trend__state
 msgid "Status"
-msgstr ""
+msgstr "Estado"
 
 #. module: marketing_strategy_consumer_trend
 #: model:ir.model.fields,help:marketing_strategy_consumer_trend.field_marketing_strategy_consumer_trend__activity_state
@@ -457,47 +459,51 @@ msgid ""
 "Today: Activity date is today\n"
 "Planned: Future activities."
 msgstr ""
+"Estado basado en actividades\n"
+"Atrasado: la fecha de vencimiento ya pasó\n"
+"Hoy: la fecha de actividad es hoy\n"
+"Planificado: actividades futuras."
 
 #. module: marketing_strategy_consumer_trend
 #: model:marketing_strategy.consumer_trend.innovation_type,name:marketing_strategy_consumer_trend.consumer_trend_innovation_type_opt_3
 msgid "Structure"
-msgstr ""
+msgstr "Estructura"
 
 #. module: marketing_strategy_consumer_trend
 #: model:ir.model.fields,field_description:marketing_strategy_consumer_trend.field_marketing_strategy_consumer_trend__trend
 #: model_terms:ir.ui.view,arch_db:marketing_strategy_consumer_trend.marketing_strategy_consumer_trend_view_form
 msgid "Trend"
-msgstr ""
+msgstr "Tendencia"
 
 #. module: marketing_strategy_consumer_trend
 #: model_terms:ir.ui.view,arch_db:marketing_strategy_consumer_trend.marketing_strategy_consumer_trend_view_form
 msgid "Triggers (short-term)"
-msgstr ""
+msgstr "Desencadenantes (a corto plazo)"
 
 #. module: marketing_strategy_consumer_trend
 #: model:ir.model.fields,help:marketing_strategy_consumer_trend.field_marketing_strategy_consumer_trend__activity_exception_decoration
 msgid "Type of the exception activity on record."
-msgstr ""
+msgstr "Tipo de actividad de excepción registrada."
 
 #. module: marketing_strategy_consumer_trend
 #: model:ir.model.fields,field_description:marketing_strategy_consumer_trend.field_marketing_strategy_consumer_trend__message_unread
 msgid "Unread Messages"
-msgstr ""
+msgstr "Mensajes no leídos"
 
 #. module: marketing_strategy_consumer_trend
 #: model:ir.model.fields,field_description:marketing_strategy_consumer_trend.field_marketing_strategy_consumer_trend__message_unread_counter
 msgid "Unread Messages Counter"
-msgstr ""
+msgstr "Contador de mensajes no leídos"
 
 #. module: marketing_strategy_consumer_trend
 #: model:ir.model.fields,field_description:marketing_strategy_consumer_trend.field_marketing_strategy_consumer_trend__website_message_ids
 msgid "Website Messages"
-msgstr ""
+msgstr "Mensajes del sitio web"
 
 #. module: marketing_strategy_consumer_trend
 #: model:ir.model.fields,help:marketing_strategy_consumer_trend.field_marketing_strategy_consumer_trend__website_message_ids
 msgid "Website communication history"
-msgstr ""
+msgstr "Historial de comunicación del sitio web"
 
 #. module: marketing_strategy_consumer_trend
 #: model_terms:ir.ui.view,arch_db:marketing_strategy_consumer_trend.marketing_strategy_consumer_trend_view_form
@@ -506,6 +512,9 @@ msgid ""
 "changes identified above?<br/>\n"
 "\t\t\t\t\t\t\t\t\t\tWhere and how does this trend satisfy them?"
 msgstr ""
+"¿Qué nuevas necesidades, deseos y expectativas de los consumidores se "
+"crean con los cambios identificados anteriormente?<br/>\n"
+"\t\t\t\t\t\t\t\t\t\t¿Dónde y cómo les satisface esta tendencia?"
 
 #. module: marketing_strategy_consumer_trend
 #: model_terms:ir.ui.view,arch_db:marketing_strategy_consumer_trend.marketing_strategy_consumer_trend_view_form
@@ -513,11 +522,15 @@ msgid ""
 "Which (new) customer groups could you apply this trend to? What would you "
 "have to change?"
 msgstr ""
+"¿A qué (nuevos) grupos de clientes podría aplicar esta tendencia? ¿Qué "
+"tendrías que cambiar?"
 
 #. module: marketing_strategy_consumer_trend
 #: model_terms:ir.ui.view,arch_db:marketing_strategy_consumer_trend.marketing_strategy_consumer_trend_view_form
 msgid "Which deep consumer needs &amp; desires does this trend address?"
 msgstr ""
+"¿Qué necesidades y deseos profundos de los consumidores aborda esta "
+"tendencia?"
 
 #. module: marketing_strategy_consumer_trend
 #: model_terms:ir.ui.view,arch_db:marketing_strategy_consumer_trend.marketing_strategy_consumer_trend_view_form

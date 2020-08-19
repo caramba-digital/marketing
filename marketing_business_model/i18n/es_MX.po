@@ -325,7 +325,7 @@ msgstr "Ingeniería como Marketing"
 #. module: marketing_business_model
 #: model:marketing_strategy.channel,name:marketing_business_model.marketing_strategy_channel_opt_15
 msgid "Existing Platforms"
-msgstr "Plataformas existentesPlataformas existentes"
+msgstr "Plataformas existentes"
 
 #. module: marketing_business_model
 #: model_terms:ir.ui.view,arch_db:marketing_business_model.marketing_strategy_business_model_view_form
