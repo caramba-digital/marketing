@@ -213,7 +213,6 @@
                                 </h4> 
                                 <ul>
                                 <li>Relation: <field name="relation"/></li>
-                                 <li>Owner: <field name="brand_owner_id"/></li>
                                  </ul>
                                   <div class="o_kanban_record_bottom">
                                     <div class="oe_kanban_bottom_left">
@@ -277,7 +276,7 @@
 
 <menuitem id="marketing_strategy_brand_persona_menu" name="Brands Persona"
             parent="marketing_strategy_menu_solutions"
-            action="marketing_strategy_brand_persona_action" sequence="2"/>	
+            action="marketing_strategy_brand_persona_action" sequence="1"/>	
 
      <!-- Touchpoint -->
 
