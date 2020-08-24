@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 13.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-17 23:20+0000\n"
-"PO-Revision-Date: 2020-08-17 18:23-0500\n"
+"POT-Creation-Date: 2020-08-24 04:32+0000\n"
+"PO-Revision-Date: 2020-08-23 23:33-0500\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: \n"
 "Language: es_MX\n"
-"X-Generator: Poedit 2.3\n"
+"X-Generator: Poedit 2.4.1\n"
 
 #. module: marketing_strategy
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_buyer_persona__children
@@ -197,7 +197,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_brand__blog
 #: model:ir.model.fields.selection,name:marketing_strategy.selection__marketing_strategy_story_brand_content__format__blog
 msgid "Blog"
-msgstr "Blog"
+msgstr ""
 
 #. module: marketing_strategy
 #: model:ir.model,name:marketing_strategy.model_marketing_strategy_brand
@@ -1219,7 +1219,7 @@ msgstr "Metas"
 #: model:ir.model.fields.selection,name:marketing_strategy.selection__marketing_strategy_brand__product_type__good
 #: model:ir.model.fields.selection,name:marketing_strategy.selection__marketing_strategy_value_proposition__product_type__good
 msgid "Good"
-msgstr "Bueno"
+msgstr "Bien"
 
 #. module: marketing_strategy
 #: model_terms:ir.ui.view,arch_db:marketing_strategy.view_marketing_strategy_buyer_persona_select
@@ -1486,6 +1486,11 @@ msgstr "Información"
 #: model:ir.model.fields.selection,name:marketing_strategy.selection__marketing_strategy_story_brand_theme__value__inspire
 msgid "Inspire"
 msgstr "Inspirar"
+
+#. module: marketing_strategy
+#: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_brand__instagram
+msgid "Instagram Page"
+msgstr "Página Instagram"
 
 #. module: marketing_strategy
 #: model:ir.model.fields.selection,name:marketing_strategy.selection__marketing_strategy_brand__product_type__institution
@@ -1830,7 +1835,7 @@ msgstr "Miembros"
 #. module: marketing_strategy
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_story_brand__brand_id
 msgid "Mentor"
-msgstr "Mentor"
+msgstr ""
 
 #. module: marketing_strategy
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_brand__message_has_error
@@ -1906,7 +1911,7 @@ msgstr "Nombre de la Persona Compradora"
 #. module: marketing_strategy
 #: model_terms:ir.ui.view,arch_db:marketing_strategy.touchpoint_form_view
 msgid "Name of the Touchpoint"
-msgstr "Nombre del Punto de Contacto"
+msgstr "Nombre del Ounto de Contacto"
 
 #. module: marketing_strategy
 #: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_tribe_view_form
@@ -2096,7 +2101,6 @@ msgid "Organic"
 msgstr "Orgánico"
 
 #. module: marketing_strategy
-#: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_brand_view_kanban
 #: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_story_brand_view_kanban
 #: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_value_proposition_view_kanban
 msgid "Owner:"
@@ -2171,7 +2175,7 @@ msgstr "Nombre del Lugar"
 #. module: marketing_strategy
 #: model:ir.model.fields,field_description:marketing_strategy.field_utm_campaign__plan_id
 msgid "Plan"
-msgstr "Plan"
+msgstr ""
 
 #. module: marketing_strategy
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_brand__podcast_channel
@@ -2304,7 +2308,7 @@ msgstr "Pedido de venta"
 #. module: marketing_strategy
 #: model:ir.model.fields.selection,name:marketing_strategy.selection__marketing_strategy_story_brand_content__mode__search
 msgid "Search"
-msgstr "Buscador"
+msgstr "Buscar"
 
 #. module: marketing_strategy
 #: model_terms:ir.ui.view,arch_db:marketing_strategy.view_marketing_strategy_buyer_persona_select
@@ -2360,7 +2364,7 @@ msgstr "Soltero"
 #: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_brand_persona_view_form
 #: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_brand_view_form
 msgid "Social"
-msgstr "Social"
+msgstr ""
 
 #. module: marketing_strategy
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_buyer_persona__social_media_ids
@@ -2689,7 +2693,7 @@ msgstr "Temas"
 #. module: marketing_strategy
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_brand__tiktok
 msgid "TikTok"
-msgstr "TikTok"
+msgstr ""
 
 #. module: marketing_strategy
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_buyer_persona__title

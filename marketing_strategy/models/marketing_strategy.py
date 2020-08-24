@@ -66,6 +66,7 @@ class MarketingBrand(models.Model):
     color = fields.Integer('Kanban Color Index')
     twitter = fields.Char('Twitter Account')
     facebook = fields.Char('Facebook Page')
+    instagram = fields.Char('Instagram Page')
     linkedin = fields.Char('Linkedin Page')
     youtube = fields.Char('Youtube Channel')
     tiktok =  fields.Char('TikTok')

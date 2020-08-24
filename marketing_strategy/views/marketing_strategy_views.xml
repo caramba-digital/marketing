@@ -84,10 +84,11 @@
                     	<group>
                     		<field name="twitter"/>
                     		<field name="facebook"/>
+                            <field name="instagram"/>
                     		<field name="linkedin"/>
-                            <field name="tiktok"/>
                     	</group>
                     	<group>
+                            <field name="tiktok"/>
                     		<field name="youtube"/>
                     		<field name="blog"/>
                             <field name="podcast_channel"/>
