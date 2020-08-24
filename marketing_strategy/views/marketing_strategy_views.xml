@@ -82,16 +82,16 @@
                         <page string="Social" name="social" autofocus="autofocus">
                         <group>
                     	<group>
-                    		<field name="twitter"/>
-                    		<field name="facebook"/>
-                            <field name="instagram"/>
-                    		<field name="linkedin"/>
+                    		<field name="twitter" widget="url"/>
+                    		<field name="facebook" widget="url"/>
+                            <field name="instagram" widget="url"/>
+                    		<field name="linkedin" widget="url"/>
                     	</group>
                     	<group>
-                            <field name="tiktok"/>
-                    		<field name="youtube"/>
-                    		<field name="blog"/>
-                            <field name="podcast_channel"/>
+                            <field name="tiktok" widget="url"/>
+                    		<field name="youtube" widget="url"/>
+                    		<field name="blog" widget="url"/>
+                            <field name="podcast_channel" widget="url"/>
                     	</group>
                     </group>
                         </page>
