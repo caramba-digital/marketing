@@ -1,3 +1,4 @@
 # -*- coding: utf-8 -*-
 
-from . import models
+from . import marketing_strategy
+from . import marketing_strategy_funnel

@@ -305,7 +305,7 @@
         <field name="name">marketing_strategy.touchpoint.form</field>
         <field name="model">marketing_strategy.touchpoint</field>
         <field name="arch" type="xml">
-            <form string="Leads Form">
+            <form string="Touchpoints">
                 <header><field name="state" widget="statusbar" options="{'clickable': '1'}"/>
                 </header>
                 <sheet>

@@ -1,32 +1,27 @@
 # -*- coding: utf-8 -*-
+# License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).#
+
 {
     'name': "marketing_funnel",
 
-    'summary': """
-        Short (1 phrase/line) summary of the module's purpose, used as
-        subtitle on modules listing or apps.openerp.com""",
+    'summary': "Sales Funnels",
 
-    'description': """
-        Long description of module's purpose
-    """,
 
-    'author': "My Company",
-    'website': "http://www.yourcompany.com",
-
-    # Categories can be used to filter modules in modules listing
-    # Check https://github.com/odoo/odoo/blob/13.0/odoo/addons/base/data/ir_module_category_data.xml
-    # for the full list
-    'category': 'Uncategorized',
-    'version': '0.1',
-
-    # any module necessary for this one to work correctly
-    'depends': ['base'],
+    'author': "antonio fregoso",
+    'website': "https://antoniofregoso.com",
+    
+    'category': 'Marketing/Strategy',
+    'version': '13.0.0.0.0',
+    'depends': ['marketing_strategy'],
+    'license': 'AGPL-3',
 
     # always loaded
     'data': [
-        # 'security/ir.model.access.csv',
-        'views/views.xml',
-        'views/templates.xml',
+        'security/ir.model.access.csv',
+        'views/marketing_strategy_funnel_templates.xml',
+        'views/marketing_strategy_funnel_views.xml',
+        'views/marketing_strategy_views.xml',
+        'data/marketing_strategy_funnel_data.xml',
     ],
     # only loaded in demonstration mode
     'demo': [
