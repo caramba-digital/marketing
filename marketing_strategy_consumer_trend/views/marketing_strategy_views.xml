@@ -104,6 +104,24 @@
                        			</div>
                        		</div>
                 	 </div>
+            <notebook colspan="4">
+              <page string="S" autofocus="autofocus">
+              </page>
+              <page string="C">
+              </page>
+              <page string="A">
+              </page>
+              <page string="M">
+              </page>
+              <page string="P">
+              </page>
+              <page string="E">
+              </page>
+              <page string="R">
+              </page>
+              <page string="All Questions">
+              </page>
+            </notebook>
         </sheet>
         <div class="oe_chatter">
           <field name="message_follower_ids" widget="mail_followers"/>

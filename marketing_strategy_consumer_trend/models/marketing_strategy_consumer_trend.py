@@ -3,13 +3,31 @@
 
 from odoo import api, fields, models, tools, _
 
+class MarketingBasicNeeds(models.Model):
+
+    _name = "marketing_strategy.consumer_trend.basic_need"
+    _description = "Basic Needs"
+
+    name = fields.Char('Name', required=True, translate=True, readonly=True)
+    color = fields.Integer('Color Index', readonly=True)
+
 class MarketingInnovationType(models.Model):
 
     _name = "marketing_strategy.consumer_trend.innovation_type"
-    _description = "Needs"
+    _description = "Innovation Type"
 
     name = fields.Char('Name', required=True, translate=True, readonly=True)
-    color = fields.Integer('Color Index')
+    color = fields.Integer('Color Index', readonly=True)
+
+class MarketingQuestion(models.Model):
+
+    _name = "marketing_strategy.consumer_trend.question"
+    _description = "SCAMPER Question"
+
+    name = fields.Char('Name', required=True, translate=True)
+    sequence = fields.Integer('Sequence')
+    consumer_trend_id = fields.Many2one('marketing_strategy.consumer_trend', required=True)
+    question_type = fields.Selection([('s','S'), ('c','C'), ('a','A'), ('m','M'), ('p','P'), ('e','E'), ('r','R')], required=True)
 
 class MarketingStrategyConsumerTrend(models.Model):
     _name = "marketing_strategy.consumer_trend"
@@ -35,4 +53,5 @@ class MarketingStrategyConsumerTrend(models.Model):
     innovation = fields.Text()
     mode = fields.Selection([('incremental','Incremental'),('architectural','Architectural'),('disruptive','Disruptive'),('radical','Radical')])
     innovation_type = fields.Many2many('marketing_strategy.consumer_trend.innovation_type','marketing_strategy_custumer_trend_innovation_type_rel','custumer_trend_id', 'type_id')
+    questions_ids = fields.One2many('marketing_strategy.consumer_trend.question', 'consumer_trend_id')
     company_id = fields.Many2one('res.company', 'Company', required=True, index=True, default=lambda self: self.env.company)

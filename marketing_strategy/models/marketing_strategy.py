@@ -59,7 +59,7 @@ class MarketingBrand(models.Model):
     name = fields.Char('Brand', required=True)
     product_type = fields.Selection(PRODUCT_TYPE)
     relation = fields.Selection([('main','Main'),('competitor','Competitor'),('collaborator','Collaborator'),('family','Family')], 
-    required=True, default='competitor', group_expand='_expand_relation')
+            required=True, default='competitor', group_expand='_expand_relation')
     brand_owner_id = fields.Many2one('res.partner')
     related_brand_id = fields.Many2one('marketing_strategy.brand', string='Related Brand')
     tag_ids = fields.Many2many('marketing_strategy.brand.tag', 'marketing_strategy_brand_tags_rel', 'brand_id', 'tag_id', string='Tags') 
