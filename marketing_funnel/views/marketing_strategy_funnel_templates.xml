@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+
+  <template id="funnel_page" name="Funnel Page Layout" >
+      <t t-call="website.layout">
+        <t t-set="no_header" t-value="True"/>
+        <t t-set="no_footer" t-value="True"/>
+        <header>
+           <nav class="navbar navbar-expand-md navbar-light bg-light">
+              <div class="container">
+                <span class="navbar-brand logo">
+                        <img t-att-src="'/logo.png?company=%s' % res_company.id" t-att-alt="'Logo of %s' % res_company.name" t-att-title="res_company.name"/>
+                    </span>
+              </div>
+           </nav>
+        </header>
+        <div t-field="page.content" class="oe_structure" id="funnel_page" /> 
+     
+    </t>
+  </template>
+
+</odoo>

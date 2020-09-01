@@ -1,0 +1,11 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_marketing_funnel_type_group_user,marketing.funnel_type.user,model_funnel_type,marketing_strategy.group_strategy_user,1,1,1,0
+access_marketing_funnel_type_group_manager,marketing.funnel_type.manager,model_funnel_type,marketing_strategy.group_strategy_manager,1,1,1,1
+access_marketing_funnel_page_type_group_user,marketing.funnel_page_type.user,model_funnel_page_type,marketing_strategy.group_strategy_user,1,1,1,0
+access_marketing_funnel_page_type_group_manager,marketing.funnel_page_type.manager,model_funnel_page_type,marketing_strategy.group_strategy_manager,1,1,1,1
+access_marketing_funnel_funnel_public,marketing.funnel_funnel.public,model_funnel_funnel,,1,0,0,0
+access_marketing_funnel_funnel_user,marketing.funnel_funnel.user,model_funnel_funnel,marketing_strategy.group_strategy_user,1,1,1,0
+access_marketing_funnel_funnel_manager,marketing.funnel_funnel.manager,model_funnel_funnel,marketing_strategy.group_strategy_manager,1,1,1,1
+access_marketing_funnel_page_public,Marketing.funnel_page.public,model_funnel_page,,1,0,0,0
+access_marketing_funnel_phane_user,marketing.funnel_phane.user,model_funnel_page,marketing_strategy.group_strategy_user,1,1,1,0
+access_marketing_funnel_page_manager,marketing.funnel_page.manager,model_funnel_page,marketing_strategy.group_strategy_manager,1,1,1,1

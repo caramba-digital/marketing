@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 13.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-24 04:32+0000\n"
-"PO-Revision-Date: 2020-08-23 23:33-0500\n"
+"POT-Creation-Date: 2020-09-01 17:04+0000\n"
+"PO-Revision-Date: 2020-09-01 12:05-0500\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: \n"
 "Language: es_MX\n"
-"X-Generator: Poedit 2.4.1\n"
+"X-Generator: Poedit 2.3\n"
 
 #. module: marketing_strategy
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_buyer_persona__children
@@ -503,6 +503,11 @@ msgid "Concept"
 msgstr "Concepto"
 
 #. module: marketing_strategy
+#: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_story_brand_view_form
+msgid "Conceptual Map"
+msgstr "Mapa Conceptual"
+
+#. module: marketing_strategy
 #: model:ir.ui.menu,name:marketing_strategy.marketing_strategy_menu_config
 msgid "Configuration"
 msgstr "Configuración"
@@ -951,6 +956,7 @@ msgstr "Definir un nuevo contenido"
 #: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_plan_view_kanban
 #: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_story_brand_view_kanban
 #: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_touchpoint_view_kanban
+#: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_tribe_view_kanban
 #: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_value_proposition_view_kanban
 msgid "Delete"
 msgstr "Eliminar"
@@ -1035,6 +1041,7 @@ msgstr "Borrador"
 #: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_plan_view_kanban
 #: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_story_brand_view_kanban
 #: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_touchpoint_view_kanban
+#: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_tribe_view_kanban
 #: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_value_proposition_view_kanban
 msgid "Dropdown menu"
 msgstr "Menú desplegable"
@@ -1051,6 +1058,7 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_plan_view_kanban
 #: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_story_brand_view_kanban
 #: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_touchpoint_view_kanban
+#: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_tribe_view_kanban
 #: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_value_proposition_view_kanban
 msgid "Edit"
 msgstr "Editar"
@@ -1219,7 +1227,7 @@ msgstr "Metas"
 #: model:ir.model.fields.selection,name:marketing_strategy.selection__marketing_strategy_brand__product_type__good
 #: model:ir.model.fields.selection,name:marketing_strategy.selection__marketing_strategy_value_proposition__product_type__good
 msgid "Good"
-msgstr "Bien"
+msgstr "Bueno"
 
 #. module: marketing_strategy
 #: model_terms:ir.ui.view,arch_db:marketing_strategy.view_marketing_strategy_buyer_persona_select
@@ -1420,7 +1428,6 @@ msgstr ""
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_touchpoint__image_1920
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_tribe__image_1920
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_value_proposition__image_1920
-#: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_story_brand_view_form
 #: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_value_proposition_view_form
 #: model_terms:ir.ui.view,arch_db:marketing_strategy.touchpoint_form_view
 msgid "Image"
@@ -1649,11 +1656,6 @@ msgstr "Ultima actualización en"
 #: model:ir.model,name:marketing_strategy.model_crm_lead
 msgid "Lead/Opportunity"
 msgstr "Iniciativa/Oportunidad"
-
-#. module: marketing_strategy
-#: model_terms:ir.ui.view,arch_db:marketing_strategy.touchpoint_form_view
-msgid "Leads Form"
-msgstr "Formulario de clientes potenciales"
 
 #. module: marketing_strategy
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_value_proposition__product_l1_id
@@ -1911,7 +1913,7 @@ msgstr "Nombre de la Persona Compradora"
 #. module: marketing_strategy
 #: model_terms:ir.ui.view,arch_db:marketing_strategy.touchpoint_form_view
 msgid "Name of the Touchpoint"
-msgstr "Nombre del Ounto de Contacto"
+msgstr "Nombre del Punto de Contacto"
 
 #. module: marketing_strategy
 #: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_tribe_view_form
@@ -2308,7 +2310,7 @@ msgstr "Pedido de venta"
 #. module: marketing_strategy
 #: model:ir.model.fields.selection,name:marketing_strategy.selection__marketing_strategy_story_brand_content__mode__search
 msgid "Search"
-msgstr "Buscar"
+msgstr "Buscador"
 
 #. module: marketing_strategy
 #: model_terms:ir.ui.view,arch_db:marketing_strategy.view_marketing_strategy_buyer_persona_select
@@ -2747,6 +2749,7 @@ msgstr "Etiquetas de Punto de Contacto"
 #: model:ir.ui.menu,name:marketing_strategy.menu_marketing_strategy_touchpoints
 #: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_plan_view_form
 #: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_story_brand_content_view_form
+#: model_terms:ir.ui.view,arch_db:marketing_strategy.touchpoint_form_view
 #: model_terms:ir.ui.view,arch_db:marketing_strategy.view_touchpoint_tree
 msgid "Touchpoints"
 msgstr "Puntos de Contacto"
