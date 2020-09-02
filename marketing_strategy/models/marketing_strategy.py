@@ -37,6 +37,7 @@ class MarketingNeed(models.Model):
     _description = "Needs"
 
     name = fields.Char('Name', required=True, translate=True, readonly=True)
+    color = fields.Integer('Color Index')
 
 
 class MarketingValue(models.Model):
@@ -45,6 +46,7 @@ class MarketingValue(models.Model):
     _description = "Values"
 
     name = fields.Char('Name', required=True, translate=True, readonly=True)
+    color = fields.Integer('Color Index')
        
        
 class MarketingBrand(models.Model):

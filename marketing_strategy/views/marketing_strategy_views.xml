@@ -137,8 +137,8 @@
                             </group>
                             <group>
                                 <group>                                    
-                                    <field name="values_ids" widget="many2many_tags" />
-                                    <field name="needs_ids" widget="many2many_tags" />
+                                    <field name="values_ids" widget="many2many_tags" options="{'color_field': 'color'}" placeholder="Values"/>
+                                    <field name="needs_ids" widget="many2many_tags"  options="{'color_field': 'color'}" placeholder="Basic Needs"/>
                                     <field name="topics_ids" widget="many2many_tags" options="{'color_field': 'color'}"  placeholder="Topics of Conversation"/>
                                 </group>
                                 <group>
