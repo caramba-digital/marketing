@@ -25,5 +25,6 @@ class WebsiteFunnel(http.Controller):
         page = request.env['funnel.page'].sudo().browse(funnel_page.id)
         values = {
             'page':page,
+            'enable_editor': enable_editor,
             }
         return request.render("marketing_funnel.funnel_page", values)

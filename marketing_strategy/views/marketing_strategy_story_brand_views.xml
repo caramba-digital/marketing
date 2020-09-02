@@ -313,7 +313,7 @@
                         </group>
                     </group>
                     <notebook colspan="4">
-                    	<page string="Image"  autofocus="autofocus">
+                    	<page string="Conceptual Map"  autofocus="autofocus">
                     		<field name="image_1920" widget="image" class="img-fluid" nolabel="1"/>
                     	</page>   
                         <page string="Summary">

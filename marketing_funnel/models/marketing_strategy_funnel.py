@@ -75,10 +75,11 @@ class FunnelPage(models.Model):
     content = fields.Html('Content', default=_default_content, translate=html_translate, sanitize=False)
     funnel_id = fields.Many2one('funnel.funnel', 'Funnel', required=True, ondelete='cascade')
     visits = fields.Integer('No of Views', copy=False)
+    is_published = fields.Boolean(default=False)
     website_id = fields.Many2one(related='funnel_id.website_id', readonly=True)
     company_id = fields.Many2one('res.company', 'Company', required=True, index=True, default=lambda self: self.env.company)  
 
-    
+
 
 class FunnelActivity(models.Model):
     _name = 'funnel.activity'
