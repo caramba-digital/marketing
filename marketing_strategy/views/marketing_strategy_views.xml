@@ -901,11 +901,12 @@
                     <group>
                     	<group>
                             <field name="meeting_place_ids"  widget="many2many_tags" options="{'color_field': 'color'}" placeholder="Meeting Places" />
-                             <field name="company_id" options="{'no_create': True}" groups="base.group_multi_company"/>
+                            <field name="online_place_ids" widget="many2many_tags" options="{'color_field': 'color'}" placeholder="Online Places"/>
                         </group>
                     	<group>
                             <field name="age_min" />
                             <field name="age_max" />
+                            <field name="company_id" options="{'no_create': True}" groups="base.group_multi_company"/>
                         </group>
                     </group>
                     <group string="Description">

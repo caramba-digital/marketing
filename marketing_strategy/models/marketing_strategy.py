@@ -372,6 +372,22 @@ class TribeCategory(models.Model):
     _description = "Tribe Category"
 
     name = fields.Char('Name', required=True, translate=True)
+
+class TribeOnlinePlace(models.Model):
+
+    _name = "marketing_strategy.online_place"
+    _description = "Online Meeting Place"
+
+    name = fields.Char('Name', required=True, translate=True)
+    url = fields.Char('URL', required=True)
+    place_type = fields.Selection([('website','Website'),('youtube','Youtube Channel'),('fbk_fanpagr','Facebook Fanpage'),
+                    ('fbk_group','Facebook Group'),('twitter','Twitter Account'), ('','LinkedIn Group')], default='website')
+    color = fields.Integer('Color Index')
+
+    _sql_constraints = [
+        ('name_uniq', 'unique (name)', "Online place name already exists !"),
+        ('url_uniq', 'unique (url)', "URL already exists !"),
+    ] 
    
     
 class Tribe(models.Model):
@@ -383,6 +399,7 @@ class Tribe(models.Model):
     category_id = fields.Many2one('marketing_strategy.tribe.category',  string='Category')   
     color = fields.Integer(string='Color Index', default=0)
     meeting_place_ids = fields.Many2many('marketing_strategy.meeting_place', 'tribe_buyer_rel', 'tribe_id', 'meeting_place_id', string='Meeting Places')
+    online_place_ids = fields.Many2many('marketing_strategy.online_place', 'tribe_online_rel', 'tribe_id', 'online_place_id', string='Online Places') 
     description = fields.Html('Description')
     age_min = fields.Integer('Age Min')
     age_max = fields.Integer('Age Max')
