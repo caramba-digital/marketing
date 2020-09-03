@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 13.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-01 17:04+0000\n"
-"PO-Revision-Date: 2020-09-01 12:05-0500\n"
+"POT-Creation-Date: 2020-09-02 16:36+0000\n"
+"PO-Revision-Date: 2020-09-02 11:43-0500\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -188,6 +188,11 @@ msgid "Background"
 msgstr "Antecedentes"
 
 #. module: marketing_strategy
+#: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_brand_persona_view_form
+msgid "Basic Needs"
+msgstr "Necesidades Básicas"
+
+#. module: marketing_strategy
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_buyer_persona__bio
 #: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_buyer_persona_view_form
 msgid "Bio"
@@ -242,7 +247,7 @@ msgstr "Etiquetas de marca"
 #: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_story_brand_view_kanban
 #: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_value_proposition_view_kanban
 msgid "Brand:"
-msgstr "Marca: "
+msgstr "Marca:"
 
 #. module: marketing_strategy
 #: model:ir.actions.act_window,name:marketing_strategy.marketing_strategy_brand_related_action
@@ -454,10 +459,13 @@ msgstr "Colegas"
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_buyer_persona__color
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_content_type__color
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_meeting_place__color
+#: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_need__color
+#: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_online_place__color
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_plan__color
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_social_media_preference__color
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_touchpoint_tag__color
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_tribe__color
+#: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_value__color
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_value_proposition_customer_gain__color
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_value_proposition_customer_job__color
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_value_proposition_customer_pain__color
@@ -701,6 +709,11 @@ msgid "Create a new meeting place"
 msgstr "Crea un nuevo lugar de encuentro"
 
 #. module: marketing_strategy
+#: model_terms:ir.actions.act_window,help:marketing_strategy.marketing_strategy_online_place_action
+msgid "Create a new online meeting place"
+msgstr "Cree un nuevo lugar de reunión en línea"
+
+#. module: marketing_strategy
 #: model_terms:ir.actions.act_window,help:marketing_strategy.marketing_strategy_pain_reliever_action
 msgid "Create a new pain reliever"
 msgstr "Crea un nuevo analgésico"
@@ -756,6 +769,7 @@ msgstr ""
 #: model_terms:ir.actions.act_window,help:marketing_strategy.marketing_strategy_buyer_objection_action
 #: model_terms:ir.actions.act_window,help:marketing_strategy.marketing_strategy_content_type_action
 #: model_terms:ir.actions.act_window,help:marketing_strategy.marketing_strategy_meeting_place_action
+#: model_terms:ir.actions.act_window,help:marketing_strategy.marketing_strategy_online_place_action
 #: model_terms:ir.actions.act_window,help:marketing_strategy.marketing_strategy_social_media_preference_action
 #: model_terms:ir.actions.act_window,help:marketing_strategy.marketing_strategy_tribe_category_action
 msgid "Create tags that fit your brands to better manage."
@@ -790,6 +804,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_content_type__create_uid
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_meeting_place__create_uid
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_need__create_uid
+#: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_online_place__create_uid
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_plan__create_uid
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_social_media_preference__create_uid
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_story_brand__create_uid
@@ -823,6 +838,7 @@ msgstr "Creado por"
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_content_type__create_date
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_meeting_place__create_date
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_need__create_date
+#: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_online_place__create_date
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_plan__create_date
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_social_media_preference__create_date
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_story_brand__create_date
@@ -995,6 +1011,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_content_type__display_name
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_meeting_place__display_name
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_need__display_name
+#: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_online_place__display_name
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_plan__display_name
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_social_media_preference__display_name
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_story_brand__display_name
@@ -1117,6 +1134,16 @@ msgstr "Experiencias"
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_buyer_persona__extraversion
 msgid "Extraversion"
 msgstr "Extraversión"
+
+#. module: marketing_strategy
+#: model:ir.model.fields.selection,name:marketing_strategy.selection__marketing_strategy_online_place__place_type__fbk_fanpagr
+msgid "Facebook Fanpage"
+msgstr "Fanpage de Facebook"
+
+#. module: marketing_strategy
+#: model:ir.model.fields.selection,name:marketing_strategy.selection__marketing_strategy_online_place__place_type__fbk_group
+msgid "Facebook Group"
+msgstr "Grupo de Facebook"
 
 #. module: marketing_strategy
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_brand__facebook
@@ -1304,6 +1331,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_content_type__id
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_meeting_place__id
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_need__id
+#: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_online_place__id
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_plan__id
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_social_media_preference__id
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_story_brand__id
@@ -1351,7 +1379,7 @@ msgstr "Icono para indicar una actividad de excepción."
 #: model:ir.model.fields.selection,name:marketing_strategy.selection__marketing_strategy_brand__product_type__idea
 #: model:ir.model.fields.selection,name:marketing_strategy.selection__marketing_strategy_value_proposition__product_type__idea
 msgid "Idea"
-msgstr ""
+msgstr "Idea"
 
 #. module: marketing_strategy
 #: model:marketing_strategy.need,name:marketing_strategy.marketing_strategy_need_opt_4
@@ -1565,6 +1593,7 @@ msgstr "Idioma"
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_content_type____last_update
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_meeting_place____last_update
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_need____last_update
+#: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_online_place____last_update
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_plan____last_update
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_social_media_preference____last_update
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_story_brand____last_update
@@ -1598,6 +1627,7 @@ msgstr "Última modificación el"
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_content_type__write_uid
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_meeting_place__write_uid
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_need__write_uid
+#: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_online_place__write_uid
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_plan__write_uid
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_social_media_preference__write_uid
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_story_brand__write_uid
@@ -1631,6 +1661,7 @@ msgstr "Última actualización por"
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_content_type__write_date
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_meeting_place__write_date
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_need__write_date
+#: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_online_place__write_date
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_plan__write_date
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_social_media_preference__write_date
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_story_brand__write_date
@@ -1691,6 +1722,11 @@ msgstr "Libertad"
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_buyer_persona__lifestyle_ids
 msgid "Lifestyle"
 msgstr "Estilo de vida"
+
+#. module: marketing_strategy
+#: model:ir.model.fields.selection,name:marketing_strategy.selection__marketing_strategy_online_place__place_type__
+msgid "LinkedIn Group"
+msgstr "Grupo de LinkedIn"
 
 #. module: marketing_strategy
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_brand__linkedin
@@ -1837,7 +1873,7 @@ msgstr "Miembros"
 #. module: marketing_strategy
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_story_brand__brand_id
 msgid "Mentor"
-msgstr ""
+msgstr "Mentor"
 
 #. module: marketing_strategy
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_brand__message_has_error
@@ -1885,6 +1921,7 @@ msgstr "Modo:"
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_buyer_persona__name
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_content_type__name
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_need__name
+#: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_online_place__name
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_plan__name
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_social_media_preference__name
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_story_brand__name
@@ -2072,9 +2109,33 @@ msgid "Online Course"
 msgstr "Curso por Internet"
 
 #. module: marketing_strategy
+#: model:ir.model,name:marketing_strategy.model_marketing_strategy_online_place
+msgid "Online Meeting Place"
+msgstr "Lugar de Encuentro en Línea"
+
+#. module: marketing_strategy
+#: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_online_place_form
+msgid "Online Place"
+msgstr "Lugar en Línea"
+
+#. module: marketing_strategy
+#: model:ir.actions.act_window,name:marketing_strategy.marketing_strategy_online_place_action
+#: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_tribe__online_place_ids
+#: model:ir.ui.menu,name:marketing_strategy.menu_marketing_strategy_online_place
+#: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_online_place_tree
+#: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_tribe_view_form
+msgid "Online Places"
+msgstr "Lugares en Línea"
+
+#. module: marketing_strategy
 #: model_terms:ir.ui.view,arch_db:marketing_strategy.touchpoint_form_view
 msgid "Online Touchpoint Location"
 msgstr "Ubicación del Punto de Contacto en línea"
+
+#. module: marketing_strategy
+#: model:ir.model.constraint,message:marketing_strategy.constraint_marketing_strategy_online_place_name_uniq
+msgid "Online place name already exists !"
+msgstr "¡El nombre del lugar en línea ya existe!"
 
 #. module: marketing_strategy
 #: model:marketing_strategy.value,name:marketing_strategy.marketing_strategy_value_opt_5
@@ -2106,7 +2167,7 @@ msgstr "Orgánico"
 #: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_story_brand_view_kanban
 #: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_value_proposition_view_kanban
 msgid "Owner:"
-msgstr "Dueño: "
+msgstr "Dueño:"
 
 #. module: marketing_strategy
 #: model:ir.model,name:marketing_strategy.model_marketing_strategy_value_proposition_pain_reliever
@@ -2175,9 +2236,14 @@ msgid "Place Name"
 msgstr "Nombre del Lugar"
 
 #. module: marketing_strategy
+#: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_online_place__place_type
+msgid "Place Type"
+msgstr "Tipo de lugar"
+
+#. module: marketing_strategy
 #: model:ir.model.fields,field_description:marketing_strategy.field_utm_campaign__plan_id
 msgid "Plan"
-msgstr ""
+msgstr "Plan"
 
 #. module: marketing_strategy
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_brand__podcast_channel
@@ -2246,7 +2312,7 @@ msgstr "Relación"
 #. module: marketing_strategy
 #: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_brand_view_kanban
 msgid "Relation:"
-msgstr "Relación: "
+msgstr "Relación:"
 
 #. module: marketing_strategy
 #: model:ir.model.fields.selection,name:marketing_strategy.selection__marketing_strategy_brand__personality__reserved
@@ -2683,7 +2749,7 @@ msgstr "Tema"
 #. module: marketing_strategy
 #: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_story_brand_content_view_kanban
 msgid "Theme:"
-msgstr "Tema: "
+msgstr "Tema:"
 
 #. module: marketing_strategy
 #: model:ir.actions.act_window,name:marketing_strategy.marketing_strategy_story_brand_theme_action
@@ -2822,6 +2888,7 @@ msgstr "Tribus"
 
 #. module: marketing_strategy
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_brand__twitter
+#: model:ir.model.fields.selection,name:marketing_strategy.selection__marketing_strategy_online_place__place_type__twitter
 msgid "Twitter Account"
 msgstr "Cuenta de Twitter"
 
@@ -2851,9 +2918,15 @@ msgid "Type:"
 msgstr "Tipo:"
 
 #. module: marketing_strategy
+#: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_online_place__url
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_touchpoint__url
 msgid "URL"
-msgstr ""
+msgstr "URL"
+
+#. module: marketing_strategy
+#: model:ir.model.constraint,message:marketing_strategy.constraint_marketing_strategy_online_place_url_uniq
+msgid "URL already exists !"
+msgstr "URL ya existe !"
 
 #. module: marketing_strategy
 #: model:ir.model,name:marketing_strategy.model_utm_campaign
@@ -2873,7 +2946,7 @@ msgstr "Fuente UTM"
 #. module: marketing_strategy
 #: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_touchpoint_view_kanban
 msgid "UTM Source:"
-msgstr ""
+msgstr "Fuente UTM:"
 
 #. module: marketing_strategy
 #: model:ir.model,name:marketing_strategy.model_utm_term
@@ -2974,6 +3047,7 @@ msgstr "Valor:"
 #: model:ir.model,name:marketing_strategy.model_marketing_strategy_value
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_brand__values_ids
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_buyer_persona__values_ids
+#: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_brand_persona_view_form
 msgid "Values"
 msgstr "Valores"
 
@@ -2989,6 +3063,7 @@ msgstr ""
 
 #. module: marketing_strategy
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_brand__url
+#: model:ir.model.fields.selection,name:marketing_strategy.selection__marketing_strategy_online_place__place_type__website
 msgid "Website"
 msgstr "Sitio web"
 
@@ -3026,6 +3101,7 @@ msgstr "Viudo"
 
 #. module: marketing_strategy
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_brand__youtube
+#: model:ir.model.fields.selection,name:marketing_strategy.selection__marketing_strategy_online_place__place_type__youtube
 msgid "Youtube Channel"
 msgstr "Canal Youtube"
 
