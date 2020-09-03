@@ -54,6 +54,7 @@
                        						<div class="col-4 border bg-light" style="height: 320px;">
                        							<h5>Basic Needs</h5>
                        								<p>Which deep consumer needs &amp; desires does this trend address? </p>
+                                       <field name="needs_ids" widget="many2many_tags" options="{'color_field': 'color'}" placeholder="Basic Needs"/>
                        						</div>
                        						<div class="col-8 border bg-light" style="height: 320px;">
                        							<h5>Drivers of Change</h5>
@@ -104,22 +105,119 @@
                        			</div>
                        		</div>
                 	 </div>
-            <notebook colspan="4">
-              <page string="S" autofocus="autofocus">
+                   <h3 class="mt-3">SCAMPER Method</h3>
+             <notebook colspan="4">
+              <page string="Substitute" autofocus="autofocus">
+              <p>What can be replaced? (for example, components, materials, people)</p>
+                 <field name="questions_s_ids"  widget="section_and_note_one2many"  mode="tree, form"  context="{'default_consumer_trend_id': active_id}"   nolabel="1"  >
+                  <tree string="Questions" >
+                                <field name="sequence" widget="handle"/>
+                                <field name="name"/>
+                                <field name="consumer_trend_id" invisible="1"/>
+                  </tree>
+                  <form string="Question">
+                    <group>
+                      <field name="name"/>
+                      <field name="consumer_trend_id" invisible="1"/>
+                    </group>
+                  </form>
+                 </field>
               </page>
-              <page string="C">
+              <page string="Combine">
+              <p>What can be combined? (for example, other features, devices)</p>
+                 <field name="questions_c_ids"  widget="section_and_note_one2many"  mode="tree, form"  context="{'default_consumer_trend_id': active_id}"   nolabel="1"  >
+                  <tree string="Questions" >
+                                <field name="sequence" widget="handle"/>
+                                <field name="name"/>
+                                <field name="consumer_trend_id" invisible="1"/>
+                  </tree>
+                  <form string="Question">
+                    <group>
+                      <field name="name"/>
+                      <field name="consumer_trend_id" invisible="1"/>
+                    </group>
+                  </form>
+                 </field>
               </page>
-              <page string="A">
+              <page string="Adapt">
+              <p>What can be added? (such as new elements or functions)</p>
+                 <field name="questions_a_ids"  widget="section_and_note_one2many"  mode="tree, form"  context="{'default_consumer_trend_id': active_id}"   nolabel="1"  >
+                  <tree string="Questions" >
+                                <field name="sequence" widget="handle"/>
+                                <field name="name"/>
+                                <field name="consumer_trend_id" invisible="1"/>
+                  </tree>
+                  <form string="Question">
+                    <group>
+                      <field name="name"/>
+                      <field name="consumer_trend_id" invisible="1"/>
+                    </group>
+                  </form>
+                 </field>
               </page>
-              <page string="M">
+              <page string="Modify">
+              <p>What can be modified? (for example, change the size, shape color or other attribute)</p>
+                 <field name="questions_m_ids"  widget="section_and_note_one2many"  mode="tree, form"  context="{'default_consumer_trend_id': active_id}"   nolabel="1"  >
+                  <tree string="Questions" >
+                                <field name="sequence" widget="handle"/>
+                                <field name="name"/>
+                                <field name="consumer_trend_id" invisible="1"/>
+                  </tree>
+                  <form string="Question">
+                    <group>
+                      <field name="name"/>
+                      <field name="consumer_trend_id" invisible="1"/>
+                    </group>
+                  </form>
+                 </field>
               </page>
-              <page string="P">
+              <page string="Put to other uses">
+              <p>Could you put the product to a different use, or use it in another industry?</p>
+                 <field name="questions_p_ids"  widget="section_and_note_one2many"  mode="tree, form"  context="{'default_consumer_trend_id': active_id}"   nolabel="1"  >
+                  <tree string="Questions" >
+                                <field name="sequence" widget="handle"/>
+                                <field name="name"/>
+                                <field name="consumer_trend_id" invisible="1"/>
+                  </tree>
+                  <form string="Question">
+                    <group>
+                      <field name="name"/>
+                      <field name="consumer_trend_id" invisible="1"/>
+                    </group>
+                  </form>
+                 </field>
               </page>
-              <page string="E">
+              <page string="Eliminate">
+                <p>What can be removed or simplified?</p>
+                 <field name="questions_e_ids"  widget="section_and_note_one2many"  mode="tree, form"  context="{'default_consumer_trend_id': active_id}"   nolabel="1"  >
+                  <tree string="Questions" >
+                                <field name="sequence" widget="handle"/>
+                                <field name="name"/>
+                                <field name="consumer_trend_id" invisible="1"/>
+                  </tree>
+                  <form string="Question">
+                    <group>
+                      <field name="name"/>
+                      <field name="consumer_trend_id" invisible="1"/>
+                    </group>
+                  </form>
+                 </field>
               </page>
-              <page string="R">
-              </page>
-              <page string="All Questions">
+              <page string="Reverse">
+              <p> What would happen if you reversed the product's production process? What can be swapped or flipped?</p>
+                 <field name="questions_r_ids"  widget="section_and_note_one2many"  mode="tree, form"  context="{'default_consumer_trend_id': active_id}"   nolabel="1"  >
+                  <tree string="Questions" >
+                                <field name="sequence" widget="handle"/>
+                                <field name="name"/>
+                                <field name="consumer_trend_id" invisible="1"/>
+                  </tree>
+                  <form string="Question">
+                    <group>
+                      <field name="name"/>
+                      <field name="consumer_trend_id" invisible="1"/>
+                    </group>
+                  </form>
+                 </field>
               </page>
             </notebook>
         </sheet>
