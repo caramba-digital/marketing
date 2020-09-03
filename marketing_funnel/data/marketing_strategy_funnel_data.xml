@@ -84,7 +84,7 @@
 
     
     <record id="marketing_strategy_funnel_page_opt_1" model="funnel.page.type">
-    	<field name="name">Storefront</field>
+    	<field name="name">Storefront Page</field>
     </record>
 
     <record id="marketing_strategy_funnel_page_opt_2" model="funnel.page.type">
@@ -128,7 +128,7 @@
     </record>
 
     <record id="marketing_strategy_funnel_page_opt_12" model="funnel.page.type">
-    	<field name="name">Cross-Sell</field>
+    	<field name="name">Cross-Sell Page</field>
     </record>
 
     <record id="marketing_strategy_funnel_page_opt_13" model="funnel.page.type">
@@ -154,6 +154,20 @@
     <record id="marketing_strategy_funnel_type_opt_18" model="funnel.page.type">
     	<field name="name">Cancellation Page</field>
     </record>
+
+      <!-- Cron --><!--
+      <record model="ir.cron" forcecreate="True" id="funnel_work_every_hour">
+        <field name="name">Funnel: Run Works Items</field>
+        <field name="active" eval="True" />
+        <field name="user_id" ref="base.user_root"/>
+        <field name="interval_number">1</field>
+        <field name="interval_type">hours</field>
+        <field name="numbercall">-1</field>
+        <field name="model_id" ref="funnel.workitem"/>
+        <field name="doall">1</field>
+        <field name="state">code</field>
+        <field name="code">model.run(True)</field>
+      </record>-->
     
 
     </data>

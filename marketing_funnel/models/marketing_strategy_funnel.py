@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).#
 
+from dateutil.relativedelta import relativedelta
+from traceback import format_exception
 from datetime import datetime
 import random
 import json
@@ -9,6 +11,8 @@ from odoo import api, models, fields, _
 from odoo.addons.http_routing.models.ir_http import slug
 from odoo.tools.translate import html_translate
 from odoo.tools import html2plaintext
+from odoo.exceptions import UserError, ValidationError
+from odoo.tools.safe_eval import safe_eval
 
 _intervalTypes = {
     'hours': lambda interval: relativedelta(hours=interval),
@@ -48,7 +52,7 @@ class Funnel(models.Model):
     child_funnel_id = fields.Many2one('funnel.funnel', 'Child Funnel')
     buyer_journey_stage = fields.Selection([('awareness','Awareness'),('consideration','Consideration'),('purchase','Purchase'),('service','Service'),('loyalty','Loyalty')], string="Buyer's Journey Stage", default='awareness', required=True, copy=False, track_visibility='onchange', group_expand='_expand_buyer_journey')
     pages_ids = fields.One2many('funnel.page', inverse_name="funnel_id")
-    website_id = fields.Many2one('website')
+    website_id = fields.Many2one('website', required=True)
     company_id = fields.Many2one('res.company', 'Company', required=True, index=True, default=lambda self: self.env.company)  
 
 class FunnelPage(models.Model):
@@ -72,10 +76,10 @@ class FunnelPage(models.Model):
     sequence = fields.Integer('Sequence', help="Determine the display order", index=True)
     type_id = fields.Many2one('funnel.page.type', required=True)
     active = fields.Boolean('Active', default=True)
-    object_id = fields.Many2one('ir.model',string='Resource')
     content = fields.Html('Content', default=_default_content, translate=html_translate, sanitize=False)
     funnel_id = fields.Many2one('funnel.funnel', 'Funnel', required=True, ondelete='cascade')
     activity_ids = fields.One2many('funnel.activity', 'page_id', 'Activities')
+    last_date = fields.Datetime('Last View')
     visits = fields.Integer('No of Views', copy=False)
     is_published = fields.Boolean(default=False)
     website_id = fields.Many2one(related='funnel_id.website_id', readonly=True)
@@ -88,7 +92,6 @@ class FunnelActivity(models.Model):
     _description = 'Funnel Activity"' 
 
     name = fields.Char('Name', required=True, translate=True)
-    object_id = fields.Many2one('ir.model', string='Object', readonly=True)
     condition = fields.Text('Condition', required=True, default="True",
         help="Python expression to decide whether the activity can be executed, otherwise it will be deleted or cancelled."
         "The expression may use the following [browsable] variables:\n"
@@ -113,7 +116,29 @@ class FunnelActivity(models.Model):
     keep_if_condition_not_met = fields.Boolean("Don't Delete Workitems", default=False,
         help="By activating this option, workitems that aren't executed because the condition is not met are marked as "
              "cancelled instead of being deleted.")
-    company_id = fields.Many2one('res.company', 'Company', required=True, index=True, default=lambda self: self.env.company)  
+    website_id = fields.Many2one('website')
+    company_id = fields.Many2one('res.company', 'Company', required=True, index=True, default=lambda self: self.env.company) 
+
+    def _process_wi_email(self, workitem):
+        self.ensure_one()
+        return self.email_template_id.send_mail(workitem.partner_id)
+
+    def _process_wi_action(self, workitem):
+        self.ensure_one()
+        return self.server_action_id.run()
+
+
+
+    def process(self, workitem):
+        self.ensure_one()
+        method = '_process_wi_%s' % (self.action_type,)
+        action = getattr(self, method, None)
+        if not action:
+            raise NotImplementedError('Method %r is not implemented on %r object.' % (method, self._name))
+        return action(workitem)
+
+
+
 
 class FunnelTransition(models.Model):
     _name = "funnel.transition"
@@ -136,18 +161,44 @@ class FunnelTransition(models.Model):
         ('interval_positive', 'CHECK(interval_nbr >= 0)', 'The interval must be positive or zero')
     ]
 
+    def _compute_name(self):
+        # name formatters that depend on trigger
+        formatters = {
+            'auto': _('Automatic transition'),
+            'time': _('After %(interval_nbr)d %(interval_type)s'),
+            'cosmetic': _('Cosmetic'),
+        }
+        # get the translations of the values of selection field 'interval_type'
+        model_fields = self.fields_get(['interval_type'])
+        interval_type_selection = dict(model_fields['interval_type']['selection'])
+
+        for transition in self:
+            values = {
+                'interval_nbr': transition.interval_nbr,
+                'interval_type': interval_type_selection.get(transition.interval_type, ''),
+            }
+            transition.name = formatters[transition.trigger] % values
+
+    def _delta(self):
+        self.ensure_one()
+        if self.trigger != 'time':
+            raise ValueError('Delta is only relevant for timed transition.')
+        return relativedelta(**{str(self.interval_type): self.interval_nbr})
+
+
+
+
+
 
 class FunnelWorkitem(models.Model):
     _name = "funnel.workitem"
     _description = "Funnel Workitem"
 
     activity_id = fields.Many2one('marketing.campaign.activity', 'Activity', required=True, readonly=True)
-    object_id = fields.Many2one('ir.model', string='Resource', index=1, readonly=True, store=True)
-    res_id = fields.Integer('Resource ID', index=1, readonly=True)
-    res_name = fields.Char(compute='_compute_res_name', string='Resource Name', search='_search_res_name')
     date = fields.Datetime('Execution Date', readonly=True, default=False,
         help='If date is not set, this workitem has to be run manually')
     partner_id = fields.Many2one('res.partner', 'Partner', index=1, readonly=True)
+    lead_id = fields.Many2one('crm.lead')
     state = fields.Selection([
         ('todo', 'To Do'),
         ('cancelled', 'Cancelled'),
@@ -166,7 +217,86 @@ class FunnelWorkitem(models.Model):
                 workitem.res_name = '/'
                 continue
             workitem.res_name = record.name_get()[0][1] 
-    
+
+
+    def _process_one(self):
+        self.ensure_one()
+        if self.state != 'todo':
+            return False
+        activity = self.activity_id
+        resource = self.partner_id
+        eval_context = {
+            'activity': activity,
+            'workitem': self,
+            'object': resource,
+            'resource': resource,
+            'transitions': activity.to_ids,
+            're': re,
+        }
+        try:
+            condition = activity.condition
+            if condition:
+                if not safe_eval(condition, eval_context):
+                    if activity.keep_if_condition_not_met:
+                        self.write({'state': 'cancelled'})
+                    else:
+                        self.unlink()
+                    return
+            result = True
+            values = {'state': 'done'}
+            if not self.date:
+                values['date'] = fields.Datetime.now()
+            self.write(values)
+            if result:
+                self.refresh()  # reload
+                execution_date = fields.Datetime.from_string(self.date)
+                for transition in activity.to_ids:
+                    if transition.trigger == 'cosmetic':
+                        continue
+                    launch_date = False
+                    if transition.trigger == 'auto':
+                        launch_date = execution_date
+                    elif transition.trigger == 'time':
+                        launch_date = execution_date + transition._delta()
+                    if launch_date:
+                        launch_date = fields.Datetime.to_string(launch_date)
+                    # Create workitem
+                    values = {
+                        'date': launch_date,
+                        'activity_id': transition.activity_to_id.id,
+                        'partner_id': self.partner_id.id,
+                        'state': 'todo',
+                    }
+                    workitem = self.create(values)
+                    if  transition.trigger == 'auto':
+                        workitem._process_one()
+        except Exception:    
+            tb = "".join(format_exception(*exc_info()))
+            self.write({'state': 'exception', 'error_msg': tb})
+
+
+
+
+
+
+
+
+
+    def process(self):
+        for workitem in self:
+            workitem._process_one()
+        return True
+
+    @api.model
+    def run(self, autocommit=False):
+        while True:
+            workitems = self.search([('done', '=', False), ('date', '!=', False), ('scheduled_date', '<=', datetime.strftime(fields.datetime.now(), tools.DEFAULT_SERVER_DATETIME_FORMAT))])
+            if not workitems:
+                break
+            workitems.process()
+        return True
+
+
 
     
    
