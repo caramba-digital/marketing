@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 13.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-04 04:10+0000\n"
-"PO-Revision-Date: 2020-09-03 23:30-0500\n"
+"POT-Creation-Date: 2020-09-04 21:59+0000\n"
+"PO-Revision-Date: 2020-09-04 17:22-0500\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: \n"
 "Language: es_MX\n"
-"X-Generator: Poedit 2.4.1\n"
+"X-Generator: Poedit 2.3\n"
 
 #. module: marketing_funnel
 #: model:ir.model.fields,field_description:marketing_funnel.field_funnel_activity__server_action_id
@@ -55,7 +55,7 @@ msgstr "Actividad"
 #: code:addons/marketing_funnel/models/marketing_strategy_funnel.py:0
 #, python-format
 msgid "After %(interval_nbr)d %(interval_type)s"
-msgstr ""
+msgstr "Después %(interval_nbr)d %(interval_type)s"
 
 #. module: marketing_funnel
 #: model:ir.model.fields,help:marketing_funnel.field_funnel_activity__signal
@@ -157,6 +157,12 @@ msgid "Company"
 msgstr "Empresa"
 
 #. module: marketing_funnel
+#: model_terms:ir.ui.view,arch_db:marketing_funnel.funel_view_form
+#: model_terms:ir.ui.view,arch_db:marketing_funnel.funnel_page_view_form
+msgid "Components"
+msgstr "Componentes"
+
+#. module: marketing_funnel
 #: model:ir.model.fields,field_description:marketing_funnel.field_funnel_activity__condition
 msgid "Condition"
 msgstr "Condición"
@@ -164,7 +170,7 @@ msgstr "Condición"
 #. module: marketing_funnel
 #: model:ir.model.fields.selection,name:marketing_funnel.selection__funnel_funnel__buyer_journey_stage__consideration
 msgid "Consideration"
-msgstr "Consideration"
+msgstr "Consideración"
 
 #. module: marketing_funnel
 #: model:ir.model.fields,field_description:marketing_funnel.field_funnel_page__content
@@ -246,7 +252,7 @@ msgstr "Determinar el orden de visualización"
 #: model:ir.model.fields,field_description:marketing_funnel.field_funnel_type__display_name
 #: model:ir.model.fields,field_description:marketing_funnel.field_funnel_workitem__display_name
 msgid "Display Name"
-msgstr "Display Name"
+msgstr "Mostrar Nombre"
 
 #. module: marketing_funnel
 #: model:ir.model.fields,field_description:marketing_funnel.field_funnel_activity__keep_if_condition_not_met
@@ -591,7 +597,7 @@ msgstr "Nombre"
 #: model:ir.model.fields,field_description:marketing_funnel.field_funnel_activity__to_ids
 #: model_terms:ir.ui.view,arch_db:marketing_funnel.funnel_activity_view_form
 msgid "Next Activities"
-msgstr "Próximas Actividades"
+msgstr "Actividades Siguientes"
 
 #. module: marketing_funnel
 #: model:ir.model.fields,field_description:marketing_funnel.field_funnel_transition__activity_to_id
@@ -678,18 +684,18 @@ msgstr "Compañero"
 #: model_terms:ir.ui.view,arch_db:marketing_funnel.view_funnel_workitem_form
 #: model_terms:ir.ui.view,arch_db:marketing_funnel.view_marketing_campaign_funnel_workitem_tree
 msgid "Preview"
-msgstr ""
+msgstr "Previa"
 
 #. module: marketing_funnel
 #: model:ir.model.fields,field_description:marketing_funnel.field_funnel_activity__from_ids
 #: model_terms:ir.ui.view,arch_db:marketing_funnel.funnel_activity_view_form
 msgid "Previous Activities"
-msgstr ""
+msgstr "Actividades Previas"
 
 #. module: marketing_funnel
 #: model:ir.model.fields,field_description:marketing_funnel.field_funnel_transition__activity_from_id
 msgid "Previous Activity"
-msgstr ""
+msgstr "Actividad Previa"
 
 #. module: marketing_funnel
 #: model_terms:ir.ui.view,arch_db:marketing_funnel.view_funnel_workitem_form
@@ -805,114 +811,140 @@ msgid "Thank Page"
 msgstr "Página de Agradecimiento"
 
 #. module: marketing_funnel
-#: model:funnel.type,name:marketing_funnel.marketing_strategy_funnel_type_opt_7
-msgid "The 2-Step Tripwire Funnel"
-msgstr "Embudo Cable Trampa de 2 Pasos"
-
-#. module: marketing_funnel
 #: model:funnel.type,name:marketing_funnel.marketing_strategy_funnel_type_opt_17
+msgid "The 2-Step Tripwire Funnel"
+msgstr "Embudo de Cable Trampa de 2 Pasos"
+
+#. module: marketing_funnel
+#: model:funnel.type,name:marketing_funnel.marketing_strategy_funnel_type_opt_20
 msgid "The Application Funnel"
-msgstr "Embudo de Aplicación"
+msgstr "Embudo de Solicitud"
 
 #. module: marketing_funnel
-#: model:funnel.type,name:marketing_funnel.marketing_strategy_funnel_type_opt_15
+#: model:funnel.type,name:marketing_funnel.marketing_strategy_funnel_type_opt_19
 msgid "The Ask Campaign Funnel"
-msgstr "Embudo de Campaña de Pregunta"
+msgstr "Embudo de Pregunta"
 
 #. module: marketing_funnel
-#: model:funnel.type,name:marketing_funnel.marketing_strategy_funnel_type_opt_12
+#: model:funnel.type,name:marketing_funnel.marketing_strategy_funnel_type_opt_8
 msgid "The Auto Webinar Funnel"
 msgstr "Embudo de Webinar Automático"
 
 #. module: marketing_funnel
-#: model:funnel.type,name:marketing_funnel.marketing_strategy_funnel_type_opt_21
+#: model:funnel.type,name:marketing_funnel.marketing_strategy_funnel_type_opt_22
 msgid "The Bridge Funnel"
 msgstr "Embudo Puente"
 
 #. module: marketing_funnel
-#: model:funnel.type,name:marketing_funnel.marketing_strategy_funnel_type_opt_16
+#: model:funnel.type,name:marketing_funnel.marketing_strategy_funnel_type_opt_21
 msgid "The Cancellation Funnel"
 msgstr "Embudo de Cancelación"
 
 #. module: marketing_funnel
-#: model:funnel.type,name:marketing_funnel.marketing_strategy_funnel_type_opt_19
-msgid "The Daily Deal Funnel"
-msgstr "Embudo de ofertas diarias"
-
-#. module: marketing_funnel
-#: model:funnel.type,name:marketing_funnel.marketing_strategy_funnel_type_opt_11
-msgid "The Hero Funnel"
-msgstr "Embudo del Héroe"
-
-#. module: marketing_funnel
 #: model:funnel.type,name:marketing_funnel.marketing_strategy_funnel_type_opt_13
-msgid "The Homepage Funnel"
-msgstr "Embudo de Página de Inicio"
+msgid "The Daily Deal Funnel"
+msgstr "Embudo de Ofertas Diarias"
 
 #. module: marketing_funnel
-#: model:funnel.type,name:marketing_funnel.marketing_strategy_funnel_type_opt_9
+#: model:funnel.type,name:marketing_funnel.marketing_strategy_funnel_type_opt_26
+msgid "The Gamification Funnel"
+msgstr "Embudo de Gamificación"
+
+#. module: marketing_funnel
+#: model:funnel.type,name:marketing_funnel.marketing_strategy_funnel_type_opt_25
+msgid "The Gratefulness Funnel"
+msgstr "Embudo de Agracedimiento"
+
+#. module: marketing_funnel
+#: model:funnel.type,name:marketing_funnel.marketing_strategy_funnel_type_opt_1
+msgid "The Homepage Funnel"
+msgstr "Embudo de Página Inicial"
+
+#. module: marketing_funnel
+#: model:funnel.type,name:marketing_funnel.marketing_strategy_funnel_type_opt_23
 msgid "The Invisible Funnel"
 msgstr "Embudo Invisible"
 
 #. module: marketing_funnel
-#: model:funnel.type,name:marketing_funnel.marketing_strategy_funnel_type_opt_10
+#: model:funnel.type,name:marketing_funnel.marketing_strategy_funnel_type_opt_11
 msgid "The Lead Magnet Funnel"
-msgstr "Embudo Magnético de Iniciativa"
+msgstr "Embudo Atrae Oportunidad"
 
 #. module: marketing_funnel
-#: model:funnel.type,name:marketing_funnel.marketing_strategy_funnel_type_opt_8
+#: model:funnel.type,name:marketing_funnel.marketing_strategy_funnel_type_opt_9
 msgid "The Live Demo Funnel"
 msgstr "Embudo de Demostración en Vivo"
 
 #. module: marketing_funnel
-#: model:funnel.type,name:marketing_funnel.marketing_strategy_funnel_type_opt_3
+#: model:funnel.type,name:marketing_funnel.marketing_strategy_funnel_type_opt_12
 msgid "The Membership Funnel"
 msgstr "Embudo de Membresía"
 
 #. module: marketing_funnel
-#: model:funnel.type,name:marketing_funnel.marketing_strategy_funnel_type_opt_6
-msgid "The Reverse Squeeze Page Funnel"
-msgstr "Embudo de Página de Compresión Inversa"
+#: model:funnel.type,name:marketing_funnel.marketing_strategy_funnel_type_opt_14
+msgid "The Product Launch Funnel"
+msgstr "Embudo de Lanzamiento de Producto"
 
 #. module: marketing_funnel
-#: model:funnel.type,name:marketing_funnel.marketing_strategy_funnel_type_opt_1
+#: model:funnel.type,name:marketing_funnel.marketing_strategy_funnel_type_opt_16
+msgid "The Reverse Squeeze Page Funnel"
+msgstr "Embudo de Página de Presión Inversa"
+
+#. module: marketing_funnel
+#: model:funnel.type,name:marketing_funnel.marketing_strategy_funnel_type_opt_3
 msgid "The Sales Letter Funnel"
 msgstr "Embudo de Carta de Ventas"
 
 #. module: marketing_funnel
-#: model:funnel.type,name:marketing_funnel.marketing_strategy_funnel_type_opt_2
+#: model:funnel.type,name:marketing_funnel.marketing_strategy_funnel_type_opt_15
 msgid "The Squeeze Page Funnel"
-msgstr "Embudo de Página de Compresión"
+msgstr "Embudo de Página de Presión"
 
 #. module: marketing_funnel
-#: model:funnel.type,name:marketing_funnel.marketing_strategy_funnel_type_opt_20
+#: model:funnel.type,name:marketing_funnel.marketing_strategy_funnel_type_opt_2
 msgid "The Storefront Funnel"
-msgstr "Embudo de Escaparate"
+msgstr "Embudo de Aparador"
 
 #. module: marketing_funnel
-#: model:funnel.type,name:marketing_funnel.marketing_strategy_funnel_type_opt_22
+#: model:funnel.type,name:marketing_funnel.marketing_strategy_funnel_type_opt_10
 msgid "The Summit Funnel"
-msgstr "Embudo de la Cumbre"
+msgstr "Embudo de Cumbre"
 
 #. module: marketing_funnel
-#: model:funnel.type,name:marketing_funnel.marketing_strategy_funnel_type_opt_4
+#: model:funnel.type,name:marketing_funnel.marketing_strategy_funnel_type_opt_24
 msgid "The Survey Funnel"
 msgstr "Embudo de Encuesta"
 
 #. module: marketing_funnel
-#: model:funnel.type,name:marketing_funnel.marketing_strategy_funnel_type_opt_5
-msgid "The Video Sales Letter Funnel"
-msgstr "Embudo de Carta de Vídeo de Ventas"
+#: code:addons/marketing_funnel/models/marketing_strategy_funnel.py:0
+#, python-format
+msgid "The To/From Activity of transition must be of the same Campaign"
+msgstr ""
 
 #. module: marketing_funnel
-#: model:funnel.type,name:marketing_funnel.marketing_strategy_funnel_type_opt_14
+#: model:funnel.type,name:marketing_funnel.marketing_strategy_funnel_type_opt_6
+msgid "The Video Sales Letter Funnel"
+msgstr "Embudo de Video de ventas"
+
+#. module: marketing_funnel
+#: model:funnel.type,name:marketing_funnel.marketing_strategy_funnel_type_opt_7
 msgid "The Webinar Funnel"
 msgstr "Embudo de Webinar"
+
+#. module: marketing_funnel
+#: model:funnel.type,name:marketing_funnel.marketing_strategy_funnel_type_opt_4
+msgid "The White Paper Funnel"
+msgstr "Embudo de Documento Técnico"
 
 #. module: marketing_funnel
 #: model:ir.model.fields,help:marketing_funnel.field_funnel_activity__server_action_id
 msgid "The action to perform when this activity is activated"
 msgstr "La acción a realizar cuando se activa esta actividad"
+
+#. module: marketing_funnel
+#: model:funnel.type,name:marketing_funnel.marketing_strategy_funnel_type_opt_5
+msgid "The eBook Funnel"
+msgstr "Embudo de Libro Electrónico"
 
 #. module: marketing_funnel
 #: model:ir.model.fields,help:marketing_funnel.field_funnel_activity__email_template_id
