@@ -847,12 +847,12 @@ msgstr "Embudo del Héroe"
 #. module: marketing_funnel
 #: model:funnel.type,name:marketing_funnel.marketing_strategy_funnel_type_opt_13
 msgid "The Homepage Funnel"
-msgstr "Embudo de Página de Inicip"
+msgstr "Embudo de Página de Inicio"
 
 #. module: marketing_funnel
 #: model:funnel.type,name:marketing_funnel.marketing_strategy_funnel_type_opt_9
 msgid "The Invisible Funnel"
-msgstr "Embudo Inbisible"
+msgstr "Embudo Invisible"
 
 #. module: marketing_funnel
 #: model:funnel.type,name:marketing_funnel.marketing_strategy_funnel_type_opt_10
@@ -897,7 +897,7 @@ msgstr "Embudo de la Cumbre"
 #. module: marketing_funnel
 #: model:funnel.type,name:marketing_funnel.marketing_strategy_funnel_type_opt_4
 msgid "The Survey Funnel"
-msgstr "El embudo de Encuesta"
+msgstr "Embudo de Encuesta"
 
 #. module: marketing_funnel
 #: model:funnel.type,name:marketing_funnel.marketing_strategy_funnel_type_opt_5

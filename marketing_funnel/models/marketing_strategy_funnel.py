@@ -3,6 +3,8 @@
 
 from dateutil.relativedelta import relativedelta
 from traceback import format_exception
+from sys import exc_info
+import re
 from datetime import datetime
 import random
 import json
@@ -74,10 +76,10 @@ class FunnelPage(models.Model):
 
     name = fields.Char('Page Name', required=True, translate=True)
     sequence = fields.Integer('Sequence', help="Determine the display order", index=True)
+    funnel_id = fields.Many2one('funnel.funnel', 'Funnel', required=True, ondelete='cascade')
     type_id = fields.Many2one('funnel.page.type', required=True)
     active = fields.Boolean('Active', default=True)
     content = fields.Html('Content', default=_default_content, translate=html_translate, sanitize=False)
-    funnel_id = fields.Many2one('funnel.funnel', 'Funnel', required=True, ondelete='cascade')
     activity_ids = fields.One2many('funnel.activity', 'page_id', 'Activities')
     last_date = fields.Datetime('Last View')
     visits = fields.Integer('No of Views', copy=False)
@@ -92,6 +94,7 @@ class FunnelActivity(models.Model):
     _description = 'Funnel Activity"' 
 
     name = fields.Char('Name', required=True, translate=True)
+    page_id = fields.Many2one('funnel.page', string="Page")
     condition = fields.Text('Condition', required=True, default="True",
         help="Python expression to decide whether the activity can be executed, otherwise it will be deleted or cancelled."
         "The expression may use the following [browsable] variables:\n"
@@ -106,8 +109,7 @@ class FunnelActivity(models.Model):
              "- Report: print an existing Report defined on the resource item and save it into a specific directory \n"
              "- Custom Action: execute a predefined action, e.g. to modify the fields of the resource record")
     email_template_id = fields.Many2one('mail.template', 'Email Template', help='The email to send when this activity is activated')
-    server_action_id = fields.Many2one('ir.actions.server', string='Action', help='The action to perform when this activity is activated')
-    page_id = fields.Many2one('funnel.page', string="Page")
+    server_action_id = fields.Many2one('ir.actions.server', string='Action', help='The action to perform when this activity is activated') 
     to_ids = fields.One2many('funnel.transition', 'activity_from_id', 'Next Activities')
     from_ids = fields.One2many('funnel.transition', 'activity_to_id', 'Previous Activities')
     signal = fields.Char('Signal',
@@ -179,6 +181,11 @@ class FunnelTransition(models.Model):
             }
             transition.name = formatters[transition.trigger] % values
 
+    @api.constrains('activity_from_id', 'activity_to_id')
+    def _check_campaign(self):
+        if self.filtered(lambda transition: transition.activity_from_id.page_id != transition.activity_to_id.page_id):
+            return ValidationError(_('The To/From Activity of transition must be of the same Campaign'))
+
     def _delta(self):
         self.ensure_one()
         if self.trigger != 'time':
@@ -194,7 +201,7 @@ class FunnelWorkitem(models.Model):
     _name = "funnel.workitem"
     _description = "Funnel Workitem"
 
-    activity_id = fields.Many2one('marketing.campaign.activity', 'Activity', required=True, readonly=True)
+    activity_id = fields.Many2one('funnel.activity', 'Activity', required=True, readonly=True)
     date = fields.Datetime('Execution Date', readonly=True, default=False,
         help='If date is not set, this workitem has to be run manually')
     partner_id = fields.Many2one('res.partner', 'Partner', index=1, readonly=True)
