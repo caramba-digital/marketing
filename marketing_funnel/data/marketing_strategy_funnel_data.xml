@@ -3,15 +3,15 @@
     <data noupdate="1">
     <!-- Types -->
     <record id="marketing_strategy_funnel_type_opt_1" model="funnel.type">
-    	<field name="name">The Squeeze Page Funnel</field>
+    	<field name="name">The Sales Letter Funnel</field>
     </record>
 
     <record id="marketing_strategy_funnel_type_opt_2" model="funnel.type">
-    	<field name="name">The Membership Funnel</field>
+    	<field name="name">The Squeeze Page Funnel</field>
     </record>
 
     <record id="marketing_strategy_funnel_type_opt_3" model="funnel.type">
-    	<field name="name">The Challenge</field>
+    	<field name="name">The Membership Funnel</field>
     </record>
     
     <record id="marketing_strategy_funnel_type_opt_4" model="funnel.type">
@@ -19,7 +19,7 @@
     </record>
     
     <record id="marketing_strategy_funnel_type_opt_5" model="funnel.type">
-    	<field name="name">The Squeeze Page Funnel</field>
+    	<field name="name">The Video Sales Letter Funnel</field>
     </record>
     
     <record id="marketing_strategy_funnel_type_opt_6" model="funnel.type">
@@ -35,47 +35,59 @@
     </record>
     
     <record id="marketing_strategy_funnel_type_opt_9" model="funnel.type">
-    	<field name="name">The Lead Magnet Funnel</field>
+    	<field name="name">The Invisible Funnel</field>
     </record>
     
     <record id="marketing_strategy_funnel_type_opt_10" model="funnel.type">
-    	<field name="name">The Webinar Funnel</field>
+    	<field name="name">The Lead Magnet Funnel</field>
     </record>
     
     <record id="marketing_strategy_funnel_type_opt_11" model="funnel.type">
-    	<field name="name">The Auto Webinar Funnel</field>
+    	<field name="name">The Hero Funnel</field>
     </record>
 
     <record id="marketing_strategy_funnel_type_opt_12" model="funnel.type">
-    	<field name="name">Book Funnel</field>
+    	<field name="name">The Auto Webinar Funnel</field>
     </record>
 
     <record id="marketing_strategy_funnel_type_opt_13" model="funnel.type">
-    	<field name="name">The Ask Campaign Funnel</field>
+    	<field name="name">The Homepage Funnel</field>
     </record>
 
     <record id="marketing_strategy_funnel_type_opt_14" model="funnel.type">
-    	<field name="name">The Cancellation Funnel</field>
+    	<field name="name">The Webinar Funnel</field>
     </record>
 
     <record id="marketing_strategy_funnel_type_opt_15" model="funnel.type">
-    	<field name="name">The Application Funnel</field>
+    	<field name="name">The Ask Campaign Funnel</field>
     </record>
 
     <record id="marketing_strategy_funnel_type_opt_16" model="funnel.type">
-    	<field name="name">The Product Launch Funnel</field>
+    	<field name="name">The Cancellation Funnel</field>
     </record>
 
     <record id="marketing_strategy_funnel_type_opt_17" model="funnel.type">
-    	<field name="name">The Daily Deal Funnel</field>
+    	<field name="name">The Application Funnel</field>
     </record>
 
     <record id="marketing_strategy_funnel_type_opt_18" model="funnel.type">
-    	<field name="name">The Summit Funnel</field>
+    	<field name="name">The Product Launch Funnel</field>
     </record>
 
-       <record id="marketing_strategy_funnel_type_opt_18" model="funnel.type">
-    	<field name="name">The Homepage Funnel</field>
+    <record id="marketing_strategy_funnel_type_opt_19" model="funnel.type">
+    	<field name="name">The Daily Deal Funnel</field>
+    </record>
+
+        <record id="marketing_strategy_funnel_type_opt_20" model="funnel.type">
+    	<field name="name">The Storefront Funnel</field>
+    </record>
+
+        <record id="marketing_strategy_funnel_type_opt_21" model="funnel.type">
+    	<field name="name">The Bridge Funnel</field>
+    </record>
+
+        <record id="marketing_strategy_funnel_type_opt_22" model="funnel.type">
+    	<field name="name">The Summit Funnel</field>
     </record>
 
 
