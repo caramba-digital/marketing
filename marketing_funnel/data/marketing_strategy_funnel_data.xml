@@ -163,7 +163,7 @@
     	<field name="name">Thank Page</field>
     </record>
 
-    <record id="marketing_strategy_funnel_type_opt_18" model="funnel.page.type">
+    <record id="marketing_strategy_funnel_page_opt_18" model="funnel.page.type">
     	<field name="name">Cancellation Page</field>
     </record>
 

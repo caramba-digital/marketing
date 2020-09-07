@@ -27,4 +27,14 @@ class WebsiteFunnel(http.Controller):
             'page':page,
             'enable_editor': enable_editor,
             }
-        return request.render("marketing_funnel.funnel_page", values)
+        response = request.render("marketing_funnel.funnel_page", values)
+
+        request.session[request.session.sid] = request.session.get(request.session.sid, [])
+        if not (funnel_page.id in request.session[request.session.sid]):
+            request.session[request.session.sid].append(funnel_page.id)
+            # Increase counter
+            funnel_page.sudo().write({
+                'visits': funnel_page.visits + 1,
+                'write_date': funnel_page.write_date,
+            })
+        return response
