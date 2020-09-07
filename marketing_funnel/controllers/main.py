@@ -16,6 +16,9 @@ from odoo.osv import expression
 from odoo.tools import html2plaintext
 from odoo.tools.misc import get_lang
 
+import logging
+_logger = logging.getLogger(__name__)
+
 class WebsiteFunnel(http.Controller):
 
     @http.route([
@@ -23,6 +26,7 @@ class WebsiteFunnel(http.Controller):
     ], type='http', auth="public", website=True)
     def funnel_page(self, funnel_page=None,  enable_editor=None, **opt):
         page = request.env['funnel.page'].sudo().browse(funnel_page.id)
+
         values = {
             'page':page,
             'enable_editor': enable_editor,
@@ -37,4 +41,7 @@ class WebsiteFunnel(http.Controller):
                 'visits': funnel_page.visits + 1,
                 'write_date': funnel_page.write_date,
             })
+            # Start activities
+            if page.activity_ids:
+                funnel_page.sudo().process_activities(1)
         return response

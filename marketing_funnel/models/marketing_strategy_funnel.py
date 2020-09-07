@@ -82,19 +82,36 @@ class FunnelPage(models.Model):
     content = fields.Html('Content', default=_default_content, translate=html_translate, sanitize=False)
     activity_ids = fields.One2many('funnel.activity', 'page_id', 'Activities')
     last_date = fields.Datetime('Last View')
-    visits = fields.Integer('No of Views', copy=False)
+    visits = fields.Integer('No of Views', copy=False, readonly=True)
     is_published = fields.Boolean(default=False)
     website_id = fields.Many2one(related='funnel_id.website_id', readonly=True)
-    company_id = fields.Many2one('res.company', 'Company', required=True, index=True, default=lambda self: self.env.company)  
+    company_id = fields.Many2one('res.company', 'Company', required=True, index=True, default=lambda self: self.env.company) 
+
+    def process_activities(self, partner_id):
+        Workitems = self.env['funnel.workitem']
+        Activities = self.env['funnel.activity']
+        action_date = fields.Datetime.now()
+        activity_ids = Activities.search([('page_id', '=', self.id)]).ids
+        wi_vals = {
+            'date': action_date,
+            'state': 'todo',
+            'partner_id': partner_id
+        }
+        for activity_id in activity_ids:
+            wi_vals['activity_id'] = activity_id
+            wi = Workitems.create(wi_vals)
+            wi.process()
+        return True
 
 
 
 class FunnelActivity(models.Model):
     _name = 'funnel.activity'
-    _description = 'Funnel Activity"' 
+    _description = 'Funnel Activity' 
 
     name = fields.Char('Name', required=True, translate=True)
     page_id = fields.Many2one('funnel.page', string="Page")
+    start = fields.Boolean('Start', help="This activity is launched when the page is viewed.", index=True)
     condition = fields.Text('Condition', required=True, default="True",
         help="Python expression to decide whether the activity can be executed, otherwise it will be deleted or cancelled."
         "The expression may use the following [browsable] variables:\n"
@@ -182,9 +199,9 @@ class FunnelTransition(models.Model):
             transition.name = formatters[transition.trigger] % values
 
     @api.constrains('activity_from_id', 'activity_to_id')
-    def _check_campaign(self):
+    def _check_page(self):
         if self.filtered(lambda transition: transition.activity_from_id.page_id != transition.activity_to_id.page_id):
-            return ValidationError(_('The To/From Activity of transition must be of the same Campaign'))
+            return ValidationError(_('The To/From Activity of transition must be of the same Page'))
 
     def _delta(self):
         self.ensure_one()
@@ -205,7 +222,6 @@ class FunnelWorkitem(models.Model):
     date = fields.Datetime('Execution Date', readonly=True, default=False,
         help='If date is not set, this workitem has to be run manually')
     partner_id = fields.Many2one('res.partner', 'Partner', index=1, readonly=True)
-    lead_id = fields.Many2one('crm.lead')
     state = fields.Selection([
         ('todo', 'To Do'),
         ('cancelled', 'Cancelled'),
@@ -280,13 +296,6 @@ class FunnelWorkitem(models.Model):
         except Exception:    
             tb = "".join(format_exception(*exc_info()))
             self.write({'state': 'exception', 'error_msg': tb})
-
-
-
-
-
-
-
 
 
     def process(self):

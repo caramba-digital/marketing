@@ -141,7 +141,7 @@
     </record>
 
     <record id="marketing_strategy_funnel_page_opt_8" model="funnel.page.type">
-    	<field name="name">Overhelm Page</field>
+    	<field name="name">Overwhelm Page</field>
     </record>
 
     <record id="marketing_strategy_funnel_page_opt_9" model="funnel.page.type">

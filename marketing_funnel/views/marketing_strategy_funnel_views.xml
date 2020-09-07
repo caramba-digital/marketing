@@ -47,11 +47,12 @@
                                 </div>
                                 <group>
                                     <group>
-                                        <field name="type_id"/>   
+                                        <field name="type_id"/>  
+                                        <field name="visits"/>       
                                         <field name="website_id"/>                                  
                                     </group>
                                     <group>
-                                        <field name="activity_ids"/> 
+                                        <field name="activity_ids" nolabel="1"/> 
                                     </group>
                                 </group>
                                 <notebook colspan="4">
@@ -158,8 +159,8 @@
                         <group>
                             <group>
                                 <field name="type_id"/>
-                                <field name="website_id"/> 
-                                 <field name="visits"/>                                
+                                 <field name="visits"/>      
+                                <field name="website_id"/>                           
                             </group>
                             <group>
                                 <field name="activity_ids" nolabel="1"/> 
@@ -254,14 +255,14 @@
                 <separator string="Next Activities"/>
                 <field name="to_ids" mode="tree" context="{'default_activity_from_id': active_id}">
                     <tree string="Outgoing Transitions" editable="bottom">
-                        <field name="activity_to_id"  options="{'no_create': True}" />
+                        <field name="activity_to_id"  />
                         <field name='trigger'/>
                         <field name="interval_nbr"/>
                         <field name="interval_type"/>
                     </tree>
                     <form string="Outgoing Transitions">
                         <group col="4">
-                            <field name="activity_to_id" options="{'no_create': True}" />
+                            <field name="activity_to_id"  />
                             <field name='trigger'/>
                             <field name="interval_nbr"/>
                             <field name="interval_type"/>
