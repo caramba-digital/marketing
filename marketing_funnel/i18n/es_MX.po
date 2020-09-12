@@ -135,7 +135,7 @@ msgstr "Cancelar Elemento de Trabajo"
 #. module: marketing_funnel
 #: model:funnel.page.type,name:marketing_funnel.marketing_strategy_funnel_page_opt_18
 msgid "Cancellation Page"
-msgstr "Cancelar Página"
+msgstr "Página de Cancelación"
 
 #. module: marketing_funnel
 #: model:ir.model.fields.selection,name:marketing_funnel.selection__funnel_workitem__state__cancelled

@@ -21,9 +21,10 @@ _logger = logging.getLogger(__name__)
 
 class WebsiteFunnel(http.Controller):
 
+
     @http.route([
         '''/touchpoint/<model("funnel.funnel", "[('website_id', 'in', (False, current_website_id))]"):funnel>/page/<model("funnel.page", "[('funnel_id','=',funnel[0])]"):funnel_page>''',
-    ], type='http', auth="public", website=True)
+    ], type='http', auth="public", methods=['POST'], website=True)
     def funnel_page(self, funnel_page=None,  enable_editor=None, **opt):
         page = request.env['funnel.page'].sudo().browse(funnel_page.id)
 
@@ -45,3 +46,5 @@ class WebsiteFunnel(http.Controller):
             if page.activity_ids:
                 funnel_page.sudo().process_activities(1)
         return response
+
+    

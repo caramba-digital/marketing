@@ -12,7 +12,7 @@
     
     'category': 'Marketing/Strategy',
     'version': '13.0.0.0.0',
-    'depends': ['marketing_strategy', 'website'],
+    'depends': ['marketing_strategy', 'website_event'],
     'license': 'AGPL-3',
 
     # always loaded
@@ -21,6 +21,8 @@
         'views/marketing_strategy_funnel_templates.xml',
         'views/marketing_strategy_funnel_views.xml',
         'views/marketing_strategy_views.xml',
+        'views/mail_template_views.xml',
+        'views/website_visitor_views.xml',
         'data/marketing_strategy_funnel_data.xml',
     ],
     # only loaded in demonstration mode

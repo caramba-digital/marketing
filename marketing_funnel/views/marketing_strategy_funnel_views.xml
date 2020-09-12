@@ -30,6 +30,7 @@
                     <group>
                         <group>
                             <field name="type_id"/>
+                            <field name="object_id"/>
                             <field name="brand_id" domain="[('relation','=','main')]"/>
                             <field name="company_id"/>
                         </group>
@@ -219,7 +220,8 @@
                     <group>
                         <group>
                             <field name="signal"/>
-                            <field name="website_id"/>
+                            <field name="start"/>
+                            <field name="object_id"/>
                         </group>
                         <group>
                             <field name="page_id"/>
@@ -231,7 +233,7 @@
                         </group>
                         <group>
                             <field name="action_type"/>
-                            <field name="email_template_id" attrs="{'required':[('action_type','=','email')], 'invisible':[('action_type','!=','email')]}"/>
+                            <field name="email_template_id" attrs="{'required':[('action_type','=','email')], 'invisible':[('action_type','!=','email')]}" context="{'default_is_for_funnel': True}"/>
                             <field name="server_action_id" attrs="{'required':[('action_type','=','action')],'invisible':[('action_type','!=','action')]}" />
                         </group>
                     </group>
@@ -297,7 +299,7 @@
         <field name="arch" type="xml">
             <tree decoration-danger="state == 'exception'" decoration-muted="state == 'cancelled'" string="Funnel Workflow">
                 <field name="activity_id"/>
-                <field name="partner_id"/>
+                <field name="object_id"/>
                 <field name="date"/>
                 <field name="state"/>
                 <button string="Cancel" states="todo" name="button_cancel" type="object" icon="fa-times-circle text-danger"/>
@@ -328,7 +330,7 @@
                         <field name="company_id" options="{'no_create': True}" groups="base.group_multi_company"/>
                     </group>
                     <group>
-                        <field name="partner_id"/>
+                        <field name="object_id"/>
                     </group>
                 </group>
                 <group attrs="{'invisible':[('state','!=','exception')]}" string="Error Message">
