@@ -88,7 +88,12 @@
                        				<div class="col-12 border bg-light" style="height: 180px;">
                        					<h5>Innovation Type</h5>
                        					<p>How and where could you apply this trend to your business?</p>
-                                  <field name="innovation_type" widget="many2many_tags" options="{'color_field': 'color'}" placeholder="Innovation Types"/>
+                                 <ul class="list-group list-group-horizontal mb-4">
+                                  <li class="list-group-item flex-fill"><i class="fa fa-cogs" style="color:#348396;"></i> CONFIGURATION</li>
+                                  <li class="list-group-item flex-fill"><i class="fa fa-gift" style="color:#f1a564;"></i> OFFERING</li>
+                                  <li class="list-group-item flex-fill"><i class="fa fa-glass" style="color:#f4cf34;"></i> EXPERIENCE</li>
+                                </ul>
+                                  <field name="innovation_type" widget="many2many_tags" options="{'color_field': 'color', 'no_quick_create':True}" placeholder="Innovation Types"/>
                        				</div>
                        			</div>
                        			<div class="row">
@@ -100,7 +105,10 @@
                        			<div class="row border bg-light">
                        				<div class="col-12" style="height: 220px;">
                        					<h5>Who</h5>
-                       					<p>Which (new) customer groups could you apply this trend to? What would you have to change?</p>
+                       					<p>Which (new) customer groups could you apply this trend to?</p>
+                                  <field name="tribes_ids" widget="many2many_tags" placeholder="Tribes"/>
+                                 <p>What would you have to change?</p>
+                                 <field name="what_change"/>
                        				</div>
                        			</div>
                        		</div>

@@ -88,6 +88,8 @@ class MarketingStrategyConsumerTrend(models.Model):
     trend = fields.Text()
     innovation = fields.Text()
     needs_ids = fields.Many2many('marketing_strategy.need')
+    tribes_ids = fields.Many2many('marketing_strategy.tribe', 'marketing_strategy_consumer_trend_tribe_rel', 'consumer_trend_id', 'tribe_id')
+    what_change = fields.Text()
     mode = fields.Selection([('incremental','Incremental'),('architectural','Architectural'),('disruptive','Disruptive'),('radical','Radical')])
     innovation_type = fields.Many2many('marketing_strategy.consumer_trend.innovation_type','marketing_strategy_custumer_trend_innovation_type_rel','custumer_trend_id', 'type_id')
     questions_s_ids = fields.One2many('marketing_strategy.consumer_trend.question_s', 'consumer_trend_id')
