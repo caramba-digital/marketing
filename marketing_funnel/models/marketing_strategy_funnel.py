@@ -52,7 +52,7 @@ class Funnel(models.Model):
     name = fields.Char('Funnel Name', required=True, translate=True)
     type_id = fields.Many2one('funnel.type', required=True)
     brand_id = fields.Many2one('marketing_strategy.brand', domain = [('relation','=', 'main')], string='Brand', required=True)
-    object_id = fields.Many2one('ir.model', 'Resource', required=True, domain=[('model','in',['res.partner', 'sale.order','crm.lead','event.registration','website.visitor'])],
+    object_id = fields.Many2one('ir.model', 'Resource', required=True, domain=[('model','in',['res.partner', 'sale.order','crm.lead','event.registration','website.visitor', 'mailing.contact'])],
         help="Choose the resource on which you want this Funnel to be run")
     color = fields.Integer('Kanban Color Index')
     parent_funnel_id = fields.Many2one('funnel.funnel', 'Parent Funnel')
@@ -87,6 +87,13 @@ class FunnelPage(models.Model):
     type_id = fields.Many2one('funnel.page.type', required=True)
     active = fields.Boolean('Active', default=True)
     content = fields.Html('Content', default=_default_content, translate=html_translate, sanitize=False)
+    product_id = fields.Many2one(
+        'product.product', string='Product', domain="[('sale_ok', '=', True), '|', ('company_id', '=', False), ('company_id', '=', company_id)]",
+        change_default=True, ondelete='restrict', check_company=True) 
+    product_ids = fields.Many2many('product.product', domain="[('sale_ok', '=', True), '|', ('company_id', '=', False), ('company_id', '=', company_id)]" )
+    products_ids= fields.Many2many(comodel_name='product.product', string='Products', ondelete='restrict', check_company=True)
+    event_id = fields.Many2one('event.event')
+    mailing_list_id = fields.Many2one('mailing.list', string='')
     activity_ids = fields.One2many('funnel.activity', 'page_id', 'Activities')
     last_date = fields.Datetime('Last View')
     visits = fields.Integer('No of Views', copy=False, readonly=True)
@@ -94,7 +101,7 @@ class FunnelPage(models.Model):
     website_id = fields.Many2one(related='funnel_id.website_id', readonly=True)
     company_id = fields.Many2one('res.company', 'Company', required=True, index=True, default=lambda self: self.env.company) 
 
-    def process_activities(self, object_id):
+    def process_activities(self, object_id, res_id):
         Workitems = self.env['funnel.workitem']
         Activities = self.env['funnel.activity']
         action_date = fields.Datetime.now()
@@ -102,7 +109,7 @@ class FunnelPage(models.Model):
         wi_vals = {
             'date': action_date,
             'state': 'todo',
-            'res_id': self.env[self.funnel_id.object_id.model].search([('id','=', object_id)])
+            'res_id': res_id
         }
         for activity_id in activity_ids:
             wi_vals['activity_id'] = activity_id
@@ -118,6 +125,7 @@ class FunnelActivity(models.Model):
 
     name = fields.Char('Name', required=True, translate=True)
     page_id = fields.Many2one('funnel.page', string="Page", required=True, ondelete='cascade', index=True)
+    res_id = fields.Integer()
     object_id = fields.Many2one(related='page_id.object_id', relation='ir.model', string='Object', readonly=True)
     start = fields.Integer('Start', help="This activity is launched when the page is viewed.", compute='_compute_start', index=True, store=True)
     condition = fields.Text('Condition', required=True, default="True",

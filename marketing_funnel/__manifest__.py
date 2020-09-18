@@ -12,7 +12,7 @@
     
     'category': 'Marketing/Strategy',
     'version': '13.0.0.0.0',
-    'depends': ['marketing_strategy', 'website_event'],
+    'depends': ['marketing_strategy', 'website_event', 'gamification', 'mass_mailing'],
     'license': 'AGPL-3',
 
     # always loaded
