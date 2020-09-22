@@ -91,7 +91,6 @@ class FunnelPage(models.Model):
         'product.product', string='Product', domain="[('sale_ok', '=', True), '|', ('company_id', '=', False), ('company_id', '=', company_id)]",
         change_default=True, ondelete='restrict', check_company=True) 
     product_ids = fields.Many2many('product.product', domain="[('sale_ok', '=', True), '|', ('company_id', '=', False), ('company_id', '=', company_id)]" )
-    products_ids= fields.Many2many(comodel_name='product.product', string='Products', ondelete='restrict', check_company=True)
     event_id = fields.Many2one('event.event')
     mailing_list_id = fields.Many2one('mailing.list', string='')
     activity_ids = fields.One2many('funnel.activity', 'page_id', 'Activities')

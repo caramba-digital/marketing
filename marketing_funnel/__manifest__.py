@@ -11,8 +11,8 @@
     'website': "https://antoniofregoso.com",
     
     'category': 'Marketing/Strategy',
-    'version': '13.0.0.0.0',
-    'depends': ['marketing_strategy', 'website_event', 'gamification', 'mass_mailing'],
+    'version': '13.0.0.1.0',
+    'depends': ['marketing_strategy', 'website_event', 'hr_gamification', 'mass_mailing'],
     'license': 'AGPL-3',
 
     # always loaded
@@ -20,7 +20,7 @@
         'security/ir.model.access.csv',
         'views/marketing_strategy_funnel_templates.xml',
         'views/marketing_strategy_funnel_views.xml',
-        'views/marketing_strategy_views.xml',
+        'views/marketing_strategy_settings_views.xml',
         'views/mail_template_views.xml',
         'views/website_visitor_views.xml',
         'data/marketing_strategy_funnel_data.xml',
