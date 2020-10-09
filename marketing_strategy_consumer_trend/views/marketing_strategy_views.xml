@@ -1,0 +1,293 @@
+<odoo>
+  <data>
+
+  <record id='marketing_strategy_consumer_trend_view_tree' model='ir.ui.view'>
+    <field name="name">marketing_strategy.consumer_trend.tree</field>
+    <field name="model">marketing_strategy.consumer_trend</field>
+    <field name="arch" type="xml">
+      <tree string="Consumer Trends">
+        <field name="name" />
+        <field name="state" />
+        <field name="company_id" options="{'no_create': True}" groups="base.group_multi_company"/>
+    </tree>
+    </field>
+  </record>
+
+  <record id='marketing_strategy_consumer_trend_view_form' model='ir.ui.view'>
+    <field name="name">marketing_strategy.consumer_trend.form</field>
+    <field name="model">marketing_strategy.consumer_trend</field>
+    <field name="arch" type="xml">
+      <form string="Consumer Trend">
+        <header>
+          <field name="state" widget="statusbar" options="{'clickable': '1'}"/>
+        </header>
+        <sheet>
+          <div class="oe_title">
+            <h1><field name="name" placeholder="Name"/></h1>
+          </div>
+          <group>
+            <group>
+              <field name="mode"/>
+              <field name="company_id" options="{'no_create': True}" groups="base.group_multi_company"/>
+            </group>
+            <group>
+              <field name="start"/>
+              <field name="end"/>
+            </group>
+          </group>
+          <div class="row mt-5 mx-2" style="font-size: xx-small;">
+                       		<div class="col-8 bg-warning pt-4 " >
+                       			<h2 class="text-center">ANALYZE</h2>
+                       			<div class="row">
+                       				<div class="col-9">  
+                       					<div class="row">
+                       						<div class="col-4  border bg-light">
+                       							<h5>Trend</h5>
+                                      <field name="trend"/>
+                       						</div>
+                       						<div class="col-8  border bg-light" style="height: 160px;">
+                       							<h5>Inspiration</h5>
+                       							<p>How are other businesses applying this trend?</p>
+                       						</div>                       						
+                       					</div> 
+                       					<div class="row">
+                       						<div class="col-4 border bg-light" style="height: 320px;">
+                       							<h5>Basic Needs</h5>
+                       								<p>Which deep consumer needs &amp; desires does this trend address? </p>
+                                       <field name="needs_ids" widget="many2many_tags" options="{'color_field': 'color'}" placeholder="Basic Needs"/>
+                       						</div>
+                       						<div class="col-8 border bg-light" style="height: 320px;">
+                       							<h5>Drivers of Change</h5>
+                       								<p>Why is this trend emerging now? What’s changing?</p>
+                       							<div class="row">
+                       								<div class="col-6">
+                       									<h6>Shifts (long-term)</h6>
+                       									<p>Widespread macro changes</p>
+                       								</div>
+                       								<div class="col-6">                       									
+                       									<h6>Triggers (short-term)</h6>
+                       									<p> Recent changes or technologies</p>
+                       								</div>
+                       							</div>
+                       						</div>
+                       					
+                       					</div>
+                       				</div>
+                       				<div class="col-3  border bg-light" style="height: 480px;" >
+                       					<h5>Emerging<br/> 
+                       					Expectations                    						
+                       					</h5>
+                       					<p style="width: 90%">What new consumer needs, wants and expectations are created by the changes identified above?<br />
+									              Where and how does this trend satisfy them?</p>
+                       				</div>
+                       			</div>
+                       		</div>
+                       		<div class="col-4 pt-4 bg-success">
+                       			<h2 class="text-center">APPLY</h2>
+                       			<div class="row">
+                       				<div class="col-12 border bg-light" style="height: 180px;">
+                       					<h5>Innovation Type</h5>
+                       					<p>How and where could you apply this trend to your business?</p>
+                                 <ul class="list-group list-group-horizontal mb-4">
+                                  <li class="list-group-item flex-fill"><i class="fa fa-cogs" style="color:#348396;"></i> CONFIGURATION</li>
+                                  <li class="list-group-item flex-fill"><i class="fa fa-gift" style="color:#f1a564;"></i> OFFERING</li>
+                                  <li class="list-group-item flex-fill"><i class="fa fa-glass" style="color:#f4cf34;"></i> EXPERIENCE</li>
+                                </ul>
+                                  <field name="innovation_type" widget="many2many_tags" options="{'color_field': 'color', 'no_quick_create':True}" placeholder="Innovation Types"/>
+                       				</div>
+                       			</div>
+                       			<div class="row">
+                       				<div class="col-12 border bg-light" style="height: 80px;">
+                       					<h5>YOUR INNOVATION</h5>
+                                  <field name="innovation"/>
+                       				</div>
+                       			</div>
+                       			<div class="row border bg-light">
+                       				<div class="col-12" style="height: 220px;">
+                       					<h5>Who</h5>
+                       					<p>Which (new) customer groups could you apply this trend to?</p>
+                                  <field name="tribes_ids" widget="many2many_tags" placeholder="Tribes"/>
+                                 <p>What would you have to change?</p>
+                                 <field name="what_change"/>
+                       				</div>
+                       			</div>
+                       		</div>
+                	 </div>
+                   <h3 class="mt-3">SCAMPER Method</h3>
+             <notebook colspan="4">
+              <page string="Substitute" autofocus="autofocus">
+              <p>What can be replaced? (for example, components, materials, people)</p>
+                 <field name="questions_s_ids"  widget="section_and_note_one2many"  mode="tree, form"  context="{'default_consumer_trend_id': active_id}"   nolabel="1"  >
+                  <tree string="Questions" >
+                                <field name="sequence" widget="handle"/>
+                                <field name="name"/>
+                                <field name="consumer_trend_id" invisible="1"/>
+                  </tree>
+                  <form string="Question">
+                    <group>
+                      <field name="name"/>
+                      <field name="consumer_trend_id" invisible="1"/>
+                    </group>
+                  </form>
+                 </field>
+              </page>
+              <page string="Combine">
+              <p>What can be combined? (for example, other features, devices)</p>
+                 <field name="questions_c_ids"  widget="section_and_note_one2many"  mode="tree, form"  context="{'default_consumer_trend_id': active_id}"   nolabel="1"  >
+                  <tree string="Questions" >
+                                <field name="sequence" widget="handle"/>
+                                <field name="name"/>
+                                <field name="consumer_trend_id" invisible="1"/>
+                  </tree>
+                  <form string="Question">
+                    <group>
+                      <field name="name"/>
+                      <field name="consumer_trend_id" invisible="1"/>
+                    </group>
+                  </form>
+                 </field>
+              </page>
+              <page string="Adapt">
+              <p>What can be added? (such as new elements or functions)</p>
+                 <field name="questions_a_ids"  widget="section_and_note_one2many"  mode="tree, form"  context="{'default_consumer_trend_id': active_id}"   nolabel="1"  >
+                  <tree string="Questions" >
+                                <field name="sequence" widget="handle"/>
+                                <field name="name"/>
+                                <field name="consumer_trend_id" invisible="1"/>
+                  </tree>
+                  <form string="Question">
+                    <group>
+                      <field name="name"/>
+                      <field name="consumer_trend_id" invisible="1"/>
+                    </group>
+                  </form>
+                 </field>
+              </page>
+              <page string="Modify">
+              <p>What can be modified? (for example, change the size, shape color or other attribute)</p>
+                 <field name="questions_m_ids"  widget="section_and_note_one2many"  mode="tree, form"  context="{'default_consumer_trend_id': active_id}"   nolabel="1"  >
+                  <tree string="Questions" >
+                                <field name="sequence" widget="handle"/>
+                                <field name="name"/>
+                                <field name="consumer_trend_id" invisible="1"/>
+                  </tree>
+                  <form string="Question">
+                    <group>
+                      <field name="name"/>
+                      <field name="consumer_trend_id" invisible="1"/>
+                    </group>
+                  </form>
+                 </field>
+              </page>
+              <page string="Put to other uses">
+              <p>Could you put the product to a different use, or use it in another industry?</p>
+                 <field name="questions_p_ids"  widget="section_and_note_one2many"  mode="tree, form"  context="{'default_consumer_trend_id': active_id}"   nolabel="1"  >
+                  <tree string="Questions" >
+                                <field name="sequence" widget="handle"/>
+                                <field name="name"/>
+                                <field name="consumer_trend_id" invisible="1"/>
+                  </tree>
+                  <form string="Question">
+                    <group>
+                      <field name="name"/>
+                      <field name="consumer_trend_id" invisible="1"/>
+                    </group>
+                  </form>
+                 </field>
+              </page>
+              <page string="Eliminate">
+                <p>What can be removed or simplified?</p>
+                 <field name="questions_e_ids"  widget="section_and_note_one2many"  mode="tree, form"  context="{'default_consumer_trend_id': active_id}"   nolabel="1"  >
+                  <tree string="Questions" >
+                                <field name="sequence" widget="handle"/>
+                                <field name="name"/>
+                                <field name="consumer_trend_id" invisible="1"/>
+                  </tree>
+                  <form string="Question">
+                    <group>
+                      <field name="name"/>
+                      <field name="consumer_trend_id" invisible="1"/>
+                    </group>
+                  </form>
+                 </field>
+              </page>
+              <page string="Reverse">
+              <p> What would happen if you reversed the product's production process? What can be swapped or flipped?</p>
+                 <field name="questions_r_ids"  widget="section_and_note_one2many"  mode="tree, form"  context="{'default_consumer_trend_id': active_id}"   nolabel="1"  >
+                  <tree string="Questions" >
+                                <field name="sequence" widget="handle"/>
+                                <field name="name"/>
+                                <field name="consumer_trend_id" invisible="1"/>
+                  </tree>
+                  <form string="Question">
+                    <group>
+                      <field name="name"/>
+                      <field name="consumer_trend_id" invisible="1"/>
+                    </group>
+                  </form>
+                 </field>
+              </page>
+            </notebook>
+        </sheet>
+        <div class="oe_chatter">
+          <field name="message_follower_ids" widget="mail_followers"/>
+          <field name="activity_ids" widget="mail_activity"/>
+          <field name="message_ids" widget="mail_thread" options="{'post_refresh': 'recipients'}"/>
+        </div>
+      </form>
+    </field>
+  </record>
+
+  <record id='marketing_strategy_consumer_trend_view_kanban' model='ir.ui.view'>
+    <field name="name">marketing_strategy.consumer_trend.kanban</field>
+    <field name="model">marketing_strategy.consumer_trend</field>
+    <field name="arch" type="xml">
+      <kanban   default_group_by="state" class="o_kanban_small_column">
+        <field name="name" />
+        <field name="color"/>
+        <field name="image_128" />
+          <templates>
+            <t t-name="kanban-box">
+              <div t-attf-class="#{kanban_color(record.color.raw_value)} oe_kanban_global_click o_kanban_record_has_image_fill">
+                <div class="o_dropdown_kanban dropdown">
+                  <a class="dropdown-toggle o-no-caret btn" role="button" data-toggle="dropdown" href="#" aria-label="Dropdown menu" title="Dropdown menu">
+                    <span class="fa fa-ellipsis-v"/>
+                  </a>
+                  <div class="dropdown-menu" role="menu">
+                    <t t-if="widget.editable"><a role="menuitem" type="edit" class="dropdown-item">Edit</a></t>
+                    <t t-if="widget.deletable"><a role="menuitem" type="delete" class="dropdown-item">Delete</a></t>
+                    <ul class="oe_kanban_colorpicker" data-field="color"/>
+                  </div>
+                </div>
+                <field name="image_128" widget="image" class="o_kanban_image_fill_left" options="{'zoom': true, 'zoom_delay': 1000, 'background': true, 'preventClicks': false}"/>
+                <div class="oe_kanban_details">
+                  <h4 class="oe_partner_heading">
+                    <a type="open" class="o_kanban_record_title">
+                      <field name="name"/>
+                    </a>
+                  </h4> 
+                </div>
+              </div>
+            </t>
+          </templates>
+      </kanban>
+    </field>
+  </record>
+
+  <record id='marketing_strategy_consumer_trend_action' model='ir.actions.act_window'>
+    <field name="name">Consumer Trends</field>
+        <field name="res_model">marketing_strategy.consumer_trend</field>
+        <field name="view_mode">kanban,tree,form</field>
+        <field name="help" type="html">
+          <p class="o_view_nocontent_smiling_face">
+            Create a new Consumer Trend
+          </p>
+        </field>
+    </record>
+
+    <menuitem id="menu_marketing_strategy_consumer_trend" name="Consumer Trends"
+      parent="marketing_strategy.marketing_strategy_menu_solutions"
+      action="marketing_strategy_consumer_trend_action" sequence="0"/>	
+
+  </data>
+</odoo>
