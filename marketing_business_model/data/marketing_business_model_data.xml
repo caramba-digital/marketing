@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+
+    <!-- Channels -->
+    <!-- Traction: How Any Startup Can Achieve Explosive Customer Growth Hardcover – October 6, 2015 -->
+
+    <record id="marketing_strategy_channel_opt_1" model="marketing_strategy.channel">
+    	<field name="name">Viral Marketing</field>
+    </record>
+
+    <record id="marketing_strategy_channel_opt_2" model="marketing_strategy.channel">
+    	<field name="name">Public Relations (PR)</field>
+    </record>
+
+    <record id="marketing_strategy_channel_opt_3" model="marketing_strategy.channel">
+    	<field name="name">Unconventional PR</field>
+    </record>
+
+    <record id="marketing_strategy_channel_opt_4" model="marketing_strategy.channel">
+    	<field name="name">Search Engine Marketing (SEM)</field>
+    </record>
+
+    <record id="marketing_strategy_channel_opt_5" model="marketing_strategy.channel">
+    	<field name="name">Social and Display Ads</field>
+    </record>
+
+    <record id="marketing_strategy_channel_opt_6" model="marketing_strategy.channel">
+    	<field name="name">Offline Ads</field>
+    </record>
+
+    <record id="marketing_strategy_channel_opt_7" model="marketing_strategy.channel">
+    	<field name="name">Search Engine Optimization (SEO)</field>
+    </record>
+
+    <record id="marketing_strategy_channel_opt_8" model="marketing_strategy.channel">
+    	<field name="name">Content Marketing</field>
+    </record>
+
+    <record id="marketing_strategy_channel_opt_9" model="marketing_strategy.channel">
+    	<field name="name">Email Marketing</field>
+    </record>
+
+    <record id="marketing_strategy_channel_opt_10" model="marketing_strategy.channel">
+    	<field name="name">Engineering as Marketing</field>
+    </record>
+
+    <record id="marketing_strategy_channel_opt_11" model="marketing_strategy.channel">
+    	<field name="name">Targeting Blogs</field>
+    </record>
+
+    <record id="marketing_strategy_channel_opt_12" model="marketing_strategy.channel">
+    	<field name="name">Business Development (BD)</field>
+    </record>
+
+    <record id="marketing_strategy_channel_opt_13" model="marketing_strategy.channel">
+    	<field name="name">Sales</field>
+    </record>
+
+    <record id="marketing_strategy_channel_opt_14" model="marketing_strategy.channel">
+    	<field name="name">Affiliate Programs</field>
+    </record>
+
+    <record id="marketing_strategy_channel_opt_15" model="marketing_strategy.channel">
+    	<field name="name">Existing Platforms</field>
+    </record>
+
+    <record id="marketing_strategy_channel_opt_16" model="marketing_strategy.channel">
+    	<field name="name">Trade Shows</field>
+    </record>
+
+    <record id="marketing_strategy_channel_opt_17" model="marketing_strategy.channel">
+    	<field name="name">Offline Events</field>
+    </record>
+
+    <record id="marketing_strategy_channel_opt_18" model="marketing_strategy.channel">
+    	<field name="name">Speaking Engagements</field>
+    </record>
+
+    <record id="marketing_strategy_channel_opt_19" model="marketing_strategy.channel">
+    	<field name="name">Community Building</field>
+    </record>
+
+
+    </data>
+</odoo>
