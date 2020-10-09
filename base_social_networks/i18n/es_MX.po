@@ -1,0 +1,145 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* base_social_networks
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-10-09 21:58+0000\n"
+"PO-Revision-Date: 2020-10-09 17:03-0500\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: es_MX\n"
+"X-Generator: Poedit 2.3\n"
+
+#. module: base_social_networks
+#: model:ir.model.fields,field_description:base_social_networks.field_res_partner__blog
+#: model:ir.model.fields,field_description:base_social_networks.field_res_users__blog
+msgid "Blog"
+msgstr ""
+
+#. module: base_social_networks
+#: model:ir.model.fields,field_description:base_social_networks.field_res_partner__blog_2
+#: model:ir.model.fields,field_description:base_social_networks.field_res_users__blog_2
+msgid "Blog 2"
+msgstr ""
+
+#. module: base_social_networks
+#: model:ir.model,name:base_social_networks.model_res_partner
+msgid "Contact"
+msgstr "Contacto"
+
+#. module: base_social_networks
+#: model:ir.model.fields,field_description:base_social_networks.field_res_partner__display_name
+msgid "Display Name"
+msgstr "Nombre mostrado"
+
+#. module: base_social_networks
+#: model:ir.model.fields,field_description:base_social_networks.field_res_partner__facebook_page
+#: model:ir.model.fields,field_description:base_social_networks.field_res_users__facebook_page
+msgid "Facebook Page"
+msgstr "Página de Facebook"
+
+#. module: base_social_networks
+#: model:ir.model.fields,field_description:base_social_networks.field_res_partner__facebook_profile
+#: model:ir.model.fields,field_description:base_social_networks.field_res_users__facebook_profile
+msgid "Facebook Profile"
+msgstr "Perfil de Facebook"
+
+#. module: base_social_networks
+#: model:ir.model.fields,field_description:base_social_networks.field_res_partner__github_profile
+#: model:ir.model.fields,field_description:base_social_networks.field_res_users__github_profile
+msgid "Github Profile"
+msgstr "Perfil Github"
+
+#. module: base_social_networks
+#: model:ir.model.fields,field_description:base_social_networks.field_res_partner__google_my_business
+#: model:ir.model.fields,field_description:base_social_networks.field_res_users__google_my_business
+msgid "Google My Business"
+msgstr "Google Mi Negocio"
+
+#. module: base_social_networks
+#: model:ir.model.fields,field_description:base_social_networks.field_res_partner__id
+msgid "ID"
+msgstr ""
+
+#. module: base_social_networks
+#: model:ir.model.fields,field_description:base_social_networks.field_res_partner__instagram_profile
+#: model:ir.model.fields,field_description:base_social_networks.field_res_users__instagram_profile
+msgid "Instagram Profile"
+msgstr "Pérfil Instagram"
+
+#. module: base_social_networks
+#: model:ir.model.fields,field_description:base_social_networks.field_res_partner____last_update
+msgid "Last Modified on"
+msgstr "Última modificación el"
+
+#. module: base_social_networks
+#: model:ir.model.fields,field_description:base_social_networks.field_res_partner__linkedin_page
+#: model:ir.model.fields,field_description:base_social_networks.field_res_users__linkedin_page
+msgid "Linkedin Page"
+msgstr "Página LinkedIn"
+
+#. module: base_social_networks
+#: model:ir.model.fields,field_description:base_social_networks.field_res_partner__linkedin_profile
+#: model:ir.model.fields,field_description:base_social_networks.field_res_users__linkedin_profile
+msgid "Linkedin Profile"
+msgstr "Perfil LinkedIn"
+
+#. module: base_social_networks
+#: model:ir.model.fields,field_description:base_social_networks.field_res_partner__messenger
+#: model:ir.model.fields,field_description:base_social_networks.field_res_users__messenger
+msgid "Messenger"
+msgstr ""
+
+#. module: base_social_networks
+#: model:ir.model.fields,field_description:base_social_networks.field_res_partner__pinterest_profile
+#: model:ir.model.fields,field_description:base_social_networks.field_res_users__pinterest_profile
+msgid "Pinterest Profile"
+msgstr "Pérfil Pinterest"
+
+#. module: base_social_networks
+#: model:ir.model.fields,field_description:base_social_networks.field_res_partner__podcast_channel
+#: model:ir.model.fields,field_description:base_social_networks.field_res_users__podcast_channel
+msgid "Podcast Channel"
+msgstr "Canal de Podcast"
+
+#. module: base_social_networks
+#: model_terms:ir.ui.view,arch_db:base_social_networks.social_netwoks_form
+msgid "Social Networks"
+msgstr "Redes Sociales"
+
+#. module: base_social_networks
+#: model:ir.model.fields,field_description:base_social_networks.field_res_partner__telegram
+#: model:ir.model.fields,field_description:base_social_networks.field_res_users__telegram
+msgid "Telegram"
+msgstr ""
+
+#. module: base_social_networks
+#: model:ir.model.fields,field_description:base_social_networks.field_res_partner__tiktok_profile
+#: model:ir.model.fields,field_description:base_social_networks.field_res_users__tiktok_profile
+msgid "Tiktok Profile"
+msgstr "Perfil TikTok"
+
+#. module: base_social_networks
+#: model:ir.model.fields,field_description:base_social_networks.field_res_partner__twitter_profile
+#: model:ir.model.fields,field_description:base_social_networks.field_res_users__twitter_profile
+msgid "Twitter Profile"
+msgstr "Pérfil Twitter"
+
+#. module: base_social_networks
+#: model:ir.model.fields,field_description:base_social_networks.field_res_partner__whatsapp_businnes
+#: model:ir.model.fields,field_description:base_social_networks.field_res_users__whatsapp_businnes
+msgid "Whatsapp Businnes"
+msgstr ""
+
+#. module: base_social_networks
+#: model:ir.model.fields,field_description:base_social_networks.field_res_partner__youtube_channel
+#: model:ir.model.fields,field_description:base_social_networks.field_res_users__youtube_channel
+msgid "Youtube Channel"
+msgstr "Canal Youtube"

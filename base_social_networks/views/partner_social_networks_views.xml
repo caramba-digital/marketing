@@ -1,0 +1,40 @@
+<odoo>
+    <data>
+
+      <record id="social_netwoks_form" model="ir.ui.view">
+        <field name="name">res.partner.social_networks.form</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+          <page name="sales_purchases" position="after">
+            <page string="Social Networks" name="social_networks">
+              <group>
+                <group>
+                  <field name="facebook_profile"/>
+                  <field name="twitter_profile"/>
+                  <field name="instagram_profile"/>
+                  <field name="linkedin_profile"/>
+                  <field name="tiktok_profile"/>
+                  <field name="pinterest_profile"/>
+                  <field name="github_profile"/>
+                  <field name="blog"/>     
+                </group>
+                <group>
+                  <field name="youtube_channel"/>
+                  <field name="facebook_page"/>
+                  <field name="linkedin_page"/>
+                  <field name="podcast_channel"/>
+                  <field name="google_my_business"/>
+                  <field name="whatsapp_businnes"/>  
+                  <field name="messenger"/>  
+                  <field name="telegram"/>  
+                  <field name="blog_2"/>   
+                </group>
+              </group>
+            </page>    
+          </page>
+        </field>  
+      </record>
+
+    </data>
+</odoo>
