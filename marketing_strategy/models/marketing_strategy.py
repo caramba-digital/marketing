@@ -7,6 +7,13 @@ from odoo import api, fields, models, tools, _
 PRODUCT_TYPE = [('good','Good'), ('service','Service'), ('event','Event'), ('experience','Experiences'), ('','People'), ('pleace','Place'), ('property_right','Property right'), ('institution','Institution'), ('information','Information'), ('idea','Idea')]
 PERSONALITY = [('average', 'Average'), ('reserved', 'Reserved'), ('self_centered', 'Self-centered'), ('role_model', 'Role model')]
 
+OPENNESS = {'average':25, 'reserved':25, 'self_centered':25, 'role_model':60}
+CONCIENTIOUSNESS = {'average':60, 'reserved':60, 'self_centered':35, 'role_model':80}
+EXTRAVERSION = {'average':75, 'reserved':45, 'self_centered':75, 'role_model':75}
+AGREEABLENESS = {'average':60, 'reserved':55, 'self_centered':30, 'role_model':75}
+EMOTIONAL_RANGE = {'average':75, 'reserved':25, 'self_centered':45, 'role_model':85}
+
+
 class BrandTag(models.Model):
 
     _name = "marketing_strategy.brand.tag"
@@ -75,19 +82,44 @@ class MarketingBrand(models.Model):
     blog = fields.Char('Blog')
     url = fields.Char('Website')
     podcast_channel = fields.Char('Podcast Channel')
-    openness = fields.Float(default=50, readonly=True)
-    conscientiousness = fields.Float(default=50, readonly=True)
-    extraversion = fields.Float(default=50, readonly=True)
-    agreeableness = fields.Float(default=50, readonly=True)
-    emotional_range = fields.Float(default=50, readonly=True)
+    openness = fields.Float(compute='_compute_openness', readonly=True)
+    conscientiousness = fields.Float(compute='_compute_conscientiousness', readonly=True)
+    extraversion = fields.Float(compute='_compute_extraversion', readonly=True)
+    agreeableness = fields.Float(compute='_compute_agreeableness', readonly=True)
+    emotional_range = fields.Float(compute='_compute_emotional_range', readonly=True)
     needs_ids = fields.Many2many('marketing_strategy.need')
     values_ids = fields.Many2many('marketing_strategy.value', 'marketing_strategy_brand_needs_rel', 'brand_id', 'value_id')
     topics_ids = fields.Many2many('marketing_strategy.brand.topic')
-    personality = fields.Selection(PERSONALITY)
+    personality = fields.Selection(PERSONALITY, default='average')
     customer_relationship = fields.Selection([('unknown','Unknown'),('friends','Friends'),('colleagues','Colleagues'),('marriage','Marriage'),('partners','Partners'),('parents','Parents'),('lovers','Lovers'),('guru-disciple','Guru-Disciple'),('star-fan','Star-Fan'),('neighbors','Neighbors'),('teammates','Teammates')])
     image_1920 = fields.Image()
     company_id = fields.Many2one('res.company', 'Company', required=True, index=True, default=lambda self: self.env.company)
     
+    @api.depends('personality')
+    def _compute_openness(self):
+        for record in self:
+            record.openness = OPENNESS[record.personality]
+
+    @api.depends('personality')
+    def _compute_conscientiousness(self):
+        for record in self:
+            record.conscientiousness = CONCIENTIOUSNESS[record.personality]
+
+    @api.depends('personality')
+    def _compute_extraversion(self):
+        for record in self:
+            record.extraversion = EXTRAVERSION[record.personality]
+
+    @api.depends('personality')
+    def _compute_agreeableness(self):
+        for record in self:
+            record.agreeableness = AGREEABLENESS[record.personality]
+
+    @api.depends('personality')
+    def _compute_emotional_range(self):
+        for record in self:
+            record.emotional_range = EMOTIONAL_RANGE[record.personality]
+
     
     
 class TouchpointTag(models.Model):
@@ -354,16 +386,41 @@ class BuyerPersona(models.Model):
     objection_ids = fields.Many2many('marketing_strategy.buyer_objection', 'buyer_objection_rel', 'buyer_id', 'objection_id', string='Objections')
     goal_ids = fields.Many2many('marketing_strategy.buyer_goal', 'buyer_goal_rel', 'buyer_id', 'goal_id', string='Goals')   
     company_currency = fields.Many2one(string='Currency', related='company_id.currency_id', readonly=True, relation="res.currency")
-    personality = fields.Selection(PERSONALITY)
-    openness = fields.Float(default=50, readonly=True)
-    conscientiousness = fields.Float(default=50, readonly=True)
-    extraversion = fields.Float(default=50, readonly=True)
-    agreeableness = fields.Float(default=50, readonly=True)
-    emotional_range = fields.Float(default=50, readonly=True)
+    personality = fields.Selection(PERSONALITY, default='average')
+    openness = fields.Float(compute='_compute_openness', readonly=True)
+    conscientiousness = fields.Float(compute='_compute_conscientiousness', readonly=True)
+    extraversion = fields.Float(compute='_compute_extraversion', readonly=True)
+    agreeableness = fields.Float(compute='_compute_agreeableness', readonly=True)
+    emotional_range = fields.Float(compute='_compute_emotional_range', readonly=True)
     needs_ids = fields.Many2many('marketing_strategy.need', 'marketing_strategy_buyer_persona_needs_rel', 'brand_id', 'need_id')
     values_ids = fields.Many2many('marketing_strategy.value', 'marketing_strategy_buyer_persona_rel', 'brand_id', 'value_id')
     company_id = fields.Many2one('res.company', 'Company', required=True, index=True, default=lambda self: self.env.company)
     
+
+    @api.depends('personality')
+    def _compute_openness(self):
+        for record in self:
+            record.openness = OPENNESS[record.personality]
+
+    @api.depends('personality')
+    def _compute_conscientiousness(self):
+        for record in self:
+            record.conscientiousness = CONCIENTIOUSNESS[record.personality]
+
+    @api.depends('personality')
+    def _compute_extraversion(self):
+        for record in self:
+            record.extraversion = EXTRAVERSION[record.personality]
+
+    @api.depends('personality')
+    def _compute_agreeableness(self):
+        for record in self:
+            record.agreeableness = AGREEABLENESS[record.personality]
+
+    @api.depends('personality')
+    def _compute_emotional_range(self):
+        for record in self:
+            record.emotional_range = EMOTIONAL_RANGE[record.personality]
 
     
 class TribeCategory(models.Model):
