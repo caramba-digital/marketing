@@ -147,7 +147,7 @@ class Touchpoint(models.Model):
     state = fields.Selection([
         ('draft', 'Draft'),('testing', 'Testing'),
         ('operating', 'Operating'), ('maintenance', 'Maintenance'), ('cancel', 'Cancelled')],
-        string='Status', default='draft', required=True, copy=False, track_visibility='onchange', group_expand='_expand_states')
+        string='Status', default='draft', required=True, copy=False, group_expand='_expand_states')
     ref = fields.Char(string='Internal Reference')
     type = fields.Selection([('online', 'Online'),('offline', 'Offline')], string='Type', required=True, default='online')
     url = fields.Char('URL')
@@ -156,7 +156,7 @@ class Touchpoint(models.Model):
     tag_ids = fields.Many2many('marketing_strategy.touchpoint.tag', 'marketing_strategy_touchpoint_tags_rel', 'touchpoint_id', 'tag_id', string='Tags')
     story_brand_id = fields.Many2one('marketing_strategy.story_brand')
     plan_id = fields.Many2one('marketing_strategy.plan', string='Marketing Plan')
-    buyer_journey_stage = fields.Selection([('awareness','Awareness'),('consideration','Consideration'),('purchase','Purchase'),('service','Service'),('loyalty','Loyalty')], string="Buyer's Journey Stage", default='awareness', required=True, copy=False, track_visibility='onchange', group_expand='_expand_buyer_journey')
+    buyer_journey_stage = fields.Selection([('awareness','Awareness'),('consideration','Consideration'),('purchase','Purchase'),('service','Service'),('loyalty','Loyalty')], string="Buyer's Journey Stage", default='awareness', required=True, copy=False, group_expand='_expand_buyer_journey')
     responsible_id = fields.Many2one('res.users', string='Responsible', required=False, default=lambda self: self.env.user)
     image_1920 = fields.Image()
     utm_source_id = fields.Many2one('utm.source')
@@ -244,7 +244,7 @@ class ValueProposition(models.Model):
         ('done', 'Completed'),
         ('cancel', 'Cancelled'),
         ],
-        string='Status', default='draft', required=True, copy=False, track_visibility='onchange', group_expand='_expand_states')
+        string='Status', default='draft', required=True, copy=False, group_expand='_expand_states')
     color = fields.Integer('Kanban Color Index')
     brand_owner_id = fields.Many2one('res.partner')
     description = fields.Html('Description')
@@ -482,7 +482,7 @@ class Plan(models.Model):
         ('done', 'Completed'),
         ('cancel', 'Cancelled'),
         ],
-        string='Status', default='draft', required=True, copy=False, track_visibility='onchange', group_expand='_expand_states')
+        string='Status', default='draft', required=True, copy=False, group_expand='_expand_states')
     active = fields.Boolean(default=True,
         help="If the active field is set to False, it will allow you to hide the project without removing it.")
     mission = fields.Html('Description')
