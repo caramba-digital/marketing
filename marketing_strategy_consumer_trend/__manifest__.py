@@ -10,7 +10,7 @@
     'website': "https://www.antoniofregoso..com",
 
     'category': 'Marketing/Strategy',
-    'version': '0.0.0.0',
+    'version': '1.0.0.0',
 
     'depends': ['marketing_strategy'],
 
