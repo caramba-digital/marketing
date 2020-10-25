@@ -48,7 +48,7 @@ class MarketingStrategyStoryBrand(models.Model):
         ('done', 'Completed'),
         ('cancel', 'Cancelled'),
         ],
-        string='Status', default='draft', required=True, copy=False, track_visibility='onchange', group_expand='_expand_states')
+        string='Status', default='draft', required=True, copy=False, group_expand='_expand_states')
     color = fields.Integer('Kanban Color Index')
     summary = fields.Html()
     brand_owner_id = fields.Many2one('res.partner', required=True)

@@ -93,9 +93,9 @@ class BusinessModel(models.Model):
         ('done', 'Completed'),
         ('cancel', 'Cancelled'),
         ],
-        string='Status', default='draft', required=True, copy=False, track_visibility='onchange', group_expand='_expand_states')
+        string='Status', default='draft', required=True, copy=False, group_expand='_expand_states')
     active = fields.Boolean(default=True)
-    user_id = fields.Many2one('res.users', string='Responsible', default=lambda self: self.env.user, track_visibility="onchange")
+    user_id = fields.Many2one('res.users', string='Responsible', default=lambda self: self.env.user)
     color = fields.Integer('Kanban Color Index')
     date_begin = fields.Date()
     date_end = fields.Date()

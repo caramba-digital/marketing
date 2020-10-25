@@ -52,19 +52,16 @@
                        						<div class="col-8  border bg-light" style="height: 160px;">
                        							<h5>Inspiration</h5>
                        							<p>How are other businesses applying this trend?</p>
-                                      <field name="brands_ids" widget="many2many_kanban">
-                                        <kanban>
-                                          <field name="name"/>
-                                          <field name="image_128"/>
-                                          <templates>
-                                            <t t-name="kanban-box" >
-                                              <div t-attf-class="oe_kanban_global_click  o_kanban_record_has_image_fill">
-                                                
-                                              </div>
-                                            </t>
-                                          </templates>
-                                        </kanban>
-                                      </field>
+                                    <div class="row">
+                                      <div class="col-3"><field name="inspiration_1" widget="image" class="img-thumbnail" style="width:50px;height:50px"/></div>
+                                      <div class="col-3"><field name="inspiration_2" widget="image" class="img-thumbnail" style="width:50px;height:50px"/></div>
+                                      <div class="col-3"><field name="inspiration_3" widget="image" class="img-thumbnail" style="width:50px;height:50px"/></div>
+                                      <div class="col-3"><field name="inspiration_4" widget="image" class="img-thumbnail" style="width:50px;height:50px"/></div>
+                                      <div class="col-3"><field name="inspiration_5" widget="image" class="img-thumbnail" style="width:50px;height:50px"/></div>
+                                      <div class="col-3"><field name="inspiration_6" widget="image" class="img-thumbnail" style="width:50px;height:50px"/></div>
+                                      <div class="col-3"><field name="inspiration_7" widget="image" class="img-thumbnail" style="width:50px;height:50px"/></div>
+                                      <div class="col-3"><field name="inspiration_8" widget="image" class="img-thumbnail" style="width:50px;height:50px"/></div>
+                                    </div>
                        						</div>                       						
                        					</div> 
                        					<div class="row">
@@ -80,10 +77,17 @@
                        								<div class="col-6">
                        									<h6>Shifts (long-term)</h6>
                        									<p>Widespread macro changes</p>
+                                         <p></p>
+                                         <field name="shift_1"/>
+                                         <field name="shift_2"/>
+                                         <field name="shift_3"/>
                        								</div>
                        								<div class="col-6">                       									
                        									<h6>Triggers (short-term)</h6>
                        									<p> Recent changes or technologies</p>
+                                         <field name="triggers_1"/>
+                                         <field name="triggers_2"/>
+                                         <field name="triggers_3"/>
                        								</div>
                        							</div>
                        						</div>
@@ -96,6 +100,11 @@
                        					</h5>
                        					<p style="width: 90%">What new consumer needs, wants and expectations are created by the changes identified above?<br />
 									              Where and how does this trend satisfy them?</p>
+                                <field name="expectation_1"/>
+                                <field name="expectation_2"/>
+                                <field name="expectation_3"/>
+                                <field name="expectation_4"/>
+                                <field name="expectation_5"/>
                        				</div>
                        			</div>
                        		</div>
