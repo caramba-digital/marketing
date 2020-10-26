@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-10-25 21:44+0000\n"
-"PO-Revision-Date: 2020-10-25 15:54-0600\n"
+"POT-Creation-Date: 2020-10-26 14:01+0000\n"
+"PO-Revision-Date: 2020-10-26 08:07-0600\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -76,6 +76,11 @@ msgstr "Adaptar"
 #: model:ir.model.fields.selection,name:marketing_strategy_consumer_trend.selection__marketing_strategy_consumer_trend__state__analyzing
 msgid "Analyzing"
 msgstr "Analizando"
+
+#. module: marketing_strategy_consumer_trend
+#: model:ir.model.fields,field_description:marketing_strategy_consumer_trend.field_marketing_strategy_consumer_trend__user_id
+msgid "Assigned to"
+msgstr "Asignado a"
 
 #. module: marketing_strategy_consumer_trend
 #: model:ir.model.fields,field_description:marketing_strategy_consumer_trend.field_marketing_strategy_consumer_trend__message_attachment_count
@@ -271,12 +276,12 @@ msgstr "Expectativa 3"
 #. module: marketing_strategy_consumer_trend
 #: model:ir.model.fields,field_description:marketing_strategy_consumer_trend.field_marketing_strategy_consumer_trend__expectation_4
 msgid "Expectation 4"
-msgstr "Expectation 4"
+msgstr "Expectativa 4"
 
 #. module: marketing_strategy_consumer_trend
 #: model:ir.model.fields,field_description:marketing_strategy_consumer_trend.field_marketing_strategy_consumer_trend__expectation_5
 msgid "Expectation 5"
-msgstr "Expectation 5"
+msgstr "Expectativa 5"
 
 #. module: marketing_strategy_consumer_trend
 #: model:ir.model.fields,field_description:marketing_strategy_consumer_trend.field_marketing_strategy_consumer_trend__message_follower_ids
@@ -345,6 +350,7 @@ msgid "If checked, some messages have a delivery error."
 msgstr "Si está marcado, algunos mensajes tienen un error de entrega."
 
 #. module: marketing_strategy_consumer_trend
+#: model:ir.model.fields,field_description:marketing_strategy_consumer_trend.field_marketing_strategy_consumer_trend__image
 #: model:ir.model.fields,field_description:marketing_strategy_consumer_trend.field_marketing_strategy_consumer_trend__image_1920
 msgid "Image"
 msgstr "Imagen"
@@ -382,7 +388,7 @@ msgstr "Inductor"
 #. module: marketing_strategy_consumer_trend
 #: model:ir.model.fields,field_description:marketing_strategy_consumer_trend.field_marketing_strategy_consumer_trend__innovation
 msgid "Innovation"
-msgstr "Innovation"
+msgstr "Innovación"
 
 #. module: marketing_strategy_consumer_trend
 #: model:ir.model.fields,field_description:marketing_strategy_consumer_trend.field_marketing_strategy_consumer_trend__innovation_inducer
@@ -434,7 +440,7 @@ msgstr "Inspiration 5"
 #. module: marketing_strategy_consumer_trend
 #: model:ir.model.fields,field_description:marketing_strategy_consumer_trend.field_marketing_strategy_consumer_trend__inspiration_6
 msgid "Inspiration 6"
-msgstr "Inspiration 6"
+msgstr "Inspiration 5"
 
 #. module: marketing_strategy_consumer_trend
 #: model:ir.model.fields,field_description:marketing_strategy_consumer_trend.field_marketing_strategy_consumer_trend__inspiration_7
@@ -843,6 +849,11 @@ msgstr "Mensajes no leídos"
 #: model:ir.model.fields,field_description:marketing_strategy_consumer_trend.field_marketing_strategy_consumer_trend__message_unread_counter
 msgid "Unread Messages Counter"
 msgstr "Contador de mensajes no leídos"
+
+#. module: marketing_strategy_consumer_trend
+#: model:ir.model.fields,field_description:marketing_strategy_consumer_trend.field_marketing_strategy_consumer_trend__value_proposition_id
+msgid "Value Proposition"
+msgstr "Propuesta de Valor"
 
 #. module: marketing_strategy_consumer_trend
 #: model:ir.model.fields,field_description:marketing_strategy_consumer_trend.field_marketing_strategy_consumer_trend__website_message_ids

@@ -22,17 +22,20 @@
           <field name="state" widget="statusbar" options="{'clickable': '1'}"/>
         </header>
         <sheet>
+          <field name="image_1920" widget='image' class="oe_avatar" options='{"preview_image": "image_128"}'/>
           <div class="oe_title">
             <h1><field name="name" placeholder="Name"/></h1>
           </div>
           <group>
             <group>
               <field name="brand_id"/>
+              <field name="value_proposition_id"/>
               <field name="company_id" options="{'no_create': True}" groups="base.group_multi_company"/>
             </group>
             <group>
               <field name="start"/>
               <field name="end"/>
+              <field name="user_id"/>
             </group>
           </group>
           <div class="row mt-5 mx-2" style="font-size: xx-small;">
@@ -48,6 +51,7 @@
                        						<div class="col-4  border bg-light">
                        							<h5>Trend</h5>
                                       <field name="trend"/>
+                                      <field name="image" widget="image_128"  />
                        						</div>
                        						<div class="col-8  border bg-light" style="height: 160px;">
                        							<h5>Inspiration</h5>

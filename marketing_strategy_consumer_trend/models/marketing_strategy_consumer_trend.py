@@ -83,7 +83,9 @@ class MarketingStrategyConsumerTrend(models.Model):
         ],
         string='Status', default='draft', required=True, copy=False, group_expand='_expand_states')
     color = fields.Integer('Kanban Color Index')
+    image = fields.Image()
     brand_id = fields.Many2one('marketing_strategy.brand')
+    value_proposition_id = fields.Many2one('marketing_strategy.value_proposition')
     inspiration_1 = fields.Image()
     inspiration_2 = fields.Image()
     inspiration_3 = fields.Image()
@@ -105,6 +107,7 @@ class MarketingStrategyConsumerTrend(models.Model):
     expectation_5 = fields.Text()
     start = fields.Datetime()
     end = fields.Datetime()
+    user_id = fields.Many2one('res.users',string='Assigned to', default=lambda self: self.env.uid, index=True, tracking=True)
     trend = fields.Text()
     innovation = fields.Text()
     needs_ids = fields.Many2many('marketing_strategy.need')

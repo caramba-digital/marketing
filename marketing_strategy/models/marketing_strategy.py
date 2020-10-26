@@ -92,9 +92,8 @@ class MarketingBrand(models.Model):
     topics_ids = fields.Many2many('marketing_strategy.brand.topic')
     personality = fields.Selection(PERSONALITY, default='average')
     customer_relationship = fields.Selection([('unknown','Unknown'),('friends','Friends'),('colleagues','Colleagues'),('marriage','Marriage'),('partners','Partners'),('parents','Parents'),('lovers','Lovers'),('guru-disciple','Guru-Disciple'),('star-fan','Star-Fan'),('neighbors','Neighbors'),('teammates','Teammates')])
-    image_1920 = fields.Image()
     company_id = fields.Many2one('res.company', 'Company', required=True, index=True, default=lambda self: self.env.company)
-    
+    image_1920 = fields.Image()
     @api.depends('personality')
     def _compute_openness(self):
         for record in self:
