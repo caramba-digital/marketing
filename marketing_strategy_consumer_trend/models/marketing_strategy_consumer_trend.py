@@ -71,43 +71,25 @@ class MarketingStrategyConsumerTrend(models.Model):
     _inherit = ['mail.thread', 'mail.activity.mixin','image.mixin']
 
     def _expand_states(self, states, domain, order):
-        return ['draft', 'analyzing', 'done', 'cancel']
+        return ['draft', 'new', 'develop', 'approved', 'progress', 'done']
     
 
     name = fields.Char('Name', required=True)
     state = fields.Selection([
         ('draft', 'Draft'),
-        ('analyzing', 'Analyzing'),
+        ('new', 'New ideas'),
+        ('develop', 'Develop Together'),
+        ('approved','Approved'),
+        ('progress','In progress'),
         ('done', 'Completed'),
         ('cancel', 'Cancelled'),
         ],
-        string='Status', default='draft', required=True, copy=False, group_expand='_expand_states')
+        string='Status', default='draft', required=True, copy=False, track_visibility='onchange', group_expand='_expand_states')
     color = fields.Integer('Kanban Color Index')
-    image = fields.Image()
     brand_id = fields.Many2one('marketing_strategy.brand')
-    value_proposition_id = fields.Many2one('marketing_strategy.value_proposition')
-    inspiration_1 = fields.Image()
-    inspiration_2 = fields.Image()
-    inspiration_3 = fields.Image()
-    inspiration_4 = fields.Image()
-    inspiration_5 = fields.Image()
-    inspiration_6 = fields.Image()
-    inspiration_7 = fields.Image()
-    inspiration_8 = fields.Image()
-    triggers_1 = fields.Text()
-    triggers_2 = fields.Text()
-    triggers_3 = fields.Text()
-    shift_1 = fields.Text()
-    shift_2 = fields.Text()
-    shift_3 = fields.Text()
-    expectation_1 = fields.Text()
-    expectation_2 = fields.Text()
-    expectation_3 = fields.Text()
-    expectation_4 = fields.Text()
-    expectation_5 = fields.Text()
+    brands_ids = fields.Many2many('marketing_strategy.brand')
     start = fields.Datetime()
     end = fields.Datetime()
-    user_id = fields.Many2one('res.users',string='Assigned to', default=lambda self: self.env.uid, index=True, tracking=True)
     trend = fields.Text()
     innovation = fields.Text()
     needs_ids = fields.Many2many('marketing_strategy.need')

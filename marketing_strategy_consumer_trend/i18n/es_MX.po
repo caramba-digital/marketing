@@ -6,15 +6,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-10-26 14:01+0000\n"
-"PO-Revision-Date: 2020-10-26 08:07-0600\n"
+"POT-Creation-Date: 2020-10-27 23:30+0000\n"
+"PO-Revision-Date: 2020-10-27 17:34-0600\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: \n"
-"Language: es_MX\n"
+"Language: es\n"
 "X-Generator: Poedit 2.3\n"
 
 #. module: marketing_strategy_consumer_trend
@@ -73,14 +73,9 @@ msgid "Adapt"
 msgstr "Adaptar"
 
 #. module: marketing_strategy_consumer_trend
-#: model:ir.model.fields.selection,name:marketing_strategy_consumer_trend.selection__marketing_strategy_consumer_trend__state__analyzing
-msgid "Analyzing"
-msgstr "Analizando"
-
-#. module: marketing_strategy_consumer_trend
-#: model:ir.model.fields,field_description:marketing_strategy_consumer_trend.field_marketing_strategy_consumer_trend__user_id
-msgid "Assigned to"
-msgstr "Asignado a"
+#: model:ir.model.fields.selection,name:marketing_strategy_consumer_trend.selection__marketing_strategy_consumer_trend__state__approved
+msgid "Approved"
+msgstr "Aprovado"
 
 #. module: marketing_strategy_consumer_trend
 #: model:ir.model.fields,field_description:marketing_strategy_consumer_trend.field_marketing_strategy_consumer_trend__message_attachment_count
@@ -98,6 +93,11 @@ msgstr "Necesidades básicas"
 #: model:marketing_strategy.consumer_trend.innovation_type,name:marketing_strategy_consumer_trend.consumer_trend_innovation_type_opt_9
 msgid "Brand"
 msgstr "Marca"
+
+#. module: marketing_strategy_consumer_trend
+#: model:ir.model.fields,field_description:marketing_strategy_consumer_trend.field_marketing_strategy_consumer_trend__brands_ids
+msgid "Brands"
+msgstr "Marcas"
 
 #. module: marketing_strategy_consumer_trend
 #: model:ir.model.fields.selection,name:marketing_strategy_consumer_trend.selection__marketing_strategy_consumer_trend__state__cancel
@@ -201,6 +201,11 @@ msgid "Delete"
 msgstr "Eliminar"
 
 #. module: marketing_strategy_consumer_trend
+#: model:ir.model.fields.selection,name:marketing_strategy_consumer_trend.selection__marketing_strategy_consumer_trend__state__develop
+msgid "Develop Together"
+msgstr "Desarrollar Juntos"
+
+#. module: marketing_strategy_consumer_trend
 #: model:ir.model.fields,field_description:marketing_strategy_consumer_trend.field_marketing_strategy_consumer_trend__display_name
 #: model:ir.model.fields,field_description:marketing_strategy_consumer_trend.field_marketing_strategy_consumer_trend_basic_need__display_name
 #: model:ir.model.fields,field_description:marketing_strategy_consumer_trend.field_marketing_strategy_consumer_trend_innovation_type__display_name
@@ -257,31 +262,6 @@ msgstr ""
 #: model:ir.model.fields,field_description:marketing_strategy_consumer_trend.field_marketing_strategy_consumer_trend__end
 msgid "End"
 msgstr "Final"
-
-#. module: marketing_strategy_consumer_trend
-#: model:ir.model.fields,field_description:marketing_strategy_consumer_trend.field_marketing_strategy_consumer_trend__expectation_1
-msgid "Expectation 1"
-msgstr "Expectativa 1"
-
-#. module: marketing_strategy_consumer_trend
-#: model:ir.model.fields,field_description:marketing_strategy_consumer_trend.field_marketing_strategy_consumer_trend__expectation_2
-msgid "Expectation 2"
-msgstr "Expectativa 2"
-
-#. module: marketing_strategy_consumer_trend
-#: model:ir.model.fields,field_description:marketing_strategy_consumer_trend.field_marketing_strategy_consumer_trend__expectation_3
-msgid "Expectation 3"
-msgstr "Expectativa 3"
-
-#. module: marketing_strategy_consumer_trend
-#: model:ir.model.fields,field_description:marketing_strategy_consumer_trend.field_marketing_strategy_consumer_trend__expectation_4
-msgid "Expectation 4"
-msgstr "Expectativa 4"
-
-#. module: marketing_strategy_consumer_trend
-#: model:ir.model.fields,field_description:marketing_strategy_consumer_trend.field_marketing_strategy_consumer_trend__expectation_5
-msgid "Expectation 5"
-msgstr "Expectativa 5"
 
 #. module: marketing_strategy_consumer_trend
 #: model:ir.model.fields,field_description:marketing_strategy_consumer_trend.field_marketing_strategy_consumer_trend__message_follower_ids
@@ -350,7 +330,6 @@ msgid "If checked, some messages have a delivery error."
 msgstr "Si está marcado, algunos mensajes tienen un error de entrega."
 
 #. module: marketing_strategy_consumer_trend
-#: model:ir.model.fields,field_description:marketing_strategy_consumer_trend.field_marketing_strategy_consumer_trend__image
 #: model:ir.model.fields,field_description:marketing_strategy_consumer_trend.field_marketing_strategy_consumer_trend__image_1920
 msgid "Image"
 msgstr "Imagen"
@@ -374,6 +353,11 @@ msgstr "Imagen 256"
 #: model:ir.model.fields,field_description:marketing_strategy_consumer_trend.field_marketing_strategy_consumer_trend__image_512
 msgid "Image 512"
 msgstr "Imagen 512"
+
+#. module: marketing_strategy_consumer_trend
+#: model:ir.model.fields.selection,name:marketing_strategy_consumer_trend.selection__marketing_strategy_consumer_trend__state__progress
+msgid "In progress"
+msgstr "En Progreso"
 
 #. module: marketing_strategy_consumer_trend
 #: model:ir.model.fields.selection,name:marketing_strategy_consumer_trend.selection__marketing_strategy_consumer_trend__mode__incremental
@@ -411,46 +395,6 @@ msgstr "Tipos de Innovación"
 #: model_terms:ir.ui.view,arch_db:marketing_strategy_consumer_trend.marketing_strategy_consumer_trend_view_form
 msgid "Inspiration"
 msgstr "Inspiración"
-
-#. module: marketing_strategy_consumer_trend
-#: model:ir.model.fields,field_description:marketing_strategy_consumer_trend.field_marketing_strategy_consumer_trend__inspiration_1
-msgid "Inspiration 1"
-msgstr "Inspiración 1"
-
-#. module: marketing_strategy_consumer_trend
-#: model:ir.model.fields,field_description:marketing_strategy_consumer_trend.field_marketing_strategy_consumer_trend__inspiration_2
-msgid "Inspiration 2"
-msgstr "Inspiration 2"
-
-#. module: marketing_strategy_consumer_trend
-#: model:ir.model.fields,field_description:marketing_strategy_consumer_trend.field_marketing_strategy_consumer_trend__inspiration_3
-msgid "Inspiration 3"
-msgstr "Inspiration 3"
-
-#. module: marketing_strategy_consumer_trend
-#: model:ir.model.fields,field_description:marketing_strategy_consumer_trend.field_marketing_strategy_consumer_trend__inspiration_4
-msgid "Inspiration 4"
-msgstr "Inspiration 4"
-
-#. module: marketing_strategy_consumer_trend
-#: model:ir.model.fields,field_description:marketing_strategy_consumer_trend.field_marketing_strategy_consumer_trend__inspiration_5
-msgid "Inspiration 5"
-msgstr "Inspiration 5"
-
-#. module: marketing_strategy_consumer_trend
-#: model:ir.model.fields,field_description:marketing_strategy_consumer_trend.field_marketing_strategy_consumer_trend__inspiration_6
-msgid "Inspiration 6"
-msgstr "Inspiration 5"
-
-#. module: marketing_strategy_consumer_trend
-#: model:ir.model.fields,field_description:marketing_strategy_consumer_trend.field_marketing_strategy_consumer_trend__inspiration_7
-msgid "Inspiration 7"
-msgstr "Inspiration 7"
-
-#. module: marketing_strategy_consumer_trend
-#: model:ir.model.fields,field_description:marketing_strategy_consumer_trend.field_marketing_strategy_consumer_trend__inspiration_8
-msgid "Inspiration 8"
-msgstr "Inspiration 8"
 
 #. module: marketing_strategy_consumer_trend
 #: model:ir.model.fields,field_description:marketing_strategy_consumer_trend.field_marketing_strategy_consumer_trend__message_is_follower
@@ -546,6 +490,11 @@ msgstr "Necesidades"
 #: model:marketing_strategy.consumer_trend.innovation_type,name:marketing_strategy_consumer_trend.consumer_trend_innovation_type_opt_2
 msgid "Network"
 msgstr "Red"
+
+#. module: marketing_strategy_consumer_trend
+#: model:ir.model.fields.selection,name:marketing_strategy_consumer_trend.selection__marketing_strategy_consumer_trend__state__new
+msgid "New ideas"
+msgstr "Ideas Nuevas"
 
 #. module: marketing_strategy_consumer_trend
 #: model:ir.model.fields,field_description:marketing_strategy_consumer_trend.field_marketing_strategy_consumer_trend__activity_date_deadline
@@ -746,21 +695,6 @@ msgid "Service"
 msgstr "Servicio"
 
 #. module: marketing_strategy_consumer_trend
-#: model:ir.model.fields,field_description:marketing_strategy_consumer_trend.field_marketing_strategy_consumer_trend__shift_1
-msgid "Shift 1"
-msgstr "Cambio1"
-
-#. module: marketing_strategy_consumer_trend
-#: model:ir.model.fields,field_description:marketing_strategy_consumer_trend.field_marketing_strategy_consumer_trend__shift_2
-msgid "Shift 2"
-msgstr "Cambio 2"
-
-#. module: marketing_strategy_consumer_trend
-#: model:ir.model.fields,field_description:marketing_strategy_consumer_trend.field_marketing_strategy_consumer_trend__shift_3
-msgid "Shift 3"
-msgstr "Cambio 3"
-
-#. module: marketing_strategy_consumer_trend
 #: model_terms:ir.ui.view,arch_db:marketing_strategy_consumer_trend.marketing_strategy_consumer_trend_view_form
 msgid "Shifts (long-term)"
 msgstr "Cambios (a largo plazo)"
@@ -821,21 +755,6 @@ msgid "Triggers (short-term)"
 msgstr "Desencadenantes (a corto plazo)"
 
 #. module: marketing_strategy_consumer_trend
-#: model:ir.model.fields,field_description:marketing_strategy_consumer_trend.field_marketing_strategy_consumer_trend__triggers_1
-msgid "Triggers 1"
-msgstr "Disparadores 1"
-
-#. module: marketing_strategy_consumer_trend
-#: model:ir.model.fields,field_description:marketing_strategy_consumer_trend.field_marketing_strategy_consumer_trend__triggers_2
-msgid "Triggers 2"
-msgstr "Disparadores 2"
-
-#. module: marketing_strategy_consumer_trend
-#: model:ir.model.fields,field_description:marketing_strategy_consumer_trend.field_marketing_strategy_consumer_trend__triggers_3
-msgid "Triggers 3"
-msgstr "Disparadores 3"
-
-#. module: marketing_strategy_consumer_trend
 #: model:ir.model.fields,help:marketing_strategy_consumer_trend.field_marketing_strategy_consumer_trend__activity_exception_decoration
 msgid "Type of the exception activity on record."
 msgstr "Tipo de actividad de excepción registrada."
@@ -849,11 +768,6 @@ msgstr "Mensajes no leídos"
 #: model:ir.model.fields,field_description:marketing_strategy_consumer_trend.field_marketing_strategy_consumer_trend__message_unread_counter
 msgid "Unread Messages Counter"
 msgstr "Contador de mensajes no leídos"
-
-#. module: marketing_strategy_consumer_trend
-#: model:ir.model.fields,field_description:marketing_strategy_consumer_trend.field_marketing_strategy_consumer_trend__value_proposition_id
-msgid "Value Proposition"
-msgstr "Propuesta de Valor"
 
 #. module: marketing_strategy_consumer_trend
 #: model:ir.model.fields,field_description:marketing_strategy_consumer_trend.field_marketing_strategy_consumer_trend__website_message_ids
