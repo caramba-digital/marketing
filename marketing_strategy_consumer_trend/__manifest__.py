@@ -7,10 +7,10 @@
     'summary': "Implement the consumer trends canvas",
 
     'author': "Antonio Fregoso",
-    'website': "https://www.antoniofregoso..com",
+    'website': "https://www.antoniofregoso.com",
 
     'category': 'Marketing/Strategy',
-    'version': '1.0.0.0',
+    'version': '1.1.0',
 
     'depends': ['marketing_strategy'],
 
@@ -18,6 +18,7 @@
 
     'data': [
         'security/ir.model.access.csv',
+        'security/marketing_strategy_consumer_trend_security.xml'
         'views/marketing_strategy_views.xml',
         'data/marketing_strategy_data.xml',
     ],

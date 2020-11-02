@@ -277,7 +277,7 @@
 
 <menuitem id="marketing_strategy_brand_persona_menu" name="Brands Persona"
             parent="marketing_strategy_menu_solutions"
-            action="marketing_strategy_brand_persona_action" sequence="1"/>	
+            action="marketing_strategy_brand_persona_action" sequence="2"/>	
 
      <!-- Touchpoint -->
 
@@ -630,7 +630,7 @@
     
       <menuitem id="menu_marketing_strategy_value_proposition_dev" name="Value Propositios"
             parent="marketing_strategy_menu_solutions"
-            action="marketing_strategy_value_proposition_action" sequence="2"/>	
+            action="marketing_strategy_value_proposition_action" sequence="1"/>	
             
  	        <!-- Marketing Strategy Plan -->
         <record id="view_marketing_strategy_plan_tree" model="ir.ui.view">

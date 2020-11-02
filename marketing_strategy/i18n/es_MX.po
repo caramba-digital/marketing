@@ -4,23 +4,83 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 13.0\n"
+"Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-02 16:36+0000\n"
-"PO-Revision-Date: 2020-09-02 11:43-0500\n"
+"POT-Creation-Date: 2020-11-02 04:20+0000\n"
+"PO-Revision-Date: 2020-11-01 22:29-0600\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: \n"
-"Language: es_MX\n"
+"Language: es\n"
 "X-Generator: Poedit 2.3\n"
 
 #. module: marketing_strategy
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_buyer_persona__children
 msgid "# Children"
 msgstr "#Hijos"
+
+#. module: marketing_strategy
+#: model:ir.model.fields.selection,name:marketing_strategy.selection__marketing_strategy_story_brand_theme__chapter__chapter_1
+msgid "1. Status Quo"
+msgstr "1. Status quo"
+
+#. module: marketing_strategy
+#: model:ir.model.fields.selection,name:marketing_strategy.selection__marketing_strategy_story_brand_theme__chapter__chapter_a
+msgid "10. The Road Back"
+msgstr "10. El camino de regreso"
+
+#. module: marketing_strategy
+#: model:ir.model.fields.selection,name:marketing_strategy.selection__marketing_strategy_story_brand_theme__chapter__chapter_b
+msgid "11. Resurrection"
+msgstr "11. Resurrección"
+
+#. module: marketing_strategy
+#: model:ir.model.fields.selection,name:marketing_strategy.selection__marketing_strategy_story_brand_theme__chapter__chapter_c
+msgid "12. Return with the Elixir"
+msgstr "12. Regresa con el Elixir"
+
+#. module: marketing_strategy
+#: model:ir.model.fields.selection,name:marketing_strategy.selection__marketing_strategy_story_brand_theme__chapter__chapter_2
+msgid "2. Call to Adventure"
+msgstr "2. Llamada a la aventura"
+
+#. module: marketing_strategy
+#: model:ir.model.fields.selection,name:marketing_strategy.selection__marketing_strategy_story_brand_theme__chapter__chapter_3
+msgid "3. Refusal of the call"
+msgstr "3. Rechazo de la llamada"
+
+#. module: marketing_strategy
+#: model:ir.model.fields.selection,name:marketing_strategy.selection__marketing_strategy_story_brand_theme__chapter__chapter_4
+msgid "4. Meeting with the mentor"
+msgstr "4. Reunión con el mentor"
+
+#. module: marketing_strategy
+#: model:ir.model.fields.selection,name:marketing_strategy.selection__marketing_strategy_story_brand_theme__chapter__chapter_5
+msgid "5. Crossing the threshold"
+msgstr "5. Cruzando el umbral"
+
+#. module: marketing_strategy
+#: model:ir.model.fields.selection,name:marketing_strategy.selection__marketing_strategy_story_brand_theme__chapter__chapter_6
+msgid "6. Trials and Allies"
+msgstr "6. Juicios y aliados"
+
+#. module: marketing_strategy
+#: model:ir.model.fields.selection,name:marketing_strategy.selection__marketing_strategy_story_brand_theme__chapter__chapter_7
+msgid "7. Approaching the cave"
+msgstr "7. Acercándose a la cueva"
+
+#. module: marketing_strategy
+#: model:ir.model.fields.selection,name:marketing_strategy.selection__marketing_strategy_story_brand_theme__chapter__chapter_8
+msgid "8. The Ordeal"
+msgstr "8. La prueba"
+
+#. module: marketing_strategy
+#: model:ir.model.fields.selection,name:marketing_strategy.selection__marketing_strategy_story_brand_theme__chapter__chapter_9
+msgid "9. The Reward"
+msgstr "9. La recompensa"
 
 #. module: marketing_strategy
 #: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_brand_view_kanban
@@ -88,6 +148,17 @@ msgid "Activity State"
 msgstr "Estado de actividad"
 
 #. module: marketing_strategy
+#: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_brand__activity_type_icon
+#: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_plan__activity_type_icon
+#: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_story_brand__activity_type_icon
+#: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_story_brand_content__activity_type_icon
+#: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_story_brand_theme__activity_type_icon
+#: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_touchpoint__activity_type_icon
+#: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_value_proposition__activity_type_icon
+msgid "Activity Type Icon"
+msgstr "Icono de tipo de actividad"
+
+#. module: marketing_strategy
 #: model:ir.ui.menu,name:marketing_strategy.menu_marketing_strategy_actors
 msgid "Actors"
 msgstr "Actores"
@@ -96,17 +167,6 @@ msgstr "Actores"
 #: model:res.groups,name:marketing_strategy.group_strategy_manager
 msgid "Administrator"
 msgstr "Administrador"
-
-#. module: marketing_strategy
-#: model:ir.model.fields,help:marketing_strategy.field_marketing_strategy_story_brand__chapter_12
-#: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_story_brand_view_form
-msgid ""
-"After defeating the big bad, the hero returns to her ordinary life, having "
-"changed and now with the ability to share her new knowledge with the world."
-msgstr ""
-"Después de derrotar al gran mal, el héroe regresa a su vida cotidiana, "
-"habiendo cambiado y ahora con la capacidad de compartir su nuevo "
-"conocimiento con el mundo."
 
 #. module: marketing_strategy
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_buyer_persona__age
@@ -149,12 +209,6 @@ msgid "Annual Income"
 msgstr "Ingresos anuales"
 
 #. module: marketing_strategy
-#: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_story_brand__chapter_7
-#: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_story_brand_view_form
-msgid "Approaching the cave"
-msgstr "Acercándose a la cueva"
-
-#. module: marketing_strategy
 #: model:ir.ui.menu,name:marketing_strategy.marketing_strategy_menu_assets
 msgid "Assets"
 msgstr "Activos"
@@ -178,7 +232,6 @@ msgstr "Promedio"
 
 #. module: marketing_strategy
 #: model:ir.model.fields.selection,name:marketing_strategy.selection__marketing_strategy_touchpoint__buyer_journey_stage__awareness
-#: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_story_brand_view_form
 msgid "Awareness"
 msgstr "Conciencia"
 
@@ -263,16 +316,6 @@ msgid "Brands Persona"
 msgstr "Marcas Persona"
 
 #. module: marketing_strategy
-#: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_story_brand_view_form
-msgid "But he hero scared of change and ignores her calling."
-msgstr "Pero el héroe tiene miedo al cambio e ignora su vocación."
-
-#. module: marketing_strategy
-#: model:ir.model.fields,help:marketing_strategy.field_marketing_strategy_story_brand__chapter_3
-msgid "But the hero scared of change and ignores her calling."
-msgstr "Pero el héroe tiene miedo al cambio e ignora su vocación."
-
-#. module: marketing_strategy
 #: model:ir.model,name:marketing_strategy.model_marketing_strategy_buyer_competence
 #: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_buyer_competence_form
 msgid "Buyer Competence"
@@ -351,19 +394,12 @@ msgstr "Etapa del Viaje del Comprador"
 #. module: marketing_strategy
 #: model:ir.actions.act_window,name:marketing_strategy.action_marketing_strategy_buyer_persona_form
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_plan__buyers_persona_ids
-#: model:ir.ui.menu,name:marketing_strategy.menu_marketing_strategy_buyer
-#: persona_config
 #: model:ir.ui.menu,name:marketing_strategy.menu_marketing_strategy_buyer_persona
+#: model:ir.ui.menu,name:marketing_strategy.menu_marketing_strategy_buyer_persona_config
 #: model:ir.ui.menu,name:marketing_strategy.menu_marketing_strategy_buyers_persona_hub
 #: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_buyer_persona_view_tree
 msgid "Buyers Persona"
 msgstr "Compradores Persona"
-
-#. module: marketing_strategy
-#: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_story_brand__chapter_2
-#: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_story_brand_view_form
-msgid "Call to Adventure"
-msgstr "Llamada a la aventura"
 
 #. module: marketing_strategy
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_plan__campaigns_ids
@@ -399,6 +435,31 @@ msgstr "Categoria:"
 #: model:marketing_strategy.need,name:marketing_strategy.marketing_strategy_need_opt_11
 msgid "Challenge"
 msgstr "Reto"
+
+#. module: marketing_strategy
+#: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_story_brand_content__chapter
+#: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_story_brand_theme__chapter
+#: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_story_brand_content_filter
+msgid "Chapter"
+msgstr "Capítulo"
+
+#. module: marketing_strategy
+#: model:ir.model.fields,help:marketing_strategy.field_marketing_strategy_story_brand_content__chapter
+#: model:ir.model.fields,help:marketing_strategy.field_marketing_strategy_story_brand_theme__chapter
+msgid "Chapter within the brand's history."
+msgstr "Capítulo dentro de la historia de la marca."
+
+#. module: marketing_strategy
+#: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_story_brand_content_view_kanban
+#: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_story_brand_view_form
+msgid "Chapter:"
+msgstr "Capítulo:"
+
+#. module: marketing_strategy
+#: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_story_brand__chapters_ids
+#: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_story_brand_view_form
+msgid "Chapters"
+msgstr "Capítulos"
 
 #. module: marketing_strategy
 #: model:ir.model.fields,help:marketing_strategy.field_res_partner__touchpoint_hub
@@ -528,7 +589,6 @@ msgstr "Responsabilidad"
 
 #. module: marketing_strategy
 #: model:ir.model.fields.selection,name:marketing_strategy.selection__marketing_strategy_touchpoint__buyer_journey_stage__consideration
-#: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_story_brand_view_form
 msgid "Consideration"
 msgstr "Consideración"
 
@@ -861,12 +921,6 @@ msgid "Created on"
 msgstr "Creado en"
 
 #. module: marketing_strategy
-#: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_story_brand__chapter_5
-#: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_story_brand_view_form
-msgid "Crossing the threshold"
-msgstr "Cruzando el umbral"
-
-#. module: marketing_strategy
 #: model:marketing_strategy.need,name:marketing_strategy.marketing_strategy_need_opt_3
 msgid "Curiosity"
 msgstr "Curiosidad"
@@ -1000,6 +1054,7 @@ msgid "Display"
 msgstr ""
 
 #. module: marketing_strategy
+#: model:ir.model.fields,field_description:marketing_strategy.field_crm_lead__display_name
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_brand__display_name
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_brand_tag__display_name
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_brand_topic__display_name
@@ -1028,10 +1083,14 @@ msgstr ""
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_value_proposition_customer_pain__display_name
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_value_proposition_gain_creator__display_name
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_value_proposition_pain_reliever__display_name
+#: model:ir.model.fields,field_description:marketing_strategy.field_res_partner__display_name
+#: model:ir.model.fields,field_description:marketing_strategy.field_sale_order__display_name
+#: model:ir.model.fields,field_description:marketing_strategy.field_utm_campaign__display_name
 #: model:ir.model.fields,field_description:marketing_strategy.field_utm_content__display_name
+#: model:ir.model.fields,field_description:marketing_strategy.field_utm_source__display_name
 #: model:ir.model.fields,field_description:marketing_strategy.field_utm_term__display_name
 msgid "Display Name"
-msgstr "Nombre para mostrar"
+msgstr "Nombre mostrado"
 
 #. module: marketing_strategy
 #: model:ir.model.fields.selection,name:marketing_strategy.selection__marketing_strategy_buyer_persona__status__divorced
@@ -1195,6 +1254,17 @@ msgid "Followers (Partners)"
 msgstr "Seguidores (Socios)"
 
 #. module: marketing_strategy
+#: model:ir.model.fields,help:marketing_strategy.field_marketing_strategy_brand__activity_type_icon
+#: model:ir.model.fields,help:marketing_strategy.field_marketing_strategy_plan__activity_type_icon
+#: model:ir.model.fields,help:marketing_strategy.field_marketing_strategy_story_brand__activity_type_icon
+#: model:ir.model.fields,help:marketing_strategy.field_marketing_strategy_story_brand_content__activity_type_icon
+#: model:ir.model.fields,help:marketing_strategy.field_marketing_strategy_story_brand_theme__activity_type_icon
+#: model:ir.model.fields,help:marketing_strategy.field_marketing_strategy_touchpoint__activity_type_icon
+#: model:ir.model.fields,help:marketing_strategy.field_marketing_strategy_value_proposition__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr ""
+
+#. module: marketing_strategy
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_story_brand_content__format
 msgid "Format"
 msgstr "Formato"
@@ -1257,6 +1327,7 @@ msgid "Good"
 msgstr "Bueno"
 
 #. module: marketing_strategy
+#: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_story_brand_content_filter
 #: model_terms:ir.ui.view,arch_db:marketing_strategy.view_marketing_strategy_buyer_persona_select
 #: model_terms:ir.ui.view,arch_db:marketing_strategy.view_marketing_strategy_touchpoints_select
 msgid "Group By"
@@ -1320,6 +1391,7 @@ msgid "Hub:"
 msgstr ""
 
 #. module: marketing_strategy
+#: model:ir.model.fields,field_description:marketing_strategy.field_crm_lead__id
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_brand__id
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_brand_tag__id
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_brand_topic__id
@@ -1348,7 +1420,11 @@ msgstr ""
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_value_proposition_customer_pain__id
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_value_proposition_gain_creator__id
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_value_proposition_pain_reliever__id
+#: model:ir.model.fields,field_description:marketing_strategy.field_res_partner__id
+#: model:ir.model.fields,field_description:marketing_strategy.field_sale_order__id
+#: model:ir.model.fields,field_description:marketing_strategy.field_utm_campaign__id
 #: model:ir.model.fields,field_description:marketing_strategy.field_utm_content__id
+#: model:ir.model.fields,field_description:marketing_strategy.field_utm_source__id
 #: model:ir.model.fields,field_description:marketing_strategy.field_utm_term__id
 msgid "ID"
 msgstr ""
@@ -1379,7 +1455,7 @@ msgstr "Icono para indicar una actividad de excepción."
 #: model:ir.model.fields.selection,name:marketing_strategy.selection__marketing_strategy_brand__product_type__idea
 #: model:ir.model.fields.selection,name:marketing_strategy.selection__marketing_strategy_value_proposition__product_type__idea
 msgid "Idea"
-msgstr "Idea"
+msgstr ""
 
 #. module: marketing_strategy
 #: model:marketing_strategy.need,name:marketing_strategy.marketing_strategy_need_opt_4
@@ -1582,6 +1658,7 @@ msgid "Language"
 msgstr "Idioma"
 
 #. module: marketing_strategy
+#: model:ir.model.fields,field_description:marketing_strategy.field_crm_lead____last_update
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_brand____last_update
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_brand_tag____last_update
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_brand_topic____last_update
@@ -1610,7 +1687,11 @@ msgstr "Idioma"
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_value_proposition_customer_pain____last_update
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_value_proposition_gain_creator____last_update
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_value_proposition_pain_reliever____last_update
+#: model:ir.model.fields,field_description:marketing_strategy.field_res_partner____last_update
+#: model:ir.model.fields,field_description:marketing_strategy.field_sale_order____last_update
+#: model:ir.model.fields,field_description:marketing_strategy.field_utm_campaign____last_update
 #: model:ir.model.fields,field_description:marketing_strategy.field_utm_content____last_update
+#: model:ir.model.fields,field_description:marketing_strategy.field_utm_source____last_update
 #: model:ir.model.fields,field_description:marketing_strategy.field_utm_term____last_update
 msgid "Last Modified on"
 msgstr "Última modificación el"
@@ -1755,7 +1836,6 @@ msgstr "Amantes"
 
 #. module: marketing_strategy
 #: model:ir.model.fields.selection,name:marketing_strategy.selection__marketing_strategy_touchpoint__buyer_journey_stage__loyalty
-#: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_story_brand_view_form
 msgid "Loyalty"
 msgstr "Lealtad"
 
@@ -1859,12 +1939,6 @@ msgid "Meeting place name already exists !"
 msgstr "¡El nombre del lugar de reunión ya existe!"
 
 #. module: marketing_strategy
-#: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_story_brand__chapter_4
-#: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_story_brand_view_form
-msgid "Meeting with the mentor"
-msgstr "Reunión con el mentor"
-
-#. module: marketing_strategy
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_tribe__members_ids
 #: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_tribe_view_form
 msgid "Members"
@@ -1873,7 +1947,7 @@ msgstr "Miembros"
 #. module: marketing_strategy
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_story_brand__brand_id
 msgid "Mentor"
-msgstr "Mentor"
+msgstr ""
 
 #. module: marketing_strategy
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_brand__message_has_error
@@ -2243,7 +2317,12 @@ msgstr "Tipo de lugar"
 #. module: marketing_strategy
 #: model:ir.model.fields,field_description:marketing_strategy.field_utm_campaign__plan_id
 msgid "Plan"
-msgstr "Plan"
+msgstr ""
+
+#. module: marketing_strategy
+#: model:ir.model.fields.selection,name:marketing_strategy.selection__marketing_strategy_story_brand_content__format__podcast
+msgid "Podcast"
+msgstr ""
 
 #. module: marketing_strategy
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_brand__podcast_channel
@@ -2284,15 +2363,8 @@ msgstr "Propuesta (1, 2, 3, 4)"
 
 #. module: marketing_strategy
 #: model:ir.model.fields.selection,name:marketing_strategy.selection__marketing_strategy_touchpoint__buyer_journey_stage__purchase
-#: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_story_brand_view_form
 msgid "Purchase"
 msgstr "Compra"
-
-#. module: marketing_strategy
-#: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_story_brand__chapter_3
-#: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_story_brand_view_form
-msgid "Refusal of the call"
-msgstr "Rechazo de la llamada"
 
 #. module: marketing_strategy
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_brand__related_brand_id
@@ -2340,18 +2412,6 @@ msgid "Responsible User"
 msgstr "Usuario Responsable"
 
 #. module: marketing_strategy
-#: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_story_brand__chapter_11
-#: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_story_brand_view_form
-msgid "Resurrection"
-msgstr "Resurrección"
-
-#. module: marketing_strategy
-#: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_story_brand__chapter_12
-#: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_story_brand_view_form
-msgid "Return with the Elixir"
-msgstr "Regresa con el Elixir"
-
-#. module: marketing_strategy
 #: model:ir.model.fields.selection,name:marketing_strategy.selection__marketing_strategy_brand__personality__role_model
 #: model:ir.model.fields.selection,name:marketing_strategy.selection__marketing_strategy_buyer_persona__personality__role_model
 msgid "Role model"
@@ -2384,6 +2444,11 @@ msgid "Search Buyers Persona"
 msgstr "Buscar compradores Persona"
 
 #. module: marketing_strategy
+#: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_story_brand_content_filter
+msgid "Search Themes"
+msgstr "Temas de búsqueda"
+
+#. module: marketing_strategy
 #: model_terms:ir.ui.view,arch_db:marketing_strategy.view_marketing_strategy_touchpoints_select
 msgid "Search Touchpoints"
 msgstr "Buscar Puntos de Contacto"
@@ -2414,7 +2479,6 @@ msgstr "Secuencia"
 #: model:ir.model.fields.selection,name:marketing_strategy.selection__marketing_strategy_brand__product_type__service
 #: model:ir.model.fields.selection,name:marketing_strategy.selection__marketing_strategy_touchpoint__buyer_journey_stage__service
 #: model:ir.model.fields.selection,name:marketing_strategy.selection__marketing_strategy_value_proposition__product_type__service
-#: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_story_brand_view_form
 msgid "Service"
 msgstr "Servicio"
 
@@ -2503,12 +2567,6 @@ msgid "Status"
 msgstr "Estado"
 
 #. module: marketing_strategy
-#: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_story_brand__chapter_1
-#: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_story_brand_view_form
-msgid "Status Quo"
-msgstr ""
-
-#. module: marketing_strategy
 #: model:ir.model.fields,help:marketing_strategy.field_marketing_strategy_brand__activity_state
 #: model:ir.model.fields,help:marketing_strategy.field_marketing_strategy_plan__activity_state
 #: model:ir.model.fields,help:marketing_strategy.field_marketing_strategy_story_brand__activity_state
@@ -2541,9 +2599,11 @@ msgstr "Historias de Marcas"
 #. module: marketing_strategy
 #: model:ir.model,name:marketing_strategy.model_marketing_strategy_story_brand
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_plan__story_brand_id
+#: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_story_brand_content__story_brand_id
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_story_brand_theme__story_brand_id
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_touchpoint__story_brand_id
 #: model:ir.ui.menu,name:marketing_strategy.menu_marketing_strategy_story_brand
+#: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_story_brand_content_filter
 #: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_story_brand_view_form
 msgid "Story Brand"
 msgstr "Historia de Marca"
@@ -2636,112 +2696,8 @@ msgid "Testing"
 msgstr "Pruebas"
 
 #. module: marketing_strategy
-#: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_story_brand__chapter_8
-#: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_story_brand_view_form
-msgid "The Ordeal"
-msgstr "La Prueba"
-
-#. module: marketing_strategy
-#: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_story_brand__chapter_9
-#: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_story_brand_view_form
-msgid "The Reward"
-msgstr "La Recompensa"
-
-#. module: marketing_strategy
-#: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_story_brand__chapter_10
-#: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_story_brand_view_form
-msgid "The Road Back"
-msgstr "El Camino de Regreso"
-
-#. module: marketing_strategy
-#: model:ir.model.fields,help:marketing_strategy.field_marketing_strategy_story_brand__chapter_10
-#: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_story_brand_view_form
-msgid ""
-"The hero crosses the threshold to return to the ordinary world, but is "
-"being chased by the unresolved conflict with her fears."
-msgstr ""
-"La héroe cruza el umbral para regresar al mundo ordinario, pero está siendo "
-"perseguida por el conflicto no resuelto con sus miedos."
-
-#. module: marketing_strategy
-#: model:ir.model.fields,help:marketing_strategy.field_marketing_strategy_story_brand__chapter_5
-#: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_story_brand_view_form
-msgid "The hero enters the adventure to a point of no return."
-msgstr "El héroe entra en la aventura a un punto sin retorno."
-
-#. module: marketing_strategy
-#: model:ir.model.fields,help:marketing_strategy.field_marketing_strategy_story_brand__chapter_8
-#: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_story_brand_view_form
-msgid ""
-"The hero faces the biggest fear and, whether successful or not, gains "
-"something and loses something in return."
-msgstr ""
-"El héroe se enfrenta al miedo más grande y, tenga éxito o no, gana algo y "
-"pierde algo a cambio."
-
-#. module: marketing_strategy
-#: model:ir.model.fields,help:marketing_strategy.field_marketing_strategy_story_brand__chapter_2
-#: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_story_brand_view_form
-msgid "The hero is called to go out and achieve the thing she wants the most."
-msgstr "El héroe está llamado a salir y lograr lo que más desea."
-
-#. module: marketing_strategy
-#: model:ir.model.fields,help:marketing_strategy.field_marketing_strategy_story_brand__chapter_1
-#: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_story_brand_view_form
-msgid ""
-"The hero is introduced in their ordinary world. Complacent, but lacking "
-"something."
-msgstr ""
-"El héroe se introduce en su mundo ordinario. Complaciente, pero falto de "
-"algo."
-
-#. module: marketing_strategy
-#: model:ir.model.fields,help:marketing_strategy.field_marketing_strategy_story_brand__chapter_7
-#: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_story_brand_view_form
-msgid "The hero is ready to face her biggest fear."
-msgstr "El héroe está listo para enfrentar su mayor miedo."
-
-#. module: marketing_strategy
-#: model:ir.model.fields,help:marketing_strategy.field_marketing_strategy_story_brand__chapter_4
-#: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_story_brand_view_form
-msgid ""
-"The hero meets a sage or is given a special tool that convinces her that "
-"she can succeed."
-msgstr ""
-"El héroe conoce a un sabio o recibe una herramienta especial que la "
-"convence de que puede tener éxito."
-
-#. module: marketing_strategy
-#: model:ir.model.fields,help:marketing_strategy.field_marketing_strategy_story_brand__chapter_9
-#: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_story_brand_view_form
-msgid "The hero receives some kind of reward for facing her fears."
-msgstr "El héroe recibe algún tipo de recompensa por afrontar sus miedos."
-
-#. module: marketing_strategy
-#: model:ir.model.fields,help:marketing_strategy.field_marketing_strategy_story_brand__chapter_6
-#: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_story_brand_view_form
-msgid ""
-"The hero undergoes tests and makes new friends all in a montage that trains "
-"her to overcome the biggest test yet to come."
-msgstr ""
-"La heroína se somete a pruebas y hace nuevos amigos, todo en un montaje que "
-"la entrena para superar la prueba más grande por venir."
-
-#. module: marketing_strategy
-#: model:ir.model.fields,help:marketing_strategy.field_marketing_strategy_story_brand__chapter_11
-#: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_story_brand_view_form
-msgid ""
-"The threat is at its highest and the hero pulls out all of the knowledge "
-"and skills that she gained earlier in her trials, reaching into the darkest "
-"depths of herself and transcending into a more powerful version of herself."
-msgstr ""
-"La amenaza está en su punto más alto y el héroe saca todo el conocimiento y "
-"las habilidades que adquirió anteriormente en sus pruebas, llegando a las "
-"profundidades más oscuras de sí misma y trascendiendo a una versión más "
-"poderosa de sí misma."
-
-#. module: marketing_strategy
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_story_brand_content__theme_id
+#: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_story_brand_content_filter
 #: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_story_brand_theme_view_form
 msgid "Theme"
 msgstr "Tema"
@@ -2847,12 +2803,6 @@ msgid "Tradition"
 msgstr "Tradición"
 
 #. module: marketing_strategy
-#: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_story_brand__chapter_6
-#: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_story_brand_view_form
-msgid "Trials and Allies"
-msgstr "Juicios y aliados"
-
-#. module: marketing_strategy
 #: model:ir.model,name:marketing_strategy.model_marketing_strategy_tribe
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_buyer_persona__tribe_id
 #: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_tribe_view_form
@@ -2921,7 +2871,7 @@ msgstr "Tipo:"
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_online_place__url
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_touchpoint__url
 msgid "URL"
-msgstr "URL"
+msgstr ""
 
 #. module: marketing_strategy
 #: model:ir.model.constraint,message:marketing_strategy.constraint_marketing_strategy_online_place_url_uniq
