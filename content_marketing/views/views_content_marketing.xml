@@ -1,0 +1,87 @@
+<odoo>
+
+        <menuitem name="Content Marketing"
+            id="marketing_content_menu_root"
+            sequence="10"
+            groups="base.group_user"
+            web_icon="content_marketing,static/description/icon.png"/>
+
+
+          <record id='marketing_content_extend_story_brand_content_view_tree' model='ir.ui.view'>
+            <field name="name">story_brand.content_extend.tree</field>
+            <field name="model">marketing_strategy.story_brand.content</field>
+            <field name="inherit_id" ref="marketing_strategy.marketing_strategy_story_brand_content_view_tree"/>
+            <field name="arch" type="xml">
+              <xpath expr="//field[@name='format']" position="after">
+                  <field name="state"/>
+              </xpath>
+            </field>
+          </record>
+
+          <record id='marketing_content_extend__story_brand_content_view_form' model='ir.ui.view'>
+            <field name="name">story_brand.content_extend.form</field>
+            <field name="model">marketing_strategy.story_brand.content</field>
+             <field name="inherit_id" ref="marketing_strategy.marketing_strategy_story_brand_content_view_form"/>
+            <field name="arch" type="xml">
+            <xpath expr="//sheet/group" position="before">
+                <header>
+                     <field name="state" widget="statusbar" statusbar_visible="draft,copywriting,proofreading,design,seo,publication,done" options="{'clickable': '1'}" groups="content_marketing.group_content_marketing_user, content_matketing.group_content_marketing_manager"/>
+                </header>
+            </xpath>
+              <xpath expr="//sheet/group" position="after">
+                <group>
+                  <group>
+                     <field name="owner_id"/>
+                      <field name="writer_id"/>
+                       <field name="progress" widget="progressbar"/>
+                  </group>
+                  <group>
+                    <field name="scheduled_date"/>
+                    <field name="content_date"/>
+                    <field name="published_date"/>
+                  </group>
+                </group>
+              </xpath>
+            </field>
+          </record>
+
+
+        <record id="marketing_strategy_story_brand_content_marketing_filter" model="ir.ui.view">
+            <field name="name">story_brand.content_marketing.search</field>
+            <field name="model">marketing_strategy.story_brand.content</field>
+            <field name="inherit_id" ref="marketing_strategy.marketing_strategy_story_brand_content_filter"/>
+            <field name="arch" type="xml">
+              <xpath expr="//filter[@name='chapter']" position="after">   
+                 <filter string="State" name="state" context="{'group_by':'state'}" />
+              </xpath>
+            </field>
+          </record>
+          
+
+
+
+        <record id='marketing_content_action' model='ir.actions.act_window'>
+            <field name="name">Content</field>
+            <field name="res_model">marketing_strategy.story_brand.content</field>
+            <field name="view_mode">kanban,tree,form</field>
+            <field name="help" type="html">
+              <p class="o_view_nocontent_smiling_face">
+                Create a new Content
+              </p>
+            </field>
+          </record>
+
+
+         <menuitem
+            id="marketing_content_menu"
+            name="Content"
+            parent="marketing_content_menu_root"
+            action="marketing_content_action"
+            sequence="1" groups="group_content_marketing_user"/>
+
+          
+
+          
+
+
+</odoo>

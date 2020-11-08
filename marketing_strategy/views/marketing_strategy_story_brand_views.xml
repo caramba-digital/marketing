@@ -176,6 +176,39 @@
                         </group>
                     </group>
                     <notebook colspan="4">
+                        <page string="Heroes">
+                    	<field name="buyers_ids" context="{'content_id': active_id}"  mode="kanban" nolabel="1" >
+                    		<kanban>
+                    			<field name="id"/>
+                                <field name="color"/>
+                                <field name="name"/>
+                                 <field name="status"/>
+                                  <field name="personality"/>
+                                 <field name="image_128"/>
+                                <templates>
+                                	<t t-name="kanban-box">
+                                        <div t-attf-class="#{kanban_color(record.color.raw_value)} oe_kanban_global_click o_kanban_record_has_image_fill">
+                            
+                                 <field name="image_128" widget="image" class="o_kanban_image_fill_left" options="{'zoom': true, 'zoom_delay': 1000, 'background': true, 'preventClicks': false}"/>
+
+                                        <div class="oe_kanban_details">
+                                 <h4 class="oe_partner_heading">
+                                    <a type="open" class="o_kanban_record_title">
+                                        <field name="name"/>
+                                    </a>
+                                </h4> 
+                               <ul>
+                                 <li>Civil Status: <field name="status"/></li>
+                                 <li>Personality: <field name="personality"/></li>
+                                 </ul>
+                                 </div>                             
+                        		<div class="oe_clear"/>
+                                        </div>         
+                                	</t>
+                                </templates>                                            
+                    		</kanban>
+                    	</field> 
+                        </page>
                         <page string="Content" autofocus="autofocus">
                             <field name="content" widget="html" nolabel="1"/>
                         </page>
@@ -319,7 +352,7 @@
         <field name="arch" type="xml">
             <form string="Story Brand">
                 <header>
-                     <field name="state" widget="statusbar" statusbar_visible="draft,active,done"/>
+                     <field name="state" widget="statusbar" statusbar_visible="draft,active,done" options="{'clickable': '1'}"/>
                 </header>
             	<sheet>
                     <div class="oe_title">
@@ -333,8 +366,13 @@
                      		<field name="user_id"/>
                              <field name="company_id" options="{'no_create': True}" groups="base.group_multi_company"/>
                         </group>
-                        <group string="Heroes">
-                             <field name="buyers_id"  widget="many2many" nolabel="1"/>
+                        <group string="Heroes" >
+                             <field name="buyers_ids"  widget="many2many" nolabel="1" >
+                                <tree>
+                                    <field name="name" />
+                                    <field name="tribe_id" />
+                                </tree>
+                             </field>
                         </group>
                     </group>
                     <notebook colspan="4">

@@ -51,6 +51,7 @@ class MarketingStrategyStoryBrandContent(models.Model):
     touch_point_ids = fields.Many2many('marketing_strategy.touchpoint', 'marketing_strategy_content_touchpoint_rel', 'touchpoint_id', 'content_id')
     chapter = fields.Selection(CHAPTERS, related='theme_id.chapter', readonly=True, store=True)
     story_brand_id = fields.Many2one('marketing_strategy.story_brand', related='theme_id.story_brand_id', readonly=True, store=True)
+    buyers_ids = fields.Many2many('marketing_strategy.buyer_persona', 'marketing_strategy_content_heroes', 'content_id', 'buyer_persona_id', string='Heroes')    
     company_id = fields.Many2one('res.company', 'Company', required=True, index=True, default=lambda self: self.env.company)
 
 
@@ -77,6 +78,6 @@ class MarketingStrategyStoryBrand(models.Model):
     value_proposition_id = fields.Many2one('marketing_strategy.value_proposition', required=True)
     user_id = fields.Many2one('res.users', string='Responsible', default=lambda self: self.env.user)
     brand_id = fields.Many2one('marketing_strategy.brand', domain = [('relation','=', 'main')], string='Mentor', required=True)
-    buyers_id = fields.Many2many('marketing_strategy.buyer_persona', 'marketing_strategy_story_brand_heroes', 'story_brand_id', 'buyer_persona_id', string='Heroes')    
+    buyers_ids = fields.Many2many('marketing_strategy.buyer_persona', 'marketing_strategy_story_brand_heroes', 'story_brand_id', 'buyer_persona_id', string='Heroes')    
     chapters_ids = fields.One2many('marketing_strategy.story_brand.theme', 'story_brand_id')
     company_id = fields.Many2one('res.company', 'Company', required=True, index=True, default=lambda self: self.env.company)

@@ -10,7 +10,7 @@
     'author': "Antonio Fregoso",
     'website': "https://www.antoniofregoso.com",
     'category': 'Marketing/Strategy',
-    'version': '1.0.0',
+    'version': '1.1.0',
     'depends': ['mail','sale_crm', 'project'],
     'license': 'AGPL-3',
     'data': [
