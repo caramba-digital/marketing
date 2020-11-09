@@ -22,9 +22,8 @@ class MarketingStrategyStoryBrandContent(models.Model):
     progress = fields.Float(compute='_compute_progress', readonly=True)
     published_date = fields.Datetime('Published Date')
     content_date = fields.Datetime('Publishing Date')
-    scheduled_date = fields.Datetime('Scheduled Date')
-    calendar_date = fields.Datetime('Calendar')
-    owner_id = fields.Many2one('res.users', required=True)
+    calendar_date = fields.Datetime('Scheduled Date')
+    owner_id = fields.Many2one('res.users')
     writer_id = fields.Many2one('res.users')
 
     @api.depends('scheduled_date','published_date')
