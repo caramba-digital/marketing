@@ -30,14 +30,14 @@
             </xpath>
               <xpath expr="//sheet/group" position="after">
                 <group>
-                  <group>
+                  <group string="Responsible">
                      <field name="owner_id"/>
                       <field name="writer_id"/>
                        <field name="progress" widget="progressbar"/>
                   </group>
-                  <group>
+                  <group string="Content">
+                    <field name="content_creation_date"/>
                     <field name="calendar_date"/>
-                    <field name="content_date"/>
                     <field name="published_date"/>
                   </group>
                 </group>

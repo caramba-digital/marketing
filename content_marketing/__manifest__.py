@@ -8,7 +8,7 @@
     'author': "Antonio Fregoso",
     'website': "http://www.antoniofregoso.com",
     'category': "Marketing/Content",
-    'version': '0.0.1',
+    'version': '0.0.2',
     'depends': ['marketing_strategy', 'website_blog'],
     'license': 'AGPL-3',
     'data': [
