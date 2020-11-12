@@ -5,10 +5,11 @@
 
      <record model="ir.rule" id="strategy_consumer_trend_comp_rule">
         <field name="name">Consumer Trend multi-company</field>
-        <field name="model_id" ref="model_marketing_strategy.consumer_trend"/>
+        <field name="model_id" ref="model_marketing_strategy_consumer_trend"/>
         <field name="global" eval="True"/>
         <field name="domain_force">[('company_id', 'in', company_ids)]</field>
     </record>
 
      </data>
 </odoo>
+

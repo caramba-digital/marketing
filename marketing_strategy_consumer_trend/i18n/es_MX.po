@@ -75,7 +75,7 @@ msgstr "Adaptar"
 #. module: marketing_strategy_consumer_trend
 #: model:ir.model.fields.selection,name:marketing_strategy_consumer_trend.selection__marketing_strategy_consumer_trend__state__approved
 msgid "Approved"
-msgstr "Aprovado"
+msgstr "Aprobado"
 
 #. module: marketing_strategy_consumer_trend
 #: model:ir.model.fields,field_description:marketing_strategy_consumer_trend.field_marketing_strategy_consumer_trend__message_attachment_count
