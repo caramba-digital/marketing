@@ -6,15 +6,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-11-02 04:20+0000\n"
-"PO-Revision-Date: 2020-11-01 22:29-0600\n"
+"POT-Creation-Date: 2020-11-11 22:04+0000\n"
+"PO-Revision-Date: 2020-11-11 16:09-0600\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: \n"
-"Language: es\n"
+"Language: es_MX\n"
 "X-Generator: Poedit 2.3\n"
 
 #. module: marketing_strategy
@@ -162,6 +162,11 @@ msgstr "Icono de tipo de actividad"
 #: model:ir.ui.menu,name:marketing_strategy.menu_marketing_strategy_actors
 msgid "Actors"
 msgstr "Actores"
+
+#. module: marketing_strategy
+#: model_terms:ir.ui.view,arch_db:marketing_strategy.res_config_settings_view_form
+msgid "Add detailed social networks to partners."
+msgstr "Agregar redes sociales detalladas a los socios."
 
 #. module: marketing_strategy
 #: model:res.groups,name:marketing_strategy.group_strategy_manager
@@ -314,6 +319,11 @@ msgstr "Marcas"
 #: model:ir.ui.menu,name:marketing_strategy.marketing_strategy_brand_persona_menu
 msgid "Brands Persona"
 msgstr "Marcas Persona"
+
+#. module: marketing_strategy
+#: model:ir.model.fields,field_description:marketing_strategy.field_res_config_settings__module_marketing_business_model
+msgid "Business Model Canvas"
+msgstr "Lienzo de modelo de negocios"
 
 #. module: marketing_strategy
 #: model:ir.model,name:marketing_strategy.model_marketing_strategy_buyer_competence
@@ -491,6 +501,7 @@ msgstr "Estado civil"
 
 #. module: marketing_strategy
 #: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_buyer_persona_view_kanban
+#: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_story_brand_content_view_form
 #: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_tribe_view_form
 msgid "Civil Status:"
 msgstr "Estado civil:"
@@ -577,6 +588,11 @@ msgid "Conceptual Map"
 msgstr "Mapa Conceptual"
 
 #. module: marketing_strategy
+#: model:ir.model,name:marketing_strategy.model_res_config_settings
+msgid "Config Settings"
+msgstr "Opciones de configuración"
+
+#. module: marketing_strategy
 #: model:ir.ui.menu,name:marketing_strategy.marketing_strategy_menu_config
 msgid "Configuration"
 msgstr "Configuración"
@@ -593,6 +609,16 @@ msgid "Consideration"
 msgstr "Consideración"
 
 #. module: marketing_strategy
+#: model:ir.model.fields,field_description:marketing_strategy.field_res_config_settings__module_marketing_strategy_consumer_trend
+msgid "Consumer Trend Canvas"
+msgstr "Lienzo de tendencias del consumidor"
+
+#. module: marketing_strategy
+#: model_terms:ir.ui.view,arch_db:marketing_strategy.res_config_settings_view_form
+msgid "Consumer trend canvas and innovation tools."
+msgstr "Lienzo de tendencias del consumidor y herramientas de innovación."
+
+#. module: marketing_strategy
 #: model:ir.model,name:marketing_strategy.model_res_partner
 msgid "Contact"
 msgstr "Contacto"
@@ -606,6 +632,11 @@ msgstr "Contacto"
 #: model_terms:ir.ui.view,arch_db:marketing_strategy.utm_content_view_tree
 msgid "Content"
 msgstr "Contenido"
+
+#. module: marketing_strategy
+#: model:ir.model.fields,field_description:marketing_strategy.field_res_config_settings__module_content_marketing
+msgid "Content Marketing"
+msgstr "Marketing de contenidos"
 
 #. module: marketing_strategy
 #: model:ir.model.fields,field_description:marketing_strategy.field_utm_content__name
@@ -1014,6 +1045,11 @@ msgid "Custumer job name already exists !"
 msgstr "¡El nombre del trabajo del cliente ya existe!"
 
 #. module: marketing_strategy
+#: model_terms:ir.ui.view,arch_db:marketing_strategy.res_config_settings_view_form
+msgid "Data Visualization"
+msgstr "Visualización de datos"
+
+#. module: marketing_strategy
 #: model_terms:ir.actions.act_window,help:marketing_strategy.utm_content_action
 #: model_terms:ir.actions.act_window,help:marketing_strategy.utm_term_action
 msgid "Define a new content"
@@ -1083,6 +1119,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_value_proposition_customer_pain__display_name
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_value_proposition_gain_creator__display_name
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_value_proposition_pain_reliever__display_name
+#: model:ir.model.fields,field_description:marketing_strategy.field_res_config_settings__display_name
 #: model:ir.model.fields,field_description:marketing_strategy.field_res_partner__display_name
 #: model:ir.model.fields,field_description:marketing_strategy.field_sale_order__display_name
 #: model:ir.model.fields,field_description:marketing_strategy.field_utm_campaign__display_name
@@ -1195,6 +1232,16 @@ msgid "Extraversion"
 msgstr "Extraversión"
 
 #. module: marketing_strategy
+#: model:ir.model.fields,field_description:marketing_strategy.field_res_config_settings__module_marketing_facebook_ads
+msgid "Facebook Ads"
+msgstr "Anuncios de Facebook"
+
+#. module: marketing_strategy
+#: model_terms:ir.ui.view,arch_db:marketing_strategy.res_config_settings_view_form
+msgid "Facebook Ads management and indicators."
+msgstr "Gestión e indicadores de anuncios de Facebook."
+
+#. module: marketing_strategy
 #: model:ir.model.fields.selection,name:marketing_strategy.selection__marketing_strategy_online_place__place_type__fbk_fanpagr
 msgid "Facebook Fanpage"
 msgstr "Fanpage de Facebook"
@@ -1208,6 +1255,16 @@ msgstr "Grupo de Facebook"
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_brand__facebook
 msgid "Facebook Page"
 msgstr "Pagina de Facebook"
+
+#. module: marketing_strategy
+#: model:ir.model.fields,field_description:marketing_strategy.field_res_config_settings__module_website_facebook_pixel
+msgid "Facebook Pixel"
+msgstr "Pixel de Facebook"
+
+#. module: marketing_strategy
+#: model_terms:ir.ui.view,arch_db:marketing_strategy.res_config_settings_view_form
+msgid "Facebook pixel integration. It is configured on website."
+msgstr "Integración de píxeles de Facebook. Es configurado en el sitio web."
 
 #. module: marketing_strategy
 #: model:ir.model.fields.selection,name:marketing_strategy.selection__marketing_strategy_brand__relation__family
@@ -1280,6 +1337,11 @@ msgid "Friends"
 msgstr "Amigos"
 
 #. module: marketing_strategy
+#: model:ir.model.fields,field_description:marketing_strategy.field_res_config_settings__module_marketing_funnels
+msgid "Funnels"
+msgstr "Embudos"
+
+#. module: marketing_strategy
 #: model:ir.model,name:marketing_strategy.model_marketing_strategy_value_proposition_gain_creator
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_value_proposition__gain_creator_ids
 #: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_gain_creator_form
@@ -1298,6 +1360,18 @@ msgstr "Creadores de Ganancia"
 #: model:ir.model.constraint,message:marketing_strategy.constraint_marketing_strategy_value_proposition_gain_creator_name_uniq
 msgid "Gain creator name already exists !"
 msgstr "¡El nombre del creador de ganancia ya existe!"
+
+#. module: marketing_strategy
+#: model:ir.model.fields,field_description:marketing_strategy.field_res_config_settings__module_marketing_strategy_gap_assessment
+msgid "Gap Assessment"
+msgstr "Evaluación de brechas"
+
+#. module: marketing_strategy
+#: model_terms:ir.ui.view,arch_db:marketing_strategy.res_config_settings_view_form
+msgid "Gap assessment throughout the buyer's journey."
+msgstr ""
+"Evaluación de diferencias entre objetivo y resultados a lo largo del viaje "
+"del comprador."
 
 #. module: marketing_strategy
 #: model:ir.model.fields.selection,name:marketing_strategy.selection__marketing_strategy_buyer_persona__gender__gay
@@ -1325,6 +1399,16 @@ msgstr "Metas"
 #: model:ir.model.fields.selection,name:marketing_strategy.selection__marketing_strategy_value_proposition__product_type__good
 msgid "Good"
 msgstr "Bueno"
+
+#. module: marketing_strategy
+#: model:ir.model.fields,field_description:marketing_strategy.field_res_config_settings__module_marketing_google_ads
+msgid "Google Ads"
+msgstr "Anuncios de Google"
+
+#. module: marketing_strategy
+#: model_terms:ir.ui.view,arch_db:marketing_strategy.res_config_settings_view_form
+msgid "Google Ads management and indicators."
+msgstr "Gestión e indicadores de Google Ads."
 
 #. module: marketing_strategy
 #: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_story_brand_content_filter
@@ -1370,7 +1454,9 @@ msgid "Hero Content"
 msgstr "Contenido de héroe"
 
 #. module: marketing_strategy
-#: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_story_brand__buyers_id
+#: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_story_brand__buyers_ids
+#: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_story_brand_content__buyers_ids
+#: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_story_brand_content_view_form
 #: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_story_brand_view_form
 msgid "Heroes"
 msgstr "Héroes"
@@ -1420,6 +1506,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_value_proposition_customer_pain__id
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_value_proposition_gain_creator__id
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_value_proposition_pain_reliever__id
+#: model:ir.model.fields,field_description:marketing_strategy.field_res_config_settings__id
 #: model:ir.model.fields,field_description:marketing_strategy.field_res_partner__id
 #: model:ir.model.fields,field_description:marketing_strategy.field_sale_order__id
 #: model:ir.model.fields,field_description:marketing_strategy.field_utm_campaign__id
@@ -1610,6 +1697,12 @@ msgid "Institution"
 msgstr "Institución"
 
 #. module: marketing_strategy
+#: model_terms:ir.ui.view,arch_db:marketing_strategy.res_config_settings_view_form
+msgid "Integration of the business model canvas to strategic planning."
+msgstr ""
+"Integración del lienzo del modelo de negocio a la planificación estratégica."
+
+#. module: marketing_strategy
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_touchpoint__ref
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_value_proposition__ref
 msgid "Internal Reference"
@@ -1687,6 +1780,7 @@ msgstr "Idioma"
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_value_proposition_customer_pain____last_update
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_value_proposition_gain_creator____last_update
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_value_proposition_pain_reliever____last_update
+#: model:ir.model.fields,field_description:marketing_strategy.field_res_config_settings____last_update
 #: model:ir.model.fields,field_description:marketing_strategy.field_res_partner____last_update
 #: model:ir.model.fields,field_description:marketing_strategy.field_sale_order____last_update
 #: model:ir.model.fields,field_description:marketing_strategy.field_utm_campaign____last_update
@@ -1884,6 +1978,7 @@ msgstr "Planes de Mercado"
 
 #. module: marketing_strategy
 #: model:ir.ui.menu,name:marketing_strategy.marketing_strategy_menu_root
+#: model_terms:ir.ui.view,arch_db:marketing_strategy.res_config_settings_view_form
 msgid "Marketing Strategy"
 msgstr "Estrategia de Mercado"
 
@@ -2294,6 +2389,7 @@ msgstr "Personalidad"
 
 #. module: marketing_strategy
 #: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_buyer_persona_view_kanban
+#: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_story_brand_content_view_form
 #: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_tribe_view_form
 msgid "Personality:"
 msgstr "Personalidad:"
@@ -2483,6 +2579,12 @@ msgid "Service"
 msgstr "Servicio"
 
 #. module: marketing_strategy
+#: model:ir.actions.act_window,name:marketing_strategy.action_marketing_strategy_configuration
+#: model:ir.ui.menu,name:marketing_strategy.menu_marketing_strategy_settings
+msgid "Settings"
+msgstr "Ajustes"
+
+#. module: marketing_strategy
 #: model:ir.model.fields.selection,name:marketing_strategy.selection__marketing_strategy_story_brand_content__format__short_video
 msgid "Short Video"
 msgstr "Video Corto"
@@ -2521,6 +2623,11 @@ msgstr "Preferencias de redes sociales"
 #: model:ir.model.constraint,message:marketing_strategy.constraint_marketing_strategy_social_media_preference_name_uniq
 msgid "Social Media name already exists !"
 msgstr "Nombre de redes sociales ya existe!"
+
+#. module: marketing_strategy
+#: model:ir.model.fields,field_description:marketing_strategy.field_res_config_settings__module_base_social_networks
+msgid "Social Networks"
+msgstr "Redes Sociales"
 
 #. module: marketing_strategy
 #: model:ir.ui.menu,name:marketing_strategy.marketing_strategy_menu_solutions
@@ -2798,6 +2905,11 @@ msgid "Touchpoints hubs"
 msgstr "Hubs de Puntos de Contacto"
 
 #. module: marketing_strategy
+#: model_terms:ir.ui.view,arch_db:marketing_strategy.res_config_settings_view_form
+msgid "Tracking"
+msgstr "Seguimiento"
+
+#. module: marketing_strategy
 #: model:marketing_strategy.value,name:marketing_strategy.marketing_strategy_value_opt_2
 msgid "Tradition"
 msgstr "Tradición"
@@ -2944,6 +3056,12 @@ msgid "Unread Messages Counter"
 msgstr "Contador de mensajes no leídos"
 
 #. module: marketing_strategy
+#: model_terms:ir.ui.view,arch_db:marketing_strategy.res_config_settings_view_form
+msgid "Use a network of sales funnels along the customer journey."
+msgstr ""
+"Utilice una red de embudos de ventas a lo largo del recorrido del cliente."
+
+#. module: marketing_strategy
 #: model:res.groups,name:marketing_strategy.group_strategy_user
 msgid "User"
 msgstr "Usuario"
@@ -3069,7 +3187,7 @@ msgstr "a"
 #: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_brand_persona_view_form
 #: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_brand_view_form
 msgid "e.g. www.odoo.com"
-msgstr ""
+msgstr "p.ej. www.odoo.com"
 
 #. module: marketing_strategy
 #: model:ir.model.fields.selection,name:marketing_strategy.selection__marketing_strategy_story_brand_content__format__email

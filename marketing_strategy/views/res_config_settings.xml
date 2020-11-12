@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+        <record id="res_config_settings_view_form" model="ir.ui.view">
+            <field name="name">res.config.settings.view.form.inherit.marketing_strategy</field>
+            <field name="model">res.config.settings</field>
+            <field name="priority" eval="30"/>
+            <field name="inherit_id" ref="base.res_config_settings_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//div[hasclass('settings')]" position="inside">
+                    <div class="app_settings_block" data-string="Marketing Strategy" string="Marketing Strategy" data-key="marketing_strategy" groups="marketing_strategy.group_strategy_manager">
+                        <h2>Marketing Strategy</h2>
+                        <div class="row mt16 o_settings_container" id="marketing_strategy_functionalities_setting_container">
+                            <div class="col-12 col-lg-6 o_setting_box" id="consumer_trend" title="">
+                                <div class="o_setting_left_pane">
+                                    <field name="module_marketing_strategy_consumer_trend"/>
+                                </div>
+                                <div class="o_setting_right_pane">
+                                    <label for="module_marketing_strategy_consumer_trend"/>
+                                    <div class="text-muted">
+                                        Consumer trend canvas and innovation tools.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-lg-6 o_setting_box" id="business_model_canvas" title="">
+                                <div class="o_setting_left_pane">
+                                    <field name="module_marketing_business_model"/>
+                                </div>
+                                <div class="o_setting_right_pane">
+                                    <label for="module_marketing_business_model"/>
+                                    <div class="text-muted">
+                                        Integration of the business model canvas to strategic planning.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-lg-6 o_setting_box" id="funnels" title="">
+                                <div class="o_setting_left_pane">
+                                    <field name="module_marketing_funnels"/>
+                                </div>
+                                <div class="o_setting_right_pane">
+                                    <label for="module_marketing_funnels"/>
+                                    <div class="text-muted">
+                                        Use a network of sales funnels along the customer journey.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-lg-6 o_setting_box" id="content_marketing" title="">
+                                <div class="o_setting_left_pane">
+                                    <field name="module_content_marketing"/>
+                                </div>
+                                <div class="o_setting_right_pane">
+                                    <label for="module_content_marketing"/>
+                                    <div class="text-muted">
+                                        Use a network of sales funnels along the customer journey.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-lg-6 o_setting_box" id="facebook_ads" title="">
+                                <div class="o_setting_left_pane">
+                                    <field name="module_marketing_facebook_ads"/>
+                                </div>
+                                <div class="o_setting_right_pane">
+                                    <label for="module_marketing_facebook_ads"/>
+                                    <div class="text-muted">
+                                        Facebook Ads management and indicators.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-lg-6 o_setting_box" id="google_ads" title="">
+                                <div class="o_setting_left_pane">
+                                    <field name="module_marketing_google_ads"/>
+                                </div>
+                                <div class="o_setting_right_pane">
+                                    <label for="module_marketing_google_ads"/>
+                                    <div class="text-muted">
+                                        Google Ads management and indicators.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <h2>Tracking</h2>
+                        <div class="row mt16 o_settings_container" id="marketing_strategy_tracking_container">
+                            <div class="col-12 col-lg-6 o_setting_box" id="social_networks" title="">
+                                <div class="o_setting_left_pane">
+                                    <field name="module_base_social_networks"/>
+                                </div>
+                                <div class="o_setting_right_pane">
+                                    <label for="module_base_social_networks"/>
+                                    <div class="text-muted">
+                                        Add detailed social networks to partners.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-lg-6 o_setting_box" id="facebook_pixel" title="">
+                                <div class="o_setting_left_pane">
+                                    <field name="module_website_facebook_pixel"/>
+                                </div>
+                                <div class="o_setting_right_pane">
+                                    <label for="module_website_facebook_pixel"/>
+                                    <div class="text-muted">
+                                        Facebook pixel integration. It is configured on website.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-lg-6 o_setting_box" id="strategy_gap_assessment" title="">
+                                <div class="o_setting_left_pane">
+                                    <field name="module_marketing_strategy_gap_assessment"/>
+                                </div>
+                                <div class="o_setting_right_pane">
+                                    <label for="module_marketing_strategy_gap_assessment"/>
+                                    <div class="text-muted">
+                                        Gap assessment throughout the buyer's journey.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <h2>Data Visualization</h2>
+                        <div class="row mt16 o_settings_container" id="marketing_strategy_data_visualization_container">
+                        </div>
+                    </div>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="action_marketing_strategy_configuration" model="ir.actions.act_window">
+            <field name="name">Settings</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">res.config.settings</field>
+            <field name="view_id" ref="res_config_settings_view_form"/>
+            <field name="view_mode">form</field>
+            <field name="target">inline</field>
+            <field name="context">{'module' : 'marketing_strategy', 'bin_size': False}</field>
+        </record>
+
+        <menuitem name="Settings"
+            id="menu_marketing_strategy_settings"
+            action="action_marketing_strategy_configuration"
+            parent="marketing_strategy_menu_config"
+            groups="base.group_system"
+            sequence="0"/>
+
+</odoo>
