@@ -36,108 +36,132 @@
             </group>
           </group>
           <div class="row mt-5 mx-2" style="font-size: xx-small;">
-                       		<div class="col-8  pt-4" >
-                           <div class="row bg-warning">
-                           <div class="col pt-2">
-                       			  <h2 class="text-center">ANALYZE</h2>
-                             </div>
-                             </div>
-                       			<div class="row">
-                       				<div class="col-9">  
-                       					<div class="row">
-                       						<div class="col-4  border bg-light">
-                       							<h5>Trend</h5>
-                                      <field name="trend"/>
-                       						</div>
-                       						<div class="col-8  border bg-light" style="height: 160px;">
-                       							<h5>Inspiration</h5>
-                       							<p>How are other businesses applying this trend?</p>
-                                      <field name="brands_ids" widget="many2many_kanban">
-                                        <kanban>
-                                          <field name="name"/>
-                                          <field name="image_128"/>
-                                          <templates>
-                                            <t t-name="kanban-box" >
-                                              <div t-attf-class="oe_kanban_global_click  o_kanban_record_has_image_fill">
-                                                
-                                              </div>
-                                            </t>
-                                          </templates>
-                                        </kanban>
-                                      </field>
-                       						</div>                       						
-                       					</div> 
-                       					<div class="row">
-                       						<div class="col-4 border bg-light" style="height: 320px;">
-                       							<h5>Basic Needs</h5>
-                       								<p>Which deep consumer needs &amp; desires does this trend address? </p>
-                                       <field name="needs_ids" widget="many2many_tags" options="{'color_field': 'color'}" placeholder="Basic Needs"/>
-                       						</div>
-                       						<div class="col-8 border bg-light" style="height: 320px;">
-                       							<h5>Drivers of Change</h5>
-                       								<p>Why is this trend emerging now? What’s changing?</p>
-                       							<div class="row">
-                       								<div class="col-6">
-                       									<h6>Shifts (long-term)</h6>
-                       									<p>Widespread macro changes</p>
-                       								</div>
-                       								<div class="col-6">                       									
-                       									<h6>Triggers (short-term)</h6>
-                       									<p> Recent changes or technologies</p>
-                       								</div>
-                       							</div>
-                       						</div>
-                       					
-                       					</div>
-                       				</div>
-                       				<div class="col-3  border bg-light" style="height: 480px;" >
-                       					<h5>Emerging<br/> 
-                       					Expectations                    						
-                       					</h5>
-                       					<p style="width: 90%">What new consumer needs, wants and expectations are created by the changes identified above?<br />
-									              Where and how does this trend satisfy them?</p>
-                       				</div>
-                       			</div>
-                       		</div>
-                       		<div class="col-4 pt-4">
-                           <div class="row bg-success">
-                            <div class="col pt-2">
-                       			  <h2 class="text-center">APPLY</h2>
-                              </div>
-                             </div>
-                       			<div class="row">
-                       				<div class="col-12 border bg-light" style="height: 240px;">
-                       					<h5>Innovation Type</h5>
-                                  <field name="mode"/>
-                       					<p>How and where could you apply this trend to your business?</p>
-                                 <ul class="list-group list-group-horizontal mb-4">
-                                  <li class="list-group-item flex-fill"><i class="fa fa-cogs" style="color:#348396;"></i> CONFIGURATION</li>
-                                  <li class="list-group-item flex-fill"><i class="fa fa-gift" style="color:#f1a564;"></i> OFFERING</li>
-                                  <li class="list-group-item flex-fill"><i class="fa fa-glass" style="color:#f4cf34;"></i> EXPERIENCE</li>
-                                </ul>
-                                  <field name="innovation_type" widget="many2many_tags" options="{'color_field': 'color', 'no_quick_create':True}" placeholder="Innovation Types"/>
-                       							<p>Inducer</p>
-                                      <field name="innovation_inducer"/>
-                       				</div>
-                       			</div>
-                       			<div class="row">
-                       				<div class="col-12 border bg-light" style="height: 80px;">
-                       					<h5>YOUR INNOVATION</h5>
-                                  <field name="innovation"/>
-                       				</div>
-                       			</div>
-                       			<div class="row border bg-light">
-                       				<div class="col-12" style="height: 160px;">
-                       					<h5>Who</h5>
-                       					<p>Which (new) customer groups could you apply this trend to?</p>
-                                  <field name="tribes_ids" widget="many2many_tags" placeholder="Tribes"/>
-                                 <p>What would you have to change?</p>
-                                 <field name="what_change"/>
-                       				</div>
-                       			</div>
-                       		</div>
-                	 </div>
-                   <h3 class="mt-3">SCAMPER Method</h3>
+            <div class="col-8  pt-4" >
+              <div class="row bg-warning">
+                <div class="col pt-2">
+                  <h2 class="text-center">ANALYZE</h2>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-9">  
+                  <div class="row">
+                    <div class="col-4  border bg-light">
+                      <h5>Trend</h5>
+                      <field name="trend"/>
+                    </div>
+                    <div class="col-8  border bg-light" style="height: 180px;">
+                      <h5>Inspiration</h5>
+                      <p>How are other businesses applying this trend?</p>
+                      <div class="row">
+                        <div class="col-3 media">
+                          <field name="inspiration_1" widget='image' class="" options='{"preview_image": "image_128"}'/>
+                        </div>
+                        <div class="col-3">
+                          <field name="inspiration_2" widget='image' class="" options='{"preview_image": "image_128"}'/>
+                        </div>
+                        <div class="col-3">
+                          <field name="inspiration_3" widget='image' class="" options='{"preview_image": "image_128"}'/>
+                        </div>
+                        <div class="col-3">
+                          <field name="inspiration_4" widget='image' class="" options='{"preview_image": "image_128"}'/>
+                        </div>
+                        <div class="col-3">
+                          <field name="inspiration_5" widget='image' class="" options='{"preview_image": "image_128"}'/>
+                        </div>
+                        <div class="col-3">
+                          <field name="inspiration_6" widget='image' class="" options='{"preview_image": "image_128"}'/>
+                        </div>
+                        <div class="col-3">
+                          <field name="inspiration_7" widget='image' class="" options='{"preview_image": "image_128"}'/>
+                        </div>
+                        <div class="col-3">
+                          <field name="inspiration_8" widget='image' class="" options='{"preview_image": "image_128"}'/>
+                        </div>
+                      </div>                      
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-4 border bg-light" style="height: 300px;">
+                      <h5>Basic Needs</h5>
+                      <p>Which deep consumer needs &amp; desires does this trend address? </p>
+                      <field name="needs_ids" widget="many2many_tags" options="{'color_field': 'color'}" placeholder="Basic Needs"/>
+                    </div>
+                    <div class="col-8 border bg-light" style="height: 300px;">
+                      <h5>Drivers of Change</h5>
+                      <p>Why is this trend emerging now? What’s changing?</p>
+                      <div class="row">
+                       	<div class="col-6">
+                       		<h6>Shifts (long-term)</h6>
+                       		<p>Widespread macro changes</p>
+                          <field name="driver_1"/>
+                          <field name="driver_2"/>
+                          <field name="driver_3"/>
+                       	</div>
+                       	<div class="col-6">                       									
+                       		<h6>Triggers (short-term)</h6>
+                       		<p> Recent changes or technologies</p>
+                          <field name="trigger_1"/>
+                          <field name="trigger_2"/>
+                          <field name="trigger_3"/>
+                       	</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-3  border bg-light" style="height: 480px;" >
+                  <h5>Emerging<br/> 
+                      Expectations                    						
+                  </h5>
+                  <p style="width: 90%">What new consumer needs, wants and expectations are created by the changes identified above?<br />
+									  Where and how does this trend satisfy them?</p>
+                  <field name="expectations_1"/>
+                  <field name="expectations_2"/>
+                  <field name="expectations_3"/>
+                  <field name="expectations_4"/>
+                  <field name="expectations_5"/>
+                </div>
+              </div>
+            </div>
+            <div class="col-4 pt-4">
+              <div class="row bg-success">
+                <div class="col pt-2">
+                  <h2 class="text-center">APPLY</h2>
+                </div>
+              </div>
+
+            <div class="row">
+              <div class="col-12 border bg-light" style="height: 240px;">
+                <h5>Innovation Type</h5>
+                  <field name="mode"/>
+                <p>How and where could you apply this trend to your business?</p>
+                  <ul class="list-group list-group-horizontal mb-4">
+                  <li class="list-group-item flex-fill"><i class="fa fa-cogs" style="color:#348396;"></i> CONFIGURATION</li>
+                  <li class="list-group-item flex-fill"><i class="fa fa-gift" style="color:#f1a564;"></i> OFFERING</li>
+                  <li class="list-group-item flex-fill"><i class="fa fa-glass" style="color:#f4cf34;"></i> EXPERIENCE</li>
+                </ul>
+                <field name="innovation_type" widget="many2many_tags" options="{'color_field': 'color', 'no_quick_create':True}" placeholder="Innovation Types"/>
+                <p>Inducer</p>
+                <field name="innovation_inducer"/>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-12 border bg-light" style="height: 80px;">
+                <h5>YOUR INNOVATION</h5>
+                <field name="innovation"/>
+              </div>            
+            </div>
+            <div class="row border bg-light">
+              <div class="col-12" style="height: 160px;">
+                <h5>Who</h5>
+                <p>Which (new) customer groups could you apply this trend to?</p>
+                  <field name="tribes_ids" widget="many2many_tags" placeholder="Tribes"/>
+                <p>What would you have to change?</p>
+                  <field name="what_change"/>
+              </div>
+            </div>
+            </div>
+          </div>
+            <h3 class="mt-3">SCAMPER Method</h3>
              <notebook colspan="4">
               <page string="Substitute" autofocus="autofocus">
               <p>What can be replaced? (for example, components, materials, people)</p>
