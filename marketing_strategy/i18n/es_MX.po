@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-11-11 22:04+0000\n"
-"PO-Revision-Date: 2020-11-11 16:09-0600\n"
+"POT-Creation-Date: 2020-11-13 18:39+0000\n"
+"PO-Revision-Date: 2020-11-13 12:48-0600\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -259,6 +259,7 @@ msgstr ""
 #. module: marketing_strategy
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_brand__blog
 #: model:ir.model.fields.selection,name:marketing_strategy.selection__marketing_strategy_story_brand_content__format__blog
+#: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_brand_view_form
 msgid "Blog"
 msgstr ""
 
@@ -410,6 +411,11 @@ msgstr "Etapa del Viaje del Comprador"
 #: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_buyer_persona_view_tree
 msgid "Buyers Persona"
 msgstr "Compradores Persona"
+
+#. module: marketing_strategy
+#: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_plan__cac
+msgid "CAC"
+msgstr ""
 
 #. module: marketing_strategy
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_plan__campaigns_ids
@@ -963,6 +969,11 @@ msgid "Currency"
 msgstr "Moneda"
 
 #. module: marketing_strategy
+#: model:ir.model.fields,help:marketing_strategy.field_marketing_strategy_plan__cac
+msgid "Customer Acquisition Cost"
+msgstr "Costo de Adquisición de Clientes"
+
+#. module: marketing_strategy
 #: model:ir.model.fields.selection,name:marketing_strategy.selection__res_partner__brand_advocacy__customer_advocate
 msgid "Customer Advocate"
 msgstr "Cliente Defensor"
@@ -1203,6 +1214,11 @@ msgid "Entertain"
 msgstr "Entretener"
 
 #. module: marketing_strategy
+#: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_brand__podcast_episodes
+msgid "Episodes"
+msgstr "Episodios"
+
+#. module: marketing_strategy
 #: model:ir.actions.act_window,name:marketing_strategy.marketing_strategy_evangelist_action
 #: model:ir.ui.menu,name:marketing_strategy.evangelist
 msgid "Evangelists"
@@ -1230,6 +1246,11 @@ msgstr "Experiencias"
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_buyer_persona__extraversion
 msgid "Extraversion"
 msgstr "Extraversión"
+
+#. module: marketing_strategy
+#: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_brand_view_form
+msgid "Facebook"
+msgstr "Facebook"
 
 #. module: marketing_strategy
 #: model:ir.model.fields,field_description:marketing_strategy.field_res_config_settings__module_marketing_facebook_ads
@@ -1309,6 +1330,15 @@ msgstr "Seguidores (Canales)"
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_value_proposition__message_partner_ids
 msgid "Followers (Partners)"
 msgstr "Seguidores (Socios)"
+
+#. module: marketing_strategy
+#: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_brand__facebook_folowers
+#: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_brand__instagram_folowers
+#: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_brand__linkedin_folowers
+#: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_brand__tiktok_folowers
+#: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_brand__twitter_folowers
+msgid "Folowers"
+msgstr "Seguidores"
 
 #. module: marketing_strategy
 #: model:ir.model.fields,help:marketing_strategy.field_marketing_strategy_brand__activity_type_icon
@@ -1391,6 +1421,7 @@ msgstr "¡El nombre del objetivo ya existe!"
 
 #. module: marketing_strategy
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_buyer_persona__goal_ids
+#: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_plan_view_form
 msgid "Goals"
 msgstr "Metas"
 
@@ -1686,6 +1717,11 @@ msgid "Inspire"
 msgstr "Inspirar"
 
 #. module: marketing_strategy
+#: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_brand_view_form
+msgid "Instagram"
+msgstr ""
+
+#. module: marketing_strategy
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_brand__instagram
 msgid "Instagram Page"
 msgstr "Página Instagram"
@@ -1743,6 +1779,11 @@ msgstr "Puesto de trabajo"
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_value_proposition__color
 msgid "Kanban Color Index"
 msgstr "Índice de color Kanban"
+
+#. module: marketing_strategy
+#: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_plan__ltv
+msgid "LTV"
+msgstr ""
 
 #. module: marketing_strategy
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_buyer_persona__lang
@@ -1899,9 +1940,25 @@ msgid "Lifestyle"
 msgstr "Estilo de vida"
 
 #. module: marketing_strategy
+#: model:ir.model.fields,help:marketing_strategy.field_marketing_strategy_plan__ltv
+msgid "Lifetime Value"
+msgstr "Valor del Tiempo de Vida"
+
+#. module: marketing_strategy
+#: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_brand__facebook_likes
+#: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_brand__tiktok_likes
+msgid "Likes"
+msgstr "Me Gusta"
+
+#. module: marketing_strategy
 #: model:ir.model.fields.selection,name:marketing_strategy.selection__marketing_strategy_online_place__place_type__
 msgid "LinkedIn Group"
 msgstr "Grupo de LinkedIn"
+
+#. module: marketing_strategy
+#: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_brand_view_form
+msgid "Linkedin"
+msgstr ""
 
 #. module: marketing_strategy
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_brand__linkedin
@@ -2413,10 +2470,11 @@ msgstr "Tipo de lugar"
 #. module: marketing_strategy
 #: model:ir.model.fields,field_description:marketing_strategy.field_utm_campaign__plan_id
 msgid "Plan"
-msgstr ""
+msgstr "Plan"
 
 #. module: marketing_strategy
 #: model:ir.model.fields.selection,name:marketing_strategy.selection__marketing_strategy_story_brand_content__format__podcast
+#: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_brand_view_form
 msgid "Podcast"
 msgstr ""
 
@@ -2424,6 +2482,11 @@ msgstr ""
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_brand__podcast_channel
 msgid "Podcast Channel"
 msgstr "Canal de podcast"
+
+#. module: marketing_strategy
+#: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_brand__instagram_posts
+msgid "Posts"
+msgstr "Publicaciones"
 
 #. module: marketing_strategy
 #: model:marketing_strategy.need,name:marketing_strategy.marketing_strategy_need_opt_9
@@ -2461,6 +2524,13 @@ msgstr "Propuesta (1, 2, 3, 4)"
 #: model:ir.model.fields.selection,name:marketing_strategy.selection__marketing_strategy_touchpoint__buyer_journey_stage__purchase
 msgid "Purchase"
 msgstr "Compra"
+
+#. module: marketing_strategy
+#: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_brand__blog_rank
+#: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_brand__podcast_rank
+#: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_brand__website_rank
+msgid "Rank"
+msgstr "Clasificación"
 
 #. module: marketing_strategy
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_brand__related_brand_id
@@ -2523,6 +2593,11 @@ msgstr "Modelo a seguir"
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_value_proposition__message_has_sms_error
 msgid "SMS Delivery error"
 msgstr "Error de entrega de SMS"
+
+#. module: marketing_strategy
+#: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_plan__sales
+msgid "Sales"
+msgstr "Ventas"
 
 #. module: marketing_strategy
 #: model:ir.model,name:marketing_strategy.model_sale_order
@@ -2736,6 +2811,11 @@ msgid "Structure"
 msgstr "Estructura"
 
 #. module: marketing_strategy
+#: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_brand__youtube_subscribers
+msgid "Subscribers"
+msgstr "Suscriptores"
+
+#. module: marketing_strategy
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_story_brand__summary
 #: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_story_brand_view_form
 msgid "Summary"
@@ -2767,11 +2847,6 @@ msgstr "¡El nombre de la etiqueta ya existe!"
 #: model_terms:ir.ui.view,arch_db:marketing_strategy.touchpoint_form_view
 msgid "Tags"
 msgstr "Etiquetas"
-
-#. module: marketing_strategy
-#: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_plan__target
-msgid "Target"
-msgstr "Objetivo"
 
 #. module: marketing_strategy
 #: model:ir.model.fields.selection,name:marketing_strategy.selection__marketing_strategy_brand__customer_relationship__teammates
@@ -2823,6 +2898,7 @@ msgstr "Temas"
 
 #. module: marketing_strategy
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_brand__tiktok
+#: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_brand_view_form
 msgid "TikTok"
 msgstr ""
 
@@ -2947,6 +3023,11 @@ msgstr "Tribu:"
 #: model:ir.ui.menu,name:marketing_strategy.menu_marketing_strategy_tribe
 msgid "Tribes"
 msgstr "Tribus"
+
+#. module: marketing_strategy
+#: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_brand_view_form
+msgid "Twiter"
+msgstr ""
 
 #. module: marketing_strategy
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_brand__twitter
@@ -3166,6 +3247,11 @@ msgstr "Documentación Técnica"
 #: model:ir.model.fields.selection,name:marketing_strategy.selection__marketing_strategy_buyer_persona__status__widower
 msgid "Widower"
 msgstr "Viudo"
+
+#. module: marketing_strategy
+#: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_brand_view_form
+msgid "Youtube"
+msgstr ""
 
 #. module: marketing_strategy
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_brand__youtube
