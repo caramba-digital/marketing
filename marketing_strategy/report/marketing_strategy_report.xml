@@ -1,0 +1,40 @@
+<odoo>
+    <data>
+
+        <record id="action_report_marketing_plan" model="ir.actions.report">
+            <field name="name">Marketing Strategy</field>
+            <field name="model">marketing_strategy.plan</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">marketing_strategy.report_marketing_plan</field>
+            <field name="report_file">marketing_strategy.marketing_plan</field>
+            <field name="print_report_name">(object.state in ('draft', 'sent') and 'Quotation - %s' % (object.name)) or 'Order - %s' % (object.name)</field>
+            <field name="binding_model_id" ref="model_marketing_strategy_plan"/>
+            <field name="binding_type">report</field>
+        </record>
+
+ 
+        <record id="action_report_value_proposition" model="ir.actions.report">
+            <field name="name">Value Proposition</field>
+            <field name="model">marketing_strategy.value_proposition</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">marketing_strategy.value_proposition</field>
+            <field name="report_file">marketing_strategy.value_proposition</field>
+            <field name="print_report_name">(object.state in ('draft', 'sent') and 'Quotation - %s' % (object.name)) or 'Order - %s' % (object.name)</field>
+            <field name="binding_model_id" ref="model_marketing_strategy_value_proposition"/>
+            <field name="binding_type">report</field>
+        </record>
+    
+        <record id="action_report_story_brand" model="ir.actions.report">
+            <field name="name">Story Brand</field>
+            <field name="model">marketing_strategy.story_brand</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">marketing_strategy.story_brand</field>
+            <field name="report_file">marketing_strategy.story_brand</field>
+            <field name="print_report_name">(object.state in ('draft', 'sent') and 'Quotation - %s' % (object.name)) or 'Order - %s' % (object.name)</field>
+            <field name="binding_model_id" ref="model_marketing_strategy_story_brand"/>
+            <field name="binding_type">report</field>
+        </record>
+
+
+    </data>
+</odoo>
