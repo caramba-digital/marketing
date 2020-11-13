@@ -23,7 +23,8 @@
         'views/crm_lead_views.xml',
         'views/res_partner_views.xml',
         'views/marketing_strategy_story_brand_views.xml',
-        'data/marketing_strategy_data.xml'
+        'data/marketing_strategy_data.xml',
+        'report/marketing_value_proposition_canvas.xml',
         
     ],
     'demo': [
