@@ -74,26 +74,50 @@
                     	</group>
                     	<group>
                     		<field name="url" widget="url" placeholder="e.g. www.odoo.com"/>
-                    		<field name="brand_owner_id"/>
+                            <field name="brand_owner_id"/>
+                    		<field name="website_rank"/>
                             <field name="company_id" options="{'no_create': True}" groups="base.group_multi_company"/>
                     	</group>
                     </group>
                     <notebook colspan="4">
                         <page string="Social" name="social" autofocus="autofocus">
-                        <group>
-                    	<group>
-                    		<field name="twitter" widget="url"/>
-                    		<field name="facebook" widget="url"/>
-                            <field name="instagram" widget="url"/>
-                    		<field name="linkedin" widget="url"/>
-                    	</group>
-                    	<group>
-                            <field name="tiktok" widget="url"/>
-                    		<field name="youtube" widget="url"/>
-                    		<field name="blog" widget="url"/>
-                            <field name="podcast_channel" widget="url"/>
-                    	</group>
-                    </group>
+                            <group>
+                                <group string="Facebook">
+                                    <field name="facebook" widget="url"/>
+                                    <field name="facebook_likes"/>
+                                    <field name="facebook_folowers"/>
+                                </group>
+                                <group string="Instagram">
+                                    <field name="instagram" widget="url"/>
+                                    <field name="instagram_posts"/>
+                                    <field name="instagram_folowers"/>
+                                </group>
+                                <group string="Youtube">
+                                    <field name="youtube" widget="url"/>
+                                    <field name="youtube_subscribers"/>
+                                </group>
+                                <group string="Twiter">
+                                    <field name="twitter" widget="url"/>
+                                    <field name="twitter_folowers"/>
+                                </group>
+                                <group string="TikTok">
+                                    <field name="tiktok" widget="url"/>
+                                    <field name="tiktok_folowers"/>
+                                </group>
+                                <group string="Linkedin">
+                                    <field name="linkedin" widget="url"/>
+                                    <field name="linkedin_folowers"/>
+                                </group>
+                                <group string="Podcast">
+                                    <field name="podcast_channel" widget="url"/>
+                                    <field name="podcast_rank"/>
+                                    <field name="podcast_episodes"/>
+                                </group>
+                                <group string="Blog">
+                                    <field name="blog" widget="url"/>
+                                    <field name="blog_rank"/>
+                                </group>
+                            </group>
                         </page>
                     </notebook>
                     
