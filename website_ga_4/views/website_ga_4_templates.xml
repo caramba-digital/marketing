@@ -4,13 +4,11 @@
      <xpath expr="//script[@id='tracking_code']" position="replace">
         <script id='tracking_code_4_async' async="async"  t-att-src="'https://www.googletagmanager.com/gtag/js?id={}'.format(website.google_analytics_key)" t-if="website and website.google_analytics_key and not editable"></script>
          <script id='tracking_code_4'  t-if="website and website.google_analytics_key and not editable">
-            <script>
               window.dataLayer = window.dataLayer || [];
               function gtag(){dataLayer.push(arguments);}
               gtag('js', new Date());
               gtag('config', '<t t-esc="website.google_analytics_key"/>');
           </script>
-        </script>
      </xpath>
 
 </template>
