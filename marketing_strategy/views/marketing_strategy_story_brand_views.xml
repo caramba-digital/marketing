@@ -13,7 +13,6 @@
             <tree string="Themes">
                 <field name="name" />
                 <field name="story_brand_id" />
-                <field name="content_type" />
                 <field name="value" />
                 <field name="company_id" options="{'no_create': True}" groups="base.group_multi_company"/>
             </tree>
@@ -38,7 +37,6 @@
                         <group>
                             <field name="story_brand_id"/>
                             <field name="chapter" />
-                            <field name="content_type" />
                         </group>
                     </group>
                     <notebook colspan="4">
@@ -336,7 +334,7 @@
         <field name="name">story_brand.tree</field>
         <field name="model">marketing_strategy.story_brand</field>
         <field name="arch" type="xml">
-            <tree string="Stories Brands">
+            <tree string="Brand Story">
                 <field name="name" />
                 <field name="value_proposition_id" />
                 <field name="brand_id" />
@@ -366,7 +364,7 @@
                      		<field name="user_id"/>
                              <field name="company_id" options="{'no_create': True}" groups="base.group_multi_company"/>
                         </group>
-                        <group string="Heroes" >
+                        <group string="Buyers Persona" >
                              <field name="buyers_ids"  widget="many2many" nolabel="1" >
                                 <tree>
                                     <field name="name" />
@@ -376,18 +374,17 @@
                         </group>
                     </group>
                     <notebook colspan="4">
-                    	<page string="Conceptual Map"  autofocus="autofocus">
-                    		<field name="image_1920" widget="image" class="img-fluid" nolabel="1"/>
+                    	<page string="Conceptual Map"  >
+                    		<field name="image_1920" widget="image" autofocus="autofocus" class="img-fluid" nolabel="1"/>
                     	</page>   
                         <page string="Summary">
-                            <field name="summary" widget="html" nolabel="1"/>
+                            <field name="summary" widget="html"  nolabel="1"/>
                         </page>
                         <page string="Chapters" >
                                 <field name="chapters_ids" mode="kanban" domain="[('chapter','=','chapter_1')]" context="{'default_story_brand_id':active_id,'default_chapter':'chapter_1'}" force_save="1"  nolabel="1">
                                     <kanban>
                                         <field name="id"/>
                                         <field name="name"/>
-                                        <field name="content_type" />
                                         <field name="value" />
                                         <field name="chapter" />
                                         <templates>
@@ -401,7 +398,6 @@
                                                         </h4> 
                                                         <ul>
                                                             <li>Chapter:  <field name="chapter" /></li>
-                                                            <li>Type:  <field name="content_type" /></li>
                                                             <li>Value: <field name="value"/></li>
                                                         </ul>
                                                     </div>
@@ -485,7 +481,7 @@
     </record>
 
     <record id='marketing_strategy_story_brand_action' model='ir.actions.act_window'>
-        <field name="name">Stories Brands</field>
+        <field name="name">Brand Story</field>
         <field name="res_model">marketing_strategy.story_brand</field>
         <field name="view_mode">kanban,tree,form</field>
         <field name="help" type="html">
@@ -495,7 +491,7 @@
         </field>
     </record>
 
-    <menuitem action="marketing_strategy_story_brand_action" name="Stories Brand"
+    <menuitem action="marketing_strategy_story_brand_action" name="Brand Story"
             parent="marketing_strategy_menu_solutions" id="marketing_strategy_brand_menu" sequence="4"/>
 
 

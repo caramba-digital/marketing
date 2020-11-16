@@ -24,6 +24,8 @@
         'views/res_partner_views.xml',
         'views/marketing_strategy_story_brand_views.xml',
         'data/marketing_strategy_data.xml',
+        'report/marketing_plan.xml',
+        'report/marketing_story_brand.xml',
         'report/marketing_value_proposition_canvas.xml',
         
     ],

@@ -160,17 +160,16 @@
                                 </group>
                             </group>
                             <group>
-                                <group>                                    
+                                <group>   
+                                    <field name="openness" widget="progressbar" />
+                                    <field name="conscientiousness" widget="progressbar"/>
+                                    <field name="extraversion" widget="progressbar"/>
+                                    <field name="agreeableness" widget="progressbar"/>
+                                    <field name="emotional_range" widget="progressbar"/> </group>
+                                <group>                                        
                                     <field name="values_ids" widget="many2many_tags" options="{'color_field': 'color'}" placeholder="Values"/>
                                     <field name="needs_ids" widget="many2many_tags"  options="{'color_field': 'color'}" placeholder="Basic Needs"/>
-                                    <field name="topics_ids" widget="many2many_tags" options="{'color_field': 'color'}"  placeholder="Topics of Conversation"/>
-                                </group>
-                                <group>
-                                <field name="openness" widget="progressbar" />
-                                <field name="conscientiousness" widget="progressbar"/>
-                                <field name="extraversion" widget="progressbar"/>
-                                <field name="agreeableness" widget="progressbar"/>
-                                <field name="emotional_range" widget="progressbar"/>                                   
+                                    <field name="topics_ids" widget="many2many_tags" options="{'color_field': 'color'}"  placeholder="Topics of Conversation"/>                          
                                 </group>
                             </group>
                         </page>		

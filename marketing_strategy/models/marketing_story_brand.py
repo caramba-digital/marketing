@@ -28,11 +28,16 @@ class MarketingStrategyStoryBrandTheme(models.Model):
 
     name = fields.Char('Name', required=True)
     description = fields.Char()
-    content_type = fields.Selection([('help','Help Content'),('hub','Hub Content'),('hero','Hero Content')])
-    value = fields.Selection([('inspire','Inspire'),('educate','Educate'),('entertain','Entertain')])
+    value = fields.Selection([
+        ('humor','Makes me laugh'),
+        ('identity','This is me'),
+        ('connection','Helps me connect with another person'),
+        ('learning','It helps me do something'),
+        ('feels','Makes me feel something')
+        ], help="System BuzzFeed developed called cultural cartography", default="learning", required=True)
     concept = fields.Html()
     contents_ids = fields.One2many('marketing_strategy.story_brand.content', 'theme_id')
-    story_brand_id = fields.Many2one('marketing_strategy.story_brand', ondelete='cascade') 
+    story_brand_id = fields.Many2one('marketing_strategy.story_brand', ondelete='cascade', string='Brand Story') 
     chapter = fields.Selection(CHAPTERS, 'Chapter', help="Chapter within the brand's history.", required=True)
     company_id = fields.Many2one('res.company', 'Company', required=True, index=True, default=lambda self: self.env.company)
 
@@ -48,7 +53,7 @@ class MarketingStrategyStoryBrandContent(models.Model):
     mode = fields.Selection([('search','Search'),('display','Display'),('organic','Organic'), ('opt_in','Opt-in')])
     format = fields.Selection([('blog','Blog'),('longform_content','Longform Content'),('case_study','Case Study'),('white_paper','White Paper'),('ebook','Ebook'),('infographic','Infographic'),('survey','Survey'),('video','Video'),('short_video','Short Video'),('webinar','Webinar'),('online_curse','Online Course'),('email','email'), ('podcast','Podcast')])
     theme_id = fields.Many2one('marketing_strategy.story_brand.theme', ondelete='cascade')
-    touch_point_ids = fields.Many2many('marketing_strategy.touchpoint', 'marketing_strategy_content_touchpoint_rel', 'touchpoint_id', 'content_id')
+    touch_point_ids = fields.Many2many('marketing_strategy.touchpoint', 'marketing_strategy_content_touchpoint_rel', 'touchpoint_id', 'content_id', string="Brand Story")
     chapter = fields.Selection(CHAPTERS, related='theme_id.chapter', readonly=True, store=True)
     story_brand_id = fields.Many2one('marketing_strategy.story_brand', related='theme_id.story_brand_id', readonly=True, store=True)
     buyers_ids = fields.Many2many('marketing_strategy.buyer_persona', 'marketing_strategy_content_heroes', 'content_id', 'buyer_persona_id', string='Heroes')    
@@ -57,7 +62,7 @@ class MarketingStrategyStoryBrandContent(models.Model):
 
 class MarketingStrategyStoryBrand(models.Model):
     _name = "marketing_strategy.story_brand"
-    _description = "Story Brand"
+    _description = "Brand Story"
     _inherit = ['mail.thread', 'mail.activity.mixin','image.mixin']
 
     def _expand_states(self, states, domain, order):
