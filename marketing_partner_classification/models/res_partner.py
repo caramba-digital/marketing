@@ -36,12 +36,13 @@ class ResPartner(models.Model):
     trainning = fields.Boolean('Training')
 
     #Classification
-    stores = fields.Integer('Stores')
+    
+    shops = fields.Integer('Shops')
     sales_floor = fields.Integer('Sales Floor')
     employees = fields.Integer('Employees', help="Number of employees")
     turnover = fields.Monetary('Turnover', currency_field='company_currency')
     assets = fields.Monetary('Assets', currency_field='company_currency')
-    digitization_level = fields.Selection([('beginner','Beginner'),('medium','Medium'),('advanced','Advanced'),('expert','Expert')], string='Digitization Level', default='beginner')
+    digitization_level = fields.Selection([('beginner','Beginner'),('medium','Medium'),('advanced','Advanced'),('expert','Expert')], string='Digitization Level')
     platform_id = fields.Many2one('res.partner.platform', string='Platform')
     company_currency = fields.Many2one('res.currency', related='company_id.currency_id')
 

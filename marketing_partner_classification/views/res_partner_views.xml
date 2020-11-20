@@ -12,7 +12,7 @@
                 <group>
                   <field name="digitization_level"/>
                   <field name="platform_id"/>
-                  <field name="stores"/>
+                  <field name="shops"/>
                   <field name="sales_floor"/>
                 </group>
                 <group> 

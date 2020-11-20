@@ -236,10 +236,10 @@ msgid "Sales Floor"
 msgstr "Piso de Venta"
 
 #. module: marketing_partner_classification
-#: model:ir.model.fields,field_description:marketing_partner_classification.field_res_partner__stores
-#: model:ir.model.fields,field_description:marketing_partner_classification.field_res_users__stores
-msgid "Stores"
-msgstr "Historias"
+#: model:ir.model.fields,field_description:marketing_partner_classification.field_res_partner__shops
+#: model:ir.model.fields,field_description:marketing_partner_classification.field_res_users__shops
+msgid "Shops"
+msgstr "Tiendas"
 
 #. module: marketing_partner_classification
 #: model:ir.model.fields,field_description:marketing_partner_classification.field_res_partner__trainning
