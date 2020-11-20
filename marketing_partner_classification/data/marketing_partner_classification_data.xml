@@ -44,6 +44,12 @@
     <record id="res_partner_platform_14" model="res.partner.platform">
     	<field name="name">None</field>
     </record>
+    <record id="res_partner_platform_15" model="res.partner.platform">
+    	<field name="name">Umbraco</field>
+    </record>
+    <record id="res_partner_platform_16" model="res.partner.platform">
+    	<field name="name">PrestaShop</field>
+    </record>
 
     </data>
 </odoo>
