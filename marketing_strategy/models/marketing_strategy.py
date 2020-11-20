@@ -397,8 +397,7 @@ class BuyerPersona(models.Model):
     content_type_ids = fields.Many2many('marketing_strategy.content_type', 'buyer_content_rel', 'buyer_id', 'content_type_id', string='Content Type')
     social_media_ids = fields.Many2many('marketing_strategy.social_media_preference', 'buyer_social_media_preferences_rel', 'buyer_id', 'social_media_id', string='Social Media')
     objection_ids = fields.Many2many('marketing_strategy.buyer_objection', 'buyer_objection_rel', 'buyer_id', 'objection_id', string='Objections')
-    goal_ids = fields.Many2many('marketing_strategy.buyer_goal', 'buyer_goal_rel', 'buyer_id', 'goal_id', string='Goals')   
-    company_currency = fields.Many2one(string='Currency', related='company_id.currency_id', readonly=True, relation="res.currency")
+    goal_ids = fields.Many2many('marketing_strategy.buyer_goal', 'buyer_goal_rel', 'buyer_id', 'goal_id', string='Goals')  
     personality = fields.Selection(PERSONALITY, default='average')
     openness = fields.Float(compute='_compute_openness', readonly=True)
     conscientiousness = fields.Float(compute='_compute_conscientiousness', readonly=True)
@@ -407,7 +406,8 @@ class BuyerPersona(models.Model):
     emotional_range = fields.Float(compute='_compute_emotional_range', readonly=True)
     needs_ids = fields.Many2many('marketing_strategy.need', 'marketing_strategy_buyer_persona_needs_rel', 'brand_id', 'need_id')
     values_ids = fields.Many2many('marketing_strategy.value', 'marketing_strategy_buyer_persona_rel', 'brand_id', 'value_id')
-    company_id = fields.Many2one('res.company', 'Company', required=True, index=True, default=lambda self: self.env.company)
+    company_id = fields.Many2one('res.company', 'Company', default=lambda self: self.env.company)
+    company_currency = fields.Many2one('res.currency', related='company_id.currency_id')
     
 
     @api.depends('personality')
@@ -508,13 +508,13 @@ class Plan(models.Model):
     date_end = fields.Date(string='End Date')
     user_id = fields.Many2one('res.users', string='Responsible', default=lambda self: self.env.user)
     project_id = fields.Many2one('project.project', string='Project', ondelete='cascade')
-    campaigns_ids = fields.One2many('utm.campaign', 'plan_id', string="Campaigns", ondelete='cascade')
+    campaigns_ids = fields.One2many('utm.campaign', 'plan_id', string="Campaigns")
     color = fields.Integer(string='Color Index')
     sequence = fields.Integer('Sequence')
-    company_currency = fields.Many2one(string='Currency', related='company_id.currency_id', readonly=True, relation="res.currency")
     buyers_persona_ids = fields.Many2many('marketing_strategy.buyer_persona', 'marketing_strategy_plan_buyer_persona_rel', 'plan_id', 'buyer_persona_id', string='Buyers Persona')     
-    touchpoints_ids = fields.One2many('marketing_strategy.touchpoint', 'plan_id', string="Touchpoints", ondelete='set null')
-    company_id = fields.Many2one('res.company', 'Company', required=True, index=True, default=lambda self: self.env.company)
+    touchpoints_ids = fields.One2many('marketing_strategy.touchpoint', 'plan_id', string="Touchpoints")    
+    company_id = fields.Many2one('res.company', 'Company', default=lambda self: self.env.company)
+    company_currency = fields.Many2one('res.currency', related='company_id.currency_id')
     
 
     

@@ -1,0 +1,266 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* marketing_partner_classification
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-11-20 18:17+0000\n"
+"PO-Revision-Date: 2020-11-20 12:30-0600\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: es_MX\n"
+"X-Generator: Poedit 2.3\n"
+
+#. module: marketing_partner_classification
+#: model:ir.model.fields.selection,name:marketing_partner_classification.selection__res_partner__digitization_level__advanced
+msgid "Advanced"
+msgstr "Avanzado"
+
+#. module: marketing_partner_classification
+#: model:ir.model.fields,field_description:marketing_partner_classification.field_res_partner__assets
+#: model:ir.model.fields,field_description:marketing_partner_classification.field_res_users__assets
+msgid "Assets"
+msgstr "Activos"
+
+#. module: marketing_partner_classification
+#: model:ir.model.fields.selection,name:marketing_partner_classification.selection__res_partner__digitization_level__beginner
+msgid "Beginner"
+msgstr "Principiante"
+
+#. module: marketing_partner_classification
+#: model:ir.model.fields,field_description:marketing_partner_classification.field_res_partner__business_model
+#: model:ir.model.fields,field_description:marketing_partner_classification.field_res_users__business_model
+msgid "Business Model"
+msgstr "Modelo de Negocio"
+
+#. module: marketing_partner_classification
+#: model:ir.model.fields,field_description:marketing_partner_classification.field_res_partner__crm
+#: model:ir.model.fields,field_description:marketing_partner_classification.field_res_users__crm
+msgid "CRM"
+msgstr "CRM"
+
+#. module: marketing_partner_classification
+#: model_terms:ir.ui.view,arch_db:marketing_partner_classification.res_partner_clasification_form
+msgid "Classification"
+msgstr "Clasificación"
+
+#. module: marketing_partner_classification
+#: model_terms:ir.ui.view,arch_db:marketing_partner_classification.res_partner_clasification_form
+msgid "Consulting"
+msgstr "Consultor"
+
+#. module: marketing_partner_classification
+#: model:ir.model,name:marketing_partner_classification.model_res_partner
+msgid "Contact"
+msgstr "Contacto"
+
+#. module: marketing_partner_classification
+#: model_terms:ir.actions.act_window,help:marketing_partner_classification.action_partner_platform
+msgid "Create a new Digital Platfom"
+msgstr "Crea una nueva plataforma digital"
+
+#. module: marketing_partner_classification
+#: model:ir.model.fields,field_description:marketing_partner_classification.field_res_partner_platform__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: marketing_partner_classification
+#: model:ir.model.fields,field_description:marketing_partner_classification.field_res_partner_platform__create_date
+msgid "Created on"
+msgstr "Creado en"
+
+#. module: marketing_partner_classification
+#: model:ir.model.fields,field_description:marketing_partner_classification.field_res_partner__company_currency
+#: model:ir.model.fields,field_description:marketing_partner_classification.field_res_users__company_currency
+msgid "Currency"
+msgstr "Moneda"
+
+#. module: marketing_partner_classification
+#: model_terms:ir.ui.view,arch_db:marketing_partner_classification.view_partner_platform_form
+#: model:ir.model,name:marketing_partner_classification.model_res_partner_platform
+msgid "Digital Platfom"
+msgstr "Plataforma Digital"
+
+#. module: marketing_partner_classification
+#: model:ir.actions.act_window,name:marketing_partner_classification.action_partner_platform
+#: model:ir.ui.menu,name:marketing_partner_classification.menu_partner_platform
+msgid "Digital Platfoms"
+msgstr "Plataformas Digitales"
+
+#. module: marketing_partner_classification
+#: model_terms:ir.ui.view,arch_db:marketing_partner_classification.res_partner_clasification_form
+msgid "Digitization"
+msgstr "Digitalización"
+
+#. module: marketing_partner_classification
+#: model:ir.model.fields,field_description:marketing_partner_classification.field_res_partner__digitization_level
+#: model:ir.model.fields,field_description:marketing_partner_classification.field_res_users__digitization_level
+msgid "Digitization Level"
+msgstr "Nivel de Digitalización"
+
+#. module: marketing_partner_classification
+#: model:ir.model.fields,field_description:marketing_partner_classification.field_res_partner__display_name
+#: model:ir.model.fields,field_description:marketing_partner_classification.field_res_partner_platform__display_name
+msgid "Display Name"
+msgstr "Nombre mostrado"
+
+#. module: marketing_partner_classification
+#: model:ir.model.fields,field_description:marketing_partner_classification.field_res_partner__employees
+#: model:ir.model.fields,field_description:marketing_partner_classification.field_res_users__employees
+msgid "Employees"
+msgstr "Empleados"
+
+#. module: marketing_partner_classification
+#: model:ir.model.fields.selection,name:marketing_partner_classification.selection__res_partner__digitization_level__expert
+msgid "Expert"
+msgstr "Experto"
+
+#. module: marketing_partner_classification
+#: model:ir.model.fields,field_description:marketing_partner_classification.field_res_partner__finances
+#: model:ir.model.fields,field_description:marketing_partner_classification.field_res_users__finances
+msgid "Finances"
+msgstr "Finanzas"
+
+#. module: marketing_partner_classification
+#: model:ir.model.fields,field_description:marketing_partner_classification.field_res_partner__fleet
+#: model:ir.model.fields,field_description:marketing_partner_classification.field_res_users__fleet
+msgid "Fleet"
+msgstr "Flota"
+
+#. module: marketing_partner_classification
+#: model:ir.model.fields,field_description:marketing_partner_classification.field_res_partner__hr
+#: model:ir.model.fields,field_description:marketing_partner_classification.field_res_users__hr
+msgid "HR"
+msgstr "HHRR"
+
+#. module: marketing_partner_classification
+#: model:ir.model.fields,field_description:marketing_partner_classification.field_res_partner__id
+#: model:ir.model.fields,field_description:marketing_partner_classification.field_res_partner_platform__id
+msgid "ID"
+msgstr "ID"
+
+#. module: marketing_partner_classification
+#: model:ir.model.fields,field_description:marketing_partner_classification.field_res_partner__innovation
+#: model:ir.model.fields,field_description:marketing_partner_classification.field_res_users__innovation
+msgid "Innovation"
+msgstr "Innovación"
+
+#. module: marketing_partner_classification
+#: model:ir.model.fields,field_description:marketing_partner_classification.field_res_partner__inventory
+#: model:ir.model.fields,field_description:marketing_partner_classification.field_res_users__inventory
+msgid "Inventory"
+msgstr "Inventario"
+
+#. module: marketing_partner_classification
+#: model:ir.model.fields,field_description:marketing_partner_classification.field_res_partner____last_update
+#: model:ir.model.fields,field_description:marketing_partner_classification.field_res_partner_platform____last_update
+msgid "Last Modified on"
+msgstr "Última modificación el"
+
+#. module: marketing_partner_classification
+#: model:ir.model.fields,field_description:marketing_partner_classification.field_res_partner_platform__write_uid
+msgid "Last Updated by"
+msgstr "Última actualización por"
+
+#. module: marketing_partner_classification
+#: model:ir.model.fields,field_description:marketing_partner_classification.field_res_partner_platform__write_date
+msgid "Last Updated on"
+msgstr "Ultima actualización en"
+
+#. module: marketing_partner_classification
+#: model:ir.model.fields,field_description:marketing_partner_classification.field_res_partner__mrp
+#: model:ir.model.fields,field_description:marketing_partner_classification.field_res_users__mrp
+msgid "MRP"
+msgstr "MRP"
+
+#. module: marketing_partner_classification
+#: model:ir.model.fields,field_description:marketing_partner_classification.field_res_partner__marketing
+#: model:ir.model.fields,field_description:marketing_partner_classification.field_res_users__marketing
+#: model_terms:ir.ui.view,arch_db:marketing_partner_classification.res_partner_clasification_form
+msgid "Marketing"
+msgstr "Márketing"
+
+#. module: marketing_partner_classification
+#: model:ir.model.fields,field_description:marketing_partner_classification.field_res_partner__marketing_campaign
+#: model:ir.model.fields,field_description:marketing_partner_classification.field_res_users__marketing_campaign
+msgid "Marketing Campaign"
+msgstr "Campaña de Marketing"
+
+#. module: marketing_partner_classification
+#: model:ir.model.fields.selection,name:marketing_partner_classification.selection__res_partner__digitization_level__medium
+msgid "Medium"
+msgstr "Medio"
+
+#. module: marketing_partner_classification
+#: model:ir.model.fields,help:marketing_partner_classification.field_res_partner__employees
+#: model:ir.model.fields,help:marketing_partner_classification.field_res_users__employees
+msgid "Number of employees"
+msgstr "Numero de empleados"
+
+#. module: marketing_partner_classification
+#: model:ir.model.fields,field_description:marketing_partner_classification.field_res_partner__online_presence
+#: model:ir.model.fields,field_description:marketing_partner_classification.field_res_users__online_presence
+msgid "Online Presence"
+msgstr "Presencia en Línea"
+
+#. module: marketing_partner_classification
+#: model:ir.model.fields,field_description:marketing_partner_classification.field_res_partner__platform_id
+#: model:ir.model.fields,field_description:marketing_partner_classification.field_res_partner_platform__name
+#: model:ir.model.fields,field_description:marketing_partner_classification.field_res_users__platform_id
+#: model_terms:ir.ui.view,arch_db:marketing_partner_classification.view_partner_platform_list
+msgid "Platform"
+msgstr "Plataforma"
+
+#. module: marketing_partner_classification
+#: model:ir.model.fields,field_description:marketing_partner_classification.field_res_partner__purchase
+#: model:ir.model.fields,field_description:marketing_partner_classification.field_res_users__purchase
+msgid "Purchase"
+msgstr "Compra"
+
+#. module: marketing_partner_classification
+#: model:ir.model.fields,field_description:marketing_partner_classification.field_res_partner__sales
+#: model:ir.model.fields,field_description:marketing_partner_classification.field_res_users__sales
+msgid "Sales"
+msgstr "Ventas"
+
+#. module: marketing_partner_classification
+#: model:ir.model.fields,field_description:marketing_partner_classification.field_res_partner__sales_floor
+#: model:ir.model.fields,field_description:marketing_partner_classification.field_res_users__sales_floor
+msgid "Sales Floor"
+msgstr "Piso de Venta"
+
+#. module: marketing_partner_classification
+#: model:ir.model.fields,field_description:marketing_partner_classification.field_res_partner__stores
+#: model:ir.model.fields,field_description:marketing_partner_classification.field_res_users__stores
+msgid "Stores"
+msgstr "Historias"
+
+#. module: marketing_partner_classification
+#: model:ir.model.fields,field_description:marketing_partner_classification.field_res_partner__trainning
+#: model:ir.model.fields,field_description:marketing_partner_classification.field_res_users__trainning
+msgid "Training"
+msgstr "Capacitación"
+
+#. module: marketing_partner_classification
+#: model:ir.model.fields,field_description:marketing_partner_classification.field_res_partner__turnover
+#: model:ir.model.fields,field_description:marketing_partner_classification.field_res_users__turnover
+msgid "Turnover"
+msgstr "Volumen de Ventas"
+
+#. module: marketing_partner_classification
+#: model:ir.model.fields,field_description:marketing_partner_classification.field_res_partner__war_room
+#: model:ir.model.fields,field_description:marketing_partner_classification.field_res_users__war_room
+msgid "War Room"
+msgstr "Sala de Guerra"
+
+#. module: marketing_partner_classification
+#: model:ir.model.fields,field_description:marketing_partner_classification.field_res_partner__ecommerce
+#: model:ir.model.fields,field_description:marketing_partner_classification.field_res_users__ecommerce
+msgid "eCommerce"
+msgstr "Comercio Electrónico"

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+
+    <record id="res_partner_platform_1" model="res.partner.platform">
+    	<field name="name">Shopify</field>
+    </record>
+    <record id="res_partner_platform_2" model="res.partner.platform">
+    	<field name="name">WooCommerce</field>
+    </record>
+    <record id="res_partner_platform_3" model="res.partner.platform">
+    	<field name="name">Squarespace</field>
+    </record>
+    <record id="res_partner_platform_4" model="res.partner.platform">
+    	<field name="name">Magento</field>
+    </record>
+    <record id="res_partner_platform_5" model="res.partner.platform">
+    	<field name="name">BigCommerce</field>
+    </record>
+    <record id="res_partner_platform_6" model="res.partner.platform">
+    	<field name="name">Vtex</field>
+    </record>
+    <record id="res_partner_platform_7" model="res.partner.platform">
+    	<field name="name">Webnode</field>
+    </record>
+    <record id="res_partner_platform_8" model="res.partner.platform">
+    	<field name="name">Jumpseller</field>
+    </record>
+    <record id="res_partner_platform_9" model="res.partner.platform">
+    	<field name="name">Wix</field>
+    </record>
+    <record id="res_partner_platform_10" model="res.partner.platform">
+    	<field name="name">SAP Commerce Cloud</field>
+    </record>
+    <record id="res_partner_platform_11" model="res.partner.platform">
+    	<field name="name">Godaddy</field>
+    </record>
+    <record id="res_partner_platform_12" model="res.partner.platform">
+    	<field name="name">Odoo</field>
+    </record>
+    <record id="res_partner_platform_13" model="res.partner.platform">
+    	<field name="name">Personalized design</field>
+    </record>
+    <record id="res_partner_platform_14" model="res.partner.platform">
+    	<field name="name">None</field>
+    </record>
+
+    </data>
+</odoo>

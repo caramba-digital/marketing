@@ -84,7 +84,7 @@ class MarketingStrategyConsumerTrend(models.Model):
         ('done', 'Completed'),
         ('cancel', 'Cancelled'),
         ],
-        string='Status', default='draft', required=True, copy=False, track_visibility='onchange', group_expand='_expand_states')
+        string='Status', default='draft', required=True, copy=False,  group_expand='_expand_states')
     color = fields.Integer('Kanban Color Index')
     brand_id = fields.Many2one('marketing_strategy.brand')
     inspiration_1 = fields.Image()
