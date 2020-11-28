@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+    <!-- Types -->
+
+    <record id="marketing_strategy_funnel_type_opt_1" model="funnel.type">
+    	<field name="name">The Homepage Funnel</field>
+    </record>
+
+    <record id="marketing_strategy_funnel_type_opt_2" model="funnel.type">
+    	<field name="name">The Storefront Funnel</field>
+    </record>
+
+    <record id="marketing_strategy_funnel_type_opt_3" model="funnel.type">
+    	<field name="name">The Sales Letter Funnel</field>
+    </record>
+
+    <record id="marketing_strategy_funnel_type_opt_4" model="funnel.type">
+    	<field name="name">The White Paper Funnel</field>
+    </record>
+
+    <record id="marketing_strategy_funnel_type_opt_5" model="funnel.type">
+    	<field name="name">The eBook Funnel</field>
+    </record>
+    
+    <record id="marketing_strategy_funnel_type_opt_6" model="funnel.type">
+    	<field name="name">The Video Sales Letter Funnel</field>
+    </record>
+
+    <record id="marketing_strategy_funnel_type_opt_7" model="funnel.type">
+    	<field name="name">The Webinar Funnel</field>
+    </record>
+
+    <record id="marketing_strategy_funnel_type_opt_8" model="funnel.type">
+    	<field name="name">The Auto Webinar Funnel</field>
+    </record>
+    
+    <record id="marketing_strategy_funnel_type_opt_9" model="funnel.type">
+    	<field name="name">The Live Demo Funnel</field>
+    </record>
+
+     <record id="marketing_strategy_funnel_type_opt_10" model="funnel.type">
+    	<field name="name">The Summit Funnel</field>
+    </record>
+    
+    <record id="marketing_strategy_funnel_type_opt_11" model="funnel.type">
+    	<field name="name">The Lead Magnet Funnel</field>
+    </record>
+
+    <record id="marketing_strategy_funnel_type_opt_12" model="funnel.type">
+    	<field name="name">The Membership Funnel</field>
+    </record>
+
+    <record id="marketing_strategy_funnel_type_opt_13" model="funnel.type">
+    	<field name="name">The Daily Deal Funnel</field>
+    </record>
+
+    <record id="marketing_strategy_funnel_type_opt_14" model="funnel.type">
+    	<field name="name">The Product Launch Funnel</field>
+    </record>
+
+    <record id="marketing_strategy_funnel_type_opt_15" model="funnel.type">
+    	<field name="name">The Squeeze Page Funnel</field>
+    </record>
+    
+    <record id="marketing_strategy_funnel_type_opt_16" model="funnel.type">
+    	<field name="name">The Reverse Squeeze Page Funnel</field>
+    </record>
+    
+    <record id="marketing_strategy_funnel_type_opt_17" model="funnel.type">
+    	<field name="name">The 2-Step Tripwire Funnel</field>
+    </record>
+    
+    <record id="marketing_strategy_funnel_type_opt_18" model="funnel.type">
+    	<field name="name">The Hero Funnel</field>
+    </record>
+
+    <record id="marketing_strategy_funnel_type_opt_19" model="funnel.type">
+    	<field name="name">The Ask Campaign Funnel</field>
+    </record>
+
+    <record id="marketing_strategy_funnel_type_opt_20" model="funnel.type">
+    	<field name="name">The Application Funnel</field>
+    </record>
+
+    <record id="marketing_strategy_funnel_type_opt_21" model="funnel.type">
+    	<field name="name">The Cancellation Funnel</field>
+    </record>
+
+        <record id="marketing_strategy_funnel_type_opt_22" model="funnel.type">
+    	<field name="name">The Bridge Funnel</field>
+    </record>
+    
+    <record id="marketing_strategy_funnel_type_opt_23" model="funnel.type">
+    	<field name="name">The Invisible Funnel</field>
+    </record>
+    
+    <record id="marketing_strategy_funnel_type_opt_24" model="funnel.type">
+    	<field name="name">The Survey Funnel</field>
+    </record>
+
+    <record id="marketing_strategy_funnel_type_opt_25" model="funnel.type">
+    	<field name="name">The Gratefulness Funnel</field>
+    </record>
+
+    <record id="marketing_strategy_funnel_type_opt_26" model="funnel.type">
+    	<field name="name">The Gamification Funnel</field>
+    </record>
+
+
+    <!-- Funnel Page Type -->
+
+
+    
+    <record id="marketing_strategy_funnel_page_opt_1" model="funnel.page.type">
+    	<field name="name">Storefront Page</field>
+    </record>
+
+    <record id="marketing_strategy_funnel_page_opt_2" model="funnel.page.type">
+    	<field name="name">Product Page</field>
+    </record>
+
+    <record id="marketing_strategy_funnel_page_opt_3" model="funnel.page.type">
+    	<field name="name">Service Page</field>
+    </record>
+    
+    <record id="marketing_strategy_funnel_page_opt_4" model="funnel.page.type">
+    	<field name="name">Sales Video Page</field>
+    </record>
+
+    <record id="marketing_strategy_funnel_page_opt_5" model="funnel.page.type">
+    	<field name="name">Event Page</field>
+    </record>
+
+    <record id="marketing_strategy_funnel_page_opt_6" model="funnel.page.type">
+    	<field name="name">Sales Letter Page</field>
+    </record>
+
+    <record id="marketing_strategy_funnel_page_opt_7" model="funnel.page.type">
+    	<field name="name">Hero Page</field>
+    </record>
+
+    <record id="marketing_strategy_funnel_page_opt_8" model="funnel.page.type">
+    	<field name="name">Overwhelm Page</field>
+    </record>
+
+    <record id="marketing_strategy_funnel_page_opt_9" model="funnel.page.type">
+    	<field name="name">Offer Page</field>
+    </record>
+
+    <record id="marketing_strategy_funnel_page_opt_10" model="funnel.page.type">
+    	<field name="name">Upsell Page</field>
+    </record>
+
+    <record id="marketing_strategy_funnel_page_opt_11" model="funnel.page.type">
+    	<field name="name">Downsell Page</field>
+    </record>
+
+    <record id="marketing_strategy_funnel_page_opt_12" model="funnel.page.type">
+    	<field name="name">Cross-Sell Page</field>
+    </record>
+
+    <record id="marketing_strategy_funnel_page_opt_13" model="funnel.page.type">
+    	<field name="name">SaaS Referral Page</field>
+    </record>
+
+    <record id="marketing_strategy_funnel_page_opt_14" model="funnel.page.type">
+    	<field name="name">Bridge Page</field>
+    </record>
+
+    <record id="marketing_strategy_funnel_page_opt_15" model="funnel.page.type">
+    	<field name="name">Gamification Page</field>
+    </record>
+
+    <record id="marketing_strategy_funnel_page_opt_16" model="funnel.page.type">
+    	<field name="name">Download Page</field>
+    </record>
+
+    <record id="marketing_strategy_funnel_page_opt_17" model="funnel.page.type">
+    	<field name="name">Thank Page</field>
+    </record>
+
+    <record id="marketing_strategy_funnel_page_opt_18" model="funnel.page.type">
+    	<field name="name">Cancellation Page</field>
+    </record>
+
+
+    <!-- Mail Template -->
+
+        <record id="funnel_email_template_opportunity_mail" model="mail.template">
+            <field name="name">Lead/Opportunity: New Lead</field>
+            <field name="model_id" ref="crm.model_crm_lead"/>
+            <field name="is_for_funnel">True</field>
+            <field name="partner_to">${object.partner_id != False and object.partner_id.id}</field>
+            <field name="email_to">${(not object.partner_id and object.email_from)|safe}</field>
+            <field name="body_html"><![CDATA[
+<p>Hello,</p>
+<p>We have very good offer that might suit you. We suggest you subscribe to the
+Odoo Discovery Day on May 2015.</p>
+<p>${object.company_id.name}</p>
+<p>If any further information is required, do not hesitate to reply to this message.</p>
+<p>Regards,</p>]]>
+            </field>
+            <field name="lang">${object.partner_id.lang}</field>
+            <field name="auto_delete" eval="True"/>
+        </record>
+
+      <!-- Cron --><!--
+      <record model="ir.cron" forcecreate="True" id="funnel_work_every_hour">
+        <field name="name">Funnel: Run Works Items</field>
+        <field name="active" eval="True" />
+        <field name="user_id" ref="base.user_root"/>
+        <field name="interval_number">1</field>
+        <field name="interval_type">hours</field>
+        <field name="numbercall">-1</field>
+        <field name="model_id" ref="funnel.workitem"/>
+        <field name="doall">1</field>
+        <field name="state">code</field>
+        <field name="code">model.run(True)</field>
+      </record>-->
+    
+
+    </data>
+</odoo>

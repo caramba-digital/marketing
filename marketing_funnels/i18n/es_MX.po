@@ -1,0 +1,1369 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* marketing_funnels
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-11-28 00:01+0000\n"
+"PO-Revision-Date: 2020-11-27 18:26-0600\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: es_MX\n"
+"X-Generator: Poedit 2.3\n"
+
+#. module: marketing_funnels
+#: model:mail.template,body_html:marketing_funnels.funnel_email_template_opportunity_mail
+msgid ""
+"\n"
+"<p>Hello,</p>\n"
+"<p>We have very good offer that might suit you. We suggest you subscribe to the\n"
+"Odoo Discovery Day on May 2015.</p>\n"
+"<p>${object.company_id.name}</p>\n"
+"<p>If any further information is required, do not hesitate to reply to this message.</p>\n"
+"<p>Regards,</p>\n"
+"            "
+msgstr ""
+"<p> Hola, </p>\n"
+"<p> Tenemos una oferta muy buena que podría ser adecuada para usted. Le sugerimos suscribirse "
+"al\n"
+"Día del descubrimiento de Odoo en mayo de 2015. </p>\n"
+"<p> $ {object.company_id.name} </p>\n"
+"<p> Si necesita más información, no dude en responder a este mensaje. </p>\n"
+"<p> Saludos, </p>"
+
+#. module: marketing_funnels
+#: model:ir.model.fields,field_description:marketing_funnels.field_website_visitor__funnel_count
+msgid "# Funnels"
+msgstr "# Embudos"
+
+#. module: marketing_funnels
+#: model_terms:ir.actions.act_window,help:marketing_funnels.goals_menu_groupby_action2
+msgid ""
+"A goal is defined by a user and a goal type.\n"
+"                    Goals can be created automatically by using challenges."
+msgstr ""
+"Un objetivo lo define un usuario y un tipo de objetivo.\n"
+"                     Los objetivos se pueden crear automáticamente mediante desafíos."
+
+#. module: marketing_funnels
+#: model:ir.model.fields,field_description:marketing_funnels.field_funnel_activity__server_action_id
+msgid "Action"
+msgstr "Acción"
+
+#. module: marketing_funnels
+#: model:ir.model.fields,field_description:marketing_funnels.field_funnel_funnel__message_needaction
+#: model:ir.model.fields,field_description:marketing_funnels.field_funnel_page__message_needaction
+msgid "Action Needed"
+msgstr "Accion necesaria"
+
+#. module: marketing_funnels
+#: model:ir.model.fields,field_description:marketing_funnels.field_funnel_activity__action_type
+msgid "Action Type"
+msgstr "Tipo de Acción"
+
+#. module: marketing_funnels
+#: model:ir.model.fields,field_description:marketing_funnels.field_funnel_page__active
+msgid "Active"
+msgstr "Activo"
+
+#. module: marketing_funnels
+#: model:ir.model.fields,field_description:marketing_funnels.field_funnel_page__activity_ids
+msgid "Activities"
+msgstr "Actividades"
+
+#. module: marketing_funnels
+#: model:ir.model.fields,field_description:marketing_funnels.field_funnel_workitem__activity_id
+#: model_terms:ir.ui.view,arch_db:marketing_funnels.funnel_activity_view_form
+#: model_terms:ir.ui.view,arch_db:marketing_funnels.funnel_page_view_form
+#: model_terms:ir.ui.view,arch_db:marketing_funnels.funnel_workitem_search
+msgid "Activity"
+msgstr "Actividad"
+
+#. module: marketing_funnels
+#: code:addons/marketing/marketing_funnels/models/marketing_strategy_funnel.py:0
+#: code:addons/marketing_funnels/models/marketing_strategy_funnel.py:0
+#, python-format
+msgid "After %(interval_nbr)d %(interval_type)s"
+msgstr "Después de% (interval_nbr) d% (interval_type) s"
+
+#. module: marketing_funnels
+#: model:ir.model.fields,help:marketing_funnels.field_funnel_activity__signal
+msgid ""
+"An activity with a signal can be called programmatically. Be careful, the workitem is always "
+"created when a signal is sent"
+msgstr ""
+"Una actividad con una señal se puede llamar mediante programación. Tenga cuidado, el elemento "
+"de trabajo siempre se crea cuando se envía una señal"
+
+#. module: marketing_funnels
+#: model:ir.model.fields,field_description:marketing_funnels.field_gamification_challenge__challenge_category
+msgid "Appears in"
+msgstr "Aparece en"
+
+#. module: marketing_funnels
+#: model_terms:ir.actions.act_window,help:marketing_funnels.challenge_list_action2
+msgid ""
+"Assign a list of goals to chosen users to evaluate them.\n"
+"                    The challenge can use a period (weekly, monthly...) for automatic "
+"creation of goals.\n"
+"                    The goals are created for the specified users or member of the group."
+msgstr ""
+"Asigne una lista de objetivos a los usuarios elegidos para evaluarlos.\n"
+"                    El desafío puede utilizar un período (semanal, mensual ...) para la "
+"creación automática de objetivos.\n"
+"                    Los objetivos se crean para los usuarios o miembros del grupo "
+"especificados."
+
+#. module: marketing_funnels
+#: model:ir.model.fields,field_description:marketing_funnels.field_funnel_funnel__message_attachment_count
+#: model:ir.model.fields,field_description:marketing_funnels.field_funnel_page__message_attachment_count
+msgid "Attachment Count"
+msgstr "Cuenta de archivos adjuntos"
+
+#. module: marketing_funnels
+#: model:ir.model.fields.selection,name:marketing_funnels.selection__funnel_transition__trigger__auto
+msgid "Automatic"
+msgstr "Automático"
+
+#. module: marketing_funnels
+#: code:addons/marketing/marketing_funnels/models/marketing_strategy_funnel.py:0
+#: code:addons/marketing_funnels/models/marketing_strategy_funnel.py:0
+#, python-format
+msgid "Automatic transition"
+msgstr "Transición automática"
+
+#. module: marketing_funnels
+#: model:ir.model.fields.selection,name:marketing_funnels.selection__funnel_funnel__buyer_journey_stage__awareness
+msgid "Awareness"
+msgstr "Conciencia"
+
+#. module: marketing_funnels
+#: model:ir.ui.menu,name:marketing_funnels.gamification_badge_menu_funnel
+msgid "Badges"
+msgstr "Insignias"
+
+#. module: marketing_funnels
+#: model:ir.model.fields,field_description:marketing_funnels.field_funnel_funnel__brand_id
+msgid "Brand"
+msgstr "Marca"
+
+#. module: marketing_funnels
+#: model_terms:ir.ui.view,arch_db:marketing_funnels.funnel_view_kanban
+msgid "Brand:"
+msgstr "Marca:"
+
+#. module: marketing_funnels
+#: model:funnel.page.type,name:marketing_funnels.marketing_strategy_funnel_page_opt_14
+msgid "Bridge Page"
+msgstr "Página Puente"
+
+#. module: marketing_funnels
+#: model:ir.model.fields,field_description:marketing_funnels.field_funnel_funnel__buyer_journey_stage
+msgid "Buyer's Journey Stage"
+msgstr "Etapa del Viaje del Comprador"
+
+#. module: marketing_funnels
+#: model:ir.model.fields,help:marketing_funnels.field_funnel_activity__keep_if_condition_not_met
+msgid ""
+"By activating this option, workitems that aren't executed because the condition is not met "
+"are marked as cancelled instead of being deleted."
+msgstr ""
+"Al activar esta opción, los elementos de trabajo que no se ejecutan porque no se cumple la "
+"condición se marcan como cancelados en lugar de eliminarse."
+
+#. module: marketing_funnels
+#: model:ir.model.fields,field_description:marketing_funnels.field_funnel_page__can_publish
+msgid "Can Publish"
+msgstr "Puede publicar"
+
+#. module: marketing_funnels
+#: model_terms:ir.ui.view,arch_db:marketing_funnels.view_marketing_campaign_funnel_workitem_tree
+msgid "Cancel"
+msgstr "Cancelar"
+
+#. module: marketing_funnels
+#: model_terms:ir.ui.view,arch_db:marketing_funnels.view_funnel_workitem_form
+msgid "Cancel Workitem"
+msgstr "Cancelar Elemento de Trabajo"
+
+#. module: marketing_funnels
+#: model:funnel.page.type,name:marketing_funnels.marketing_strategy_funnel_page_opt_18
+msgid "Cancellation Page"
+msgstr "Página de Cancelación"
+
+#. module: marketing_funnels
+#: model:ir.model.fields.selection,name:marketing_funnels.selection__funnel_workitem__state__cancelled
+msgid "Cancelled"
+msgstr "Cancelada"
+
+#. module: marketing_funnels
+#: model:ir.actions.act_window,name:marketing_funnels.challenge_list_action2
+#: model:ir.ui.menu,name:marketing_funnels.gamification_challenge_menu_funnel
+msgid "Challenges"
+msgstr "Desafíos"
+
+#. module: marketing_funnels
+#: model:ir.model.fields,field_description:marketing_funnels.field_funnel_funnel__child_funnel_id
+msgid "Child Funnel"
+msgstr "Embudo Hijo"
+
+#. module: marketing_funnels
+#: model:ir.model.fields,help:marketing_funnels.field_funnel_activity__object_id
+#: model:ir.model.fields,help:marketing_funnels.field_funnel_funnel__object_id
+#: model:ir.model.fields,help:marketing_funnels.field_funnel_page__object_id
+#: model:ir.model.fields,help:marketing_funnels.field_funnel_workitem__object_id
+msgid "Choose the resource on which you want this Funnel to be run"
+msgstr "Elija el recurso en el que desea que se ejecute este embudo"
+
+#. module: marketing_funnels
+#: model:ir.model.fields,field_description:marketing_funnels.field_funnel_activity__company_id
+#: model:ir.model.fields,field_description:marketing_funnels.field_funnel_funnel__company_id
+#: model:ir.model.fields,field_description:marketing_funnels.field_funnel_page__company_id
+#: model:ir.model.fields,field_description:marketing_funnels.field_funnel_transition__company_id
+#: model:ir.model.fields,field_description:marketing_funnels.field_funnel_workitem__company_id
+msgid "Company"
+msgstr "Empresa"
+
+#. module: marketing_funnels
+#: model:ir.model.fields,help:marketing_funnels.field_website_visitor__funnel_ids
+msgid "Completed Funnels"
+msgstr "Embudos completados"
+
+#. module: marketing_funnels
+#: model_terms:ir.ui.view,arch_db:marketing_funnels.funel_view_form
+#: model_terms:ir.ui.view,arch_db:marketing_funnels.funnel_page_view_form
+msgid "Components"
+msgstr "Componentes"
+
+#. module: marketing_funnels
+#: model:ir.model.fields,field_description:marketing_funnels.field_funnel_activity__condition
+msgid "Condition"
+msgstr "Condición"
+
+#. module: marketing_funnels
+#: model:ir.model.fields.selection,name:marketing_funnels.selection__funnel_funnel__buyer_journey_stage__consideration
+msgid "Consideration"
+msgstr "Consideración"
+
+#. module: marketing_funnels
+#: model:ir.model.fields,field_description:marketing_funnels.field_funnel_page__content
+msgid "Content"
+msgstr "Contenido"
+
+#. module: marketing_funnels
+#: code:addons/marketing/marketing_funnels/models/marketing_strategy_funnel.py:0
+#: code:addons/marketing_funnels/models/marketing_strategy_funnel.py:0
+#: model:ir.model.fields.selection,name:marketing_funnels.selection__funnel_transition__trigger__cosmetic
+#, python-format
+msgid "Cosmetic"
+msgstr "Cosmético"
+
+#. module: marketing_funnels
+#: model_terms:ir.actions.act_window,help:marketing_funnels.challenge_list_action2
+msgid "Create a new challenge"
+msgstr "Crea un nuevo desafío"
+
+#. module: marketing_funnels
+#: model_terms:ir.actions.act_window,help:marketing_funnels.funnel_action
+msgid "Create a new funnel"
+msgstr "Crear un Nuevo Embudo"
+
+#. module: marketing_funnels
+#: model_terms:ir.actions.act_window,help:marketing_funnels.funnel_activity_action
+#: model_terms:ir.actions.act_window,help:marketing_funnels.funnel_page_action
+#: model_terms:ir.actions.act_window,help:marketing_funnels.funnel_workitem_action
+msgid "Create a new funnel activity"
+msgstr "Crea una nueva actividad de embudo"
+
+#. module: marketing_funnels
+#: model_terms:ir.actions.act_window,help:marketing_funnels.goals_menu_groupby_action2
+msgid "Create a new goal"
+msgstr "Crea una nueva meta"
+
+#. module: marketing_funnels
+#: model:ir.model.fields,field_description:marketing_funnels.field_funnel_activity__create_uid
+#: model:ir.model.fields,field_description:marketing_funnels.field_funnel_funnel__create_uid
+#: model:ir.model.fields,field_description:marketing_funnels.field_funnel_page__create_uid
+#: model:ir.model.fields,field_description:marketing_funnels.field_funnel_page_type__create_uid
+#: model:ir.model.fields,field_description:marketing_funnels.field_funnel_transition__create_uid
+#: model:ir.model.fields,field_description:marketing_funnels.field_funnel_type__create_uid
+#: model:ir.model.fields,field_description:marketing_funnels.field_funnel_workitem__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: marketing_funnels
+#: model:ir.model.fields,field_description:marketing_funnels.field_funnel_activity__create_date
+#: model:ir.model.fields,field_description:marketing_funnels.field_funnel_funnel__create_date
+#: model:ir.model.fields,field_description:marketing_funnels.field_funnel_page__create_date
+#: model:ir.model.fields,field_description:marketing_funnels.field_funnel_page_type__create_date
+#: model:ir.model.fields,field_description:marketing_funnels.field_funnel_transition__create_date
+#: model:ir.model.fields,field_description:marketing_funnels.field_funnel_type__create_date
+#: model:ir.model.fields,field_description:marketing_funnels.field_funnel_workitem__create_date
+msgid "Created on"
+msgstr "Creado en"
+
+#. module: marketing_funnels
+#: model:funnel.page.type,name:marketing_funnels.marketing_strategy_funnel_page_opt_12
+msgid "Cross-Sell Page"
+msgstr "Página de Venta Cruzada"
+
+#. module: marketing_funnels
+#: model:ir.model.fields.selection,name:marketing_funnels.selection__funnel_activity__action_type__action
+msgid "Custom Action"
+msgstr "Acción Personalizada"
+
+#. module: marketing_funnels
+#: model:ir.model.fields.selection,name:marketing_funnels.selection__funnel_transition__interval_type__days
+msgid "Day(s)"
+msgstr "Día(s)"
+
+#. module: marketing_funnels
+#: model:ir.model.fields,help:marketing_funnels.field_gamification_challenge__challenge_category
+msgid "Define the visibility of the challenge through menus"
+msgstr "Defina la visibilidad del desafío a través de los menús"
+
+#. module: marketing_funnels
+#: model_terms:ir.ui.view,arch_db:marketing_funnels.funnel_view_kanban
+msgid "Delete"
+msgstr "Borrar"
+
+#. module: marketing_funnels
+#: model:ir.model.fields,help:marketing_funnels.field_funnel_page__sequence
+msgid "Determine the display order"
+msgstr "Determina el orden de presentación"
+
+#. module: marketing_funnels
+#: model:ir.model.fields,field_description:marketing_funnels.field_funnel_activity__display_name
+#: model:ir.model.fields,field_description:marketing_funnels.field_funnel_funnel__display_name
+#: model:ir.model.fields,field_description:marketing_funnels.field_funnel_page__display_name
+#: model:ir.model.fields,field_description:marketing_funnels.field_funnel_page_type__display_name
+#: model:ir.model.fields,field_description:marketing_funnels.field_funnel_transition__display_name
+#: model:ir.model.fields,field_description:marketing_funnels.field_funnel_type__display_name
+#: model:ir.model.fields,field_description:marketing_funnels.field_funnel_workitem__display_name
+#: model:ir.model.fields,field_description:marketing_funnels.field_gamification_badge__display_name
+#: model:ir.model.fields,field_description:marketing_funnels.field_gamification_badge_user__display_name
+#: model:ir.model.fields,field_description:marketing_funnels.field_gamification_challenge__display_name
+#: model:ir.model.fields,field_description:marketing_funnels.field_mail_template__display_name
+#: model:ir.model.fields,field_description:marketing_funnels.field_marketing_strategy_touchpoint__display_name
+#: model:ir.model.fields,field_description:marketing_funnels.field_website_visitor__display_name
+msgid "Display Name"
+msgstr "Nombre mostrado"
+
+#. module: marketing_funnels
+#: model:ir.model.fields,field_description:marketing_funnels.field_funnel_activity__keep_if_condition_not_met
+msgid "Don't Delete Workitems"
+msgstr "No Borrar Elemento de Trabajo"
+
+#. module: marketing_funnels
+#: model:ir.model.fields.selection,name:marketing_funnels.selection__funnel_workitem__state__done
+msgid "Done"
+msgstr "Hecho"
+
+#. module: marketing_funnels
+#: model:funnel.page.type,name:marketing_funnels.marketing_strategy_funnel_page_opt_16
+msgid "Download Page"
+msgstr "Página de Descarga"
+
+#. module: marketing_funnels
+#: model:funnel.page.type,name:marketing_funnels.marketing_strategy_funnel_page_opt_11
+msgid "Downsell Page"
+msgstr "Página de Descuento"
+
+#. module: marketing_funnels
+#: model_terms:ir.ui.view,arch_db:marketing_funnels.funnel_view_kanban
+msgid "Dropdown menu"
+msgstr "Menú desplegable"
+
+#. module: marketing_funnels
+#: model_terms:ir.ui.view,arch_db:marketing_funnels.funnel_view_kanban
+msgid "Edit"
+msgstr "Editar"
+
+#. module: marketing_funnels
+#: model:ir.model.fields.selection,name:marketing_funnels.selection__funnel_activity__action_type__email
+#: model_terms:ir.ui.view,arch_db:marketing_funnels.funnel_page
+msgid "Email"
+msgstr "Correo Electrónico"
+
+#. module: marketing_funnels
+#: code:addons/marketing/marketing_funnels/models/marketing_strategy_funnel.py:0
+#: code:addons/marketing_funnels/models/marketing_strategy_funnel.py:0
+#, python-format
+msgid "Email Preview"
+msgstr "Vista previa de correo electrónico"
+
+#. module: marketing_funnels
+#: model:ir.model.fields,field_description:marketing_funnels.field_funnel_activity__email_template_id
+msgid "Email Template"
+msgstr "Plantilla de Correo"
+
+#. module: marketing_funnels
+#: model:ir.model,name:marketing_funnels.model_mail_template
+msgid "Email Templates"
+msgstr "Plantillas de correo electrónico"
+
+#. module: marketing_funnels
+#: model:ir.model.fields,field_description:marketing_funnels.field_funnel_workitem__error_msg
+#: model_terms:ir.ui.view,arch_db:marketing_funnels.view_funnel_workitem_form
+msgid "Error Message"
+msgstr "Mensaje de Error"
+
+#. module: marketing_funnels
+#: model:ir.model.fields,field_description:marketing_funnels.field_funnel_page__event_id
+msgid "Event"
+msgstr "Evento"
+
+#. module: marketing_funnels
+#: model:funnel.page.type,name:marketing_funnels.marketing_strategy_funnel_page_opt_5
+msgid "Event Page"
+msgstr "Página de Evento"
+
+#. module: marketing_funnels
+#: model:ir.model.fields.selection,name:marketing_funnels.selection__funnel_workitem__state__exception
+msgid "Exception"
+msgstr "Excepción"
+
+#. module: marketing_funnels
+#: model:ir.model.fields,field_description:marketing_funnels.field_funnel_workitem__date
+msgid "Execution Date"
+msgstr "Fecha de Ejecución"
+
+#. module: marketing_funnels
+#: model_terms:ir.ui.view,arch_db:marketing_funnels.funnel_workitem_search
+msgid "Execution Month"
+msgstr "Mes de Ejeucución"
+
+#. module: marketing_funnels
+#: model:ir.model.fields,field_description:marketing_funnels.field_funnel_funnel__message_follower_ids
+#: model:ir.model.fields,field_description:marketing_funnels.field_funnel_page__message_follower_ids
+msgid "Followers"
+msgstr "Seguidores"
+
+#. module: marketing_funnels
+#: model:ir.model.fields,field_description:marketing_funnels.field_funnel_funnel__message_channel_ids
+#: model:ir.model.fields,field_description:marketing_funnels.field_funnel_page__message_channel_ids
+msgid "Followers (Channels)"
+msgstr "Seguidores (Canales)"
+
+#. module: marketing_funnels
+#: model:ir.model.fields,field_description:marketing_funnels.field_funnel_funnel__message_partner_ids
+#: model:ir.model.fields,field_description:marketing_funnels.field_funnel_page__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "Seguidores (Socios)"
+
+#. module: marketing_funnels
+#: model:ir.model,name:marketing_funnels.model_funnel_funnel
+#: model:ir.model.fields,field_description:marketing_funnels.field_funnel_page__funnel_id
+#: model:ir.model.fields,field_description:marketing_funnels.field_marketing_strategy_touchpoint__funnel_id
+#: model_terms:ir.ui.view,arch_db:marketing_funnels.funel_view_form
+msgid "Funnel"
+msgstr "Embudo"
+
+#. module: marketing_funnels
+#: model:ir.ui.menu,name:marketing_funnels.menu_funnel_activity
+#: model_terms:ir.ui.view,arch_db:marketing_funnels.funnel_activity_view_tree
+msgid "Funnel Activities"
+msgstr "Actividades de Embudo"
+
+#. module: marketing_funnels
+#: model:ir.model,name:marketing_funnels.model_funnel_activity
+msgid "Funnel Activity"
+msgstr "Actividad de Embudo"
+
+#. module: marketing_funnels
+#: model:ir.model.fields,field_description:marketing_funnels.field_funnel_funnel__name
+msgid "Funnel Name"
+msgstr "Nombre de Embudo"
+
+#. module: marketing_funnels
+#: model:ir.model,name:marketing_funnels.model_funnel_page
+msgid "Funnel Page"
+msgstr "Página de Embudo"
+
+#. module: marketing_funnels
+#: model:ir.model,name:marketing_funnels.model_funnel_page_type
+msgid "Funnel Page Type"
+msgstr "Tipo de Página de Embudo"
+
+#. module: marketing_funnels
+#: model:ir.model.fields,field_description:marketing_funnels.field_website_visitor__funnel_pages_ids
+#: model:ir.ui.menu,name:marketing_funnels.menu_marketing_strategy_touchpoint
+#: model_terms:ir.ui.view,arch_db:marketing_funnels.funnel_page_view_tree
+msgid "Funnel Pages"
+msgstr "Páginas de Embudo"
+
+#. module: marketing_funnels
+#: model:ir.model,name:marketing_funnels.model_funnel_transition
+msgid "Funnel Transition"
+msgstr "Transición de Embudo"
+
+#. module: marketing_funnels
+#: model:ir.model,name:marketing_funnels.model_funnel_type
+#: model:ir.model.fields,field_description:marketing_funnels.field_funnel_page_type__name
+#: model:ir.model.fields,field_description:marketing_funnels.field_funnel_type__name
+msgid "Funnel Type"
+msgstr "Tipo de Embudo"
+
+#. module: marketing_funnels
+#: model:ir.actions.act_window,name:marketing_funnels.funnel_workitem_action
+#: model:ir.ui.menu,name:marketing_funnels.menu_funnel_workitem
+#: model_terms:ir.ui.view,arch_db:marketing_funnels.view_funnel_workitem_form
+#: model_terms:ir.ui.view,arch_db:marketing_funnels.view_marketing_campaign_funnel_workitem_tree
+msgid "Funnel Workflow"
+msgstr "Flujo de Trabajo de Embudo"
+
+#. module: marketing_funnels
+#: model:ir.model,name:marketing_funnels.model_funnel_workitem
+msgid "Funnel Workitem"
+msgstr "Elemento de Trabajo de Embudo"
+
+#. module: marketing_funnels
+#: model:ir.actions.act_window,name:marketing_funnels.funnel_action
+#: model:ir.model.fields,field_description:marketing_funnels.field_website_visitor__funnel_ids
+#: model:ir.ui.menu,name:marketing_funnels.menu_funnel
+#: model_terms:ir.ui.view,arch_db:marketing_funnels.funnel_view_tree
+#: model_terms:ir.ui.view,arch_db:marketing_funnels.website_visitor_view_kanban
+msgid "Funnels"
+msgstr "Embudos"
+
+#. module: marketing_funnels
+#: model:ir.actions.act_window,name:marketing_funnels.funnel_activity_action
+msgid "Funnels Activities"
+msgstr "Actividades de Embudo"
+
+#. module: marketing_funnels
+#: model:ir.actions.act_window,name:marketing_funnels.funnel_page_action
+msgid "Funnels Pages"
+msgstr "Páginas de Embudo"
+
+#. module: marketing_funnels
+#: model_terms:ir.ui.view,arch_db:marketing_funnels.funnel_workitem_search
+msgid "Funnels Workflows"
+msgstr "Flujo de Trabajo de Embudos"
+
+#. module: marketing_funnels
+#: model:ir.ui.menu,name:marketing_funnels.menu_marketing_strategy_gamification_config
+msgid "Gamification"
+msgstr "Gamificación"
+
+#. module: marketing_funnels
+#: model:ir.model,name:marketing_funnels.model_gamification_badge
+msgid "Gamification Badge"
+msgstr "Insignia de gamificación"
+
+#. module: marketing_funnels
+#: model:ir.model,name:marketing_funnels.model_gamification_challenge
+msgid "Gamification Challenge"
+msgstr "Desafío de gamificación"
+
+#. module: marketing_funnels
+#: model:funnel.page.type,name:marketing_funnels.marketing_strategy_funnel_page_opt_15
+msgid "Gamification Page"
+msgstr "Página de Gamificación"
+
+#. module: marketing_funnels
+#: model:ir.model,name:marketing_funnels.model_gamification_badge_user
+msgid "Gamification User Badge"
+msgstr "Insignia de usuario de gamificación"
+
+#. module: marketing_funnels
+#: model:ir.actions.act_window,name:marketing_funnels.goals_menu_groupby_action2
+#: model:ir.ui.menu,name:marketing_funnels.gamification_goal_menu_funnel
+msgid "Goals History"
+msgstr "Historial de Objetivos"
+
+#. module: marketing_funnels
+#: model:ir.model.fields,field_description:marketing_funnels.field_gamification_badge__granted_clients_count
+msgid "Granted Clients Count"
+msgstr "Recuento de clientes premiados"
+
+#. module: marketing_funnels
+#: model_terms:ir.ui.view,arch_db:marketing_funnels.funnel_badge_form_view
+msgid "Granted2"
+msgstr ""
+
+#. module: marketing_funnels
+#: model_terms:ir.ui.view,arch_db:marketing_funnels.funnel_workitem_search
+msgid "Group By"
+msgstr "Agrupar por"
+
+#. module: marketing_funnels
+#: model:funnel.page.type,name:marketing_funnels.marketing_strategy_funnel_page_opt_7
+msgid "Hero Page"
+msgstr "Página de Héroe"
+
+#. module: marketing_funnels
+#: model:ir.model.fields.selection,name:marketing_funnels.selection__funnel_transition__interval_type__hours
+msgid "Hour(s)"
+msgstr "Hora(s)"
+
+#. module: marketing_funnels
+#: model:ir.model.fields,help:marketing_funnels.field_funnel_transition__trigger
+msgid "How is the destination workitem triggered"
+msgstr "Como es activado el elemento de trabajo de destino"
+
+#. module: marketing_funnels
+#: model:ir.model.fields,field_description:marketing_funnels.field_funnel_activity__id
+#: model:ir.model.fields,field_description:marketing_funnels.field_funnel_funnel__id
+#: model:ir.model.fields,field_description:marketing_funnels.field_funnel_page__id
+#: model:ir.model.fields,field_description:marketing_funnels.field_funnel_page_type__id
+#: model:ir.model.fields,field_description:marketing_funnels.field_funnel_transition__id
+#: model:ir.model.fields,field_description:marketing_funnels.field_funnel_type__id
+#: model:ir.model.fields,field_description:marketing_funnels.field_funnel_workitem__id
+#: model:ir.model.fields,field_description:marketing_funnels.field_gamification_badge__id
+#: model:ir.model.fields,field_description:marketing_funnels.field_gamification_badge_user__id
+#: model:ir.model.fields,field_description:marketing_funnels.field_gamification_challenge__id
+#: model:ir.model.fields,field_description:marketing_funnels.field_mail_template__id
+#: model:ir.model.fields,field_description:marketing_funnels.field_marketing_strategy_touchpoint__id
+#: model:ir.model.fields,field_description:marketing_funnels.field_website_visitor__id
+msgid "ID"
+msgstr "ID"
+
+#. module: marketing_funnels
+#: model:ir.model.fields,help:marketing_funnels.field_funnel_funnel__message_needaction
+#: model:ir.model.fields,help:marketing_funnels.field_funnel_funnel__message_unread
+#: model:ir.model.fields,help:marketing_funnels.field_funnel_page__message_needaction
+#: model:ir.model.fields,help:marketing_funnels.field_funnel_page__message_unread
+msgid "If checked, new messages require your attention."
+msgstr "Si está marcado, los nuevos mensajes requieren su atención."
+
+#. module: marketing_funnels
+#: model:ir.model.fields,help:marketing_funnels.field_funnel_funnel__message_has_error
+#: model:ir.model.fields,help:marketing_funnels.field_funnel_funnel__message_has_sms_error
+#: model:ir.model.fields,help:marketing_funnels.field_funnel_page__message_has_error
+#: model:ir.model.fields,help:marketing_funnels.field_funnel_page__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr "Si está marcado, algunos mensajes tienen un error de entrega."
+
+#. module: marketing_funnels
+#: model:ir.model.fields,help:marketing_funnels.field_funnel_workitem__date
+msgid "If date is not set, this workitem has to be run manually"
+msgstr "Si no se establece la fecha, este elemento de trabajo debe ejecutarse manualmente"
+
+#. module: marketing_funnels
+#: model_terms:ir.ui.view,arch_db:marketing_funnels.funnel_activity_view_form
+msgid "Incoming Transitions"
+msgstr "Transiciones Entrantes"
+
+#. module: marketing_funnels
+#: model:ir.model.fields,field_description:marketing_funnels.field_funnel_transition__interval_type
+msgid "Interval Unit"
+msgstr "Unidad de Intervalo"
+
+#. module: marketing_funnels
+#: model:ir.model.fields,field_description:marketing_funnels.field_funnel_transition__interval_nbr
+msgid "Interval Value"
+msgstr "Valor de Intervalo"
+
+#. module: marketing_funnels
+#: model:ir.model.fields,field_description:marketing_funnels.field_gamification_badge_user__is_client
+msgid "Is Client"
+msgstr "Es Cliente"
+
+#. module: marketing_funnels
+#: model:ir.model.fields,field_description:marketing_funnels.field_funnel_funnel__message_is_follower
+#: model:ir.model.fields,field_description:marketing_funnels.field_funnel_page__message_is_follower
+msgid "Is Follower"
+msgstr "Es Seguidor"
+
+#. module: marketing_funnels
+#: model:ir.model.fields,field_description:marketing_funnels.field_mail_template__is_for_funnel
+msgid "Is For Funnel"
+msgstr "Es Para Embudo"
+
+#. module: marketing_funnels
+#: model:ir.model.fields,field_description:marketing_funnels.field_funnel_page__is_published
+msgid "Is Published"
+msgstr "Esta Publicada"
+
+#. module: marketing_funnels
+#: model:ir.model.fields,field_description:marketing_funnels.field_gamification_badge__is_for_clients
+msgid "Is for clients"
+msgstr "Es para Clientes"
+
+#. module: marketing_funnels
+#: model:ir.model.fields,field_description:marketing_funnels.field_funnel_funnel__color
+msgid "Kanban Color Index"
+msgstr "Índice de color Kanban"
+
+#. module: marketing_funnels
+#: model:ir.model.fields,field_description:marketing_funnels.field_funnel_activity____last_update
+#: model:ir.model.fields,field_description:marketing_funnels.field_funnel_funnel____last_update
+#: model:ir.model.fields,field_description:marketing_funnels.field_funnel_page____last_update
+#: model:ir.model.fields,field_description:marketing_funnels.field_funnel_page_type____last_update
+#: model:ir.model.fields,field_description:marketing_funnels.field_funnel_transition____last_update
+#: model:ir.model.fields,field_description:marketing_funnels.field_funnel_type____last_update
+#: model:ir.model.fields,field_description:marketing_funnels.field_funnel_workitem____last_update
+#: model:ir.model.fields,field_description:marketing_funnels.field_gamification_badge____last_update
+#: model:ir.model.fields,field_description:marketing_funnels.field_gamification_badge_user____last_update
+#: model:ir.model.fields,field_description:marketing_funnels.field_gamification_challenge____last_update
+#: model:ir.model.fields,field_description:marketing_funnels.field_mail_template____last_update
+#: model:ir.model.fields,field_description:marketing_funnels.field_marketing_strategy_touchpoint____last_update
+#: model:ir.model.fields,field_description:marketing_funnels.field_website_visitor____last_update
+msgid "Last Modified on"
+msgstr "Última modificación el"
+
+#. module: marketing_funnels
+#: model:ir.model.fields,field_description:marketing_funnels.field_funnel_activity__write_uid
+#: model:ir.model.fields,field_description:marketing_funnels.field_funnel_funnel__write_uid
+#: model:ir.model.fields,field_description:marketing_funnels.field_funnel_page__write_uid
+#: model:ir.model.fields,field_description:marketing_funnels.field_funnel_page_type__write_uid
+#: model:ir.model.fields,field_description:marketing_funnels.field_funnel_transition__write_uid
+#: model:ir.model.fields,field_description:marketing_funnels.field_funnel_type__write_uid
+#: model:ir.model.fields,field_description:marketing_funnels.field_funnel_workitem__write_uid
+msgid "Last Updated by"
+msgstr "Última actualización por"
+
+#. module: marketing_funnels
+#: model:ir.model.fields,field_description:marketing_funnels.field_funnel_activity__write_date
+#: model:ir.model.fields,field_description:marketing_funnels.field_funnel_funnel__write_date
+#: model:ir.model.fields,field_description:marketing_funnels.field_funnel_page__write_date
+#: model:ir.model.fields,field_description:marketing_funnels.field_funnel_page_type__write_date
+#: model:ir.model.fields,field_description:marketing_funnels.field_funnel_transition__write_date
+#: model:ir.model.fields,field_description:marketing_funnels.field_funnel_type__write_date
+#: model:ir.model.fields,field_description:marketing_funnels.field_funnel_workitem__write_date
+msgid "Last Updated on"
+msgstr "Ultima actualización en"
+
+#. module: marketing_funnels
+#: model:ir.model.fields,field_description:marketing_funnels.field_funnel_page__last_date
+msgid "Last View"
+msgstr "Última Vista"
+
+#. module: marketing_funnels
+#: model:ir.model.fields.selection,name:marketing_funnels.selection__funnel_funnel__buyer_journey_stage__loyalty
+msgid "Loyalty"
+msgstr "Lealtad"
+
+#. module: marketing_funnels
+#: model:ir.actions.act_window,name:marketing_funnels.funnel_mail_template_action
+#: model:ir.ui.menu,name:marketing_funnels.menu_funnel_mail_template
+msgid "Mail Templates"
+msgstr "Plantillas de Correo"
+
+#. module: marketing_funnels
+#: model:ir.model.fields,field_description:marketing_funnels.field_funnel_page__mailing_list_id
+msgid "Mailing List"
+msgstr "Lista de Correo"
+
+#. module: marketing_funnels
+#: model:ir.model.fields,field_description:marketing_funnels.field_funnel_funnel__message_main_attachment_id
+#: model:ir.model.fields,field_description:marketing_funnels.field_funnel_page__message_main_attachment_id
+msgid "Main Attachment"
+msgstr "Adjunto Principal"
+
+#. module: marketing_funnels
+#: model:ir.model.fields.selection,name:marketing_funnels.selection__gamification_challenge__challenge_category__marketing
+msgid "Marketing / Strategy"
+msgstr "Mercado / Estratégia"
+
+#. module: marketing_funnels
+#: model:ir.model.fields,field_description:marketing_funnels.field_funnel_funnel__message_has_error
+#: model:ir.model.fields,field_description:marketing_funnels.field_funnel_page__message_has_error
+msgid "Message Delivery error"
+msgstr "Mensaje de entrega de error"
+
+#. module: marketing_funnels
+#: model:ir.model.fields,field_description:marketing_funnels.field_funnel_funnel__message_ids
+#: model:ir.model.fields,field_description:marketing_funnels.field_funnel_page__message_ids
+msgid "Messages"
+msgstr "Mensajes"
+
+#. module: marketing_funnels
+#: model:ir.model.fields.selection,name:marketing_funnels.selection__funnel_transition__interval_type__months
+msgid "Month(s)"
+msgstr "Mes(s)"
+
+#. module: marketing_funnels
+#: model:ir.model.fields,field_description:marketing_funnels.field_funnel_activity__name
+#: model:ir.model.fields,field_description:marketing_funnels.field_funnel_transition__name
+#: model_terms:ir.ui.view,arch_db:marketing_funnels.funel_view_form
+#: model_terms:ir.ui.view,arch_db:marketing_funnels.funnel_activity_view_form
+#: model_terms:ir.ui.view,arch_db:marketing_funnels.funnel_page_view_form
+msgid "Name"
+msgstr "Nombre"
+
+#. module: marketing_funnels
+#: model:ir.model.fields,field_description:marketing_funnels.field_funnel_activity__to_ids
+#: model_terms:ir.ui.view,arch_db:marketing_funnels.funnel_activity_view_form
+msgid "Next Activities"
+msgstr "Actividades Próximas"
+
+#. module: marketing_funnels
+#: model:ir.model.fields,field_description:marketing_funnels.field_funnel_transition__activity_to_id
+msgid "Next Activity"
+msgstr "Actividad Próxima"
+
+#. module: marketing_funnels
+#: model:ir.model.fields,field_description:marketing_funnels.field_funnel_page__visits
+msgid "No of Views"
+msgstr "No. de Vistas"
+
+#. module: marketing_funnels
+#: model:ir.model.fields,field_description:marketing_funnels.field_funnel_funnel__message_needaction_counter
+#: model:ir.model.fields,field_description:marketing_funnels.field_funnel_page__message_needaction_counter
+msgid "Number of Actions"
+msgstr "Número de Acciones"
+
+#. module: marketing_funnels
+#: model:ir.model.fields,field_description:marketing_funnels.field_funnel_funnel__message_has_error_counter
+#: model:ir.model.fields,field_description:marketing_funnels.field_funnel_page__message_has_error_counter
+msgid "Number of errors"
+msgstr "Numero de errores"
+
+#. module: marketing_funnels
+#: model:ir.model.fields,help:marketing_funnels.field_funnel_funnel__message_needaction_counter
+#: model:ir.model.fields,help:marketing_funnels.field_funnel_page__message_needaction_counter
+msgid "Number of messages which requires an action"
+msgstr "Número de mensajes que requieren una acción"
+
+#. module: marketing_funnels
+#: model:ir.model.fields,help:marketing_funnels.field_funnel_funnel__message_has_error_counter
+#: model:ir.model.fields,help:marketing_funnels.field_funnel_page__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "Número de mensajes con error de entrega"
+
+#. module: marketing_funnels
+#: model:ir.model.fields,help:marketing_funnels.field_funnel_funnel__message_unread_counter
+#: model:ir.model.fields,help:marketing_funnels.field_funnel_page__message_unread_counter
+msgid "Number of unread messages"
+msgstr "Número de mensajes no leídos"
+
+#. module: marketing_funnels
+#: model:ir.model.fields,field_description:marketing_funnels.field_funnel_activity__object_id
+#: model:ir.model.fields,field_description:marketing_funnels.field_funnel_page__object_id
+msgid "Object"
+msgstr "Objeto"
+
+#. module: marketing_funnels
+#: model:funnel.page.type,name:marketing_funnels.marketing_strategy_funnel_page_opt_9
+msgid "Offer Page"
+msgstr "Página de Oferta"
+
+#. module: marketing_funnels
+#: model_terms:ir.ui.view,arch_db:marketing_funnels.funnel_activity_view_form
+msgid "Outgoing Transitions"
+msgstr "Transiciones Salientes"
+
+#. module: marketing_funnels
+#: model:funnel.page.type,name:marketing_funnels.marketing_strategy_funnel_page_opt_8
+msgid "Overwhelm Page"
+msgstr "Página de Agobio"
+
+#. module: marketing_funnels
+#: model:ir.model.fields,field_description:marketing_funnels.field_funnel_activity__page_id
+msgid "Page"
+msgstr "Página"
+
+#. module: marketing_funnels
+#: model:ir.model.fields,field_description:marketing_funnels.field_funnel_page__name
+msgid "Page Name"
+msgstr "Nombre de Página"
+
+#. module: marketing_funnels
+#: model:ir.model.fields,field_description:marketing_funnels.field_funnel_funnel__pages_ids
+#: model_terms:ir.ui.view,arch_db:marketing_funnels.funel_view_form
+msgid "Pages"
+msgstr "Páginas"
+
+#. module: marketing_funnels
+#: model:ir.model.fields,field_description:marketing_funnels.field_funnel_funnel__parent_funnel_id
+msgid "Parent Funnel"
+msgstr "Embudo Padre"
+
+#. module: marketing_funnels
+#: model:ir.model.fields,field_description:marketing_funnels.field_funnel_workitem__partner_id
+msgid "Partner"
+msgstr "Socio"
+
+#. module: marketing_funnels
+#: model_terms:ir.ui.view,arch_db:marketing_funnels.funnel_page
+msgid "Phone Number"
+msgstr "Teléfono"
+
+#. module: marketing_funnels
+#: model_terms:ir.ui.view,arch_db:marketing_funnels.view_funnel_workitem_form
+#: model_terms:ir.ui.view,arch_db:marketing_funnels.view_marketing_campaign_funnel_workitem_tree
+msgid "Preview"
+msgstr "Anterior"
+
+#. module: marketing_funnels
+#: model:ir.model.fields,field_description:marketing_funnels.field_funnel_activity__from_ids
+#: model_terms:ir.ui.view,arch_db:marketing_funnels.funnel_activity_view_form
+msgid "Previous Activities"
+msgstr "Actividades Previas"
+
+#. module: marketing_funnels
+#: model:ir.model.fields,field_description:marketing_funnels.field_funnel_transition__activity_from_id
+msgid "Previous Activity"
+msgstr "Actividad Anterior"
+
+#. module: marketing_funnels
+#: model_terms:ir.ui.view,arch_db:marketing_funnels.view_funnel_workitem_form
+#: model_terms:ir.ui.view,arch_db:marketing_funnels.view_marketing_campaign_funnel_workitem_tree
+msgid "Process"
+msgstr "Proceso"
+
+#. module: marketing_funnels
+#: model:ir.model.fields,field_description:marketing_funnels.field_funnel_page__product_id
+#: model:ir.model.fields,field_description:marketing_funnels.field_funnel_page__product_ids
+msgid "Product"
+msgstr "Producto"
+
+#. module: marketing_funnels
+#: model:funnel.page.type,name:marketing_funnels.marketing_strategy_funnel_page_opt_2
+msgid "Product Page"
+msgstr "Página de Producto"
+
+#. module: marketing_funnels
+#: model:ir.model.fields.selection,name:marketing_funnels.selection__funnel_funnel__buyer_journey_stage__purchase
+msgid "Purchase"
+msgstr "Compra"
+
+#. module: marketing_funnels
+#: model:ir.model.fields,help:marketing_funnels.field_funnel_activity__condition
+msgid ""
+"Python expression to decide whether the activity can be executed, otherwise it will be "
+"deleted or cancelled.The expression may use the following [browsable] variables:\n"
+"   - activity: the funnel activity\n"
+"   - workitem: the funnel workitem\n"
+"   - resource: the resource object this funnel item represents\n"
+"   - transitions: list of funnel transitions outgoing from this activity\n"
+"...- re: Python regular expression module"
+msgstr ""
+"Expresión de Python para decidir si la actividad se puede ejecutar; de lo contrario, se "
+"eliminará o cancelará. La expresión puede usar las siguientes variables [navegables]:\n"
+"   - actividad: la actividad del embudo\n"
+"   - elemento de trabajo: el elemento de trabajo del embudo\n"
+"   - recurso: el objeto de recurso que representa este elemento de embudo\n"
+"   - transiciones: lista de transiciones de embudo que salen de esta actividad\n"
+"...- re: módulo de expresión regular de Python"
+
+#. module: marketing_funnels
+#: model:ir.model.fields,field_description:marketing_funnels.field_funnel_activity__res_id
+msgid "Res"
+msgstr ""
+
+#. module: marketing_funnels
+#: model_terms:ir.ui.view,arch_db:marketing_funnels.view_funnel_workitem_form
+msgid "Reset"
+msgstr "Reiniciar"
+
+#. module: marketing_funnels
+#: model:ir.model.fields,field_description:marketing_funnels.field_funnel_funnel__object_id
+#: model:ir.model.fields,field_description:marketing_funnels.field_funnel_workitem__object_id
+msgid "Resource"
+msgstr "Recurso"
+
+#. module: marketing_funnels
+#: model:ir.model.fields,field_description:marketing_funnels.field_funnel_workitem__res_id
+msgid "Resource ID"
+msgstr "ID de píxel"
+
+#. module: marketing_funnels
+#: model:ir.model.fields,help:marketing_funnels.field_funnel_page__website_id
+msgid "Restrict publishing to this website."
+msgstr "Restrinja la publicación en este sitio web."
+
+#. module: marketing_funnels
+#: model:ir.model.fields,field_description:marketing_funnels.field_funnel_page__is_seo_optimized
+msgid "SEO optimized"
+msgstr "SEO optimizada"
+
+#. module: marketing_funnels
+#: model:ir.model.fields,field_description:marketing_funnels.field_funnel_funnel__message_has_sms_error
+#: model:ir.model.fields,field_description:marketing_funnels.field_funnel_page__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr "Error de entrega de SMS"
+
+#. module: marketing_funnels
+#: model:funnel.page.type,name:marketing_funnels.marketing_strategy_funnel_page_opt_13
+msgid "SaaS Referral Page"
+msgstr "Página de referencia de SaaS"
+
+#. module: marketing_funnels
+#: model:funnel.page.type,name:marketing_funnels.marketing_strategy_funnel_page_opt_6
+msgid "Sales Letter Page"
+msgstr "Página de Carta de Ventas"
+
+#. module: marketing_funnels
+#: model:funnel.page.type,name:marketing_funnels.marketing_strategy_funnel_page_opt_4
+msgid "Sales Video Page"
+msgstr "Página de Videos de Ventas"
+
+#. module: marketing_funnels
+#: model_terms:ir.ui.view,arch_db:marketing_funnels.funnel_page
+msgid "Send"
+msgstr "Enviar"
+
+#. module: marketing_funnels
+#: model:ir.model.fields,field_description:marketing_funnels.field_funnel_page__seo_name
+msgid "Seo name"
+msgstr "Nombre SEO"
+
+#. module: marketing_funnels
+#: model:ir.model.fields,field_description:marketing_funnels.field_funnel_page__sequence
+msgid "Sequence"
+msgstr "Secuencia"
+
+#. module: marketing_funnels
+#: model:ir.model.fields.selection,name:marketing_funnels.selection__funnel_funnel__buyer_journey_stage__service
+msgid "Service"
+msgstr "Servicio"
+
+#. module: marketing_funnels
+#: model:funnel.page.type,name:marketing_funnels.marketing_strategy_funnel_page_opt_3
+msgid "Service Page"
+msgstr "Página de Servicio"
+
+#. module: marketing_funnels
+#: model:ir.model.fields,field_description:marketing_funnels.field_funnel_activity__signal
+msgid "Signal"
+msgstr "Señal"
+
+#. module: marketing_funnels
+#: model:ir.model.fields,field_description:marketing_funnels.field_funnel_activity__start
+msgid "Start"
+msgstr "Comienzo"
+
+#. module: marketing_funnels
+#: code:addons/marketing/marketing_funnels/models/marketing_strategy_funnel.py:0
+#: code:addons/marketing_funnels/models/marketing_strategy_funnel.py:0
+#, python-format
+msgid "Start writing here..."
+msgstr "Empiece a escribir aquí..."
+
+#. module: marketing_funnels
+#: model:ir.model.fields,field_description:marketing_funnels.field_funnel_workitem__state
+#: model_terms:ir.ui.view,arch_db:marketing_funnels.funnel_workitem_search
+msgid "Status"
+msgstr "Estado"
+
+#. module: marketing_funnels
+#: model:funnel.page.type,name:marketing_funnels.marketing_strategy_funnel_page_opt_1
+msgid "Storefront Page"
+msgstr "Página de Mostrador"
+
+#. module: marketing_funnels
+#: model_terms:ir.ui.view,arch_db:marketing_funnels.funnel_page
+msgid "Subject"
+msgstr "Sujeto"
+
+#. module: marketing_funnels
+#: model:funnel.page.type,name:marketing_funnels.marketing_strategy_funnel_page_opt_17
+msgid "Thank Page"
+msgstr "Página de Agradecimiento"
+
+#. module: marketing_funnels
+#: model:funnel.type,name:marketing_funnels.marketing_strategy_funnel_type_opt_17
+msgid "The 2-Step Tripwire Funnel"
+msgstr "Embudo de Trampa de 2 Pasos"
+
+#. module: marketing_funnels
+#: model:funnel.type,name:marketing_funnels.marketing_strategy_funnel_type_opt_20
+msgid "The Application Funnel"
+msgstr "Embudo de Súplica"
+
+#. module: marketing_funnels
+#: model:funnel.type,name:marketing_funnels.marketing_strategy_funnel_type_opt_19
+msgid "The Ask Campaign Funnel"
+msgstr "Embudo de Pregunta"
+
+#. module: marketing_funnels
+#: model:funnel.type,name:marketing_funnels.marketing_strategy_funnel_type_opt_8
+msgid "The Auto Webinar Funnel"
+msgstr "Embudo de Auto Webinar"
+
+#. module: marketing_funnels
+#: model:funnel.type,name:marketing_funnels.marketing_strategy_funnel_type_opt_22
+msgid "The Bridge Funnel"
+msgstr "Embudo Puente"
+
+#. module: marketing_funnels
+#: model:funnel.type,name:marketing_funnels.marketing_strategy_funnel_type_opt_21
+msgid "The Cancellation Funnel"
+msgstr "Embudo de Cancelación"
+
+#. module: marketing_funnels
+#: model:funnel.type,name:marketing_funnels.marketing_strategy_funnel_type_opt_13
+msgid "The Daily Deal Funnel"
+msgstr "Embudo de Oferta del Día"
+
+#. module: marketing_funnels
+#: model:funnel.type,name:marketing_funnels.marketing_strategy_funnel_type_opt_26
+msgid "The Gamification Funnel"
+msgstr "Embudo de Gamificación"
+
+#. module: marketing_funnels
+#: model:funnel.type,name:marketing_funnels.marketing_strategy_funnel_type_opt_25
+msgid "The Gratefulness Funnel"
+msgstr "Embudo de Agradecimiento"
+
+#. module: marketing_funnels
+#: model:funnel.type,name:marketing_funnels.marketing_strategy_funnel_type_opt_18
+msgid "The Hero Funnel"
+msgstr "Embudo de Héroe"
+
+#. module: marketing_funnels
+#: model:funnel.type,name:marketing_funnels.marketing_strategy_funnel_type_opt_1
+msgid "The Homepage Funnel"
+msgstr "Embudo de Página de Inicio"
+
+#. module: marketing_funnels
+#: model:funnel.type,name:marketing_funnels.marketing_strategy_funnel_type_opt_23
+msgid "The Invisible Funnel"
+msgstr "Embudo Invisible"
+
+#. module: marketing_funnels
+#: model:funnel.type,name:marketing_funnels.marketing_strategy_funnel_type_opt_11
+msgid "The Lead Magnet Funnel"
+msgstr "Embudo Atrae Oportunidad"
+
+#. module: marketing_funnels
+#: model:funnel.type,name:marketing_funnels.marketing_strategy_funnel_type_opt_9
+msgid "The Live Demo Funnel"
+msgstr "Embudo de Demostración en Vivo"
+
+#. module: marketing_funnels
+#: model:funnel.type,name:marketing_funnels.marketing_strategy_funnel_type_opt_12
+msgid "The Membership Funnel"
+msgstr "Embudo de Membresía"
+
+#. module: marketing_funnels
+#: model:funnel.type,name:marketing_funnels.marketing_strategy_funnel_type_opt_14
+msgid "The Product Launch Funnel"
+msgstr "Embudo de Lanzamiento de Producto"
+
+#. module: marketing_funnels
+#: model:funnel.type,name:marketing_funnels.marketing_strategy_funnel_type_opt_16
+msgid "The Reverse Squeeze Page Funnel"
+msgstr "Embudo de Página de Presión Inversa"
+
+#. module: marketing_funnels
+#: model:funnel.type,name:marketing_funnels.marketing_strategy_funnel_type_opt_3
+msgid "The Sales Letter Funnel"
+msgstr "Embudo de Carta de Ventas"
+
+#. module: marketing_funnels
+#: model:funnel.type,name:marketing_funnels.marketing_strategy_funnel_type_opt_15
+msgid "The Squeeze Page Funnel"
+msgstr "Embudo de Página de Presión"
+
+#. module: marketing_funnels
+#: model:funnel.type,name:marketing_funnels.marketing_strategy_funnel_type_opt_2
+msgid "The Storefront Funnel"
+msgstr "Embudo de Aparador"
+
+#. module: marketing_funnels
+#: model:funnel.type,name:marketing_funnels.marketing_strategy_funnel_type_opt_10
+msgid "The Summit Funnel"
+msgstr "Embudo de Cumbre"
+
+#. module: marketing_funnels
+#: model:funnel.type,name:marketing_funnels.marketing_strategy_funnel_type_opt_24
+msgid "The Survey Funnel"
+msgstr "Embudo de Encuesta"
+
+#. module: marketing_funnels
+#: code:addons/marketing/marketing_funnels/models/marketing_strategy_funnel.py:0
+#: code:addons/marketing_funnels/models/marketing_strategy_funnel.py:0
+#, python-format
+msgid "The To/From Activity of transition must be of the same Page"
+msgstr "La actividad de transición hacia / desde debe ser de la misma página"
+
+#. module: marketing_funnels
+#: model:funnel.type,name:marketing_funnels.marketing_strategy_funnel_type_opt_6
+msgid "The Video Sales Letter Funnel"
+msgstr "Embudo de Video de Ventas"
+
+#. module: marketing_funnels
+#: model:funnel.type,name:marketing_funnels.marketing_strategy_funnel_type_opt_7
+msgid "The Webinar Funnel"
+msgstr "Embudo de Webinar"
+
+#. module: marketing_funnels
+#: model:funnel.type,name:marketing_funnels.marketing_strategy_funnel_type_opt_4
+msgid "The White Paper Funnel"
+msgstr "Embudo de Documento Técnico"
+
+#. module: marketing_funnels
+#: model:ir.model.fields,help:marketing_funnels.field_funnel_activity__server_action_id
+msgid "The action to perform when this activity is activated"
+msgstr "La acción a realizar cuando se activa esta actividad"
+
+#. module: marketing_funnels
+#: code:addons/marketing/marketing_funnels/models/marketing_strategy_funnel.py:0
+#: code:addons/marketing_funnels/models/marketing_strategy_funnel.py:0
+#, python-format
+msgid "The current step for this item has no email to preview."
+msgstr ""
+"El paso actual de este elemento no tiene correo electrónico para obtener una vista previa."
+
+#. module: marketing_funnels
+#: model:funnel.type,name:marketing_funnels.marketing_strategy_funnel_type_opt_5
+msgid "The eBook Funnel"
+msgstr "Embudo de Libro Electrónico"
+
+#. module: marketing_funnels
+#: model:ir.model.fields,help:marketing_funnels.field_funnel_activity__email_template_id
+msgid "The email to send when this activity is activated"
+msgstr "El correo electrónico que se enviará cuando se active esta actividad"
+
+#. module: marketing_funnels
+#: model:ir.model.fields,help:marketing_funnels.field_funnel_page__website_url
+msgid "The full URL to access the document through the website."
+msgstr "La URL completa para acceder al documento a través del sitio web."
+
+#. module: marketing_funnels
+#: model:ir.model.constraint,message:marketing_funnels.constraint_funnel_transition_interval_positive
+msgid "The interval must be positive or zero"
+msgstr "El intervalo debe ser positivo o cero"
+
+#. module: marketing_funnels
+#: model:ir.model.fields,help:marketing_funnels.field_funnel_activity__action_type
+msgid ""
+"The type of action to execute when an item enters this activity, such as:\n"
+"- Email: send an email using a predefined email template \n"
+"- Report: print an existing Report defined on the resource item and save it into a specific "
+"directory \n"
+"- Custom Action: execute a predefined action, e.g. to modify the fields of the resource record"
+msgstr ""
+"El tipo de acción que se ejecutará cuando un elemento ingrese a esta actividad, como:\n"
+"- Correo electrónico: envíe un correo electrónico utilizando una plantilla de correo "
+"electrónico predefinida\n"
+"- Informe: imprima un informe existente definido en el elemento de recurso y guárdelo en un "
+"directorio específico\n"
+"- Acción personalizada: ejecuta una acción predefinida, p. Ej. para modificar los campos del "
+"registro de recursos"
+
+#. module: marketing_funnels
+#: model:ir.model.fields,help:marketing_funnels.field_funnel_activity__start
+msgid "This activity is launched when the page is viewed."
+msgstr "Esta actividad se inicia cuando se visualiza la página."
+
+#. module: marketing_funnels
+#: model:ir.model.fields.selection,name:marketing_funnels.selection__funnel_transition__trigger__time
+msgid "Time"
+msgstr "Hora"
+
+#. module: marketing_funnels
+#: model:ir.model.fields.selection,name:marketing_funnels.selection__funnel_workitem__state__todo
+msgid "To Do"
+msgstr "Por Hacer"
+
+#. module: marketing_funnels
+#: model:ir.model,name:marketing_funnels.model_marketing_strategy_touchpoint
+msgid "Touchpoint"
+msgstr "Punto de Contacto"
+
+#. module: marketing_funnels
+#: model:ir.model.fields,field_description:marketing_funnels.field_funnel_transition__trigger
+msgid "Trigger"
+msgstr "Disparador"
+
+#. module: marketing_funnels
+#: model:ir.model.fields,field_description:marketing_funnels.field_funnel_funnel__type_id
+#: model:ir.model.fields,field_description:marketing_funnels.field_funnel_page__type_id
+msgid "Type"
+msgstr "Tipo"
+
+#. module: marketing_funnels
+#: model_terms:ir.ui.view,arch_db:marketing_funnels.funnel_view_kanban
+msgid "Type:"
+msgstr "Tipo:"
+
+#. module: marketing_funnels
+#: model:ir.model.fields,field_description:marketing_funnels.field_funnel_funnel__message_unread
+#: model:ir.model.fields,field_description:marketing_funnels.field_funnel_page__message_unread
+msgid "Unread Messages"
+msgstr "Mensajes no leídos"
+
+#. module: marketing_funnels
+#: model:ir.model.fields,field_description:marketing_funnels.field_funnel_funnel__message_unread_counter
+#: model:ir.model.fields,field_description:marketing_funnels.field_funnel_page__message_unread_counter
+msgid "Unread Messages Counter"
+msgstr "Contador de mensajes no leídos"
+
+#. module: marketing_funnels
+#: model:funnel.page.type,name:marketing_funnels.marketing_strategy_funnel_page_opt_10
+msgid "Upsell Page"
+msgstr "Página de Venta Adicional"
+
+#. module: marketing_funnels
+#: model:ir.model.fields,field_description:marketing_funnels.field_funnel_page__website_published
+msgid "Visible on current website"
+msgstr "Visible en el sitio web actual"
+
+#. module: marketing_funnels
+#: model:ir.model.fields,field_description:marketing_funnels.field_funnel_funnel__website_id
+#: model:ir.model.fields,field_description:marketing_funnels.field_funnel_page__website_id
+msgid "Website"
+msgstr "Sitio web"
+
+#. module: marketing_funnels
+#: model:ir.model.fields,field_description:marketing_funnels.field_funnel_funnel__website_message_ids
+#: model:ir.model.fields,field_description:marketing_funnels.field_funnel_page__website_message_ids
+msgid "Website Messages"
+msgstr "Mensajes del Sitio Web"
+
+#. module: marketing_funnels
+#: model:ir.model.fields,field_description:marketing_funnels.field_funnel_page__website_url
+msgid "Website URL"
+msgstr "URL del Sitio Web"
+
+#. module: marketing_funnels
+#: model:ir.model,name:marketing_funnels.model_website_visitor
+msgid "Website Visitor"
+msgstr "Visitante del sitio web"
+
+#. module: marketing_funnels
+#: model:ir.model.fields,help:marketing_funnels.field_funnel_funnel__website_message_ids
+#: model:ir.model.fields,help:marketing_funnels.field_funnel_page__website_message_ids
+msgid "Website communication history"
+msgstr "Historial de comunicación del sitio web"
+
+#. module: marketing_funnels
+#: model:ir.model.fields,field_description:marketing_funnels.field_funnel_page__website_meta_description
+msgid "Website meta description"
+msgstr "Meta descripción del sitio web"
+
+#. module: marketing_funnels
+#: model:ir.model.fields,field_description:marketing_funnels.field_funnel_page__website_meta_keywords
+msgid "Website meta keywords"
+msgstr "Meta palabras clave del sitio web"
+
+#. module: marketing_funnels
+#: model:ir.model.fields,field_description:marketing_funnels.field_funnel_page__website_meta_title
+msgid "Website meta title"
+msgstr "Meta título del sitio web"
+
+#. module: marketing_funnels
+#: model:ir.model.fields,field_description:marketing_funnels.field_funnel_page__website_meta_og_img
+msgid "Website opengraph image"
+msgstr "Imagen de opengraph del sitio web"
+
+#. module: marketing_funnels
+#: model:ir.model.fields.selection,name:marketing_funnels.selection__funnel_transition__interval_type__years
+msgid "Year(s)"
+msgstr "Año(s)"
+
+#. module: marketing_funnels
+#: model_terms:ir.ui.view,arch_db:marketing_funnels.funnel_page
+msgid "Your Company"
+msgstr "Your Company"
+
+#. module: marketing_funnels
+#: model_terms:ir.ui.view,arch_db:marketing_funnels.funnel_page
+msgid "Your Name"
+msgstr "Tu Nombre"
+
+#. module: marketing_funnels
+#: model_terms:ir.ui.view,arch_db:marketing_funnels.funnel_page
+msgid "Your Question"
+msgstr "Tu Pregunta"

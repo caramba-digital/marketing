@@ -1,0 +1,375 @@
+<odoo>
+  <data>
+       
+      <!-- Funnels --> 
+      <record id='funnel_view_tree' model='ir.ui.view'>
+        <field name="name">funnel.tree</field>
+        <field name="model">funnel.funnel</field>
+        <field name="arch" type="xml">
+            <tree string="Funnels">
+                <field name="name" />
+                <field name="type_id" />
+                <field name="buyer_journey_stage" />
+                <field name="company_id" options="{'no_create': True}" groups="base.group_multi_company"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id='funel_view_form' model='ir.ui.view'>
+        <field name="name">funnel.form</field>
+        <field name="model">funnel.funnel</field>
+        <field name="arch" type="xml">
+            <form string="Funnel">
+                <header>
+                    <field name="buyer_journey_stage" widget="statusbar" options="{'clickable': '1'}"/>
+                </header>
+            	<sheet>
+                    <div class="oe_title">
+                    	<h1><field name="name" placeholder="Name" nolabel="1"/></h1>                    	
+                    </div>
+                    <group>
+                        <group>
+                            <field name="type_id"/>
+                            <field name="object_id"/>
+                            <field name="brand_id" domain="[('relation','=','main')]"/>
+                            <field name="company_id"/>
+                        </group>
+                        <group>
+                            <field name="website_id"/>
+                            <field name="child_funnel_id"/>
+                            <field name="parent_funnel_id"/>
+                        </group>
+                    </group>
+                    <group string="Pages">
+                        <field name="pages_ids"  widget="section_and_note_one2many"  mode="tree,form"  context="{'default_funnel_id': active_id}" nolabel="1" >
+                            <form >
+                                <div class="oe_title">
+                                    <h1><field name="name" placeholder="Name" nolabel="1"/></h1>                    	
+                                </div>
+                                <group>
+                                    <group>
+                                        <field name="type_id"/>  
+                                        <field name="visits"/>       
+                                        <field name="website_id"/>                                  
+                                    </group>
+                                    <group>
+                                        <field name="activity_ids" nolabel="1"/> 
+                                    </group>
+                                </group>
+                                <notebook colspan="4">
+                                    <page string="Components" autofocus="autofocus">
+                                    </page>
+                                </notebook>      
+                            </form>
+                            <tree string="Pages" >
+                                <field name="sequence" widget="handle"/>
+                                <field name="name"/>
+                                <field name="type_id"/>
+                                <field name="website_url" widget="url" readonly="1"/>
+                                <field name="website_id"/>
+                            </tree>
+                        </field>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id='funnel_view_kanban' model='ir.ui.view'>
+        <field name="name">funnel.kanban</field>
+        <field name="model">funnel.funnel</field>
+        <field name="arch" type="xml">
+            <kanban default_group_by="buyer_journey_stage" class="o_kanban_small_column">
+                <field name="buyer_journey_stage"/>
+                <field name="name"/>
+                <field name="type_id"/>
+                <field name="color"/>
+                <templates>
+                    <t t-name="kanban-box">
+                        <div t-attf-class="#{kanban_color(record.color.raw_value)} oe_kanban_global_click">
+                        	<div class="o_dropdown_kanban dropdown">
+                                <a class="dropdown-toggle o-no-caret btn" role="button" data-toggle="dropdown" href="#" aria-label="Dropdown menu" title="Dropdown menu">
+                                    <span class="fa fa-ellipsis-v"/>
+                                </a>
+                                <div class="dropdown-menu" role="menu">
+                                    <t t-if="widget.editable"><a role="menuitem" type="edit" class="dropdown-item">Edit</a></t>
+                                    <t t-if="widget.deletable"><a role="menuitem" type="delete" class="dropdown-item">Delete</a></t>
+                                    <ul class="oe_kanban_colorpicker" data-field="color"/>
+                                </div>
+                            </div>
+                            <div class="oe_kanban_details">
+                                <h4 class="oe_partner_heading">
+                                    <a type="open" class="o_kanban_record_title">
+                                        <field name="name"/>
+                                    </a>
+                                </h4> 
+                                <ul>
+                                    <li>Type: <field name="type_id"/></li>
+                                    <li>Brand: <field name="brand_id"/></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <record id='funnel_action' model='ir.actions.act_window'>
+        <field name="name">Funnels</field>
+        <field name="res_model">funnel.funnel</field>
+        <field name="view_mode">kanban,tree,form</field>
+        <field name="help" type="html">
+          <p class="o_view_nocontent_smiling_face">
+            Create a new funnel
+          </p>
+        </field>
+    </record>
+    
+        <menuitem id="menu_funnel" name="Funnels"
+            parent="marketing_strategy.marketing_strategy_menu_solutions"
+            action="funnel_action" sequence="7"/>
+
+
+    <!-- Funnel Pages -->
+
+
+    <record id='funnel_page_view_tree' model='ir.ui.view'>
+        <field name="name">funnel.page.tree</field>
+        <field name="model">funnel.page</field>
+        <field name="arch" type="xml">
+            <tree string="Funnel Pages">
+                <field name="sequence" widget="handle"/>
+                <field name="name"/>
+                <field name="type_id"/>
+                 <field name="funnel_id"/>
+                <field name="company_id" options="{'no_create': True}" groups="base.group_multi_company"/>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="funnel_page_view_form">
+        <field name="name">funnel.page.form</field>
+        <field name="model">funnel.page</field>
+        <field name="arch" type="xml">
+            <form string="Activity">                
+            	<sheet>
+                    <div class="oe_title">
+                    	<h1><field name="name" placeholder="Name" nolabel="1"/></h1>   
+                    </div>                      
+                        <group>
+                            <group>
+                                <field name="type_id"/>
+                                 <field name="visits"/>      
+                                <field name="website_id"/>                           
+                            </group>
+                            <group>
+                                <field name="activity_ids" nolabel="1"/> 
+                            </group>
+                        </group>  
+                    <notebook colspan="4">
+                        <page string="Components" autofocus="autofocus">
+                        </page>
+                    </notebook>                	
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+
+    <record id='funnel_page_action' model='ir.actions.act_window'>
+        <field name="name">Funnels Pages</field>
+        <field name="res_model">funnel.page</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+          <p class="o_view_nocontent_smiling_face">
+            Create a new funnel activity
+          </p>
+        </field>
+    </record>
+
+
+    <menuitem id="menu_marketing_strategy_touchpoint" name="Funnel Pages"
+            parent="marketing_strategy.menu_marketing_strategy_touchpoints"
+            action="funnel_page_action" sequence="3"/>	
+
+    <!-- Funnel Activities-->
+
+
+    <record id='funnel_activity_view_tree' model='ir.ui.view'>
+        <field name="name">funnel.activity.tree</field>
+        <field name="model">funnel.activity</field>
+        <field name="arch" type="xml">
+            <tree string="Funnel Activities">
+                <field name="name"/>
+                <field name="action_type"/>
+                <field name="company_id" options="{'no_create': True}" groups="base.group_multi_company"/>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="funnel_activity_view_form">
+        <field name="name">funnel.activity.form</field>
+        <field name="model">funnel.activity</field>
+        <field name="arch" type="xml">
+            <form string="Activity">                
+            	<sheet>
+                    <div class="oe_title">
+                    	<h1><field name="name" placeholder="Name" nolabel="1"/></h1>                    	
+                    </div>
+                    <group>
+                        <group>
+                            <field name="signal"/>
+                            <field name="start"/>
+                            <field name="object_id"/>
+                        </group>
+                        <group>
+                            <field name="page_id"/>
+                            <field name="company_id" groups="base.group_multi_company"/>
+                        </group>
+                        <group>
+                            <field name="condition" widget="char"/>
+                            <field name="keep_if_condition_not_met"/>
+                        </group>
+                        <group>
+                            <field name="action_type"/>
+                            <field name="email_template_id" attrs="{'required':[('action_type','=','email')], 'invisible':[('action_type','!=','email')]}" context="{'default_is_for_funnel': True}"/>
+                            <field name="server_action_id" attrs="{'required':[('action_type','=','action')],'invisible':[('action_type','!=','action')]}" />
+                        </group>
+                    </group>
+                <separator string="Previous Activities"/>
+                <field name="from_ids" mode="tree" context="{'default_activity_to_id': active_id}">
+                    <tree string="Incoming Transitions" editable="bottom">
+                        <field name="activity_from_id" options="{'no_create': True}" />
+                        <field name='trigger'/>
+                        <field name="interval_nbr"/>
+                        <field name="interval_type"/>
+                    </tree>
+                    <form string="Incoming Transitions">
+                        <group col="4">
+                            <field name="activity_from_id" options="{'no_create': True}" />
+                            <field name='trigger'/>
+                            <field name="interval_nbr"/>
+                            <field name="interval_type"/>
+                        </group>
+                    </form>
+                </field>
+                <separator string="Next Activities"/>
+                <field name="to_ids" mode="tree" context="{'default_activity_from_id': active_id}">
+                    <tree string="Outgoing Transitions" editable="bottom">
+                        <field name="activity_to_id"  />
+                        <field name='trigger'/>
+                        <field name="interval_nbr"/>
+                        <field name="interval_type"/>
+                    </tree>
+                    <form string="Outgoing Transitions">
+                        <group col="4">
+                            <field name="activity_to_id"  />
+                            <field name='trigger'/>
+                            <field name="interval_nbr"/>
+                            <field name="interval_type"/>
+                        </group>
+                    </form>
+                </field>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id='funnel_activity_action' model='ir.actions.act_window'>
+        <field name="name">Funnels Activities</field>
+        <field name="res_model">funnel.activity</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+          <p class="o_view_nocontent_smiling_face">
+            Create a new funnel activity
+          </p>
+        </field>
+    </record>
+
+        <menuitem id="menu_funnel_activity" name="Funnel Activities"
+            parent="marketing_strategy.menu_marketing_strategy_touchpoints"
+            action="funnel_activity_action" sequence="4"/>	
+
+
+        <!-- Funnel Workitems -->
+    <record model="ir.ui.view" id="view_marketing_campaign_funnel_workitem_tree">
+        <field name="name">funnel.workitem.tree</field>
+        <field name="model">funnel.workitem</field>
+        <field name="arch" type="xml">
+            <tree decoration-danger="state == 'exception'" decoration-muted="state == 'cancelled'" string="Funnel Workflow">
+                <field name="activity_id"/>
+                <field name="object_id"/>
+                <field name="date"/>
+                <field name="state"/>
+                <button string="Cancel" states="todo" name="button_cancel" type="object" icon="fa-times-circle text-danger"/>
+                <button string="Preview" states="todo" name="preview" icon="fa-search-plus text-primary" type="object"/>
+                <button string="Process" states="todo" name="process" type="object" icon="fa-arrow-right text-success"/>
+            </tree>
+        </field>
+    </record>
+
+
+    <record model="ir.ui.view" id="view_funnel_workitem_form">
+        <field name="name">funnel.workitem.form</field>
+        <field name="model">funnel.workitem</field>
+        <field name="arch" type="xml">
+            <form string="Funnel Workflow">
+            <header>
+                <button string="Process" states="todo" name="process" type="object"/>
+                <button string="Reset" states="exception,cancelled" name="button_draft" type="object"/>
+                <button string="Cancel Workitem" states="todo,exception" name="button_cancel" type="object"/>
+                <field name="state" readonly="True" widget="statusbar" statusbar_visible="todo,done"/>
+                <button string="Preview" states="todo" name="preview" icon="fa-search-plus fa-lg text-primary" type="object"/>
+            </header>
+            <sheet>
+                <group>
+                    <group>
+                        <field name="activity_id"/>
+                        <field name="date"/>
+                        <field name="company_id" options="{'no_create': True}" groups="base.group_multi_company"/>
+                    </group>
+                    <group>
+                        <field name="object_id"/>
+                    </group>
+                </group>
+                <group attrs="{'invisible':[('state','!=','exception')]}" string="Error Message">
+                    <field name="error_msg" nolabel="1" colspan="2"/>
+                </group>
+            </sheet>
+            </form>
+        </field>
+    </record>
+
+        <record id="funnel_workitem_search" model="ir.ui.view">
+        <field name="name">funnel.workitem.search</field>
+        <field name="model">funnel.workitem</field>
+        <field name="arch" type="xml">
+            <search string="Funnels Workflows">
+                <group expand="0" string="Group By"  colspan="16">
+                      <filter string="Activity" name="activity" context="{'group_by':'activity_id'}"/>
+                      <filter string="Status" name="Status" context="{'group_by':'state'}"/>
+                      <filter string="Execution Month" name="Date" context="{'group_by':'date'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id='funnel_workitem_action' model='ir.actions.act_window'>
+        <field name="name">Funnel Workflow</field>
+        <field name="res_model">funnel.workitem</field>
+        <field name="view_mode">tree,form</field>
+        <field name="search_view_id" ref="funnel_workitem_search"/>
+        <field name="help" type="html">
+          <p class="o_view_nocontent_smiling_face">
+            Create a new funnel activity
+          </p>
+        </field>
+    </record>
+
+        <menuitem id="menu_funnel_workitem" name="Funnel Workflow"
+            parent="marketing_strategy.menu_marketing_strategy_touchpoints"
+            action="funnel_workitem_action" sequence="5"/>	
+    
+  </data>
+</odoo>
