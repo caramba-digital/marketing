@@ -76,7 +76,8 @@ class FunnelPage(models.Model):
     def _compute_website_url(self):
         super(FunnelPage, self)._compute_website_url()
         for funnel_page in self:
-            funnel_page.website_url = "/touchpoint/%s/page/%s" % (slug(funnel_page.funnel_id), slug(funnel_page))
+            if funnel_page.id:
+                funnel_page.website_url = "/touchpoint/%s/page/%s" % (slug(funnel_page.funnel_id), slug(funnel_page))
 
 
 
