@@ -13,7 +13,7 @@
     'category': 'Marketing/Strategy',
     'version': '0.0.1',
 
-    'depends': ['marketing_strategy', 'website_event', 'hr_gamification', 'mass_mailing'],
+    'depends': ['marketing_strategy', 'website_sale_coupon', 'website_event', 'gamification', 'mass_mailing'],
 
 
     'data': [

@@ -114,74 +114,92 @@
     
     <record id="marketing_strategy_funnel_page_opt_1" model="funnel.page.type">
     	<field name="name">Storefront Page</field>
+      <field name="resource">catalog</field>
     </record>
 
     <record id="marketing_strategy_funnel_page_opt_2" model="funnel.page.type">
     	<field name="name">Product Page</field>
-    </record>
-
-    <record id="marketing_strategy_funnel_page_opt_3" model="funnel.page.type">
-    	<field name="name">Service Page</field>
+      <field name="resource">product</field>
     </record>
     
-    <record id="marketing_strategy_funnel_page_opt_4" model="funnel.page.type">
+    <record id="marketing_strategy_funnel_page_opt_3" model="funnel.page.type">
     	<field name="name">Sales Video Page</field>
+      <field name="resource">lead</field>
+    </record>
+
+    <record id="marketing_strategy_funnel_page_opt_4" model="funnel.page.type">
+    	<field name="name">Event Page</field>
+      <field name="resource">event</field>
     </record>
 
     <record id="marketing_strategy_funnel_page_opt_5" model="funnel.page.type">
-    	<field name="name">Event Page</field>
+    	<field name="name">News Letter Page</field>
+      <field name="resource">newsletter</field>
     </record>
 
     <record id="marketing_strategy_funnel_page_opt_6" model="funnel.page.type">
     	<field name="name">Sales Letter Page</field>
+      <field name="resource">lead</field>
     </record>
 
     <record id="marketing_strategy_funnel_page_opt_7" model="funnel.page.type">
     	<field name="name">Hero Page</field>
+      <field name="resource">event</field>
     </record>
 
     <record id="marketing_strategy_funnel_page_opt_8" model="funnel.page.type">
     	<field name="name">Overwhelm Page</field>
+      <field name="resource">product</field>
     </record>
 
     <record id="marketing_strategy_funnel_page_opt_9" model="funnel.page.type">
     	<field name="name">Offer Page</field>
+      <field name="resource">coupon_program</field>
     </record>
 
     <record id="marketing_strategy_funnel_page_opt_10" model="funnel.page.type">
     	<field name="name">Upsell Page</field>
+      <field name="resource">catalog</field>
     </record>
 
     <record id="marketing_strategy_funnel_page_opt_11" model="funnel.page.type">
     	<field name="name">Downsell Page</field>
+      <field name="resource">coupon_program</field>
     </record>
 
     <record id="marketing_strategy_funnel_page_opt_12" model="funnel.page.type">
     	<field name="name">Cross-Sell Page</field>
+      <field name="resource">catalog</field>
     </record>
 
     <record id="marketing_strategy_funnel_page_opt_13" model="funnel.page.type">
     	<field name="name">SaaS Referral Page</field>
+      <field name="resource">coupon_program</field>
     </record>
 
     <record id="marketing_strategy_funnel_page_opt_14" model="funnel.page.type">
     	<field name="name">Bridge Page</field>
+      <field name="resource">none</field>
     </record>
 
     <record id="marketing_strategy_funnel_page_opt_15" model="funnel.page.type">
     	<field name="name">Gamification Page</field>
+      <field name="resource">badge</field>
     </record>
 
     <record id="marketing_strategy_funnel_page_opt_16" model="funnel.page.type">
     	<field name="name">Download Page</field>
+      <field name="resource">none</field>
     </record>
 
     <record id="marketing_strategy_funnel_page_opt_17" model="funnel.page.type">
     	<field name="name">Thank Page</field>
+      <field name="resource">none</field>
     </record>
 
     <record id="marketing_strategy_funnel_page_opt_18" model="funnel.page.type">
     	<field name="name">Cancellation Page</field>
+      <field name="resource">none</field>
     </record>
 
 

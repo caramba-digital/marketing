@@ -38,6 +38,15 @@ class FunnelPageType(models.Model):
     _description = 'Funnel Page Type'
 
     name = fields.Char('Funnel Type', required=True, translate=True)
+    resource = fields.Selection([
+        ('product','Product'),
+        ('catalog', 'Catalog'), 
+        ('event','Event'),
+        ('newsletter','Newsletter'),
+        ('lead','Lead'),
+        ('coupon_program','Coupon Program'),
+        ('badge','Badge'),
+        ('none','None')], required=True)
 
 
 class Funnel(models.Model):
@@ -87,13 +96,17 @@ class FunnelPage(models.Model):
     object_id = fields.Many2one(related='funnel_id.object_id', relation='ir.model', string='Object', readonly=True)
     type_id = fields.Many2one('funnel.page.type', required=True)
     active = fields.Boolean('Active', default=True)
-    content = fields.Html('Content', default=_default_content, translate=html_translate, sanitize=False)
+    content_top = fields.Html('Top Content', default=_default_content, translate=html_translate, sanitize=False)
+    content_bottom = fields.Html('Bottom Content', default=_default_content, translate=html_translate, sanitize=False)
     product_id = fields.Many2one(
-        'product.product', string='Product', domain="[('sale_ok', '=', True), '|', ('company_id', '=', False), ('company_id', '=', company_id)]",
+        'product.product', string='Product', domain="[('sale_ok', '=', True)]",
         change_default=True, check_company=True) 
-    product_ids = fields.Many2many('product.product', domain="[('sale_ok', '=', True), '|', ('company_id', '=', False), ('company_id', '=', company_id)]" )
+    products_ids = fields.Many2many('product.product', 'funnel_page_product_rel', 'page_id', 'page_prodyct_id', domain="[('sale_ok', '=', True)]", string='Products')
     event_id = fields.Many2one('event.event')
+    badge_id = fields.Many2one('gamification.badge')
+    coupon_program_id = fields.Many2one('coupon.program')
     mailing_list_id = fields.Many2one('mailing.list', string='')
+    resource = fields.Char(compute='_get_resource', store=True)
     activity_ids = fields.One2many('funnel.activity', 'page_id', 'Activities')
     last_date = fields.Datetime('Last View')
     visits = fields.Integer('No of Views', copy=False, readonly=True)
@@ -101,6 +114,12 @@ class FunnelPage(models.Model):
     website_id = fields.Many2one(related='funnel_id.website_id', readonly=True)
     company_id = fields.Many2one('res.company', 'Company', required=True, index=True, default=lambda self: self.env.company) 
 
+    @api.depends('type_id')
+    def _get_resource(self):
+        for record in self:
+            record.resource = self.type_id.resource
+
+    
     def process_activities(self, object_id, res_id):
         Workitems = self.env['funnel.workitem']
         Activities = self.env['funnel.activity']

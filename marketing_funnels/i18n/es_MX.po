@@ -6,15 +6,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-11-28 00:01+0000\n"
-"PO-Revision-Date: 2020-11-27 18:26-0600\n"
+"POT-Creation-Date: 2020-12-05 00:15+0000\n"
+"PO-Revision-Date: 2020-12-04 18:17-0600\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: \n"
-"Language: es_MX\n"
+"Language: es\n"
 "X-Generator: Poedit 2.3\n"
 
 #. module: marketing_funnels
@@ -30,8 +30,7 @@ msgid ""
 "            "
 msgstr ""
 "<p> Hola, </p>\n"
-"<p> Tenemos una oferta muy buena que podría ser adecuada para usted. Le sugerimos suscribirse "
-"al\n"
+"<p> Tenemos una oferta muy buena que podría ser adecuada para usted. Le sugerimos suscribirse al\n"
 "Día del descubrimiento de Odoo en mayo de 2015. </p>\n"
 "<p> $ {object.company_id.name} </p>\n"
 "<p> Si necesita más información, no dude en responder a este mensaje. </p>\n"
@@ -95,11 +94,11 @@ msgstr "Después de% (interval_nbr) d% (interval_type) s"
 #. module: marketing_funnels
 #: model:ir.model.fields,help:marketing_funnels.field_funnel_activity__signal
 msgid ""
-"An activity with a signal can be called programmatically. Be careful, the workitem is always "
-"created when a signal is sent"
+"An activity with a signal can be called programmatically. Be careful, the workitem is always created when a "
+"signal is sent"
 msgstr ""
-"Una actividad con una señal se puede llamar mediante programación. Tenga cuidado, el elemento "
-"de trabajo siempre se crea cuando se envía una señal"
+"Una actividad con una señal se puede llamar mediante programación. Tenga cuidado, el elemento de trabajo siempre "
+"se crea cuando se envía una señal"
 
 #. module: marketing_funnels
 #: model:ir.model.fields,field_description:marketing_funnels.field_gamification_challenge__challenge_category
@@ -110,15 +109,13 @@ msgstr "Aparece en"
 #: model_terms:ir.actions.act_window,help:marketing_funnels.challenge_list_action2
 msgid ""
 "Assign a list of goals to chosen users to evaluate them.\n"
-"                    The challenge can use a period (weekly, monthly...) for automatic "
-"creation of goals.\n"
+"                    The challenge can use a period (weekly, monthly...) for automatic creation of goals.\n"
 "                    The goals are created for the specified users or member of the group."
 msgstr ""
 "Asigne una lista de objetivos a los usuarios elegidos para evaluarlos.\n"
-"                    El desafío puede utilizar un período (semanal, mensual ...) para la "
-"creación automática de objetivos.\n"
-"                    Los objetivos se crean para los usuarios o miembros del grupo "
-"especificados."
+"                    El desafío puede utilizar un período (semanal, mensual ...) para la creación automática de "
+"objetivos.\n"
+"                    Los objetivos se crean para los usuarios o miembros del grupo especificados."
 
 #. module: marketing_funnels
 #: model:ir.model.fields,field_description:marketing_funnels.field_funnel_funnel__message_attachment_count
@@ -142,6 +139,12 @@ msgstr "Transición automática"
 #: model:ir.model.fields.selection,name:marketing_funnels.selection__funnel_funnel__buyer_journey_stage__awareness
 msgid "Awareness"
 msgstr "Conciencia"
+
+#. module: marketing_funnels
+#: model:ir.model.fields,field_description:marketing_funnels.field_funnel_page__badge_id
+#: model:ir.model.fields.selection,name:marketing_funnels.selection__funnel_page_type__resource__badge
+msgid "Badge"
+msgstr ""
 
 #. module: marketing_funnels
 #: model:ir.ui.menu,name:marketing_funnels.gamification_badge_menu_funnel
@@ -171,11 +174,11 @@ msgstr "Etapa del Viaje del Comprador"
 #. module: marketing_funnels
 #: model:ir.model.fields,help:marketing_funnels.field_funnel_activity__keep_if_condition_not_met
 msgid ""
-"By activating this option, workitems that aren't executed because the condition is not met "
-"are marked as cancelled instead of being deleted."
+"By activating this option, workitems that aren't executed because the condition is not met are marked as "
+"cancelled instead of being deleted."
 msgstr ""
-"Al activar esta opción, los elementos de trabajo que no se ejecutan porque no se cumple la "
-"condición se marcan como cancelados en lugar de eliminarse."
+"Al activar esta opción, los elementos de trabajo que no se ejecutan porque no se cumple la condición se marcan "
+"como cancelados en lugar de eliminarse."
 
 #. module: marketing_funnels
 #: model:ir.model.fields,field_description:marketing_funnels.field_funnel_page__can_publish
@@ -201,6 +204,11 @@ msgstr "Página de Cancelación"
 #: model:ir.model.fields.selection,name:marketing_funnels.selection__funnel_workitem__state__cancelled
 msgid "Cancelled"
 msgstr "Cancelada"
+
+#. module: marketing_funnels
+#: model:ir.model.fields.selection,name:marketing_funnels.selection__funnel_page_type__resource__catalog
+msgid "Catalog"
+msgstr ""
 
 #. module: marketing_funnels
 #: model:ir.actions.act_window,name:marketing_funnels.challenge_list_action2
@@ -252,9 +260,14 @@ msgid "Consideration"
 msgstr "Consideración"
 
 #. module: marketing_funnels
-#: model:ir.model.fields,field_description:marketing_funnels.field_funnel_page__content
-msgid "Content"
-msgstr "Contenido"
+#: model:ir.model.fields,field_description:marketing_funnels.field_funnel_page__content_bottom
+msgid "Content Bottom"
+msgstr ""
+
+#. module: marketing_funnels
+#: model:ir.model.fields,field_description:marketing_funnels.field_funnel_page__content_top
+msgid "Content Top"
+msgstr ""
 
 #. module: marketing_funnels
 #: code:addons/marketing/marketing_funnels/models/marketing_strategy_funnel.py:0
@@ -263,6 +276,12 @@ msgstr "Contenido"
 #, python-format
 msgid "Cosmetic"
 msgstr "Cosmético"
+
+#. module: marketing_funnels
+#: model:ir.model.fields,field_description:marketing_funnels.field_funnel_page__coupon_program_id
+#: model:ir.model.fields.selection,name:marketing_funnels.selection__funnel_page_type__resource__coupon_program
+msgid "Coupon Program"
+msgstr ""
 
 #. module: marketing_funnels
 #: model_terms:ir.actions.act_window,help:marketing_funnels.challenge_list_action2
@@ -416,13 +435,14 @@ msgstr "Mensaje de Error"
 
 #. module: marketing_funnels
 #: model:ir.model.fields,field_description:marketing_funnels.field_funnel_page__event_id
+#: model:ir.model.fields.selection,name:marketing_funnels.selection__funnel_page_type__resource__event
 msgid "Event"
 msgstr "Evento"
 
 #. module: marketing_funnels
-#: model:funnel.page.type,name:marketing_funnels.marketing_strategy_funnel_page_opt_5
+#: model:funnel.page.type,name:marketing_funnels.marketing_strategy_funnel_page_opt_4
 msgid "Event Page"
-msgstr "Página de Evento"
+msgstr ""
 
 #. module: marketing_funnels
 #: model:ir.model.fields.selection,name:marketing_funnels.selection__funnel_workitem__state__exception
@@ -623,7 +643,7 @@ msgstr "Como es activado el elemento de trabajo de destino"
 #: model:ir.model.fields,field_description:marketing_funnels.field_marketing_strategy_touchpoint__id
 #: model:ir.model.fields,field_description:marketing_funnels.field_website_visitor__id
 msgid "ID"
-msgstr "ID"
+msgstr ""
 
 #. module: marketing_funnels
 #: model:ir.model.fields,help:marketing_funnels.field_funnel_funnel__message_needaction
@@ -737,6 +757,11 @@ msgid "Last View"
 msgstr "Última Vista"
 
 #. module: marketing_funnels
+#: model:ir.model.fields.selection,name:marketing_funnels.selection__funnel_page_type__resource__lead
+msgid "Lead"
+msgstr ""
+
+#. module: marketing_funnels
 #: model:ir.model.fields.selection,name:marketing_funnels.selection__funnel_funnel__buyer_journey_stage__loyalty
 msgid "Loyalty"
 msgstr "Lealtad"
@@ -785,9 +810,18 @@ msgstr "Mes(s)"
 #: model:ir.model.fields,field_description:marketing_funnels.field_funnel_transition__name
 #: model_terms:ir.ui.view,arch_db:marketing_funnels.funel_view_form
 #: model_terms:ir.ui.view,arch_db:marketing_funnels.funnel_activity_view_form
-#: model_terms:ir.ui.view,arch_db:marketing_funnels.funnel_page_view_form
 msgid "Name"
 msgstr "Nombre"
+
+#. module: marketing_funnels
+#: model:funnel.page.type,name:marketing_funnels.marketing_strategy_funnel_page_opt_5
+msgid "News Letter"
+msgstr ""
+
+#. module: marketing_funnels
+#: model:ir.model.fields.selection,name:marketing_funnels.selection__funnel_page_type__resource__newsletter
+msgid "Newsletter"
+msgstr ""
 
 #. module: marketing_funnels
 #: model:ir.model.fields,field_description:marketing_funnels.field_funnel_activity__to_ids
@@ -804,6 +838,11 @@ msgstr "Actividad Próxima"
 #: model:ir.model.fields,field_description:marketing_funnels.field_funnel_page__visits
 msgid "No of Views"
 msgstr "No. de Vistas"
+
+#. module: marketing_funnels
+#: model:ir.model.fields.selection,name:marketing_funnels.selection__funnel_page_type__resource__none
+msgid "None"
+msgstr ""
 
 #. module: marketing_funnels
 #: model:ir.model.fields,field_description:marketing_funnels.field_funnel_funnel__message_needaction_counter
@@ -912,7 +951,7 @@ msgstr "Proceso"
 
 #. module: marketing_funnels
 #: model:ir.model.fields,field_description:marketing_funnels.field_funnel_page__product_id
-#: model:ir.model.fields,field_description:marketing_funnels.field_funnel_page__product_ids
+#: model:ir.model.fields.selection,name:marketing_funnels.selection__funnel_page_type__resource__product
 msgid "Product"
 msgstr "Producto"
 
@@ -922,6 +961,11 @@ msgid "Product Page"
 msgstr "Página de Producto"
 
 #. module: marketing_funnels
+#: model:ir.model.fields,field_description:marketing_funnels.field_funnel_page__products_ids
+msgid "Products"
+msgstr ""
+
+#. module: marketing_funnels
 #: model:ir.model.fields.selection,name:marketing_funnels.selection__funnel_funnel__buyer_journey_stage__purchase
 msgid "Purchase"
 msgstr "Compra"
@@ -929,16 +973,16 @@ msgstr "Compra"
 #. module: marketing_funnels
 #: model:ir.model.fields,help:marketing_funnels.field_funnel_activity__condition
 msgid ""
-"Python expression to decide whether the activity can be executed, otherwise it will be "
-"deleted or cancelled.The expression may use the following [browsable] variables:\n"
+"Python expression to decide whether the activity can be executed, otherwise it will be deleted or cancelled.The "
+"expression may use the following [browsable] variables:\n"
 "   - activity: the funnel activity\n"
 "   - workitem: the funnel workitem\n"
 "   - resource: the resource object this funnel item represents\n"
 "   - transitions: list of funnel transitions outgoing from this activity\n"
 "...- re: Python regular expression module"
 msgstr ""
-"Expresión de Python para decidir si la actividad se puede ejecutar; de lo contrario, se "
-"eliminará o cancelará. La expresión puede usar las siguientes variables [navegables]:\n"
+"Expresión de Python para decidir si la actividad se puede ejecutar; de lo contrario, se eliminará o cancelará. "
+"La expresión puede usar las siguientes variables [navegables]:\n"
 "   - actividad: la actividad del embudo\n"
 "   - elemento de trabajo: el elemento de trabajo del embudo\n"
 "   - recurso: el objeto de recurso que representa este elemento de embudo\n"
@@ -957,6 +1001,8 @@ msgstr "Reiniciar"
 
 #. module: marketing_funnels
 #: model:ir.model.fields,field_description:marketing_funnels.field_funnel_funnel__object_id
+#: model:ir.model.fields,field_description:marketing_funnels.field_funnel_page__resource
+#: model:ir.model.fields,field_description:marketing_funnels.field_funnel_page_type__resource
 #: model:ir.model.fields,field_description:marketing_funnels.field_funnel_workitem__object_id
 msgid "Resource"
 msgstr "Recurso"
@@ -993,9 +1039,9 @@ msgid "Sales Letter Page"
 msgstr "Página de Carta de Ventas"
 
 #. module: marketing_funnels
-#: model:funnel.page.type,name:marketing_funnels.marketing_strategy_funnel_page_opt_4
+#: model:funnel.page.type,name:marketing_funnels.marketing_strategy_funnel_page_opt_3
 msgid "Sales Video Page"
-msgstr "Página de Videos de Ventas"
+msgstr ""
 
 #. module: marketing_funnels
 #: model_terms:ir.ui.view,arch_db:marketing_funnels.funnel_page
@@ -1016,11 +1062,6 @@ msgstr "Secuencia"
 #: model:ir.model.fields.selection,name:marketing_funnels.selection__funnel_funnel__buyer_journey_stage__service
 msgid "Service"
 msgstr "Servicio"
-
-#. module: marketing_funnels
-#: model:funnel.page.type,name:marketing_funnels.marketing_strategy_funnel_page_opt_3
-msgid "Service Page"
-msgstr "Página de Servicio"
 
 #. module: marketing_funnels
 #: model:ir.model.fields,field_description:marketing_funnels.field_funnel_activity__signal
@@ -1202,8 +1243,7 @@ msgstr "La acción a realizar cuando se activa esta actividad"
 #: code:addons/marketing_funnels/models/marketing_strategy_funnel.py:0
 #, python-format
 msgid "The current step for this item has no email to preview."
-msgstr ""
-"El paso actual de este elemento no tiene correo electrónico para obtener una vista previa."
+msgstr "El paso actual de este elemento no tiene correo electrónico para obtener una vista previa."
 
 #. module: marketing_funnels
 #: model:funnel.type,name:marketing_funnels.marketing_strategy_funnel_type_opt_5
@@ -1230,17 +1270,14 @@ msgstr "El intervalo debe ser positivo o cero"
 msgid ""
 "The type of action to execute when an item enters this activity, such as:\n"
 "- Email: send an email using a predefined email template \n"
-"- Report: print an existing Report defined on the resource item and save it into a specific "
-"directory \n"
+"- Report: print an existing Report defined on the resource item and save it into a specific directory \n"
 "- Custom Action: execute a predefined action, e.g. to modify the fields of the resource record"
 msgstr ""
 "El tipo de acción que se ejecutará cuando un elemento ingrese a esta actividad, como:\n"
-"- Correo electrónico: envíe un correo electrónico utilizando una plantilla de correo "
-"electrónico predefinida\n"
-"- Informe: imprima un informe existente definido en el elemento de recurso y guárdelo en un "
-"directorio específico\n"
-"- Acción personalizada: ejecuta una acción predefinida, p. Ej. para modificar los campos del "
-"registro de recursos"
+"- Correo electrónico: envíe un correo electrónico utilizando una plantilla de correo electrónico predefinida\n"
+"- Informe: imprima un informe existente definido en el elemento de recurso y guárdelo en un directorio "
+"específico\n"
+"- Acción personalizada: ejecuta una acción predefinida, p. Ej. para modificar los campos del registro de recursos"
 
 #. module: marketing_funnels
 #: model:ir.model.fields,help:marketing_funnels.field_funnel_activity__start
@@ -1356,7 +1393,7 @@ msgstr "Año(s)"
 #. module: marketing_funnels
 #: model_terms:ir.ui.view,arch_db:marketing_funnels.funnel_page
 msgid "Your Company"
-msgstr "Your Company"
+msgstr ""
 
 #. module: marketing_funnels
 #: model_terms:ir.ui.view,arch_db:marketing_funnels.funnel_page

@@ -33,8 +33,9 @@ class WebsiteFunnel(http.Controller):
         values = {
             'page':page,
             'enable_editor': enable_editor,
+            'main_object': funnel_page,
             }
-        response = request.render("marketing_funnel.funnel_page", values)
+        response = request.render("marketing_funnels.funnel_page", values)
 
         request.session[request.session.sid] = request.session.get(request.session.sid, [])
         if not (funnel_page.id in request.session[request.session.sid]):
@@ -45,8 +46,6 @@ class WebsiteFunnel(http.Controller):
                 'write_date': funnel_page.write_date,
             })
             # Start activities
-            if page.activity_ids:
-                funnel_page.sudo().process_activities(1)
         return response
 
 class WebsiteForm(WebsiteForm):
