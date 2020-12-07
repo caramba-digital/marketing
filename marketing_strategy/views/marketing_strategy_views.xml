@@ -34,7 +34,7 @@
             id="marketing_strategy_menu_config"
             name="Configuration"
             parent="marketing_strategy_menu_root"
-            sequence="80" groups="group_strategy_manager"/>
+            sequence="80" groups="base.group_system"/>
 
 
 
