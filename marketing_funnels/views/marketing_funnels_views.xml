@@ -1,6 +1,12 @@
 <odoo>
   <data>
        
+    <menuitem name="Sales Funnels"
+            id="marketing_funnels_menu_root"
+            sequence="10"
+            groups="base.group_user"
+            web_icon="marketing_funnels,static/description/icon.png"/>
+
       <!-- Funnels --> 
       <record id='funnel_view_tree' model='ir.ui.view'>
         <field name="name">funnel.tree</field>
@@ -31,13 +37,13 @@
                         <group>
                             <field name="type_id"/>
                             <field name="object_id"/>
-                            <field name="brand_id" domain="[('relation','=','main')]"/>
                             <field name="company_id"/>
                         </group>
                         <group>
                             <field name="website_id"/>
                             <field name="child_funnel_id"/>
                             <field name="parent_funnel_id"/>
+                            <field name="social_proof_interval"/>
                         </group>
                     </group>
                     <group string="Pages">
@@ -67,7 +73,6 @@
                                 <field name="type_id"/>
                                 <field name="visits"/>
                                 <field name="last_date"/>
-                                <field name="website_id"/>
                             </tree>
                         </field>
                     </group>
@@ -106,7 +111,6 @@
                                 </h4> 
                                 <ul>
                                     <li>Type: <field name="type_id"/></li>
-                                    <li>Brand: <field name="brand_id"/></li>
                                 </ul>
                             </div>
                         </div>
@@ -128,8 +132,8 @@
     </record>
     
         <menuitem id="menu_funnel" name="Funnels"
-            parent="marketing_strategy.marketing_strategy_menu_solutions"
-            action="funnel_action" sequence="7"/>
+            parent="marketing_funnels.marketing_funnels_menu_root"
+            action="funnel_action" sequence="1"/>
 
 
     <!-- Funnel Pages -->
@@ -174,18 +178,40 @@
                     <notebook colspan="4">
                         <page string="Components" autofocus="autofocus">
                             <group>
-                                <field name="product_id"  attrs="{'invisible':[('resource','!=','product')]}"/>
-                                <field name="products_ids"  attrs="{'invisible':[('resource','!=','catalog')]}" >
-                                    <tree>
-                                        <field name="name" />
-                                        <field name="price" />
-                                        <field name="public_categ_ids" widget="many2many_tags"/>
-                                    </tree>
-                                </field>
-                                <field name="event_id"  attrs="{'invisible':[('resource','!=','event')]}"/>
-                                <field name="badge_id"  attrs="{'invisible':[('resource','!=','badge')]}"/>
-                                <field name="coupon_program_id"  attrs="{'invisible':[('resource','!=','coupon_program')]}"/>
-                                <field name="mailing_list_id"  attrs="{'invisible':[('resource','!=','newsletter')]}"/>
+                                <group>
+                                    <field name="has_form" />
+                                    <field name="social_proof_notification" />
+                                </group>
+                                <group>
+                                    <field name="style_id" />
+                                </group>
+                                <group  attrs="{'invisible':[('resource','!=','product')]}">
+                                    <field name="product_id" domain="[('is_published','=',True)]"/>
+
+                                </group>
+                                <group attrs="{'invisible':[('resource','!=','catalog'),('resource','!=','random')]}">
+                                    <field name="products_ids"  domain="[('is_published','=',True)]"  nolabel="1">
+                                        <tree>
+                                            <field name="name" />
+                                            <field name="price" />
+                                            <field name="public_categ_ids" widget="many2many_tags"/>
+                                        </tree>
+                                    </field>
+                                
+                                </group>
+                                <group  attrs="{'invisible':[('resource','!=','event')]}">
+                                    <field name="event_id" />
+                                </group>
+                                <group  attrs="{'invisible':[('resource','!=','badge')]}">
+                                    <field name="badge_id" />
+                                </group>
+                                <group attrs="{'invisible':[('resource','!=','coupon_program'),('resource','!=','random')]}">
+                                    <field name="coupon_program_id" />
+                                    <field name="random_product" attrs="{'invisible':[('resource','!=','random')]}"/>
+                                </group>
+                                <group attrs="{'invisible':[('resource','!=','newsletter')]}">
+                                    <field name="mailing_list_id" />
+                                </group>
                             </group>    
                         </page>
                     </notebook>                	
@@ -208,8 +234,8 @@
 
 
     <menuitem id="menu_marketing_strategy_touchpoint" name="Funnel Pages"
-            parent="marketing_strategy.menu_marketing_strategy_touchpoints"
-            action="funnel_page_action" sequence="3"/>	
+            parent="marketing_funnels.marketing_funnels_menu_root"
+            action="funnel_page_action" sequence="2"/>	
 
     <!-- Funnel Activities-->
 
@@ -306,88 +332,10 @@
     </record>
 
         <menuitem id="menu_funnel_activity" name="Funnel Activities"
-            parent="marketing_strategy.menu_marketing_strategy_touchpoints"
-            action="funnel_activity_action" sequence="4"/>	
+            parent="marketing_funnels.marketing_funnels_menu_root"
+            action="funnel_activity_action" sequence="3"/>	
 
 
-        <!-- Funnel Workitems -->
-    <record model="ir.ui.view" id="view_marketing_campaign_funnel_workitem_tree">
-        <field name="name">funnel.workitem.tree</field>
-        <field name="model">funnel.workitem</field>
-        <field name="arch" type="xml">
-            <tree decoration-danger="state == 'exception'" decoration-muted="state == 'cancelled'" string="Funnel Workflow">
-                <field name="activity_id"/>
-                <field name="object_id"/>
-                <field name="date"/>
-                <field name="state"/>
-                <button string="Cancel" states="todo" name="button_cancel" type="object" icon="fa-times-circle text-danger"/>
-                <button string="Preview" states="todo" name="preview" icon="fa-search-plus text-primary" type="object"/>
-                <button string="Process" states="todo" name="process" type="object" icon="fa-arrow-right text-success"/>
-            </tree>
-        </field>
-    </record>
-
-
-    <record model="ir.ui.view" id="view_funnel_workitem_form">
-        <field name="name">funnel.workitem.form</field>
-        <field name="model">funnel.workitem</field>
-        <field name="arch" type="xml">
-            <form string="Funnel Workflow">
-            <header>
-                <button string="Process" states="todo" name="process" type="object"/>
-                <button string="Reset" states="exception,cancelled" name="button_draft" type="object"/>
-                <button string="Cancel Workitem" states="todo,exception" name="button_cancel" type="object"/>
-                <field name="state" readonly="True" widget="statusbar" statusbar_visible="todo,done"/>
-                <button string="Preview" states="todo" name="preview" icon="fa-search-plus fa-lg text-primary" type="object"/>
-            </header>
-            <sheet>
-                <group>
-                    <group>
-                        <field name="activity_id"/>
-                        <field name="date"/>
-                        <field name="company_id" options="{'no_create': True}" groups="base.group_multi_company"/>
-                    </group>
-                    <group>
-                        <field name="object_id"/>
-                    </group>
-                </group>
-                <group attrs="{'invisible':[('state','!=','exception')]}" string="Error Message">
-                    <field name="error_msg" nolabel="1" colspan="2"/>
-                </group>
-            </sheet>
-            </form>
-        </field>
-    </record>
-
-        <record id="funnel_workitem_search" model="ir.ui.view">
-        <field name="name">funnel.workitem.search</field>
-        <field name="model">funnel.workitem</field>
-        <field name="arch" type="xml">
-            <search string="Funnels Workflows">
-                <group expand="0" string="Group By"  colspan="16">
-                      <filter string="Activity" name="activity" context="{'group_by':'activity_id'}"/>
-                      <filter string="Status" name="Status" context="{'group_by':'state'}"/>
-                      <filter string="Execution Month" name="Date" context="{'group_by':'date'}"/>
-                </group>
-            </search>
-        </field>
-    </record>
-
-    <record id='funnel_workitem_action' model='ir.actions.act_window'>
-        <field name="name">Funnel Workflow</field>
-        <field name="res_model">funnel.workitem</field>
-        <field name="view_mode">tree,form</field>
-        <field name="search_view_id" ref="funnel_workitem_search"/>
-        <field name="help" type="html">
-          <p class="o_view_nocontent_smiling_face">
-            Create a new funnel activity
-          </p>
-        </field>
-    </record>
-
-        <menuitem id="menu_funnel_workitem" name="Funnel Workflow"
-            parent="marketing_strategy.menu_marketing_strategy_touchpoints"
-            action="funnel_workitem_action" sequence="5"/>	
     
   </data>
 </odoo>

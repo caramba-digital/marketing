@@ -18,8 +18,8 @@
             id="menu_funnel_mail_template"
             name="Mail Templates"
             action="funnel_mail_template_action"
-            parent="marketing_strategy.menu_marketing_strategy_touch_point_config"
-            sequence="2"/>
+            parent="marketing_funnels.marketing_funnels_menu_config"
+            sequence="3"/>
 
     </data>
 </odoo>

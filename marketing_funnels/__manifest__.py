@@ -4,28 +4,35 @@
 {
     'name': "Marketing Funnels",
 
-    'summary': "Sales Funnels",
+    'summary': "Second-Generation Sales Funnels",
 
     'author': "Antonio Fregoso",
     'website': "https://antoniofregoso.com",
  
 
-    'category': 'Marketing/Strategy',
+    'category': 'Marketing/Funnels',
     'version': '0.0.1',
 
-    'depends': ['marketing_strategy', 'website_sale_coupon', 'website_event', 'gamification', 'mass_mailing'],
+    'depends': ['crm', 'website_sale_coupon', 'website_event', 'gamification', 'mass_mailing', 
+                        'website_services','website_animated','website_swiper'],
 
 
     'data': [
+        'security/marketing_funnels_security.xml',
         'security/ir.model.access.csv',
-        'views/marketing_strategy_funnel_templates.xml',
-        'views/marketing_strategy_funnel_views.xml',
-        'views/marketing_strategy_settings_views.xml',
+        'views/marketing_funnels_templates.xml',
+        'views/marketing_funnels_views.xml',
+        'views/marketing_funnels_settings_views.xml',
         'views/mail_template_views.xml',
+        'views/assets.xml',
         'views/website_visitor_views.xml',
-        'data/marketing_strategy_funnel_data.xml',
+        'data/marketing_funnels_data.xml',
     ],
     'demo': [
         'demo/demo.xml',
-    ],
+    ], 
+    
+    'installable': True,
+    'application': True,
+    'auto_install': False
 }

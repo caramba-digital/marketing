@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE xml>
+<odoo >
+
+     <data noupdate="0">
+
+        <record model="ir.module.category" id="base.module_category_marketing_funnels">
+            <field name="description">Second-generation sales funnels.</field>
+            <field name="sequence">20</field>
+        </record>
+
+        <record id="group_funnels_user" model="res.groups">
+            <field name="name">User</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+            <field name="category_id" ref="base.module_category_marketing_funnels"/>
+        </record>
+
+        <record id="group_funnels_manager" model="res.groups">
+            <field name="name">Administrator</field>
+            <field name="category_id" ref="base.module_category_marketing_funnels"/>
+            <field name="implied_ids" eval="[(4, ref('group_funnels_user'))]"/>
+            <field name="users" eval="[(4, ref('base.user_root')), (4, ref('base.user_admin'))]"/>
+        </record>
+
+     </data>
+
+      <data noupdate="1">
+
+        <record id="base.default_user" model="res.users">
+            <field name="groups_id" eval="[(4,ref('marketing_funnels.group_funnels_manager'))]"/>
+        </record>
+
+        <!-- Multi - Company Rules -->
+
+        <record model="ir.rule" id="funnel_funnel_comp_rule">
+            <field name="name">Funnel multi-company</field>
+            <field name="model_id" ref="model_funnel_funnel"/>
+            <field name="global" eval="True"/>
+            <field name="domain_force">[('company_id', 'in', company_ids)]</field>
+        </record>
+
+        <record model="ir.rule" id="funnel_activity_comp_rule">
+            <field name="name">Funnel Activity multi-company</field>
+            <field name="model_id" ref="model_funnel_activity"/>
+            <field name="global" eval="True"/>
+            <field name="domain_force">[('company_id', 'in', company_ids)]</field>
+        </record>
+
+        <record model="ir.rule" id="funnel_transition_comp_rule">
+            <field name="name">Funnel Transition multi-company</field>
+            <field name="model_id" ref="model_funnel_transition"/>
+            <field name="global" eval="True"/>
+            <field name="domain_force">[('company_id', 'in', company_ids)]</field>
+        </record>
+
+        <record model="ir.rule" id="funnel_workitem_comp_rule">
+            <field name="name">Funnel Workitem multi-company</field>
+            <field name="model_id" ref="model_funnel_workitem"/>
+            <field name="global" eval="True"/>
+            <field name="domain_force">[('company_id', 'in', company_ids)]</field>
+        </record>
+
+
+      </data>
+</odoo>

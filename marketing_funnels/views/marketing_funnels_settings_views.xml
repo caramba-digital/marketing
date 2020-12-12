@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <menuitem
+            id="marketing_funnels_menu_config"
+            name="Configuration"
+            parent="marketing_funnels_menu_root"
+            sequence="80" groups="base.group_system"/>
+
+
+    <!-- Funnel Type--> 
+        <record model="ir.ui.view" id="view_funnels_funnel_type_tree">
+        <field name="name">funnel.type.tree</field>
+        <field name="model">funnel.type</field>
+        <field name="arch" type="xml">
+            <tree string="Funnel Type">
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+
+
+    <record model="ir.ui.view" id="view_funnels_funnel_type_form">
+        <field name="name">funnel.type.form</field>
+        <field name="model">funnel.type</field>
+        <field name="arch" type="xml">
+            <form string="Funnel Type">
+                <sheet>
+                    <group>
+                            <field name="name"/>
+                    </group>
+                    <group>
+                        <field name="description"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id='funnels_type_action' model='ir.actions.act_window'>
+        <field name="name">Funnel Type</field>
+        <field name="res_model">funnel.type</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+          <p class="o_view_nocontent_smiling_face">
+            Create a new funnel type
+          </p>
+        </field>
+    </record>
+
+    <menuitem id="menu_funnels_type" name="Funnel Type"
+            parent="marketing_funnels.marketing_funnels_menu_config"
+            action="funnels_type_action" sequence="1"/>
+
+
+    <!--Page Type-->
+    <record model="ir.ui.view" id="view_funnels_page_type_tree">
+        <field name="name">funnel.page_type.tree</field>
+        <field name="model">funnel.page.type</field>
+        <field name="arch" type="xml">
+            <tree string="Funnel Page Type">
+                <field name="name"/>
+                <field name="resource"/>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="view_funnels_page_type_form">
+        <field name="name">funnel.page.type.form</field>
+        <field name="model">funnel.page.type</field>
+        <field name="arch" type="xml">
+            <form string="Funnel Page Type">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                        </group>
+                        <group>
+                            <field name="funnel_types_ids"  widget="many2many_tags"/>
+                        </group>
+                    </group>
+                    <group>
+                        <group>
+                            <field name="resource"/>
+                        </group>
+                        <group>
+                            
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id='funnels_page_type_action' model='ir.actions.act_window'>
+        <field name="name">Funnel Page Type</field>
+        <field name="res_model">funnel.page.type</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+          <p class="o_view_nocontent_smiling_face">
+            Create a new funnel page type
+          </p>
+        </field>
+    </record>
+
+        <menuitem id="menu_funnels_page_type" name="Funnel Page Type"
+            parent="marketing_funnels.marketing_funnels_menu_config"
+            action="funnels_page_type_action" sequence="2"/>	
+
+    <!--Funel Page Styles-->
+
+    <record model="ir.ui.view" id="view_funnels_page_style_tree">
+        <field name="name">funnel.page.style.tree</field>
+        <field name="model">funnel.page.style</field>
+        <field name="arch" type="xml">
+            <tree string="Funnel Page Style">
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="view_funnels_page_style_form">
+        <field name="name">funnel.page.style.form</field>
+        <field name="model">funnel.page.style</field>
+        <field name="arch" type="xml">
+            <form string="Funnel Page Style">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                        </group>
+                        <group>
+                            <field name="theme_class"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id='funnels_page_style_action' model='ir.actions.act_window'>
+        <field name="name">Funnel Page Style</field>
+        <field name="res_model">funnel.page.style</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+          <p class="o_view_nocontent_smiling_face">
+            Create a new funnel page Style
+          </p>
+        </field>
+    </record>
+
+        <menuitem id="menu_funnels_page_style" name="Funnel Page Style"
+            parent="marketing_funnels.marketing_funnels_menu_config"
+            action="funnels_page_style_action" sequence="3"/>
+
+    <!-- Funnel Workitems -->
+    <record model="ir.ui.view" id="view_funnels_workitem_tree">
+        <field name="name">funnel.workitem.tree</field>
+        <field name="model">funnel.workitem</field>
+        <field name="arch" type="xml">
+            <tree decoration-danger="state == 'exception'" decoration-muted="state == 'cancelled'" string="Funnel Workflow">
+                <field name="activity_id"/>
+                <field name="object_id"/>
+                <field name="date"/>
+                <field name="state"/>
+                <button string="Cancel" states="todo" name="button_cancel" type="object" icon="fa-times-circle text-danger"/>
+                <button string="Preview" states="todo" name="preview" icon="fa-search-plus text-primary" type="object"/>
+                <button string="Process" states="todo" name="process" type="object" icon="fa-arrow-right text-success"/>
+            </tree>
+        </field>
+    </record>
+
+
+   <record model="ir.ui.view" id="view_funnel_workitem_form">
+        <field name="name">funnel.workitem.form</field>
+        <field name="model">funnel.workitem</field>
+        <field name="arch" type="xml">
+            <form string="Funnel Workflow">
+            <header>
+                <button string="Process" states="todo" name="process" type="object"/>
+                <button string="Reset" states="exception,cancelled" name="button_draft" type="object"/>
+                <button string="Cancel Workitem" states="todo,exception" name="button_cancel" type="object"/>
+                <field name="state" readonly="True" widget="statusbar" statusbar_visible="todo,done"/>
+                <button string="Preview" states="todo" name="preview" icon="fa-search-plus fa-lg text-primary" type="object"/>
+            </header>
+            <sheet>
+                <group>
+                    <group>
+                        <field name="activity_id"/>
+                        <field name="date"/>
+                        <field name="company_id" options="{'no_create': True}" groups="base.group_multi_company"/>
+                    </group>
+                    <group>
+                        <field name="object_id"/>
+                    </group>
+                </group>
+                <group attrs="{'invisible':[('state','!=','exception')]}" string="Error Message">
+                    <field name="error_msg" nolabel="1" colspan="2"/>
+                </group>
+            </sheet>
+            </form>
+        </field>
+    </record>
+
+        <record id="funnel_workitem_search" model="ir.ui.view">
+        <field name="name">funnel.workitem.search</field>
+        <field name="model">funnel.workitem</field>
+        <field name="arch" type="xml">
+            <search string="Funnels Workflows">
+                <group expand="0" string="Group By"  colspan="16">
+                      <filter string="Activity" name="activity" context="{'group_by':'activity_id'}"/>
+                      <filter string="Status" name="Status" context="{'group_by':'state'}"/>
+                      <filter string="Execution Month" name="Date" context="{'group_by':'date'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id='funnels_workitem_action' model='ir.actions.act_window'>
+        <field name="name">Funnel Workflow</field>
+        <field name="res_model">funnel.workitem</field>
+        <field name="view_mode">tree,form</field>
+        <field name="search_view_id" ref="funnel_workitem_search"/>
+        <field name="help" type="html">
+          <p class="o_view_nocontent_smiling_face">
+            Create a new funnel activity
+          </p>
+        </field>
+    </record>
+
+        <menuitem id="menu_funnels_workitem" name="Funnel Workflow"
+            parent="marketing_funnels.marketing_funnels_menu_config"
+            action="funnels_workitem_action" sequence="4"/>	
+
+<!--Gamification-->
+
+
+  <menuitem id="menu_marketing_funnels_gamification_config" name="Gamification"
+      parent="marketing_funnels.marketing_funnels_menu_config"
+        sequence="5"/>
+
+         <record id="funnel_badge_form_view" model="ir.ui.view">
+            <field name="name">gamification.badge.form.inherit</field>
+            <field name="model">gamification.badge</field>
+            <field name="inherit_id" ref="gamification.badge_form_view"/>
+            <field name="arch" type="xml">
+                <div name="button_box" position="inside">
+                    <button class="oe_stat_button" type="object" name="get_granted_cliets" attrs="{'invisible': [('granted_clients_count','=',0)]}" icon="fa-shopping-basket">
+                        <field name="granted_clients_count" string="Granted2" widget="statinfo"/>
+                    </button>
+                </div>
+            </field>
+        </record>
+
+
+
+        <record id="goals_menu_groupby_action2" model="ir.actions.act_window">
+            <field name="res_model">gamification.goal</field>
+            <field name="name">Goals History</field>
+            <field name="view_mode">tree,kanban</field>
+            <field name="context">{'search_default_group_by_user': True, 'search_default_group_by_definition': True}</field>
+            <field name="domain">[('challenge_id.category', '=', 'marketing')]</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Create a new goal
+                </p><p>
+                    A goal is defined by a user and a goal type.
+                    Goals can be created automatically by using challenges.
+                </p>
+            </field>
+        </record>
+
+
+        <record id="challenge_list_action2" model="ir.actions.act_window">
+            <field name="name">Challenges</field>
+            <field name="res_model">gamification.challenge</field>
+            <field name="view_mode">kanban,tree,form</field>
+            <field name="domain">[('category', '=', 'marketing')]</field>
+            <field name="context">{'search_default_inprogress':True, 'default_inprogress':True}</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Create a new challenge
+                </p><p>
+                    Assign a list of goals to chosen users to evaluate them.
+                    The challenge can use a period (weekly, monthly...) for automatic creation of goals.
+                    The goals are created for the specified users or member of the group.
+                </p>
+            </field>
+        </record>
+        <record id="challenge_list_action2_view1" model="ir.actions.act_window.view">
+            <field name="sequence" eval="1"/>
+            <field name="view_mode">kanban</field>
+            <field name="act_window_id" ref="challenge_list_action2"/>
+            <field name="view_id" ref="gamification.view_challenge_kanban"/>
+        </record>
+        <record id="challenge_list_action2_view2" model="ir.actions.act_window.view">
+            <field name="sequence" eval="10"/>
+            <field name="view_mode">form</field>
+            <field name="act_window_id" ref="challenge_list_action2"/>
+            <field name="view_id" ref="gamification.challenge_form_view"/>
+        </record>
+
+        <menuitem id="gamification_badge_menu_funnel" parent="menu_marketing_funnels_gamification_config" action="gamification.badge_list_action" />
+        <menuitem id="gamification_challenge_menu_funnel" parent="menu_marketing_funnels_gamification_config" action="challenge_list_action2" />
+        <menuitem id="gamification_goal_menu_funnel" parent="menu_marketing_funnels_gamification_config" action="goals_menu_groupby_action2" />
+
+  
+
+</odoo>

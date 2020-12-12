@@ -23,20 +23,52 @@ _logger = logging.getLogger(__name__)
 
 class WebsiteFunnel(http.Controller):
 
+    def _get_pricelist_context(self):
+        pricelist_context = dict(request.env.context)
+        pricelist = False
+        if not pricelist_context.get('pricelist'):
+            pricelist = request.website.get_current_pricelist()
+            pricelist_context['pricelist'] = pricelist.id
+        else:
+            pricelist = request.env['product.pricelist'].browse(pricelist_context['pricelist'])
+
+        return pricelist_context, pricelist
+
 
     @http.route([
         '''/touchpoint/<model("funnel.funnel", "[('website_id', 'in', (False, current_website_id))]"):funnel>/page/<model("funnel.page", "[('funnel_id','=',funnel[0])]"):funnel_page>''',
     ], type='http', auth="public", website=True)
     def funnel_page(self, funnel_page=None,  enable_editor=None, **opt):
+        pricelist_context, pricelist = self._get_pricelist_context()
+        request.context = dict(request.context, pricelist=pricelist.id, partner=request.env.user.partner_id)
         page = request.env['funnel.page'].sudo().browse(funnel_page.id)
-
         values = {
             'page':page,
             'enable_editor': enable_editor,
             'main_object': funnel_page,
+            'pricelist': pricelist,
             }
+        resource = page.type_id.resource
+        if resource=='product':
+            values['product']= page.product_id
+        elif  resource=='catalog':
+            values['products']= page.products_ids
+        elif  resource=='random':
+            set=2
+        elif  resource=='event':  
+            set=2
+        elif  resource=='newsletter':  
+            set=2
+        elif  resource=='lead':  
+            set=2
+        elif  resource=='coupon_program': 
+            set=2 
+        elif  resource=='badge':  
+            set=2
+        else:  
+            set=2  
         response = request.render("marketing_funnels.funnel_page", values)
-
+        _logger.warning('nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn: {}'.format(values['product']))
         request.session[request.session.sid] = request.session.get(request.session.sid, [])
         if not (funnel_page.id in request.session[request.session.sid]):
             request.session[request.session.sid].append(funnel_page.id)

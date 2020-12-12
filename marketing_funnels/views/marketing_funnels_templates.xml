@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+
+  <template id="funnel_page" name="Funnel Page Layout" >
+      <t t-call="website.layout">
+        <t t-set="no_header" t-value="True"/>
+        <t t-set="no_footer" t-value="True"/>
+        <header>
+           <nav class="navbar navbar-expand-md navbar-light bg-light">
+              <div class="container justify-content-between">
+                <span class="navbar-brand logo">
+                  <img t-att-src="'/logo.png?company=%s' % res_company.id" t-att-alt="'Logo of %s' % res_company.name" t-att-title="res_company.name"/>
+                </span>
+                <span class="navbar-nav">
+                  <t t-set="website_sale_order" t-value="website.sale_get_order()" />
+                  <a href="/shop/cart" class="btn btn-outline-primary">
+                      <i class="fa fa-shopping-cart"/>
+                      <span t-if="_text">My Cart</span>
+                      <sup class="my_cart_quantity badge badge-primary" t-esc="website_sale_order and website_sale_order.cart_quantity or '0'" t-att-data-order-id="website_sale_order and website_sale_order.id or ''"/>
+                  </a>
+                </span>
+              </div>
+           </nav>
+        </header>
+        <div t-field="page.content_top" class="oe_structure" id="funnel_page" /> 
+        <t t-if="page.type_id.resource=='product'"><t t-call="marketing_funnels.funnel_type_product"/></t>
+        <t t-if="page.type_id.resource=='catalog'"><t t-call="marketing_funnels.funnel_type_catalog"/></t>
+        <t t-if="page.type_id.resource=='event'"><t t-call="marketing_funnels.funnel_type_event"/></t>
+        <t t-if="page.type_id.resource=='newsletter'"><t t-call="marketing_funnels.funnel_type_newsletter"/></t>
+        <t t-if="page.type_id.resource=='lead'"><t t-call="marketing_funnels.funnel_type_lead"/></t>
+        <t t-if="page.type_id.resource=='coupon_program'"><t t-call="marketing_funnels.funnel_type_coupon_program"/></t>
+        <t t-if="page.type_id.resource=='badge'"><t t-call="marketing_funnels.funnel_type_badge"/></t>
+        <t t-else=""></t>
+        <div t-field="page.content_bottom" class="oe_structure" id="funnel_page" />      
+    </t>
+  </template>
+
+  <template id="funnel_type_product" name="Funnel Page Product" >
+    <section class="pt32 pb32">
+      <div class="container">
+        <h1 itemprop="name" t-field="product.name">Product Name</h1>
+        <div class="row">
+          <div class="col-md-6 col-xl-8">
+              <t t-call="website_sale.shop_product_carousel"/>
+          </div>
+          <div class="col-md-6 col-xl-4" id="product_details">
+            <div>
+              <p t-field="product.description_sale" class="text-muted mt-3" placeholder="A short description that will also appear on documents." />
+              <div id="product_attributes_simple">
+                <hr t-if="sum([(1 if len(l.value_ids)==1 else 0) for l in product.attribute_line_ids])"/>
+                <p class="text-muted">
+                  <t t-set="single_value_attributes" t-value="product.valid_product_template_attribute_line_ids._prepare_single_value_for_display()"/>
+                  <t t-foreach="single_value_attributes" t-as="attribute">
+                    <span t-field="attribute.name"/>:
+                    <t t-foreach="single_value_attributes[attribute]" t-as="ptal">
+                      <span t-field="ptal.product_template_value_ids._only_active().name"/><t t-if="not ptal_last">, </t>
+                    </t>
+                    <br/>
+                  </t>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+             <form t-if="product._is_add_to_cart_possible()" action="/shop/cart/update" method="POST">
+             </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </template>
+
+  <template id="funnel_type_catalog" name="Funnel Page Catalog" >
+    <section class="pt32 pb32">
+      <div class="container">
+        <div class="row">
+          <t t-foreach="products" t-as="product">
+            <div class="col-lg-3 mb-4">
+              <div class="card">
+                <a t-att-href="product.website_url" class="funnels-catalog-img">
+                  <span t-field="product.image_1920" t-options="{'widget': 'image', 'qweb_img_responsive': False}" />
+                </a>
+                <div class="card-body">
+                  <h6 class="card-title" t-field="product.name"/>
+                </div>
+                <div class="card-footer">
+                  <small class="text-muted">Last updated 3 mins ago</small>
+                </div>
+              </div>
+            </div>
+          </t>
+        </div>
+      </div>
+    </section>
+  </template>
+
+  <template id="funnel_type_event" name="Funnel Page Event" >
+    <h1>Event</h1>
+  </template>
+
+  <template id="funnel_type_newsletter" name="Funnel Page Newsletter" >
+    <h1>Newsletter</h1>
+  </template>
+
+  <template id="funnel_type_lead" name="Funnel Page Layout Lead" >
+    <h1>Lead</h1>
+  </template>
+
+  <template id="funnel_type_coupon_program" name="Funnel Page Coupon Program" >
+    <h1>Coupon Program</h1>
+  </template>
+
+  <template id="funnel_type_badge" name="Funnel Page Layout Badge" >
+    <h1>Badge</h1>
+  </template>
+
+</odoo>

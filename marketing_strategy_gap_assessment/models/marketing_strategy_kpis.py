@@ -79,11 +79,13 @@ class MarketingPlanKpisTracking(models.Model):
     haters = fields.Integer()
     brand_sentiment = fields.selection([('negative','Negative'),('neutral','Neutral'),('positive','Positive')])
     #master
+    ltv = fields.Monetary('Life Time Value')
+    cac = fields.Monetary('Customer Acquisition Cost')
     ltv_cac = fields.Monetary('LTV:CAC')
     net_income = fields.Monetary() 
     Investment = fields.Monetary()
-    roas = fields.Float()
-
+    roas = fields.Monetary('ROAS', help='Return on Ad Spend')
+    roi = fields.Monetary('ROI', help='Return on Investment')
     plan_id = fields.Many2one('marketing_strategy.plan_tracking')
 
 

@@ -32,21 +32,31 @@ class FunnelType(models.Model):
     _description = 'Funnel Type'
 
     name = fields.Char('Funnel Type', required=True, translate=True)
+    description= fields.Text('Description')
 
 class FunnelPageType(models.Model):
     _name = 'funnel.page.type'
     _description = 'Funnel Page Type'
 
-    name = fields.Char('Funnel Type', required=True, translate=True)
+    name = fields.Char('Funnel Page Type', required=True, translate=True)
     resource = fields.Selection([
         ('product','Product'),
         ('catalog', 'Catalog'), 
+        ('random', 'Random'), 
         ('event','Event'),
         ('newsletter','Newsletter'),
         ('lead','Lead'),
         ('coupon_program','Coupon Program'),
         ('badge','Badge'),
-        ('none','None')], required=True)
+        ('none','None')], required=True, default="none")
+    funnel_types_ids = fields.Many2many('funnel.type', 'funnel_page_funnel_type_rel', 'page_id', 'funnel_type_id', string="Funnels Type", help='Visible in these type of funnels')
+
+class FunnelPageStyle(models.Model):
+    _name = 'funnel.page.style'
+    _description = 'Funnel Page Style'
+
+    name = fields.Char('Name', required=True, translate=True)
+    theme_class = fields.Char('Class')
 
 
 class Funnel(models.Model):
@@ -60,10 +70,10 @@ class Funnel(models.Model):
 
     name = fields.Char('Funnel Name', required=True, translate=True)
     type_id = fields.Many2one('funnel.type', required=True)
-    brand_id = fields.Many2one('marketing_strategy.brand', domain = [('relation','=', 'main')], string='Brand', required=True)
     object_id = fields.Many2one('ir.model', 'Resource', required=True, domain=[('model','in',['res.partner', 'sale.order','crm.lead','event.registration','website.visitor', 'mailing.contact'])],
         help="Choose the resource on which you want this Funnel to be run", ondelete='cascade')
     color = fields.Integer('Kanban Color Index')
+    social_proof_interval = fields.Integer('Social Proof Interval', default= 5, help='Maximum tracking time in hours')
     parent_funnel_id = fields.Many2one('funnel.funnel', 'Parent Funnel')
     child_funnel_id = fields.Many2one('funnel.funnel', 'Child Funnel')
     buyer_journey_stage = fields.Selection([('awareness','Awareness'),('consideration','Consideration'),('purchase','Purchase'),('service','Service'),('loyalty','Loyalty')], string="Buyer's Journey Stage", default='awareness', required=True, copy=False, track_visibility='onchange', group_expand='_expand_buyer_journey')
@@ -88,6 +98,17 @@ class FunnelPage(models.Model):
             if funnel_page.id:
                 funnel_page.website_url = "/touchpoint/%s/page/%s" % (slug(funnel_page.funnel_id), slug(funnel_page))
 
+    def _get_funnels_types(self):
+        if 'params' in self.env.context.keys():
+            if 'id' in self.env.context['params'].keys():
+                funnel_id = self.env.context['params']['id']
+                funnel_type = self.env['funnel.funnel'].browse(funnel_id).type_id
+                res = []
+                for page_type in  self.env['funnel.page.type'].search([]):
+                    if funnel_type in page_type.funnel_ids:
+                        res.append( page_type.id)
+        return [('funnel_ids', 'in',res)]
+
 
 
     name = fields.Char('Page Name', required=True, translate=True)
@@ -99,13 +120,17 @@ class FunnelPage(models.Model):
     content_top = fields.Html('Top Content', default=_default_content, translate=html_translate, sanitize=False)
     content_bottom = fields.Html('Bottom Content', default=_default_content, translate=html_translate, sanitize=False)
     product_id = fields.Many2one(
-        'product.product', string='Product', domain="[('sale_ok', '=', True)]",
+        'product.product', string='Product', domain=[('sale_ok', '=', True)],
         change_default=True, check_company=True) 
-    products_ids = fields.Many2many('product.product', 'funnel_page_product_rel', 'page_id', 'page_prodyct_id', domain="[('sale_ok', '=', True)]", string='Products')
+    products_ids = fields.Many2many('product.product', 'funnel_page_product_rel', 'page_id', 'page_prodyct_id', domain=[('sale_ok', '=', True)], string='Products')
     event_id = fields.Many2one('event.event')
     badge_id = fields.Many2one('gamification.badge')
     coupon_program_id = fields.Many2one('coupon.program')
+    has_form = fields.Boolean(default=True)
+    random_product = fields.Boolean(default=False)
+    style_id = fields.Many2one('funnel.page.style')
     mailing_list_id = fields.Many2one('mailing.list', string='')
+    social_proof_notification = fields.Boolean('Social Proof Notifications', default=False, help='')
     resource = fields.Char(compute='_get_resource', store=True)
     activity_ids = fields.One2many('funnel.activity', 'page_id', 'Activities')
     last_date = fields.Datetime('Last View')
@@ -118,6 +143,7 @@ class FunnelPage(models.Model):
     def _get_resource(self):
         for record in self:
             record.resource = self.type_id.resource
+
 
     
     def process_activities(self, object_id, res_id):
