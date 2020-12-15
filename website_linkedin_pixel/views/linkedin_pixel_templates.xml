@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+<template id="linkedin_pixel" name="Linkedin Pixel" inherit_id="portal.frontend_layout">
+  <xpath expr="//div[@id='wrapwrap']" position="after">
+      <script type="text/javascript">
+        _linkedin_partner_id = "<t t-esc="website.linkedin_pixel"/>";
+        window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
+        window._linkedin_data_partner_ids.push(_linkedin_partner_id);
+        </script><script type="text/javascript">
+        (function(){var s = document.getElementsByTagName("script")[0];
+        var b = document.createElement("script");
+        b.type = "text/javascript";b.async = true;
+        b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
+        s.parentNode.insertBefore(b, s);})();
+      </script>
+      <noscript>
+        <img height="1" width="1" style="display:none;" alt="" t-att-src="'https://px.ads.linkedin.com/collect/?pid={}&amp;fmt=gif'.format(website.linkedin_pixel)" />
+      </noscript>
+  </xpath>
+</template>
+  
+</odoo>
