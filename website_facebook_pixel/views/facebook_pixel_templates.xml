@@ -12,7 +12,7 @@
         t.src=v;s=b.getElementsByTagName(e)[0];
         s.parentNode.insertBefore(t,s)}(window, document,'script',
         'https://connect.facebook.net/en_US/fbevents.js');
-        fbq('init', '<t t-esc="website.facebook_pixel"/>';
+        fbq('init', '<t t-esc="website.facebook_pixel"/>');
         fbq('track', 'PageView');
       </script>
       <noscript>
