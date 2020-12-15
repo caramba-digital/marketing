@@ -49,7 +49,6 @@
                                     <field name="id"/>
                                     <field name="name"/>
                                     <field name="format"/>
-                                    <field name="mode"/>
                                     <templates>
                                         <t t-name="kanban-box">
                                             <div class="oe_kanban_global_click">
@@ -61,7 +60,6 @@
                                                     </h4> 
                                                     <ul>
                                                         <li>Format:  <field name="format"/></li>
-                                                        <li>Mode: <field name="mode"/></li>
                                                     </ul>
                                                 </div>
                                                 <div class="oe_clear"/>
@@ -169,45 +167,11 @@
                             <field name="company_id" options="{'no_create': True}" groups="base.group_multi_company"/>
                         </group>
                         <group>
-                            <field name="mode"/>
                             <field name="format"/>
                         </group>
                     </group>
                     <notebook colspan="4">
-                        <page string="Heroes">
-                    	<field name="buyers_ids" context="{'content_id': active_id}"  mode="kanban" nolabel="1" >
-                    		<kanban>
-                    			<field name="id"/>
-                                <field name="color"/>
-                                <field name="name"/>
-                                 <field name="status"/>
-                                  <field name="personality"/>
-                                 <field name="image_128"/>
-                                <templates>
-                                	<t t-name="kanban-box">
-                                        <div t-attf-class="#{kanban_color(record.color.raw_value)} oe_kanban_global_click o_kanban_record_has_image_fill">
-                            
-                                 <field name="image_128" widget="image" class="o_kanban_image_fill_left" options="{'zoom': true, 'zoom_delay': 1000, 'background': true, 'preventClicks': false}"/>
-
-                                        <div class="oe_kanban_details">
-                                 <h4 class="oe_partner_heading">
-                                    <a type="open" class="o_kanban_record_title">
-                                        <field name="name"/>
-                                    </a>
-                                </h4> 
-                               <ul>
-                                 <li>Civil Status: <field name="status"/></li>
-                                 <li>Personality: <field name="personality"/></li>
-                                 </ul>
-                                 </div>                             
-                        		<div class="oe_clear"/>
-                                        </div>         
-                                	</t>
-                                </templates>                                            
-                    		</kanban>
-                    	</field> 
-                        </page>
-                        <page string="Content" autofocus="autofocus">
+                        <page string="Draft" autofocus="autofocus">
                             <field name="content" widget="html" nolabel="1"/>
                         </page>
                         <page string="Touchpoints">
@@ -257,7 +221,6 @@
                 <field name="name" />
                 <field name="theme_id" />
                 <field name="chapter" />
-                <field name="mode" />
                 <field name="message_needaction_counter"/>
                 <field name="activity_ids"/>
                 <field name="activity_state"/>
@@ -273,7 +236,6 @@
                                 <ul>
                                     <li>Theme: <field name="theme_id"/></li>
                                     <li>Chapter: <field name="chapter"/></li>
-                                    <li>Mode: <field name="mode"/></li>
                                  </ul>
                             </div>
                             <div class="o_kanban_record_bottom">

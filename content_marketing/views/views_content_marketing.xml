@@ -25,7 +25,7 @@
             <field name="arch" type="xml">
             <xpath expr="//sheet/group" position="before">
                 <header>
-                     <field name="state" widget="statusbar" statusbar_visible="draft,copywriting,proofreading,design,seo,publication,done" options="{'clickable': '1'}" groups="content_marketing.group_content_marketing_user, content_matketing.group_content_marketing_manager"/>
+                     <field name="state" widget="statusbar" statusbar_visible="draft,copywriting,proofreading,design,seo,publication,done" options="{'clickable': '1'}" groups="content_marketing.group_content_marketing_user, content_marketing.group_content_marketing_manager"/>
                 </header>
             </xpath>
               <xpath expr="//sheet/group" position="after">

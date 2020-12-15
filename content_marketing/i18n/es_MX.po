@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-11-10 22:05+0000\n"
-"PO-Revision-Date: 2020-11-10 16:08-0600\n"
+"POT-Creation-Date: 2020-12-15 17:51+0000\n"
+"PO-Revision-Date: 2020-12-15 11:52-0600\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -131,7 +131,7 @@ msgstr "Responsables"
 #. module: content_marketing
 #: model:ir.model.fields.selection,name:content_marketing.selection__marketing_strategy_story_brand_content__state__seo
 msgid "SEO"
-msgstr ""
+msgstr "SEO"
 
 #. module: content_marketing
 #: model:ir.model.fields,field_description:content_marketing.field_blog_post__scheduled_date

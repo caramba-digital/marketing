@@ -50,13 +50,11 @@ class MarketingStrategyStoryBrandContent(models.Model):
 
     name = fields.Char('Name', required=True)
     content = fields.Html()
-    mode = fields.Selection([('search','Search'),('display','Display'),('organic','Organic'), ('opt_in','Opt-in')])
     format = fields.Selection([('blog','Blog'),('longform_content','Longform Content'),('case_study','Case Study'),('white_paper','White Paper'),('ebook','Ebook'),('infographic','Infographic'),('survey','Survey'),('video','Video'),('short_video','Short Video'),('webinar','Webinar'),('online_curse','Online Course'),('email','email'), ('podcast','Podcast')])
     theme_id = fields.Many2one('marketing_strategy.story_brand.theme', ondelete='cascade')
-    touch_point_ids = fields.Many2many('marketing_strategy.touchpoint', 'marketing_strategy_content_touchpoint_rel', 'touchpoint_id', 'content_id', string="Brand Story")
+    touch_point_ids = fields.Many2many('marketing_strategy.touchpoint', 'marketing_strategy_content_touchpoint_rel', 'touchpoint_id', 'content_id', string="Touchpoints")
     chapter = fields.Selection(CHAPTERS, related='theme_id.chapter', readonly=True, store=True)
     story_brand_id = fields.Many2one('marketing_strategy.story_brand', related='theme_id.story_brand_id', readonly=True, store=True)
-    buyers_ids = fields.Many2many('marketing_strategy.buyer_persona', 'marketing_strategy_content_heroes', 'content_id', 'buyer_persona_id', string='Heroes')    
     company_id = fields.Many2one('res.company', 'Company', required=True, index=True, default=lambda self: self.env.company)
 
 
