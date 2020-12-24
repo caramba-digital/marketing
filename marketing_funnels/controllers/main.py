@@ -39,18 +39,15 @@ class WebsiteFunnel(http.Controller):
         '''/touchpoint/<model("funnel.funnel", "[('website_id', 'in', (False, current_website_id))]"):funnel>/page/<model("funnel.page", "[('funnel_id','=',funnel[0])]"):funnel_page>''',
     ], type='http', auth="public", website=True)
     def funnel_page(self, funnel_page=None,  enable_editor=None, **opt):
-        pricelist_context, pricelist = self._get_pricelist_context()
-        request.context = dict(request.context, pricelist=pricelist.id, partner=request.env.user.partner_id)
         page = request.env['funnel.page'].sudo().browse(funnel_page.id)
         values = {
             'page':page,
             'enable_editor': enable_editor,
-            'main_object': funnel_page,
-            'pricelist': pricelist,
+            'main_object': funnel_page
             }
         resource = page.type_id.resource
         if resource=='product':
-            values['product']= page.product_id
+            values.update(self._prepare_product_values(page.product_id))
         elif  resource=='catalog':
             values['products']= page.products_ids
         elif  resource=='random':
@@ -68,7 +65,6 @@ class WebsiteFunnel(http.Controller):
         else:  
             set=2  
         response = request.render("marketing_funnels.funnel_page", values)
-        _logger.warning('nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn: {}'.format(values['product']))
         request.session[request.session.sid] = request.session.get(request.session.sid, [])
         if not (funnel_page.id in request.session[request.session.sid]):
             request.session[request.session.sid].append(funnel_page.id)
@@ -79,6 +75,43 @@ class WebsiteFunnel(http.Controller):
             })
             # Start activities
         return response
+
+
+
+    def _prepare_product_values(self, product, **kwargs):
+        add_qty = int(kwargs.get('add_qty', 1))
+        product_context = dict(request.env.context, quantity=add_qty,
+                                active_id=product.id,
+                                partner=request.env.user.partner_id)
+        attrib_list = request.httprequest.args.getlist('attrib')
+        attrib_values = [[int(x) for x in v.split("-")] for v in attrib_list if v]
+        attrib_set = {v[1] for v in attrib_values}
+        pricelist = request.website.get_current_pricelist()
+        if not product_context.get('pricelist'):
+                product_context['pricelist'] = pricelist.id
+                product = product.with_context(product_context)
+
+            # Needed to trigger the recently viewed product rpc
+        view_track = request.website.viewref("website_sale.product").track
+        return {
+                'pricelist': pricelist,
+                'attrib_values': attrib_values,
+                'attrib_set': attrib_set,
+                'main_object': product,
+                'product': product,
+                'add_qty': add_qty,
+                'view_track': view_track,
+            }
+    @http.route(['/funnel/get_social_proof'], type='json', auth='public', website=True)
+    def get_social_proof(self, template, **kwargs):
+        return request.website.viewref(template)._render({})
+        
+
+
+
+
+
+
 
 class WebsiteForm(WebsiteForm):
     

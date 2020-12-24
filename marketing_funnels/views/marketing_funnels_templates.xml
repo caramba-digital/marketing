@@ -24,77 +24,192 @@
            </nav>
         </header>
         <div t-field="page.content_top" class="oe_structure" id="funnel_page" /> 
-        <t t-if="page.type_id.resource=='product'"><t t-call="marketing_funnels.funnel_type_product"/></t>
-        <t t-if="page.type_id.resource=='catalog'"><t t-call="marketing_funnels.funnel_type_catalog"/></t>
-        <t t-if="page.type_id.resource=='event'"><t t-call="marketing_funnels.funnel_type_event"/></t>
-        <t t-if="page.type_id.resource=='newsletter'"><t t-call="marketing_funnels.funnel_type_newsletter"/></t>
-        <t t-if="page.type_id.resource=='lead'"><t t-call="marketing_funnels.funnel_type_lead"/></t>
-        <t t-if="page.type_id.resource=='coupon_program'"><t t-call="marketing_funnels.funnel_type_coupon_program"/></t>
-        <t t-if="page.type_id.resource=='badge'"><t t-call="marketing_funnels.funnel_type_badge"/></t>
-        <t t-else=""></t>
-        <div t-field="page.content_bottom" class="oe_structure" id="funnel_page" />      
-    </t>
+        <div t-att-class="'content-fluid '+ page.style_id.theme_class">
+          <t t-if="page.type_id.resource=='product'"><t t-call="marketing_funnels.funnel_type_product"/></t>
+          <t t-if="page.type_id.resource=='catalog'"><t t-call="marketing_funnels.funnel_type_catalog"/></t>
+          <t t-if="page.type_id.resource=='event'"><t t-call="marketing_funnels.funnel_type_event"/></t>
+          <t t-if="page.type_id.resource=='newsletter'"><t t-call="marketing_funnels.funnel_type_newsletter"/></t>
+          <t t-if="page.type_id.resource=='lead'"><t t-call="marketing_funnels.funnel_type_lead"/></t>
+          <t t-if="page.type_id.resource=='coupon_program'"><t t-call="marketing_funnels.funnel_type_coupon_program"/></t>
+          <t t-if="page.type_id.resource=='badge'"><t t-call="marketing_funnels.funnel_type_badge"/></t>
+          <t t-else=""></t>
+        </div>
+        <div t-field="page.content_bottom" class="oe_structure" id="funnel_page" />     
+        <t t-if="page.social_proof_notification==True"><t t-call="marketing_funnels.funnel_type_badge"/></t>
+  </template>
+
+  <template id="social_proof" name="Funnels Social Proof">
+  <h1>Puto</h1>
+      <div class="toast" >
+        <div class="toast-header">
+          <strong class="mr-auto">Bootstrap</strong>
+          <small class="text-muted">11 mins ago</small>
+          <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+            <span aria-hidden="true">x</span>
+          </button>
+        </div>
+        <div class="toast-body">
+          Hello, world! This is a toast message.
+        </div>
+      </div>
   </template>
 
   <template id="funnel_type_product" name="Funnel Page Product" >
-    <section class="pt32 pb32">
-      <div class="container">
-        <h1 itemprop="name" t-field="product.name">Product Name</h1>
-        <div class="row">
-          <div class="col-md-6 col-xl-8">
-              <t t-call="website_sale.shop_product_carousel"/>
-          </div>
-          <div class="col-md-6 col-xl-4" id="product_details">
-            <div>
-              <p t-field="product.description_sale" class="text-muted mt-3" placeholder="A short description that will also appear on documents." />
-              <div id="product_attributes_simple">
-                <hr t-if="sum([(1 if len(l.value_ids)==1 else 0) for l in product.attribute_line_ids])"/>
-                <p class="text-muted">
-                  <t t-set="single_value_attributes" t-value="product.valid_product_template_attribute_line_ids._prepare_single_value_for_display()"/>
-                  <t t-foreach="single_value_attributes" t-as="attribute">
-                    <span t-field="attribute.name"/>:
-                    <t t-foreach="single_value_attributes[attribute]" t-as="ptal">
-                      <span t-field="ptal.product_template_value_ids._only_active().name"/><t t-if="not ptal_last">, </t>
-                    </t>
-                    <br/>
-                  </t>
-                </p>
-              </div>
-            </div>
-          </div>
+    <t t-set="combination" t-value="product._get_first_possible_combination()"/>
+    <t t-set="combination_info" t-value="product._get_combination_info(combination, add_qty=add_qty or 1, pricelist=pricelist)"/>
+    <t t-set="product_variant" t-value="product.env['product.product'].browse(combination_info['product_id'])"/>
+    <t t-set="additional_title" t-value="product.name" />
+    <t t-if="page.has_zoom==True">
+      <t t-set="zoom_class" t-value="'js_sale ecom-zoomable zoomodoo-next'" />
+      <t t-set="zoom_data" t-value="1" />
+    </t>
+    <t t-else="">
+      <t t-set="zoom_class" t-value="'js_sale'" />
+      <t t-set="zoom_data" t-value="0" /> 
+    </t>
+    <div itemscope="itemscope" itemtype="http://schema.org/Product" id="wrap" t-att-class="zoom_class + ' pt32 pb32'" t-att-data-ecom-zoom-auto="zoom_data">
+     <section t-attf-class="container py-2 oe_website_sale #{'discount' if combination_info['has_discounted_price'] else ''} " id="product_detail" t-att-data-view-track="view_track and '1' or '0'">
+      <div class="row">
+        <div class="col-md-6 col-xl-8">
+          <t t-call="website_sale.shop_product_carousel"/>
         </div>
-        <div class="row">
-          <div class="col">
-             <form t-if="product._is_add_to_cart_possible()" action="/shop/cart/update" method="POST">
-             </form>
-          </div>
+        <div class="col-md-6 col-xl-4" id="product_details">
+          <h1 itemprop="name" class="funnels-h1" t-field="product.name">Product Name</h1>
+          <span itemprop="url" style="display:none;" t-esc="product.website_url"/>
+          <form t-if="product._is_add_to_cart_possible()" action="/shop/cart/update" method="POST">
+            <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()" />
+             <div class="js_product js_main_product">
+              <t t-placeholder="select">
+                <input type="hidden" class="product_id" name="product_id" t-att-value="product_variant.id" />
+                <input type="hidden" class="product_template_id" name="product_template_id" t-att-value="product.id" />
+                <t t-if="combination" t-call="sale.variants">
+                  <t t-set="ul_class" t-value="'flex-column'" />
+                  <t t-set="parent_combination" t-value="None" />
+                </t>
+                <t t-else="">
+                  <ul class="d-none js_add_cart_variants" t-att-data-attribute_exclusions="{'exclusions: []'}"/>
+                </t>
+              </t>
+              <t t-call="website_sale.product_price" />
+              <p t-if="True" class="css_not_available_msg alert alert-warning">This combination does not exist.</p>
+              <a role="button" id="add_to_cart" class="btn btn-primary btn-lg mt16 js_check_product a-submit d-block d-sm-inline-block" href="#"><i class="fa fa-shopping-cart"/> Add to Cart</a>
+              <div id="product_option_block"/>
+            </div>
+          </form>
+          <p t-elif="not product.active" class="alert alert-warning">This product is no longer available.</p>
+          <p t-else="" class="alert alert-warning">This product has no valid combination.</p>
         </div>
       </div>
-    </section>
+     </section>
+     <div itemprop="description" t-field="product.website_description" class="oe_structure oe_empty mt16" id="product_full_description"/>
+    </div>
   </template>
 
   <template id="funnel_type_catalog" name="Funnel Page Catalog" >
-    <section class="pt32 pb32">
-      <div class="container">
-        <div class="row">
-          <t t-foreach="products" t-as="product">
-            <div class="col-lg-3 mb-4">
-              <div class="card">
-                <a t-att-href="product.website_url" class="funnels-catalog-img">
-                  <span t-field="product.image_1920" t-options="{'widget': 'image', 'qweb_img_responsive': False}" />
-                </a>
-                <div class="card-body">
-                  <h6 class="card-title" t-field="product.name"/>
-                </div>
-                <div class="card-footer">
-                  <small class="text-muted">Last updated 3 mins ago</small>
+          <t t-if="page.catalogue_mode=='s_carousel'">
+            <section id="swiper-coverflow" data-pagination="numbered" data-container=".funnels-products" class="s_comparisons pt32 pb32">
+              <div class="swiper-container funnels-products" id="swiper-container">
+                  <div class="swiper-wrapper">
+                    <t t-foreach="products" t-as="product">
+                    <t t-set="combination" t-value="product._get_first_possible_combination()"/>
+                    <t t-set="combination_info" t-value="product._get_combination_info(combination, add_qty=add_qty or 1, pricelist=pricelist)"/>
+                      <div class="swiper-slide card bg-white">
+                        <h4 class="card-header" t-field="product.name"/>
+                        <div class="card-body text-center">
+                          <h2 class="card-title">
+                            <span class="s_comparisons_currency" t-esc="website.currency_id.symbol" />
+                            <span class="s_comparisons_price"><b t-esc="int(combination_info['price'])"/></span>
+                            <span class="s_comparisons_decimal" t-raw="str(round(combination_info['price'] - int(combination_info['price']),2)).replace('0.','.')" />
+                          </h2>
+                          <small t-esc="'/ ' + product.uom_name"/>
+                        </div>
+                        <ul class="list-group list-group-flush" t-foreach="product.service_ids" t-as="c">
+                          <li class="list-group-item" t-esc="c.name" />
+                        </ul>
+                        <div class="card-footer">
+                          <p><i>Instant setup, satisfied or reimbursed.</i></p>
+                          <a href="/contactus" class="btn btn-primary mb-2">Order now</a>
+                        </div>
+                      </div>
+                    </t>
+                  </div>
+              </div>
+            </section>
+          </t>
+          <t t-elif="page.catalogue_mode=='p_carousel'">
+            <section id="swiper-coverflow" data-pagination="numbered" data-container=".funnels-products" class="pt32 pb32">
+              <div class="swiper-container funnels-products" id="swiper-container">
+                <div class="swiper-wrapper">
+                  <t t-foreach="products" t-as="product">
+                      <div class="swiper-slide card bg-white h-100">
+                        <a t-att-href="product.website_url" class="funnels-catalog-img">
+                          <span t-field="product.image_1920" t-options="{'widget': 'image', 'qweb_img_responsive': False, 'class':'card-img-top'}" />
+                        </a>
+                        <div class="card-body">
+                          <h4 class="card-title text-dark" t-field="product.name"/>
+                        </div>
+                        <div class="card-footer">
+                        </div>
+                      </div>
+                  </t>
                 </div>
               </div>
-            </div>
+            </section>
           </t>
-        </div>
-      </div>
-    </section>
+          <t t-elif="page.catalogue_mode=='s_cards'">
+            <section class="s_comparisons pt32 pb32">
+                <div class="container">
+                    <div class="row">
+                       <t t-foreach="products" t-as="product">
+                        <t t-set="combination" t-value="product._get_first_possible_combination()"/>
+                        <t t-set="combination_info" t-value="product._get_combination_info(combination, add_qty=add_qty or 1, pricelist=pricelist)"/>
+                        <div class="col-lg-4 s_col_no_bgcolor text-center pt32 pb16" >
+                          <div class="card bg-200">
+                             <h4 class="card-header" t-field="product.name"/>
+                            <div class="card-body text-center">
+                                <h2 class="card-title">
+                                    <span class="s_comparisons_currency" t-esc="website.currency_id.symbol" />
+                                    <span class="s_comparisons_price"><b t-esc="int(combination_info['price'])"/></span>
+                                    <span class="s_comparisons_decimal" t-raw="str(round(combination_info['price'] - int(combination_info['price']),2)).replace('0.','.')" />
+                                </h2>
+                                <small t-esc="'/ ' + product.uom_name"/>
+                            </div>
+                            <ul class="list-group list-group-flush" t-foreach="product.service_ids" t-as="c">
+                                <li class="list-group-item" t-esc="c.name" />
+                            </ul>
+                            <div class="card-footer">
+                                <p><i>Instant setup, satisfied or reimbursed.</i></p>
+                                <a href="/contactus" class="btn btn-primary mb-2">Order now</a>
+                            </div>
+                          </div>
+                        </div>
+                       </t>
+                    </div>
+                </div>
+            </section>
+          </t>
+          <t t-else="">
+            <section class="pt32 pb32">
+              <div class="container">
+                <div class="row d-flex align-items-stretch">
+                  <t t-foreach="products" t-as="product">
+                    <div class="col-lg-3 mb-4">
+                      <div class="card bg-white h-100">
+                        <a t-att-href="product.website_url" class="funnels-catalog-img">
+                          <span t-field="product.image_1920" t-options="{'widget': 'image', 'qweb_img_responsive': False, 'class':'card-img-top'}" />
+                        </a>
+                        <div class="card-body">
+                          <h4 class="card-title text-dark" t-field="product.name"/>
+                        </div>
+                        <div class="card-footer">
+                        </div>
+                      </div>
+                    </div>
+                  </t>
+                </div>  
+              </div>
+            </section>
+          </t>
   </template>
 
   <template id="funnel_type_event" name="Funnel Page Event" >

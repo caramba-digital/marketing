@@ -21,10 +21,35 @@
               <div class="row mt16">
                  <label class="col-lg-3 o_light_label" string="Pixel ID" for="facebook_pixel"/>
                  <field name="facebook_pixel" placeholder="XXXXXXXXXXXXXXX"
-                                                attrs="{'required': [('has_facebook_pixel', '=', True)]}"/>
+                                                attrs="{'required': [('has_facebook_pixel', '=', True)]}"/>                
+                 <label class="col-lg-3 o_light_label" string="Purchase" for="fb_track_purchase"/>
+                 <field name="fb_track_purchase" attrs="{'required': [('has_facebook_pixel', '=', True)]}"/>              
+                 <label class="col-lg-3 o_light_label" string="Lead" for="fb_track_lead"/>
+                 <field name="fb_track_lead" attrs="{'required': [('has_facebook_pixel', '=', True)]}"/>              
+                 <label class="col-lg-3 o_light_label" string="Complete Registration" for="fb_track_registration"/>
+                 <field name="fb_track_registration" attrs="{'required': [('has_facebook_pixel', '=', True)]}"/>                   
+                 <label class="col-lg-3 o_light_label" string="Add Payment Info" for="fb_track_payment_info"/>
+                 <field name="fb_track_payment_info" attrs="{'required': [('has_facebook_pixel', '=', True)]}"/>              
+                 <label class="col-lg-3 o_light_label" string="Add to Chart" for="fb_track_add_to_chart"/>
+                 <field name="fb_track_add_to_chart" attrs="{'required': [('has_facebook_pixel', '=', True)]}"/>              
+                 <label class="col-lg-3 o_light_label" string="Add to Wishlist" for="fb_track_add_to_wishlist"/>
+                 <field name="fb_track_add_to_wishlist" attrs="{'required': [('has_facebook_pixel', '=', True)]}"/>              
+                 <label class="col-lg-3 o_light_label" string="Initiate Checkout" for="fb_track_initiate_checkout"/>
+                 <field name="fb_track_initiate_checkout" attrs="{'required': [('has_facebook_pixel', '=', True)]}"/>              
+                 <label class="col-lg-3 o_light_label" string="Search" for="fb_track_search"/>
+                 <field name="fb_track_search" attrs="{'required': [('has_facebook_pixel', '=', True)]}"/>              
+                 <label class="col-lg-3 o_light_label" string="View Content" for="fb_track_view_content"/>
+                 <field name="fb_track_view_content" attrs="{'required': [('has_facebook_pixel', '=', True)]}"/>              
+                 <label class="col-lg-3 o_light_label" string="Contact" for="fb_track_contact"/>
+                 <field name="fb_track_contact" attrs="{'required': [('has_facebook_pixel', '=', True)]}"/>              
+                 <label class="col-lg-3 o_light_label" string="Customize Product" for="fb_track_customize_product"/>
+                 <field name="fb_track_customize_product" attrs="{'required': [('has_facebook_pixel', '=', True)]}"/>              
+                 <label class="col-lg-3 o_light_label" string="Donate" for="fb_track_donate"/>
+                 <field name="fb_track_donate" attrs="{'required': [('has_facebook_pixel', '=', True)]}"/>             
+                 <label class="col-lg-3 o_light_label" string="Find Location" for="fb_track_find_location"/>
+                 <field name="fb_track_find_location" attrs="{'required': [('has_facebook_pixel', '=', True)]}"/>               
+
               </div>
-            </div>
-            <div attrs="{'invisible': [('has_facebook_pixel', '=', False)]}">
             </div>
           </div>
         </div>

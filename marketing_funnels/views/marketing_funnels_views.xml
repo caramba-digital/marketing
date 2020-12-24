@@ -184,32 +184,32 @@
                                 </group>
                                 <group>
                                     <field name="style_id" />
+                                    <field name="catalogue_mode" attrs="{'invisible':[('resource','!=','catalog'),('resource','!=','random')]}"/>
                                 </group>
-                                <group  attrs="{'invisible':[('resource','!=','product')]}">
+                                <group  attrs="{'invisible':[('resource','!=','product')]}" string="Product or Service">
                                     <field name="product_id" domain="[('is_published','=',True)]"/>
-
+                                     <field name="has_zoom" />
                                 </group>
-                                <group attrs="{'invisible':[('resource','!=','catalog'),('resource','!=','random')]}">
-                                    <field name="products_ids"  domain="[('is_published','=',True)]"  nolabel="1">
-                                        <tree>
+                                <group attrs="{'invisible':[('resource','!=','catalog'),('resource','!=','random')]}" string="Catalogue">
+                                    
+                                    <field name="products_ids"  domain="[('is_published','=',True)]"  nolabel="1">                                        <tree>
                                             <field name="name" />
                                             <field name="price" />
                                             <field name="public_categ_ids" widget="many2many_tags"/>
                                         </tree>
-                                    </field>
-                                
+                                    </field>                                    
                                 </group>
-                                <group  attrs="{'invisible':[('resource','!=','event')]}">
+                                <group  attrs="{'invisible':[('resource','!=','event')]}" string="Event">
                                     <field name="event_id" />
                                 </group>
-                                <group  attrs="{'invisible':[('resource','!=','badge')]}">
+                                <group  attrs="{'invisible':[('resource','!=','badge')]}" string="Gamification">
                                     <field name="badge_id" />
                                 </group>
                                 <group attrs="{'invisible':[('resource','!=','coupon_program'),('resource','!=','random')]}">
                                     <field name="coupon_program_id" />
                                     <field name="random_product" attrs="{'invisible':[('resource','!=','random')]}"/>
                                 </group>
-                                <group attrs="{'invisible':[('resource','!=','newsletter')]}">
+                                <group attrs="{'invisible':[('resource','!=','newsletter')]}" string="Newsletter">
                                     <field name="mailing_list_id" />
                                 </group>
                             </group>    

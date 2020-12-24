@@ -120,13 +120,16 @@ class FunnelPage(models.Model):
     content_top = fields.Html('Top Content', default=_default_content, translate=html_translate, sanitize=False)
     content_bottom = fields.Html('Bottom Content', default=_default_content, translate=html_translate, sanitize=False)
     product_id = fields.Many2one(
-        'product.product', string='Product', domain=[('sale_ok', '=', True)],
+        'product.template', string='Product', domain=[('sale_ok', '=', True)],
         change_default=True, check_company=True) 
-    products_ids = fields.Many2many('product.product', 'funnel_page_product_rel', 'page_id', 'page_prodyct_id', domain=[('sale_ok', '=', True)], string='Products')
+    products_ids = fields.Many2many('product.template', 'funnel_page_product_rel', 'page_id', 'page_product_id', domain=[('sale_ok', '=', True)], string='Products')
     event_id = fields.Many2one('event.event')
     badge_id = fields.Many2one('gamification.badge')
     coupon_program_id = fields.Many2one('coupon.program')
     has_form = fields.Boolean(default=True)
+    has_zoom = fields.Boolean(default=False)
+    catalogue_mode = fields.Selection([('p_cards', 'Products Cards'), ('p_carousel','Carousel Products'), ('s_cards','Card Services'),('s_carousel','Carousel Services')],
+                                    default='p_cards')
     random_product = fields.Boolean(default=False)
     style_id = fields.Many2one('funnel.page.style')
     mailing_list_id = fields.Many2one('mailing.list', string='')

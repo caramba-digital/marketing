@@ -20,5 +20,21 @@
       </noscript>
   </xpath>
 </template>
+
+ <template id="facebook_pixel_view_content" name="Facebook Pixel View Content" inherit_id="website_sale.product"> >
+  <xpath expr="//div[@id='wrap']" position="after">
+   <t t-if="website.fb_track_view_content==True">
+      <script type="text/javascript">
+        fbq('track', 'ViewContent', {
+          content_name: '<t t-esc="product.name"/>',
+          content_ids: ['<t t-esc="product.default_code"/>'],
+          content_type: 'product',
+          value: <t t-esc="combination_info['price']"/>,
+          currency: '<t t-esc="website.currency_id.name"/>'
+        });
+      </script>
+    </t>
+  </xpath>
+ </template>
   
 </odoo>

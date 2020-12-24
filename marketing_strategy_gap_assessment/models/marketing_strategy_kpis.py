@@ -82,6 +82,7 @@ class MarketingPlanKpisTracking(models.Model):
     ltv = fields.Monetary('Life Time Value')
     cac = fields.Monetary('Customer Acquisition Cost')
     ltv_cac = fields.Monetary('LTV:CAC')
+    aov = fields.Monetary('Average Order Value')
     net_income = fields.Monetary() 
     Investment = fields.Monetary()
     roas = fields.Monetary('ROAS', help='Return on Ad Spend')
