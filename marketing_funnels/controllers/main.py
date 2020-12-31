@@ -48,12 +48,14 @@ class WebsiteFunnel(http.Controller):
         resource = page.type_id.resource
         if resource=='product':
             values.update(self._prepare_product_values(page.product_id))
+        elif  resource=='offer':
+            set=2
         elif  resource=='catalog':
             values['products']= page.products_ids
         elif  resource=='random':
             set=2
         elif  resource=='event':  
-            set=2
+            values['event']= page.event_id
         elif  resource=='newsletter':  
             set=2
         elif  resource=='lead':  

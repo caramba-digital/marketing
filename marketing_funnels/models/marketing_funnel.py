@@ -37,10 +37,13 @@ class FunnelType(models.Model):
 class FunnelPageType(models.Model):
     _name = 'funnel.page.type'
     _description = 'Funnel Page Type'
+    _order = 'sequence'
 
     name = fields.Char('Funnel Page Type', required=True, translate=True)
+    sequence = fields.Integer('Sequence', help="Determine the display order", index=True)
     resource = fields.Selection([
         ('product','Product'),
+        ('offer', 'Offer'),
         ('catalog', 'Catalog'), 
         ('random', 'Random'), 
         ('event','Event'),

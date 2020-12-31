@@ -60,6 +60,7 @@
         <field name="model">funnel.page.type</field>
         <field name="arch" type="xml">
             <tree string="Funnel Page Type">
+                <field name="sequence" widget="handle"/>
                 <field name="name"/>
                 <field name="resource"/>
             </tree>
