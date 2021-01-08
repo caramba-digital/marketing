@@ -7,8 +7,10 @@ import itertools
 import pytz
 import babel.dates
 from collections import OrderedDict
+import string
+import random
 
-from odoo import http, fields
+from odoo import http, fields, _
 from odoo.addons.http_routing.models.ir_http import slug, unslug
 from odoo.addons.website.controllers.main import QueryURL
 from odoo.http import request
@@ -46,10 +48,8 @@ class WebsiteFunnel(http.Controller):
             'main_object': funnel_page
             }
         resource = page.type_id.resource
-        if resource=='product':
+        if resource=='product' or resource=='offer':
             values.update(self._prepare_product_values(page.product_id))
-        elif  resource=='offer':
-            set=2
         elif  resource=='catalog':
             values['products']= page.products_ids
         elif  resource=='random':
@@ -57,9 +57,25 @@ class WebsiteFunnel(http.Controller):
         elif  resource=='event':  
             values['event']= page.event_id
         elif  resource=='newsletter':  
-            set=2
+            if page.button_position=='left':
+                values['align']='text-left s_website_form_no_submit_label'
+            elif page.button_position=='center':
+                values['align']='text-center s_website_form_no_submit_label'
+            elif page.button_position=='right':
+                values['align']='text-right s_website_form_no_submit_label'
+            else:
+                values['align']=' '
         elif  resource=='lead':  
-            set=2
+            if page.button_position=='left':
+                values['align']='text-left s_website_form_no_submit_label'
+            elif page.button_position=='center':
+                values['align']='text-center s_website_form_no_submit_label'
+            elif page.button_position=='right':
+                values['align']='text-right s_website_form_no_submit_label'
+            else:
+                values['align']=' '
+            values['call_to_action'] =  {'suscribe':_('Subscribe'),'apply':_('Apply'),'reserve':_('Reserve'),'download':_('Download'),'get_offer':_('Get Offer'),'quote':_('Quote'),'sign_up':_('Sign Up'),'more_info':_('More Information')}
+            values['required_ids']= {'name':self._id_generator(),'phone':self._id_generator(),'email':self._id_generator(),'company':self._id_generator(), 'question':self._id_generator(),'subject':self._id_generator}
         elif  resource=='coupon_program': 
             set=2 
         elif  resource=='badge':  
@@ -68,6 +84,8 @@ class WebsiteFunnel(http.Controller):
             set=2  
         response = request.render("marketing_funnels.funnel_page", values)
         request.session[request.session.sid] = request.session.get(request.session.sid, [])
+        visitor_sudo = request.env['website.visitor']._get_visitor_from_request(force_create=True)
+        _logger.warning('ddddddddddddddddddddddddddddddddddddddddddddddddddd:{}'.format(visitor_sudo))
         if not (funnel_page.id in request.session[request.session.sid]):
             request.session[request.session.sid].append(funnel_page.id)
             # Increase counter
@@ -107,6 +125,9 @@ class WebsiteFunnel(http.Controller):
     @http.route(['/funnel/get_social_proof'], type='json', auth='public', website=True)
     def get_social_proof(self, template, **kwargs):
         return request.website.viewref(template)._render({})
+
+    def _id_generator(self, size=11, chars=string.ascii_lowercase + string.digits):
+        return ''.join(random.choice(chars) for _ in range(size))
         
 
 
@@ -115,38 +136,7 @@ class WebsiteFunnel(http.Controller):
 
 
 
-class WebsiteForm(WebsiteForm):
-    
-    # Check and insert values from the form on the model <model> + validation phone fields
-    @http.route('/funnel_form/<string:model_name>', type='http', auth="public", methods=['POST'], website=True)
-    def website_form(self, model_name, **kwargs):
-        model_record = request.env['ir.model'].sudo().search([('model', '=', model_name), ('website_form_access', '=', True)])
-        if model_record and hasattr(request.env[model_name], 'phone_format'):
-            try:
-                data = self.extract_data(model_record, request.params)
-            except:
-                # no specific management, super will do it
-                pass
-            else:
-                record = data.get('record', {})
-                phone_fields = self._get_phone_fields_to_validate()
-                country = request.env['res.country'].browse(record.get('country_id'))
-                contact_country = country.exists() and country or self._get_country()
-                for phone_field in phone_fields:
-                    if not record.get(phone_field):
-                        continue
-                    number = record[phone_field]
-                    fmt_number = request.env[model_name].phone_format(number, contact_country)
-                    request.params.update({phone_field: fmt_number})
 
-        if model_name == 'crm.lead' and not request.params.get('state_id'):
-            geoip_country_code = request.session.get('geoip', {}).get('country_code')
-            geoip_state_code = request.session.get('geoip', {}).get('region')
-            if geoip_country_code and geoip_state_code:
-                state = request.env['res.country.state'].search([('code', '=', geoip_state_code), ('country_id.code', '=', geoip_country_code)])
-                if state:
-                    request.params['state_id'] = state.id
-        return super(WebsiteForm, self).website_form(model_name, **kwargs)
         
 
 

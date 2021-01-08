@@ -179,7 +179,6 @@
                         <page string="Components" autofocus="autofocus">
                             <group>
                                 <group>
-                                    <field name="has_form" />
                                     <field name="social_proof_notification" />
                                 </group>
                                 <group>
@@ -189,6 +188,7 @@
                                 <group  attrs="{'invisible':[('resource','!=','product')]}" string="Product or Service">
                                     <field name="product_id" domain="[('is_published','=',True)]"/>
                                      <field name="has_zoom" />
+                                     <field name="has_buy_now" />
                                 </group>
                                 <group attrs="{'invisible':[('resource','!=','catalog'),('resource','!=','random')]}" string="Catalogue">
                                     
@@ -201,6 +201,18 @@
                                 </group>
                                 <group  attrs="{'invisible':[('resource','!=','event')]}" string="Event">
                                     <field name="event_id" />
+                                </group>
+                                <group  attrs="{'invisible':[('resource','!=','lead')]}" string="Lead">
+                                    <field name="lead_phone" />
+                                    <field name="lead_company" />
+                                    <field name="lead_subject" />
+                                    <field name="lead_name" attrs="{'invisible':[('lead_subject','==','required')]}"/>
+                                    <field name="lead_question" />
+                                    <field name="salesteam_id" />
+                                    <field name="salesperson_id" />
+                                    <field name="call_to_action" />
+                                    <field name="button_position" />
+                                    <field name="success_page" context="{'funnel_id':funnel_id}"/>
                                 </group>
                                 <group  attrs="{'invisible':[('resource','!=','badge')]}" string="Gamification">
                                     <field name="badge_id" />

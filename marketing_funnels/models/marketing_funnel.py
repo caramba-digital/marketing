@@ -129,8 +129,27 @@ class FunnelPage(models.Model):
     event_id = fields.Many2one('event.event')
     badge_id = fields.Many2one('gamification.badge')
     coupon_program_id = fields.Many2one('coupon.program')
-    has_form = fields.Boolean(default=True)
+    salesteam_id = fields.Many2one('crm.team',string='Sales Team')
+    salesperson_id = fields.Many2one('res.users', string='Salesperson')
+    lead_phone = fields.Selection([('not_necessary','Not necessary'),('requested','Requested'),('required','Required')], default='requested', required=True)
+    lead_company = fields.Selection([('not_necessary','Not necessary'),('requested','Requested'),('required','Required')], default='requested', required=True)
+    lead_subject = fields.Selection([('required','Required'),('hidden','Hidden')], default='required', required=True)
+    lead_name = fields.Char()
+    lead_question = fields.Selection([('not_necessary','Not necessary'),('requested','Requested'),('required','Required')], default='required', required=True)
+    call_to_action = fields.Selection([
+        ('suscribe','Subscribe'), 
+        ('apply','Apply'),
+        ('reserve','Reserve'),
+        ('download','Download'),
+        ('get_offer','Get Offer'),
+        ('quote','Quote'),
+        ('sign_up','Sign Up'),
+        ('more_info','More Information')
+        ], string='Call to Action', default='more_info', required=True)
+    button_position = fields.Selection([('left','Left'),('center','Center'),('right','Right'),('input_aligned','Input Aligned')], default='input_aligned', required=True)
+    success_page = fields.Many2one('funnel.page')
     has_zoom = fields.Boolean(default=False)
+    has_buy_now = fields.Boolean(default=True)
     catalogue_mode = fields.Selection([('p_cards', 'Products Cards'), ('p_carousel','Carousel Products'), ('s_cards','Card Services'),('s_carousel','Carousel Services')],
                                     default='p_cards')
     random_product = fields.Boolean(default=False)

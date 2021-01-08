@@ -24,8 +24,8 @@
            </nav>
         </header>
         <div t-field="page.content_top" class="oe_structure" id="funnel_page" /> 
-        <div t-att-class="'content-fluid '+ page.style_id.theme_class">
-          <t t-if="page.type_id.resource=='product'"><t t-call="marketing_funnels.funnel_type_product"/></t>
+        <div t-att-class="'content-fluid {}'.format(page.style_id.theme_class)">
+          <t t-if="page.type_id.resource=='product' or page.type_id.resource=='offer'"><t t-call="marketing_funnels.funnel_type_product"/></t>
           <t t-if="page.type_id.resource=='catalog'"><t t-call="marketing_funnels.funnel_type_catalog"/></t>
           <t t-if="page.type_id.resource=='event'"><t t-call="marketing_funnels.funnel_type_event"/></t>
           <t t-if="page.type_id.resource=='newsletter'"><t t-call="marketing_funnels.funnel_type_newsletter"/></t>
@@ -53,6 +53,12 @@
     </t>
     <div itemscope="itemscope" itemtype="http://schema.org/Product" id="wrap" t-att-class="zoom_class + ' pt32 pb32'" t-att-data-ecom-zoom-auto="zoom_data">
      <section t-attf-class="container py-2 oe_website_sale #{'discount' if combination_info['has_discounted_price'] else ''} " id="product_detail" t-att-data-view-track="view_track and '1' or '0'">
+      <div t-if="page.type_id.resource=='offer'" class="row">
+       <div class="alert btn-primary active col" role="alert">
+        A simple primary alert—check it out!
+        </div>
+        <p t-esc="combination_info" />
+      </div>
       <div class="row">
         <div class="col-md-6 col-xl-8">
           <t t-call="website_sale.shop_product_carousel"/>
@@ -76,7 +82,21 @@
               </t>
               <t t-call="website_sale.product_price" />
               <p t-if="True" class="css_not_available_msg alert alert-warning">This combination does not exist.</p>
+              <div class="css_quantity input-group" contenteditable="false">
+                  <div class="input-group-prepend">
+                      <a t-attf-href="#" class="btn btn-secondary js_add_cart_json" aria-label="Remove one" title="Remove one">
+                          <i class="fa fa-minus"></i>
+                      </a>
+                  </div>
+                  <input type="text" class="form-control quantity" data-min="1" name="add_qty" t-att-value="add_qty or 1"/>
+                  <div class="input-group-append">
+                      <a t-attf-href="#" class="btn btn-secondary float_left js_add_cart_json" aria-label="Add one" title="Add one">
+                          <i class="fa fa-plus"></i>
+                      </a>
+                  </div>
+              </div>
               <a role="button" id="add_to_cart" class="btn btn-primary btn-lg mt16 js_check_product a-submit d-block d-sm-inline-block" href="#"><i class="fa fa-shopping-cart"/> Add to Cart</a>
+              <a t-if="page.has_buy_now" role="button" id="buy_now" class="btn btn-outline-primary btn-lg mt16 d-block d-sm-inline-block" href="#"><i class="fa fa-bolt"/> Buy Now</a>
               <div id="product_option_block"/>
             </div>
           </form>
@@ -298,11 +318,118 @@
   </template>
 
   <template id="funnel_type_newsletter" name="Funnel Page Newsletter" >
-    <h1>Newsletter</h1>
+    <section class="s_website_form pt32 pb16 o_colored_level">
+      <div class="container">
+
+      </div>
+    </section>
   </template>
 
   <template id="funnel_type_lead" name="Funnel Page Layout Lead" >
-    <h1>Lead</h1>
+    <section class="s_website_form pt32 pb16 o_colored_level">
+      <div class="container">
+        <form action="/website_form/" method="post" enctype="multipart/form-data" class="o_mark_required" data-mark="*" data-success-mode="redirect" t-att-data-success-page="page.success_page.website_url" data-model_name="crm.lead">
+          <div class="s_website_form_rows row s_col_no_bgcolor">
+            <div class="form-group s_website_form_field col-12  s_website_form_required  " data-type="char" data-name="Field">
+              <div class="row s_col_no_resize s_col_no_bgcolor">
+                <label class="col-form-label col-sm-auto s_website_form_label" style="width: 200px" t-att-for="required_ids['name']">
+                                  <span class="s_website_form_label_content">Your Name</span><span class="s_website_form_mark"> *</span>
+                      </label>
+                            <div class="col-sm">                    
+                            <input type="text" class="form-control s_website_form_input" name="contact_name" required="1" t-att-id="required_ids['name']"/>
+                
+                            </div>
+                        </div>
+                  </div>
+                  <div t-if="page.lead_phone!='not_necessary'"  t-att-class="'form-group s_website_form_field col-12{}'.format(' s_website_form_required' if page.lead_phone=='required' else ' ')" data-type="tel" data-name="Field">
+                        <div class="row s_col_no_resize s_col_no_bgcolor">
+                            <label class="col-form-label col-sm-auto s_website_form_label " style="width: 200px" t-att-for="required_ids['phone']">
+                                  <span class="s_website_form_label_content">Phone Number</span><span  t-if="page.lead_phone=='required'" class="s_website_form_mark"> *</span>
+                      </label>
+                            <div class="col-sm">                    
+                              <input t-if="page.lead_phone=='required'" type="tel" class="form-control s_website_form_input" name="phone" required="1" t-att-id="required_ids['phone']"/>
+                              <input t-else="" type="tel" class="form-control s_website_form_input" name="phone"/>
+                            </div>
+                        </div>
+                  </div>
+                  <div class="form-group s_website_form_field col-12  s_website_form_required" data-type="email" data-name="Field">
+                        <div class="row s_col_no_resize s_col_no_bgcolor">
+                            <label class="col-form-label col-sm-auto s_website_form_label " style="width: 200px" t-att-for="required_ids['phone']">
+                        <span class="s_website_form_label_content">Your Email</span><span class="s_website_form_mark"> *</span>
+                      </label>
+                            <div class="col-sm">
+                                  <input type="email" class="form-control s_website_form_input" name="email_from" required="1" t-att-id="required_ids['phone']"/>
+                      </div>
+                        </div>
+                  </div>
+                  <div t-if="page.lead_company!='not_necessary'" t-att-class="'form-group s_website_form_field col-12{}'.format(' s_website_form_required' if page.lead_company=='required' else ' ')" data-type="char" data-name="Field">
+                        <div class="row s_col_no_resize s_col_no_bgcolor">
+                            <label class="col-form-label col-sm-auto s_website_form_label " style="width: 200px" t-att-for="required_ids['company']">
+                                  <span class="s_website_form_label_content">Your Company</span><span  t-if="page.lead_company=='required'" class="s_website_form_mark"> *</span>
+                      </label>
+                            <div class="col-sm">
+                                <input t-if="page.lead_company=='required'" type="text" class="form-control s_website_form_input" name="partner_name" required="1" t-att-id="required_ids['company']"/>
+                                <input t-else="" type="text" class="form-control s_website_form_input" name="partner_name" />
+                      </div>
+                        </div>
+                  </div>
+                  <div t-att-class="'form-group s_website_form_field col-12{}'.format(' s_website_form_required' if page.lead_subject=='required' else ' s_website_form_dnone')" data-type="char" data-name="Field">
+                        <div class="row s_col_no_resize s_col_no_bgcolor">
+                            <label class="col-form-label col-sm-auto s_website_form_label " style="width: 200px" t-att-for="required_ids['subject']">
+                              <t t-if="page.lead_subject=='required'">
+                                  <span class="s_website_form_label_content">Subject</span><span class="s_website_form_mark"> *</span>
+                              </t>
+                              <t t-else="">
+                                <span class="s_website_form_label_content"></span>
+                              </t>
+                      </label>
+                            <div class="col-sm">                    
+                              <input t-if="page.lead_subject=='required'" type="text" class="form-control s_website_form_input" name="name" required="true" t-att-id="required_ids['subject']"/>
+                              <input t-else="" type="hidden" class="form-control s_website_form_input" name="name" required="true" t-att-value="page.lead_name"/>
+                      </div>
+                        </div>
+                  </div>
+                  <div t-if="page.lead_question!='not_necessary'" t-att-class="'form-group s_website_form_field col-12{}'.format(' s_website_form_required' if page.lead_question=='required' else ' ')" data-type="text" data-name="Field">
+                        <div class="row s_col_no_resize s_col_no_bgcolor">
+                            <label class="col-form-label col-sm-auto s_website_form_label " style="width: 200px" t-att-for="required_ids['question']">
+                                  <span class="s_website_form_label_content">Your Question</span><span  t-if="page.lead_question=='required'" class="s_website_form_mark"> *</span>
+                </label>
+                            <div class="col-sm">
+                                  <textarea t-if="page.lead_question=='required'" class="form-control s_website_form_input" name="description" required="1" t-att-id="required_ids['question']" rows="3"></textarea>
+                                  <textarea t-else="" class="form-control s_website_form_input" name="description"  rows="3"></textarea>
+                      </div>
+                        </div>
+                  </div>
+                  <div t-if="page.salesteam_id"  class="form-group s_website_form_field col-12    s_website_form_dnone" data-name="Field">
+                        <div class="row s_col_no_resize s_col_no_bgcolor">
+                            <label class="col-form-label col-sm-auto s_website_form_label " style="width: 200px">
+                                  <span class="s_website_form_label_content"></span>
+                            </label>
+                            <div class="col-sm">
+                              <input type="hidden" class="form-control s_website_form_input" name="team_id" t-att-value="page.salesteam_id.id"/>
+                            </div>
+                        </div>
+                  </div>
+                  <div t-if="page.salesperson_id" class="form-group s_website_form_field col-12    s_website_form_dnone" data-name="Field">
+                      <div class="row s_col_no_resize s_col_no_bgcolor">
+                            <label class="col-form-label col-sm-auto s_website_form_label " style="width: 200px">
+                                <span class="s_website_form_label_content"></span>
+                            </label>
+                            <div class="col-sm">
+                                  <input type="hidden" class="form-control s_website_form_input" name="user_id" t-att-value="page.salesperson_id.id"/>
+                            </div>
+                        </div>
+                  </div>
+                  <div t-att-class="'form-group col-12 s_website_form_submit {}'.format(align)" data-name="Submit Button">
+                    <div style="width: 200px;" class="s_website_form_label"/>
+                    <t t-set="callToAction" t-value="call_to_action"/>
+                    <a href="#" role="button" class="btn btn-primary btn-lg s_website_form_send"><span t-esc="callToAction[page.call_to_action]"/></a>
+                    <span id="s_website_form_result"/>
+                  </div>
+          </div>
+        </form>
+      </div>
+    </section>
   </template>
 
   <template id="funnel_type_coupon_program" name="Funnel Page Coupon Program" >

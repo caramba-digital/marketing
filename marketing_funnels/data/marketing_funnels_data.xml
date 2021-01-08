@@ -118,7 +118,7 @@
 
     <record id="marketing_funnel_type_opt_20" model="funnel.type">
     	<field name="name">The Application Funnel</field>
-      <field name="description">El embudo de solicitud es cuando los clientes potenciales completan un formulario de solicitud para ver si califican para un producto o servicio antes de hacerles una oferta.
+      <field name="description">The application funnel is when potential customers fill out an application form to see if they qualify for a product or service before making them an offer.
       </field>
     </record>
 
@@ -351,7 +351,7 @@
     <record id="marketing_funnel_page_opt_19" model="funnel.page.type">
     	<field name="name">OTO (one-time-offer page)</field>
       <field name="sequence">14</field>
-      <field name="resource">product</field>
+      <field name="resource">offer</field>
       <field name="funnel_types_ids" eval="[(6, 0, [ref('marketing_funnel_type_opt_21')])]"/>
     </record>
 
