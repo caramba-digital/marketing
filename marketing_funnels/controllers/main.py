@@ -9,6 +9,7 @@ import babel.dates
 from collections import OrderedDict
 import string
 import random
+from datetime import datetime
 
 from odoo import http, fields, _
 from odoo.addons.http_routing.models.ir_http import slug, unslug
@@ -83,18 +84,12 @@ class WebsiteFunnel(http.Controller):
         else:  
             set=2  
         response = request.render("marketing_funnels.funnel_page", values)
-        request.session[request.session.sid] = request.session.get(request.session.sid, [])
-        visitor_sudo = request.env['website.visitor']._get_visitor_from_request(force_create=True)
-        _logger.warning('ddddddddddddddddddddddddddddddddddddddddddddddddddd:{}'.format(visitor_sudo))
-        if not (funnel_page.id in request.session[request.session.sid]):
-            request.session[request.session.sid].append(funnel_page.id)
-            # Increase counter
-            funnel_page.sudo().write({
-                'visits': funnel_page.visits + 1,
-                'write_date': funnel_page.write_date,
-            })
-            # Start activities
+        if page.is_published:
+            page.visits +=1
+            page.last_date = datetime.now()
+            visitor_sudo = request.env['website.visitor']._get_visitor_from_request()
         return response
+
 
 
 

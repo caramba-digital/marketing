@@ -25,7 +25,6 @@
         'views/marketing_funnels_settings_views.xml',
         'views/mail_template_views.xml',
         'views/assets.xml',
-        'views/website_visitor_views.xml',
         'data/marketing_funnels_data.xml',
     ],
     'demo': [

@@ -164,6 +164,8 @@ class FunnelPage(models.Model):
     website_id = fields.Many2one(related='funnel_id.website_id', readonly=True)
     company_id = fields.Many2one('res.company', 'Company', required=True, index=True, default=lambda self: self.env.company) 
 
+
+
     @api.depends('type_id')
     def _get_resource(self):
         for record in self:
@@ -194,7 +196,7 @@ class FunnelActivity(models.Model):
     _description = 'Funnel Activity' 
 
     name = fields.Char('Name', required=True, translate=True)
-    page_id = fields.Many2one('funnel.page', string="Page", required=True, ondelete='cascade', index=True)
+    page_id = fields.Many2one('funnel.page', string="Page", ondelete='cascade', index=True)
     res_id = fields.Integer()
     object_id = fields.Many2one(related='page_id.object_id', relation='ir.model', string='Object', readonly=True)
     start = fields.Integer('Start', help="This activity is launched when the page is viewed.", compute='_compute_start', index=True, store=True)
