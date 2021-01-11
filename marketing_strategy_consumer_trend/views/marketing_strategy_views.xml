@@ -54,28 +54,28 @@
                       <p>How are other businesses applying this trend?</p>
                       <div class="row">
                         <div class="col-3 media">
-                          <field name="inspiration_1" widget='image' class="" options='{"preview_image": "image_128"}'/>
+                          <field name="inspiration_1" widget='image' class="" options='{"preview_image": "inspiration_1"}'/>
                         </div>
                         <div class="col-3">
-                          <field name="inspiration_2" widget='image' class="" options='{"preview_image": "image_128"}'/>
+                          <field name="inspiration_2" widget='image' class="" options='{"preview_image": "inspiration_2"}'/>
                         </div>
                         <div class="col-3">
-                          <field name="inspiration_3" widget='image' class="" options='{"preview_image": "image_128"}'/>
+                          <field name="inspiration_3" widget='image' class="" options='{"preview_image": "inspiration_3"}'/>
                         </div>
                         <div class="col-3">
-                          <field name="inspiration_4" widget='image' class="" options='{"preview_image": "image_128"}'/>
+                          <field name="inspiration_4" widget='image' class="" options='{"preview_image": "inspiration_4"}'/>
                         </div>
                         <div class="col-3">
-                          <field name="inspiration_5" widget='image' class="" options='{"preview_image": "image_128"}'/>
+                          <field name="inspiration_5" widget='image' class="" options='{"preview_image": "inspiration_5"}'/>
                         </div>
                         <div class="col-3">
-                          <field name="inspiration_6" widget='image' class="" options='{"preview_image": "image_128"}'/>
+                          <field name="inspiration_6" widget='image' class="" options='{"preview_image": "inspiration_6"}'/>
                         </div>
                         <div class="col-3">
-                          <field name="inspiration_7" widget='image' class="" options='{"preview_image": "image_128"}'/>
+                          <field name="inspiration_7" widget='image' class="" options='{"preview_image": "inspiration_7"}'/>
                         </div>
                         <div class="col-3">
-                          <field name="inspiration_8" widget='image' class="" options='{"preview_image": "image_128"}'/>
+                          <field name="inspiration_8" widget='image' class="" options='{"preview_image": "inspiration_8"}'/>
                         </div>
                       </div>                      
                     </div>
@@ -163,6 +163,9 @@
           </div>
             <h3 class="mt-3">SCAMPER Method</h3>
              <notebook colspan="4">
+             <page string="Conceptual Map" autofocus="autofocus">
+              <field name="image_1920" widget="image" autofocus="autofocus" class="img-fluid" nolabel="1"/>
+             </page>
               <page string="Substitute" autofocus="autofocus">
               <p>What can be replaced? (for example, components, materials, people)</p>
                  <field name="questions_s_ids"  widget="section_and_note_one2many"  mode="tree, form"  context="{'default_consumer_trend_id': active_id}"   nolabel="1"  >

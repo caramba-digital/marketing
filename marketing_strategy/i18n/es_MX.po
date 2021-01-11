@@ -1572,7 +1572,7 @@ msgstr "Metas"
 #: model:ir.model.fields.selection,name:marketing_strategy.selection__marketing_strategy_brand__product_type__good
 #: model:ir.model.fields.selection,name:marketing_strategy.selection__marketing_strategy_value_proposition__product_type__good
 msgid "Good"
-msgstr "Bueno"
+msgstr "Bien"
 
 #. module: marketing_strategy
 #: model:ir.model.fields,field_description:marketing_strategy.field_res_config_settings__module_marketing_google_ads

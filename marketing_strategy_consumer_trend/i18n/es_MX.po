@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-10-27 23:30+0000\n"
-"PO-Revision-Date: 2020-10-27 17:34-0600\n"
+"POT-Creation-Date: 2021-01-11 21:06+0000\n"
+"PO-Revision-Date: 2021-01-11 15:19-0600\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -95,11 +95,6 @@ msgid "Brand"
 msgstr "Marca"
 
 #. module: marketing_strategy_consumer_trend
-#: model:ir.model.fields,field_description:marketing_strategy_consumer_trend.field_marketing_strategy_consumer_trend__brands_ids
-msgid "Brands"
-msgstr "Marcas"
-
-#. module: marketing_strategy_consumer_trend
 #: model:ir.model.fields.selection,name:marketing_strategy_consumer_trend.selection__marketing_strategy_consumer_trend__state__cancel
 msgid "Cancelled"
 msgstr "Cancelado"
@@ -129,6 +124,11 @@ msgstr "Empresa"
 #: model:ir.model.fields.selection,name:marketing_strategy_consumer_trend.selection__marketing_strategy_consumer_trend__state__done
 msgid "Completed"
 msgstr "Terminado"
+
+#. module: marketing_strategy_consumer_trend
+#: model_terms:ir.ui.view,arch_db:marketing_strategy_consumer_trend.marketing_strategy_consumer_trend_view_form
+msgid "Conceptual Map"
+msgstr "Mapa Conceptual"
 
 #. module: marketing_strategy_consumer_trend
 #: model:ir.model,name:marketing_strategy_consumer_trend.model_marketing_strategy_consumer_trend
@@ -230,6 +230,21 @@ msgid "Draft"
 msgstr "Borrador"
 
 #. module: marketing_strategy_consumer_trend
+#: model:ir.model.fields,field_description:marketing_strategy_consumer_trend.field_marketing_strategy_consumer_trend__driver_1
+msgid "Driver 1"
+msgstr ""
+
+#. module: marketing_strategy_consumer_trend
+#: model:ir.model.fields,field_description:marketing_strategy_consumer_trend.field_marketing_strategy_consumer_trend__driver_2
+msgid "Driver 2"
+msgstr ""
+
+#. module: marketing_strategy_consumer_trend
+#: model:ir.model.fields,field_description:marketing_strategy_consumer_trend.field_marketing_strategy_consumer_trend__driver_3
+msgid "Driver 3"
+msgstr ""
+
+#. module: marketing_strategy_consumer_trend
 #: model_terms:ir.ui.view,arch_db:marketing_strategy_consumer_trend.marketing_strategy_consumer_trend_view_form
 msgid "Drivers of Change"
 msgstr "Impulsores del cambio"
@@ -253,7 +268,7 @@ msgstr "Eliminar"
 #: model_terms:ir.ui.view,arch_db:marketing_strategy_consumer_trend.marketing_strategy_consumer_trend_view_form
 msgid ""
 "Emerging<br/> \n"
-"                       \t\t\t\t\tExpectations"
+"                      Expectations"
 msgstr ""
 "Expectativas<br/> \n"
 "                       \t\t\t\t\tEmergentes"
@@ -262,6 +277,31 @@ msgstr ""
 #: model:ir.model.fields,field_description:marketing_strategy_consumer_trend.field_marketing_strategy_consumer_trend__end
 msgid "End"
 msgstr "Final"
+
+#. module: marketing_strategy_consumer_trend
+#: model:ir.model.fields,field_description:marketing_strategy_consumer_trend.field_marketing_strategy_consumer_trend__expectations_1
+msgid "Expectations 1"
+msgstr ""
+
+#. module: marketing_strategy_consumer_trend
+#: model:ir.model.fields,field_description:marketing_strategy_consumer_trend.field_marketing_strategy_consumer_trend__expectations_2
+msgid "Expectations 2"
+msgstr ""
+
+#. module: marketing_strategy_consumer_trend
+#: model:ir.model.fields,field_description:marketing_strategy_consumer_trend.field_marketing_strategy_consumer_trend__expectations_3
+msgid "Expectations 3"
+msgstr ""
+
+#. module: marketing_strategy_consumer_trend
+#: model:ir.model.fields,field_description:marketing_strategy_consumer_trend.field_marketing_strategy_consumer_trend__expectations_4
+msgid "Expectations 4"
+msgstr ""
+
+#. module: marketing_strategy_consumer_trend
+#: model:ir.model.fields,field_description:marketing_strategy_consumer_trend.field_marketing_strategy_consumer_trend__expectations_5
+msgid "Expectations 5"
+msgstr ""
 
 #. module: marketing_strategy_consumer_trend
 #: model:ir.model.fields,field_description:marketing_strategy_consumer_trend.field_marketing_strategy_consumer_trend__message_follower_ids
@@ -362,7 +402,7 @@ msgstr "En Progreso"
 #. module: marketing_strategy_consumer_trend
 #: model:ir.model.fields.selection,name:marketing_strategy_consumer_trend.selection__marketing_strategy_consumer_trend__mode__incremental
 msgid "Incremental"
-msgstr "Incremental"
+msgstr ""
 
 #. module: marketing_strategy_consumer_trend
 #: model_terms:ir.ui.view,arch_db:marketing_strategy_consumer_trend.marketing_strategy_consumer_trend_view_form
@@ -395,6 +435,46 @@ msgstr "Tipos de Innovación"
 #: model_terms:ir.ui.view,arch_db:marketing_strategy_consumer_trend.marketing_strategy_consumer_trend_view_form
 msgid "Inspiration"
 msgstr "Inspiración"
+
+#. module: marketing_strategy_consumer_trend
+#: model:ir.model.fields,field_description:marketing_strategy_consumer_trend.field_marketing_strategy_consumer_trend__inspiration_1
+msgid "Inspiration 1"
+msgstr ""
+
+#. module: marketing_strategy_consumer_trend
+#: model:ir.model.fields,field_description:marketing_strategy_consumer_trend.field_marketing_strategy_consumer_trend__inspiration_2
+msgid "Inspiration 2"
+msgstr ""
+
+#. module: marketing_strategy_consumer_trend
+#: model:ir.model.fields,field_description:marketing_strategy_consumer_trend.field_marketing_strategy_consumer_trend__inspiration_3
+msgid "Inspiration 3"
+msgstr ""
+
+#. module: marketing_strategy_consumer_trend
+#: model:ir.model.fields,field_description:marketing_strategy_consumer_trend.field_marketing_strategy_consumer_trend__inspiration_4
+msgid "Inspiration 4"
+msgstr ""
+
+#. module: marketing_strategy_consumer_trend
+#: model:ir.model.fields,field_description:marketing_strategy_consumer_trend.field_marketing_strategy_consumer_trend__inspiration_5
+msgid "Inspiration 5"
+msgstr ""
+
+#. module: marketing_strategy_consumer_trend
+#: model:ir.model.fields,field_description:marketing_strategy_consumer_trend.field_marketing_strategy_consumer_trend__inspiration_6
+msgid "Inspiration 6"
+msgstr ""
+
+#. module: marketing_strategy_consumer_trend
+#: model:ir.model.fields,field_description:marketing_strategy_consumer_trend.field_marketing_strategy_consumer_trend__inspiration_7
+msgid "Inspiration 7"
+msgstr ""
+
+#. module: marketing_strategy_consumer_trend
+#: model:ir.model.fields,field_description:marketing_strategy_consumer_trend.field_marketing_strategy_consumer_trend__inspiration_8
+msgid "Inspiration 8"
+msgstr ""
 
 #. module: marketing_strategy_consumer_trend
 #: model:ir.model.fields,field_description:marketing_strategy_consumer_trend.field_marketing_strategy_consumer_trend__message_is_follower
@@ -750,6 +830,21 @@ msgid "Tribes"
 msgstr "Tribus"
 
 #. module: marketing_strategy_consumer_trend
+#: model:ir.model.fields,field_description:marketing_strategy_consumer_trend.field_marketing_strategy_consumer_trend__trigger_1
+msgid "Trigger 1"
+msgstr ""
+
+#. module: marketing_strategy_consumer_trend
+#: model:ir.model.fields,field_description:marketing_strategy_consumer_trend.field_marketing_strategy_consumer_trend__trigger_2
+msgid "Trigger 2"
+msgstr ""
+
+#. module: marketing_strategy_consumer_trend
+#: model:ir.model.fields,field_description:marketing_strategy_consumer_trend.field_marketing_strategy_consumer_trend__trigger_3
+msgid "Trigger 3"
+msgstr ""
+
+#. module: marketing_strategy_consumer_trend
 #: model_terms:ir.ui.view,arch_db:marketing_strategy_consumer_trend.marketing_strategy_consumer_trend_view_form
 msgid "Triggers (short-term)"
 msgstr "Desencadenantes (a corto plazo)"
@@ -819,7 +914,7 @@ msgstr ""
 msgid ""
 "What new consumer needs, wants and expectations are created by the changes "
 "identified above?<br/>\n"
-"\t\t\t\t\t\t\t\t\t              Where and how does this trend satisfy them?"
+"\t\t\t\t\t\t\t\t\t  Where and how does this trend satisfy them?"
 msgstr ""
 "¿Qué nuevas necesidades, deseos y expectativas de los consumidores se crean "
 "con los cambios identificados anteriormente?<br/>\n"
