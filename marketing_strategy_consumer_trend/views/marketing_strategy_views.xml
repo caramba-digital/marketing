@@ -28,6 +28,7 @@
           <group>
             <group>
               <field name="brand_id"/>
+              <field name="mode"/>
               <field name="company_id" options="{'no_create': True}" groups="base.group_multi_company"/>
             </group>
             <group>
@@ -131,17 +132,15 @@
 
             <div class="row">
               <div class="col-12 border bg-light" style="height: 240px;">
-                <h5>Innovation Type</h5>
-                  <field name="mode"/>
+                <h5>Innovation Potential</h5>
                 <p>How and where could you apply this trend to your business?</p>
+                <field name="innovation_inducer"/>
                   <ul class="list-group list-group-horizontal mb-4">
                   <li class="list-group-item flex-fill"><i class="fa fa-cogs" style="color:#348396;"></i> CONFIGURATION</li>
                   <li class="list-group-item flex-fill"><i class="fa fa-gift" style="color:#f1a564;"></i> OFFERING</li>
                   <li class="list-group-item flex-fill"><i class="fa fa-glass" style="color:#f4cf34;"></i> EXPERIENCE</li>
                 </ul>
                 <field name="innovation_type" widget="many2many_tags" options="{'color_field': 'color', 'no_quick_create':True}" placeholder="Innovation Types"/>
-                <p>Inducer</p>
-                <field name="innovation_inducer"/>
               </div>
             </div>
             <div class="row">
