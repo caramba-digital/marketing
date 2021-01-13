@@ -1211,7 +1211,8 @@
                                 </h4> 
                                 <ul>
                                  <li>Tribe: <field name="tribe_id"/></li>
-                                 <li>Civil Status: <field name="status"/></li>
+                                 <li>Age: <field name="age"/></li>
+                                 <li>Function: <field name="function" /></li>
                                  <li>Personality: <field name="personality"/></li>
                                  </ul>
                                  </div>                             
