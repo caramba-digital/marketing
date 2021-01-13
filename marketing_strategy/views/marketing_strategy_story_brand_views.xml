@@ -330,6 +330,7 @@
                              <field name="buyers_ids"  widget="many2many" nolabel="1" >
                                 <tree>
                                     <field name="name" />
+                                    <field name="function" />
                                     <field name="tribe_id" />
                                 </tree>
                              </field>
