@@ -48,11 +48,13 @@
                   <div class="row">
                     <div class="col-4  border bg-light">
                       <h5>Trend</h5>
-                      <field name="trend"/>
+                      <hr />
+                      <field name="trend" class="bg-white"/>
                     </div>
                     <div class="col-8  border bg-light" style="height: 180px;">
                       <h5>Inspiration</h5>
                       <p>How are other businesses applying this trend?</p>
+                      <hr />
                       <div class="row">
                         <div class="col-3 media">
                           <field name="inspiration_1" widget='image' class="" options='{"preview_image": "inspiration_1"}'/>
@@ -85,6 +87,7 @@
                     <div class="col-4 border bg-light" style="height: 300px;">
                       <h5>Basic Needs</h5>
                       <p>Which deep consumer needs &amp; desires does this trend address? </p>
+                      <hr />
                       <field name="needs_ids" widget="many2many_tags" options="{'color_field': 'color'}" placeholder="Basic Needs"/>
                     </div>
                     <div class="col-8 border bg-light" style="height: 300px;">
@@ -94,16 +97,18 @@
                        	<div class="col-6">
                        		<h6>Shifts (long-term)</h6>
                        		<p>Widespread macro changes</p>
-                          <field name="driver_1"/>
-                          <field name="driver_2"/>
-                          <field name="driver_3"/>
+                          <hr />
+                          <field name="driver_1" class="bg-white"/>
+                          <field name="driver_2" class="bg-white"/>
+                          <field name="driver_3" class="bg-white"/>
                        	</div>
                        	<div class="col-6">                       									
                        		<h6>Triggers (short-term)</h6>
                        		<p> Recent changes or technologies</p>
-                          <field name="trigger_1"/>
-                          <field name="trigger_2"/>
-                          <field name="trigger_3"/>
+                          <hr />
+                          <field name="trigger_1" class="bg-white"/>
+                          <field name="trigger_2" class="bg-white"/>
+                          <field name="trigger_3" class="bg-white"/>
                        	</div>
                       </div>
                     </div>
@@ -115,11 +120,12 @@
                   </h5>
                   <p style="width: 90%">What new consumer needs, wants and expectations are created by the changes identified above?<br />
 									  Where and how does this trend satisfy them?</p>
-                  <field name="expectations_1"/>
-                  <field name="expectations_2"/>
-                  <field name="expectations_3"/>
-                  <field name="expectations_4"/>
-                  <field name="expectations_5"/>
+                    <hr />
+                  <field name="expectations_1" class="bg-white"/>
+                  <field name="expectations_2" class="bg-white"/>
+                  <field name="expectations_3" class="bg-white"/>
+                  <field name="expectations_4" class="bg-white"/>
+                  <field name="expectations_5" class="bg-white"/>
                 </div>
               </div>
             </div>
@@ -134,7 +140,8 @@
               <div class="col-12 border bg-light" style="height: 240px;">
                 <h5>Innovation Potential</h5>
                 <p>How and where could you apply this trend to your business?</p>
-                <field name="innovation_inducer"/>
+                  <hr />
+                <field name="innovation_inducer" class="bg-white"/>
                   <ul class="list-group list-group-horizontal mb-4">
                   <li class="list-group-item flex-fill"><i class="fa fa-cogs" style="color:#348396;"></i> CONFIGURATION</li>
                   <li class="list-group-item flex-fill"><i class="fa fa-gift" style="color:#f1a564;"></i> OFFERING</li>
@@ -146,7 +153,8 @@
             <div class="row">
               <div class="col-12 border bg-light" style="height: 80px;">
                 <h5>YOUR INNOVATION</h5>
-                <field name="innovation"/>
+                  <hr />
+                <field name="innovation" class="bg-white"/>
               </div>            
             </div>
             <div class="row border bg-light">
@@ -155,7 +163,8 @@
                 <p>Which (new) customer groups could you apply this trend to?</p>
                   <field name="tribes_ids" widget="many2many_tags" placeholder="Tribes"/>
                 <p>What would you have to change?</p>
-                  <field name="what_change"/>
+                  <hr />
+                  <field name="what_change" class="bg-white"/>
               </div>
             </div>
             </div>

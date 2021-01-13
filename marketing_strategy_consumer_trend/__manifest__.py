@@ -20,6 +20,7 @@
         'security/ir.model.access.csv',
         'security/marketing_strategy_consumer_trend_security.xml',
         'views/marketing_strategy_views.xml',
+        'report/consumer_trend.xml',
         'data/marketing_strategy_data.xml',
     ],
 
