@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-01-13 23:11+0000\n"
-"PO-Revision-Date: 2021-01-13 17:19-0600\n"
+"POT-Creation-Date: 2021-01-14 16:53+0000\n"
+"PO-Revision-Date: 2021-01-14 10:57-0600\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -1632,11 +1632,6 @@ msgid "Hub"
 msgstr ""
 
 #. module: marketing_strategy
-#: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_touchpoint_view_kanban
-msgid "Hub:"
-msgstr ""
-
-#. module: marketing_strategy
 #: model:ir.model.fields,field_description:marketing_strategy.field_crm_lead__id
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_brand__id
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_brand_tag__id
@@ -2878,6 +2873,11 @@ msgid "Stability"
 msgstr "Estabilidad"
 
 #. module: marketing_strategy
+#: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_touchpoint_view_kanban
+msgid "Stage:"
+msgstr "Etapa:"
+
+#. module: marketing_strategy
 #: model:ir.model.fields.selection,name:marketing_strategy.selection__marketing_strategy_brand__customer_relationship__star-fan
 msgid "Star-Fan"
 msgstr "Estrella-Fan"
@@ -2891,6 +2891,11 @@ msgstr "Fecha de inicio"
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_buyer_persona__state_id
 msgid "State"
 msgstr "Estado"
+
+#. module: marketing_strategy
+#: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_buyer_journey_view_kanban
+msgid "State:"
+msgstr "Estado:"
 
 #. module: marketing_strategy
 #: model:ir.model.fields,field_description:marketing_strategy.field_marketing_strategy_plan__state
@@ -3317,6 +3322,7 @@ msgid "Type of the exception activity on record."
 msgstr "Tipo de actividad de excepción registrada."
 
 #. module: marketing_strategy
+#: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_buyer_journey_view_kanban
 #: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_story_brand_content_view_form
 #: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_touchpoint_view_kanban
 #: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_value_proposition_view_kanban
@@ -3348,11 +3354,6 @@ msgstr "Contenido UTM"
 #: model:ir.model,name:marketing_strategy.model_utm_source
 msgid "UTM Source"
 msgstr "Fuente UTM"
-
-#. module: marketing_strategy
-#: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_touchpoint_view_kanban
-msgid "UTM Source:"
-msgstr "Fuente UTM:"
 
 #. module: marketing_strategy
 #: model:ir.model,name:marketing_strategy.model_utm_term

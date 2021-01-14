@@ -375,7 +375,6 @@
                     <field name="name" string="Name"/>
                     <field name="type" />
                     <field name="url"/>
-                    <field name="hub_id"/>
                     <field name="state"/>
 	            	<field name="buyer_journey_stage" invisible="1"/>
 	            	<field name="plan_id" invisible="1"/>
@@ -408,7 +407,7 @@
                 		</group>
                 		<group>
                 			<field name="url" widget="url" placeholder="Online Touchpoint Location"/>
-                			<field name="hub_id" />
+                			<field name="hub_id" context="{'default_touchpoint_hub': True, 'default_is_company':True}"/>
                             <field name="utm_source_id" />
                 			<field name="plan_id" />
                 		</group>
@@ -473,8 +472,7 @@
                                 </h4> 
                                 <ul>
                                  <li>Type: <field name="type"/></li>
-                                 <li>UTM Source: <field name="utm_source_id"/></li>
-                                 <li>Hub: <field name="hub_id"/></li>
+                                 <li>Stage: <field name="buyer_journey_stage"/></li>
                                  </ul>
                                  </div>  
                                 <div class="o_kanban_record_bottom">
@@ -872,13 +870,14 @@
         <field name="model">marketing_strategy.touchpoint</field>
         <field name="arch" type="xml">
             <kanban default_group_by="buyer_journey_stage" class="o_kanban_small_column">
-            	<field name="buyer_journey_stage"/>
             	<field name="state"/>
+            	<field name="buyer_journey_stage"/>
             	<field name="plan_id"/>
                 <field name="id"/>
                 <field name="name" />
+                 <field name="tag_ids" />
                 <field name="type" />
-                <field name="hub_id" />
+                <field name="state" />
                 <field name="image_128" />
                 <field name="color"/>
                 <field name="responsible_id"/>
@@ -887,7 +886,7 @@
                 <field name="activity_state"/>
                 <templates>
                     <t t-name="kanban-box">
-                        <div t-attf-class="#{kanban_color(record.color.raw_value)} oe_kanban_global_click  o_kanban_record_has_image_fill">
+                        <div t-attf-class="#{kanban_color(record.color.raw_value)} oe_kanban_global_click">
                         	<field name="tag_ids" widget="many2many_tags" options="{'color_field': 'color'}"/>
                         	<div class="o_dropdown_kanban dropdown">
 
@@ -900,7 +899,6 @@
                                         <ul class="oe_kanban_colorpicker" data-field="color"/>
                                     </div>
                                 </div>
-                                <field name="image_128" widget="image" class="o_kanban_image_fill_left" options="{'zoom': true, 'zoom_delay': 1000, 'background': true, 'preventClicks': false}"/>
                                  <div class="oe_kanban_details">
                                  <h4 class="oe_partner_heading">
                                     <a type="open" class="o_kanban_record_title">
@@ -908,8 +906,8 @@
                                     </a>
                                 </h4> 
                                 <ul>
-                                 <li><field name="type"/></li>
-                                 <li><field name="hub_id"/></li>
+                                 <li>Type: <field name="type"/></li>
+                                 <li>State: <field name="state"/></li>
                                  </ul>
                                  </div>  
                                 <div class="o_kanban_record_bottom">
@@ -935,8 +933,8 @@
      <record id='marketing_strategy_buyer_journey_action' model='ir.actions.act_window'>
         <field name="name">Buyer's Journey</field>
         <field name="res_model">marketing_strategy.touchpoint</field>
+        <field name="domain">[]</field>
         <field name="view_mode">kanban,tree,form</field>
-        <field name="domain">[('state','=','operating')]</field>
         <field name="view_id" ref="marketing_strategy_buyer_journey_view_kanban"/>
         <field name="help" type="html">
           <p class="o_view_nocontent_smiling_face">
