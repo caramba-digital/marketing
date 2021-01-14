@@ -362,6 +362,7 @@
                                                         <ul>
                                                             <li>Chapter:  <field name="chapter" /></li>
                                                             <li>Value: <field name="value"/></li>
+                                                            <li>Description: <field name="description"/></li>
                                                         </ul>
                                                     </div>
                                                     <div class="oe_clear"/>

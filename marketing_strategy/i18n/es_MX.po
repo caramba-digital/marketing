@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-01-14 16:53+0000\n"
-"PO-Revision-Date: 2021-01-14 10:57-0600\n"
+"POT-Creation-Date: 2021-01-14 18:19+0000\n"
+"PO-Revision-Date: 2021-01-14 12:21-0600\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -1243,6 +1243,11 @@ msgstr "Demografía"
 #: model_terms:ir.ui.view,arch_db:marketing_strategy.touchpoint_form_view
 msgid "Description"
 msgstr "Descripción"
+
+#. module: marketing_strategy
+#: model_terms:ir.ui.view,arch_db:marketing_strategy.marketing_strategy_story_brand_view_form
+msgid "Description:"
+msgstr "Descripción:"
 
 #. module: marketing_strategy
 #: model:ir.model.fields,field_description:marketing_strategy.field_crm_lead__display_name
