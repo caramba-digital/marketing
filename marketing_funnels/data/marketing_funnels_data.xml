@@ -314,7 +314,7 @@
 
     <record id="marketing_funnel_page_opt_14" model="funnel.page.type">
     	<field name="name">Bridge Page</field>
-      <field name="sequence">21</field>
+      <field name="sequence">22</field>
       <field name="resource">none</field>
     </record>
 
@@ -337,13 +337,13 @@
 
     <record id="marketing_funnel_page_opt_17" model="funnel.page.type">
     	<field name="name">Thank Page</field>
-      <field name="sequence">19</field>
+      <field name="sequence">20</field>
       <field name="resource">none</field>
     </record>
 
     <record id="marketing_funnel_page_opt_18" model="funnel.page.type">
     	<field name="name">Cancellation Page</field>
-      <field name="sequence">20</field>
+      <field name="sequence">21</field>
       <field name="resource">none</field>
       <field name="funnel_types_ids" eval="[(6, 0, [ref('marketing_funnel_type_opt_21')])]"/>
     </record>
@@ -367,6 +367,28 @@
       <field name="sequence">18</field>
       <field name="resource">coupon_program</field>
       <field name="funnel_types_ids" eval="[(6, 0, [ref('marketing_funnel_type_opt_28')])]"/>
+    </record>
+
+    <record id="marketing_funnel_page_opt_22" model="funnel.page.type">
+    	<field name="name">Promotion Page</field>
+      <field name="sequence">19</field>
+      <field name="resource">promotion</field>
+      <field name="funnel_types_ids" eval="[(6, 0, [ref('marketing_funnel_type_opt_13'),
+                                                ref('marketing_funnel_type_opt_14'),
+                                                ref('marketing_funnel_type_opt_20'),
+                                                ref('marketing_funnel_type_opt_21'),
+                                              ])]"/>
+    </record>
+
+    <record id="marketing_funnel_page_opt_23" model="funnel.page.type">
+    	<field name="name">Coupon Page</field>
+      <field name="sequence">20</field>
+      <field name="resource">coupon_program</field>
+      <field name="funnel_types_ids" eval="[(6, 0, [ref('marketing_funnel_type_opt_13'),
+                                                ref('marketing_funnel_type_opt_14'),
+                                                ref('marketing_funnel_type_opt_20'),
+                                                ref('marketing_funnel_type_opt_21'),
+                                              ])]"/>
     </record>
 
 

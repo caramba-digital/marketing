@@ -162,7 +162,7 @@
         <field name="arch" type="xml">
             <tree decoration-danger="state == 'exception'" decoration-muted="state == 'cancelled'" string="Funnel Workflow">
                 <field name="activity_id"/>
-                <field name="object_id"/>
+                <field name="page_id"/>
                 <field name="date"/>
                 <field name="state"/>
                 <button string="Cancel" states="todo" name="button_cancel" type="object" icon="fa-times-circle text-danger"/>
@@ -193,7 +193,7 @@
                         <field name="company_id" options="{'no_create': True}" groups="base.group_multi_company"/>
                     </group>
                     <group>
-                        <field name="object_id"/>
+                        <field name="page_id"/>
                     </group>
                 </group>
                 <group attrs="{'invisible':[('state','!=','exception')]}" string="Error Message">

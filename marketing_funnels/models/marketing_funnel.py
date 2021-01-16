@@ -1,22 +1,22 @@
 # -*- coding: utf-8 -*-
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).#
 
-from dateutil.relativedelta import relativedelta
-from traceback import format_exception
-from sys import exc_info
+import json
+import logging
+import random
 import re
 from datetime import datetime
-import random
-import json
+from sys import exc_info
+from traceback import format_exception
 
-from odoo import api, models, fields, _
+from dateutil.relativedelta import relativedelta
+from odoo import _, api, fields, models
 from odoo.addons.http_routing.models.ir_http import slug
-from odoo.tools.translate import html_translate
-from odoo.tools import html2plaintext
 from odoo.exceptions import UserError, ValidationError
+from odoo.tools import html2plaintext
 from odoo.tools.safe_eval import safe_eval
+from odoo.tools.translate import html_translate
 
-import logging
 _logger = logging.getLogger(__name__)
 
 _intervalTypes = {
@@ -46,6 +46,7 @@ class FunnelPageType(models.Model):
         ('offer', 'Offer'),
         ('catalog', 'Catalog'), 
         ('random', 'Random'), 
+        ('promotion', 'Promotion'),
         ('event','Event'),
         ('newsletter','Newsletter'),
         ('lead','Lead'),
@@ -73,8 +74,6 @@ class Funnel(models.Model):
 
     name = fields.Char('Funnel Name', required=True, translate=True)
     type_id = fields.Many2one('funnel.type', required=True)
-    object_id = fields.Many2one('ir.model', 'Resource', required=True, domain=[('model','in',['res.partner', 'sale.order','crm.lead','event.registration','website.visitor', 'mailing.contact'])],
-        help="Choose the resource on which you want this Funnel to be run", ondelete='cascade')
     color = fields.Integer('Kanban Color Index')
     social_proof_interval = fields.Integer('Social Proof Interval', default= 5, help='Maximum tracking time in hours')
     parent_funnel_id = fields.Many2one('funnel.funnel', 'Parent Funnel')
@@ -117,7 +116,6 @@ class FunnelPage(models.Model):
     name = fields.Char('Page Name', required=True, translate=True)
     sequence = fields.Integer('Sequence', help="Determine the display order", index=True)
     funnel_id = fields.Many2one('funnel.funnel', 'Funnel', required=True, ondelete='cascade')
-    object_id = fields.Many2one(related='funnel_id.object_id', relation='ir.model', string='Object', readonly=True)
     type_id = fields.Many2one('funnel.page.type', required=True)
     active = fields.Boolean('Active', default=True)
     content_top = fields.Html('Top Content', default=_default_content, translate=html_translate, sanitize=False)
@@ -155,8 +153,8 @@ class FunnelPage(models.Model):
     random_product = fields.Boolean(default=False)
     style_id = fields.Many2one('funnel.page.style')
     mailing_list_id = fields.Many2one('mailing.list', string='')
-    social_proof_notification = fields.Boolean('Social Proof Notifications', default=False, help='')
     resource = fields.Char(compute='_get_resource', store=True)
+    social_proof_notification = fields.Boolean('Social Proof Notifications', default=False, help='')
     activity_ids = fields.One2many('funnel.activity', 'page_id', 'Activities')
     last_date = fields.Datetime('Last View')
     visits = fields.Integer('No of Views', copy=False, readonly=True)
@@ -164,29 +162,27 @@ class FunnelPage(models.Model):
     website_id = fields.Many2one(related='funnel_id.website_id', readonly=True)
     company_id = fields.Many2one('res.company', 'Company', required=True, index=True, default=lambda self: self.env.company) 
 
-
-
     @api.depends('type_id')
     def _get_resource(self):
         for record in self:
             record.resource = self.type_id.resource
 
-
     
-    def process_activities(self, object_id, res_id):
+    def process_activities(self, page_id, visitor_id):
         Workitems = self.env['funnel.workitem']
         Activities = self.env['funnel.activity']
         action_date = fields.Datetime.now()
-        activity_ids = Activities.search([('start', '=', True), ('page_id', '=', self.id)]).ids
         wi_vals = {
             'date': action_date,
             'state': 'todo',
-            'res_id': res_id
+            'visitor_id': visitor_id
         }
-        for activity_id in activity_ids:
+        for activity in self.activity_ids:
+            _logger.warning('XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX; {}'.format(activity.name))
+        '''for activity_id in activity_ids:
             wi_vals['activity_id'] = activity_id
             wi = Workitems.create(wi_vals)
-            wi.process()
+            wi.process()'''
         return True
 
 
@@ -197,9 +193,7 @@ class FunnelActivity(models.Model):
 
     name = fields.Char('Name', required=True, translate=True)
     page_id = fields.Many2one('funnel.page', string="Page", ondelete='cascade', index=True)
-    res_id = fields.Integer()
-    object_id = fields.Many2one(related='page_id.object_id', relation='ir.model', string='Object', readonly=True)
-    start = fields.Integer('Start', help="This activity is launched when the page is viewed.", compute='_compute_start', index=True, store=True)
+    start = fields.Boolean('Start', help="This activity is launched when the page is viewed.",  index=True, default=False)
     condition = fields.Text('Condition', required=True, default="True",
         help="Python expression to decide whether the activity can be executed, otherwise it will be deleted or cancelled."
         "The expression may use the following [browsable] variables:\n"
@@ -224,11 +218,6 @@ class FunnelActivity(models.Model):
         help="By activating this option, workitems that aren't executed because the condition is not met are marked as "
              "cancelled instead of being deleted.")
     company_id = fields.Many2one('res.company', 'Company', required=True, index=True, default=lambda self: self.env.company) 
-
-    @api.depends('from_ids')
-    def _compute_start(self):
-        i = len(self.from_ids.ids)
-        return i
     
     def _process_wi_email(self, workitem):
         self.ensure_one()
@@ -311,8 +300,8 @@ class FunnelWorkitem(models.Model):
     _description = "Funnel Workitem"
 
     activity_id = fields.Many2one('funnel.activity', 'Activity', required=True, readonly=True)
-    object_id = fields.Many2one('ir.model', related='activity_id.page_id.object_id', string='Resource', index=1, readonly=True, store=True)
-    res_id = fields.Integer('Resource ID', index=1, readonly=True)
+    page_id = fields.Many2one('ir.model', related='activity_id.page_id', string='Page', index=1, readonly=True, store=True)
+    visitor_id = fields.Integer('Resource ID', index=1, readonly=True)
     date = fields.Datetime('Execution Date', readonly=True, default=False,
         help='If date is not set, this workitem has to be run manually')
     partner_id = fields.Many2one('res.partner', 'Partner', index=1, readonly=True)
@@ -329,8 +318,8 @@ class FunnelWorkitem(models.Model):
     def _compute_res_name(self):
         for workitem in self:
             proxy = self.env[workitem.object_id.model]
-            record = proxy.browse(workitem.res_id)
-            if not workitem.res_id or not record.exists():
+            record = proxy.browse(workitem.visitor_id)
+            if not workitem.visitor_id or not record.exists():
                 workitem.res_name = '/'
                 continue
             workitem.res_name = record.name_get()[0][1] 
@@ -428,7 +417,7 @@ class FunnelWorkitem(models.Model):
                 'views': [(view_ref and view_ref.id or False, 'form')],
                 'type': 'ir.actions.act_window',
                 'target': 'new',
-                'context': "{'template_id': %d,'default_res_id': %d}" % (self.activity_id.email_template_id.id, self.partner_id)
+                'context': "{'template_id': %d,'default_visitor_id': %d}" % (self.activity_id.email_template_id.id, self.partner_id)
             }
 
         else:

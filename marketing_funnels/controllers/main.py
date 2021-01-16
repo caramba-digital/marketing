@@ -87,7 +87,9 @@ class WebsiteFunnel(http.Controller):
         if page.is_published:
             page.visits +=1
             page.last_date = datetime.now()
-            visitor_sudo = request.env['website.visitor']._get_visitor_from_request()
+            visitor = request.env['website.visitor']._get_visitor_from_request()
+            if page.activity_ids:
+                funnel_page.sudo().process_activities(visitor.id)
         return response
 
 
