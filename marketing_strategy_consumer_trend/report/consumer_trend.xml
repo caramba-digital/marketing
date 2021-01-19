@@ -6,7 +6,7 @@
         <field name="name">Print Canvas</field>
         <field name="model">marketing_strategy.consumer_trend</field>
         <field name="report_type">qweb-pdf</field>
-        <field name="paperformat_id" ref="paperformat_euro_no_margin"/>
+        <field name="paperformat_id" ref="marketing_strategy.paperformat_euro_a3_landscape"/>
         <field name="report_name">marketing_strategy_consumer_trend.print_consumer_trend_canvas</field>
         <field name="report_file">marketing_strategy_consumer_trend.print_consumer_trend_canvas</field>
         <field name="print_report_name">'Consumer Trend - %s' % (object.name).replace('/', '')</field>

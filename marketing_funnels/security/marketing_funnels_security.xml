@@ -39,27 +39,12 @@
             <field name="domain_force">[('company_id', 'in', company_ids)]</field>
         </record>
 
-        <record model="ir.rule" id="funnel_activity_comp_rule">
+        <record model="ir.rule" id="funnel_page_comp_rule">
             <field name="name">Funnel Activity multi-company</field>
-            <field name="model_id" ref="model_funnel_activity"/>
+            <field name="model_id" ref="model_funnel_page"/>
             <field name="global" eval="True"/>
             <field name="domain_force">[('company_id', 'in', company_ids)]</field>
         </record>
-
-        <record model="ir.rule" id="funnel_transition_comp_rule">
-            <field name="name">Funnel Transition multi-company</field>
-            <field name="model_id" ref="model_funnel_transition"/>
-            <field name="global" eval="True"/>
-            <field name="domain_force">[('company_id', 'in', company_ids)]</field>
-        </record>
-
-        <record model="ir.rule" id="funnel_workitem_comp_rule">
-            <field name="name">Funnel Workitem multi-company</field>
-            <field name="model_id" ref="model_funnel_workitem"/>
-            <field name="global" eval="True"/>
-            <field name="domain_force">[('company_id', 'in', company_ids)]</field>
-        </record>
-
 
       </data>
 </odoo>

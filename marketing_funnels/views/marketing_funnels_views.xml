@@ -58,7 +58,6 @@
                                         <field name="website_id"/>                                  
                                     </group>
                                     <group>
-                                        <field name="activity_ids" nolabel="1"/> 
                                     </group>
                                 </group>
                                 <notebook colspan="4">
@@ -160,18 +159,19 @@
             	<sheet>
                         <div class="oe_button_box" name="button_box">
                             <field name="is_published" widget="website_redirect_button"/>
-                        </div>    
+                        </div>   
+                    <div class="oe_title">
+                    	<h1><field name="name" placeholder="Name" nolabel="1"/></h1>                    	
+                    </div> 
                         <group>
                             <group>
-                                <field name="name" />
-                                <field name="type_id"/> 
-                                <field name="funnel_id"/>    
-                                <field name="website_id"/>   
-                                <field name="visits"/>      
+                                <field name="funnel_id"/>   
+                                <field name="type_id"/>  
                                 <field name="resource"/>                             
                             </group>
                             <group>
-                                <field name="activity_ids" nolabel="1" context="{'default_page_id':active_id,'default_start':True}"/> 
+                                <field name="website_id"/>   
+                                <field name="visits"/>   
                             </group>
                         </group>  
                     <notebook colspan="4">
@@ -237,7 +237,7 @@
         <field name="view_mode">tree,form</field>
         <field name="help" type="html">
           <p class="o_view_nocontent_smiling_face">
-            Create a new funnel activity
+            Create a new funnel page
           </p>
         </field>
     </record>
@@ -247,104 +247,7 @@
             parent="marketing_funnels.marketing_funnels_menu_root"
             action="funnel_page_action" sequence="2"/>	
 
-    <!-- Funnel Activities-->
-
-
-    <record id='funnel_activity_view_tree' model='ir.ui.view'>
-        <field name="name">funnel.activity.tree</field>
-        <field name="model">funnel.activity</field>
-        <field name="arch" type="xml">
-            <tree string="Funnel Activities">
-                <field name="name"/>
-                <field name="action_type"/>
-                <field name="company_id" options="{'no_create': True}" groups="base.group_multi_company"/>
-            </tree>
-        </field>
-    </record>
-
-    <record model="ir.ui.view" id="funnel_activity_view_form">
-        <field name="name">funnel.activity.form</field>
-        <field name="model">funnel.activity</field>
-        <field name="arch" type="xml">
-            <form string="Activity">                
-            	<sheet>
-                    <div class="oe_title">
-                    	<h1><field name="name" placeholder="Name" nolabel="1"/></h1>                    	
-                    </div>
-                    <group>
-                        <group>
-                            <field name="signal"/>
-                            <field name="start"/>
-                        </group>
-                        <group>
-                            <field name="page_id"/>
-                            <field name="company_id" groups="base.group_multi_company"/>
-                        </group>
-                        <group>
-                            <field name="condition" widget="char"/>
-                            <field name="keep_if_condition_not_met"/>
-                        </group>
-                        <group>
-                            <field name="action_type"/>
-                            <field name="email_template_id" attrs="{'required':[('action_type','=','email')], 'invisible':[('action_type','!=','email')]}" context="{'default_is_for_funnel': True}"/>
-                            <field name="server_action_id" attrs="{'required':[('action_type','=','action')],'invisible':[('action_type','!=','action')]}" />
-                        </group>
-                    </group>
-                <separator string="Previous Activities"/>
-                <field name="from_ids" mode="tree" context="{'default_activity_to_id': active_id}">
-                    <tree string="Incoming Transitions" editable="bottom">
-                        <field name="activity_from_id" options="{'no_create': True}" />
-                        <field name='trigger'/>
-                        <field name="interval_nbr"/>
-                        <field name="interval_type"/>
-                    </tree>
-                    <form string="Incoming Transitions">
-                        <group col="4">
-                            <field name="activity_from_id" options="{'no_create': True}" />
-                            <field name='trigger'/>
-                            <field name="interval_nbr"/>
-                            <field name="interval_type"/>
-                        </group>
-                    </form>
-                </field>
-                <separator string="Next Activities"/>
-                <field name="to_ids" mode="tree" context="{'default_activity_from_id': active_id}">
-                    <tree string="Outgoing Transitions" editable="bottom">
-                        <field name="activity_to_id"  />
-                        <field name='trigger'/>
-                        <field name="interval_nbr"/>
-                        <field name="interval_type"/>
-                    </tree>
-                    <form string="Outgoing Transitions">
-                        <group col="4">
-                            <field name="activity_to_id"  />
-                            <field name='trigger'/>
-                            <field name="interval_nbr"/>
-                            <field name="interval_type"/>
-                        </group>
-                    </form>
-                </field>
-                </sheet>
-            </form>
-        </field>
-    </record>
-
-    <record id='funnel_activity_action' model='ir.actions.act_window'>
-        <field name="name">Funnels Activities</field>
-        <field name="res_model">funnel.activity</field>
-        <field name="view_mode">tree,form</field>
-        <field name="help" type="html">
-          <p class="o_view_nocontent_smiling_face">
-            Create a new funnel activity
-          </p>
-        </field>
-    </record>
-
-        <menuitem id="menu_funnel_activity" name="Funnel Activities"
-            parent="marketing_funnels.marketing_funnels_menu_root"
-            action="funnel_activity_action" sequence="3"/>	
-
-
+   
     
   </data>
 </odoo>
