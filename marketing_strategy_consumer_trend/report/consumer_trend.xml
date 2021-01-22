@@ -19,6 +19,98 @@
             <t t-foreach="docs" t-as="o">
                 <t t-call="web.external_layout">
                     <div class="page">
+                        <div class="container-fluid">
+                            <div class="row ">
+                               <col/>
+                                   <h1>Consumer Trend Canvas</h1>
+                            </div>    
+                        </div>
+                        <div class="container-fluid">
+                            <div class="row bg-warning">
+                               <col/>
+                                   <h1>Consumer Trend Canvas</h1>
+                            </div>    
+                        </div>
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-8  pt-4" >
+                                    <div class="row bg-warning">
+                                        <div class="col pt-2">
+                                        <h2 class="text-center">ANALYZE</h2>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-9">
+                                            <div class="row">
+                                                <div class="col-4  border bg-light">
+                                                    <h5>Trend</h5>
+                                                    <hr />
+                                                    <p t-field="o.trend" class="bg-white"/>
+                                                </div>
+                                                <div class="col-8  border bg-light" style="height: 180px;">
+                                                    <h5>Inspiration</h5>
+                                                    <p>How are other businesses applying this trend?</p>
+                                                    <hr />
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                 <div class="col-4 border bg-light" style="height: 300px;">
+                                                 </div>
+                                                 <div class="col-8 border bg-light" style="height: 300px;">
+                                                    <h5>Drivers of Change</h5>
+                                                    <p>Why is this trend emerging now? What’s changing?</p>
+                                                    <div class="row">
+                                                        <div class="col-6">
+                                                            <h6>Shifts (long-term)</h6>
+                                                            <p>Widespread macro changes</p>
+                                                            <hr />
+                                                            <p t-field="o.driver_1" class="bg-white"/>
+                                                            <p t-field="o.driver_2" class="bg-white"/>
+                                                            <p t-field="o.driver_3" class="bg-white"/>
+                                                            </div>
+                                                            <div class="col-6">                       									
+                                                                <h6>Triggers (short-term)</h6>
+                                                                <p> Recent changes or technologies</p>
+                                                            <hr />
+                                                            <p t-field="o.trigger_1" class="bg-white"/>
+                                                            <p t-field="o.trigger_2" class="bg-white"/>
+                                                            <p t-field="o.trigger_3" class="bg-white"/>
+                                                        </div>
+                                                    </div>
+                                                 </div>
+                                            </div>
+                                        </div> 
+                                        <div class="col-3  border bg-light" style="height: 480px;" >
+                                            <h5>Emerging<br/> 
+                                                Expectations                    						
+                                            </h5>
+                                            <p style="width: 90%">What new consumer needs, wants and expectations are created by the changes identified above?<br />
+                                                                Where and how does this trend satisfy them?</p>
+                                            <hr />
+                                            <p t-field="o.expectations_1" class="bg-white"/>
+                                            <p t-field="o.expectations_2" class="bg-white"/>
+                                            <p t-field="o.expectations_3" class="bg-white"/>
+                                            <p t-field="o.expectations_4" class="bg-white"/>
+                                            <p t-field="o.expectations_5" class="bg-white"/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-4  pt-4" >
+                                    <div class="row bg-success">
+                                        <div class="col pt-2">
+                                        <h2 class="text-center">APPLY</h2>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="container-fluid">
+                            <div class="row bg-warning">
+                               <col/>
+                                   <h1>Consumer Trend Canvas</h1>
+                            </div>    
+                        </div>
+                        
                     </div>
                 </t>
             </t>

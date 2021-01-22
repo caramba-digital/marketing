@@ -9,3 +9,5 @@ access_marketing_funnels_funnel_manager,marketing.funnel_funnel.manager,model_fu
 access_marketing_funnels_page_public,Marketing.funnel_page.public,model_funnel_page,,1,0,0,0
 access_marketing_funnels_page_user,marketing.funnel_page.user,model_funnel_page,marketing_funnels.group_funnels_user,1,1,1,0
 access_marketing_funnels_page_manager,marketing.funnel_page.manager,model_funnel_page,marketing_funnels.group_funnels_manager,1,1,1,1
+access_marketing_funnels_page_style_user,marketing.funnel_page_style.user,model_funnel_page_style,marketing_funnels.group_funnels_user,1,1,1,0
+access_marketing_funnels_page_style_manager,marketing.funnel_page_style.manager,model_funnel_page_style,marketing_funnels.group_funnels_manager,1,1,1,1

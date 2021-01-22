@@ -145,14 +145,23 @@
               <div class="swiper-container funnels-products" id="swiper-container">
                 <div class="swiper-wrapper">
                   <t t-foreach="products" t-as="product">
+                        <t t-set="combination" t-value="product._get_first_possible_combination()"/>
+                        <t t-set="combination_info" t-value="product._get_combination_info(combination, add_qty=add_qty or 1, pricelist=pricelist)"/>
                       <div class="swiper-slide card bg-white h-100">
                         <a t-att-href="product.website_url" class="funnels-catalog-img">
                           <span t-field="product.image_1920" t-options="{'widget': 'image', 'qweb_img_responsive': False, 'class':'card-img-top'}" />
                         </a>
                         <div class="card-body">
                           <h4 class="card-title text-dark" t-field="product.name"/>
+                          <p class="card-text" t-field="product.description_sale" />
                         </div>
                         <div class="card-footer">
+                           <a t-att-href="product.website_url" >
+                            <h2 class="text-center">
+                              <span class="s_comparisons_currency" t-esc="website.currency_id.symbol" />
+                              <span class="s_comparisons_price"><b t-esc="combination_info['price']"/></span>
+                            </h2>
+                          </a>
                         </div>
                       </div>
                   </t>
