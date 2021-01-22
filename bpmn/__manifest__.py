@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).#
 {
-    'name': "bpmn",
+    'name': "BPMN",
 
     'summary': """
         Short (1 phrase/line) summary of the module's purpose, used as
