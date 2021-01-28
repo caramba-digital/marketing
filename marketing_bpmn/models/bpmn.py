@@ -134,6 +134,13 @@ class BpmnLaneSet(models.Model):
     lanes_ids = fields.One2many('bpmn.lane', 'lane_set_id', string='Lanes')
     company_id = fields.Many2one('res.company', 'Company', required=True, index=True, default=lambda self: self.env.company) 
 
+class BpmnFlowNodeRef(models.Model):
+    _name = 'bpmn.flow_node_ref'
+    _description = 'BPMN Flow Node Ref'
+
+    bpmn_ref = fields.Char('Ref', required=True)
+    lane_id = fields.Many2one('bpmn.lane')
+    company_id = fields.Many2one('res.company', 'Company', required=True, index=True, default=lambda self: self.env.company)
 
 class BpmnLane(models.Model):
     _name = 'bpmn.lane'
@@ -142,16 +149,7 @@ class BpmnLane(models.Model):
     name = fields.Char('Name', required=True, translate=True)
     bpmn_id = fields.Char('BPMN Id', required=True, readonly=True)
     lane_set_id = fields.Many2one('bpmn.lane_set', string='Lane Set')
-    flow_node_ref_ids = fields.One2many('bpmn.flow_node_ref', 'lane__id', string='Object Reference')
-    company_id = fields.Many2one('res.company', 'Company', required=True, index=True, default=lambda self: self.env.company)
-
-
-class BpmnFlowNodeRef(models.Model):
-    _name = 'bpmn.flow_node_ref'
-    _description = 'BPMN Flow Node Ref'
-
-    bpmn_ref = fields.Char('Ref', required=True)
-    lane_id = fields.Many2one('bpmn.lane')
+    flow_node_ref_ids = fields.One2many('bpmn.flow_node_ref', 'lane_id', string='Object Reference')
     company_id = fields.Many2one('res.company', 'Company', required=True, index=True, default=lambda self: self.env.company)
 
 class BpmnTask(models.Model):

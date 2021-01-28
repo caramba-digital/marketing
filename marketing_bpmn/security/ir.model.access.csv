@@ -1,6 +1,6 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_bpmn_definition_user,bpmn.definition.user,model_bpmn_definition,marketing_bpmn.group_bpmn_user,1,1,1,0
-access_bpmn_definition_manager,bpmn.definition.manager,model_bpmn_definition,marketing_bpmn.group_bpmn_manager,1,1,1,1
+access_bpmn_definitions_user,bpmn.definitions.user,model_bpmn_definitions,marketing_bpmn.group_bpmn_user,1,1,1,0
+access_bpmn_definitions_manager,bpmn.definitions.manager,model_bpmn_definitions,marketing_bpmn.group_bpmn_manager,1,1,1,1
 access_bpmn_diagram_user,bpmn.diagram.user,model_bpmn_diagram,marketing_bpmn.group_bpmn_user,1,1,1,0
 access_bpmn_diagram_manager,bpmn.diagram.manager,model_bpmn_diagram,marketing_bpmn.group_bpmn_manager,1,1,1,1
 access_bpmn_plane_user,bpmn.plane.user,model_bpmn_plane,marketing_bpmn.group_bpmn_user,1,1,1,0
@@ -25,7 +25,7 @@ access_bpmn_event_user,bpmn.event.user,model_bpmn_event,marketing_bpmn.group_bpm
 access_bpmn_event_manager,bpmn.event.manager,model_bpmn_event,marketing_bpmn.group_bpmn_manager,1,1,1,1
 access_bpmn_workitem_user,bpmn.workitem.user,model_bpmn_workitem,marketing_bpmn.group_bpmn_user,1,1,1,0
 access_bpmn_workitem_manager,bpmn.workitem.manager,model_bpmn_workitem,marketing_bpmn.group_bpmn_manager,1,1,1,1
-access_bpmn_sequence_flow_user,Bpmn.sequence_flow.user,bpmn_sequence_flow,marketing_bpmn.group_bpmn_user,1,1,1,0
-access_bpmn_sequence_flow_manager,Bpmn.sequence_flow.manager,bpmn_sequence_flow,marketing_bpmn.group_bpmn_manager,1,1,1,1
-access_bpmn_flow_node_ref_user,bpmn.flow_node_ref.user,bpmn_flow_node_ref,marketing_bpmn.group_bpmn_user,1,1,1,0
-access_bpmn_flow_node_ref_manager,bpmn.flow_node_ref.manager,bpmn_flow_node_ref,marketing_bpmn.group_bpmn_manager,1,1,1,1
+access_bpmn_sequence_flow_user,Bpmn.sequence_flow.user,model_bpmn_sequence_flow,marketing_bpmn.group_bpmn_user,1,1,1,0
+access_bpmn_sequence_flow_manager,Bpmn.sequence_flow.manager,model_bpmn_sequence_flow,marketing_bpmn.group_bpmn_manager,1,1,1,1
+access_bpmn_flow_node_ref_user,bpmn.flow_node_ref.user,model_bpmn_flow_node_ref,marketing_bpmn.group_bpmn_user,1,1,1,0
+access_bpmn_flow_node_ref_manager,bpmn.flow_node_ref.manager,model_bpmn_flow_node_ref,marketing_bpmn.group_bpmn_manager,1,1,1,1
