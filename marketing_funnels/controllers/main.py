@@ -57,6 +57,8 @@ class WebsiteFunnel(http.Controller):
             values.update(self._prepare_product_values(page.product_id))
         elif  resource=='catalog':
             values['products']= page.products_ids
+            if page.catalogue_mode.startswith('s_'):
+                values['call_to_action'] =  {'suscribe':_('Subscribe'),'apply':_('Apply'),'reserve':_('Reserve'),'download':_('Download'),'get_offer':_('Get Offer'),'quote':_('Quote'),'sign_up':_('Sign Up'),'more_info':_('More Information')}
         elif  resource=='random':
             set=2
         elif  resource=='event':  
