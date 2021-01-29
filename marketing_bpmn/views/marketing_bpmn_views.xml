@@ -1,0 +1,315 @@
+<odoo>
+  <data>
+
+  <menuitem name="Marketing BPMN"
+            id="marketing_bpmn_menu_root"
+            sequence="11"
+            groups="base.group_user"
+            web_icon="marketing_bpmn,static/description/icon.png"/>
+
+  <!--Definitions-->
+
+      <record id='bpmn_definitions_view_form' model='ir.ui.view'>
+        <field name="name">definitions.form</field>
+        <field name="model">bpmn.definitions</field>
+        <field name="arch" type="xml">
+          <form string="BPMN Definitions">
+            <header>
+              <field name="state" widget="statusbar" options="{'clickable': '1'}"/>
+            </header>
+            <sheet>
+              <div class="oe_title">
+                <h1><field name="name" placeholder="Name"/></h1>
+              </div>
+              <group>
+                <group></group>
+                <group></group>
+              </group>
+              <notebook colspan="4">
+                <page string="Process Model" autofocus="autofocus">
+                  <field name="image_1920" widget="image" autofocus="autofocus" class="img-fluid" nolabel="1"/>
+                </page>
+                <page string="Summary" >
+                  <field name="summary" widget="html"  nolabel="1"/>
+                </page>
+                <page string="Collaborations" >
+                </page>
+                <page string="Processes" >
+                </page>
+                <page string="Diagrams" >
+                </page>
+              </notebook>
+              </sheet>
+              <div class="oe_chatter">
+                <field name="message_follower_ids" widget="mail_followers"/>
+                <field name="activity_ids" widget="mail_activity"/>
+                <field name="message_ids" widget="mail_thread" options="{'post_refresh': 'recipients'}"/>
+              </div>
+          </form>
+        </field>
+      </record>
+
+    <record id='bpmn_definitions_view_tree' model='ir.ui.view'>
+        <field name="name">definitions.tree</field>
+        <field name="model">bpmn.definitions</field>
+        <field name="arch" type="xml">
+            <tree string="BPMN Definitions" editable="bottom" create="1" delete="1">
+                <field name="sequence" widget="handle"/>
+                <field name="name" />
+                <field name="user_id" optional="show" widget="many2one_avatar_user"/>
+                <field name="partner_id"/>
+                <field name="activity_ids" widget="list_activity" optional="show"/>
+                <field name="state" />                
+                <field name="company_id" groups="base.group_multi_company" optional="show"/>
+            </tree>
+        </field>
+    </record>
+
+  <record id='bpmn_definitions_view_kanban' model='ir.ui.view'>
+    <field name="name">definitions.kanban</field>
+    <field name="model">bpmn.definitions</field>
+    <field name="arch" type="xml">
+      <kanban   default_group_by="state" class="o_kanban_small_column">
+        <field name="name" />
+        <field name="color"/>
+        <field name="sequence"/>
+        <field name="state"/>
+        <field name="partner_id"/> <field name="message_partner_ids"/>
+        <field name="activity_ids" />
+        <field name="activity_state" />
+        <progressbar field="activity_state" colors='{"planned": "success", "today": "warning", "overdue": "danger"}'/>
+        <templates>
+          <t t-name="kanban-box">
+            <div t-attf-class="#{!selection_mode ? kanban_color(record.color.raw_value) : ''} oe_kanban_global_click_edit oe_semantic_html_override oe_kanban_card">
+              <div class="o_dropdown_kanban dropdown">
+                  <a class="dropdown-toggle o-no-caret btn" role="button" data-toggle="dropdown" href="#" aria-label="Dropdown menu" title="Dropdown menu">
+                    <span class="fa fa-ellipsis-v"/>
+                  </a>
+                  <div class="dropdown-menu" role="menu">
+                    <t t-if="widget.editable"><a role="menuitem" type="edit" class="dropdown-item">Edit</a></t>
+                    <t t-if="widget.deletable"><a role="menuitem" type="delete" class="dropdown-item">Delete</a></t>
+                    <ul class="oe_kanban_colorpicker" data-field="color"/>
+                  </div>
+                </div>
+                <div class="oe_kanban_details">
+                  <h4 class="oe_partner_heading">
+                    <a type="open" class="o_kanban_record_title">
+                      <field name="name"/>
+                    </a>
+                  </h4> 
+                </div>
+            </div>
+          </t>
+        </templates>
+      </kanban>
+    </field>
+  </record>
+
+  <record id='bpmn_definitions_action' model='ir.actions.act_window'>
+    <field name="name">Definitions</field>
+        <field name="res_model">bpmn.definitions</field>
+        <field name="view_mode">kanban,tree,form</field>
+        <field name="help" type="html">
+          <p class="o_view_nocontent_smiling_face">
+            Create a new BPMN2 Model
+          </p>
+        </field>
+    </record>
+
+    <menuitem id="menu_bpmn_definitions" name="Definitions"
+      parent="marketing_bpmn.marketing_bpmn_menu_root"
+      action="bpmn_definitions_action" sequence="1"/>	
+
+
+  <!--Process-->
+
+  <record id='bpmn_process_view_form' model='ir.ui.view'>
+    <field name="name">process.form</field>
+    <field name="model">bpmn.process</field>
+    <field name="arch" type="xml">
+      <form string="BPMN Process">
+          <sheet>
+          </sheet>
+      </form>
+    </field>
+  </record>
+
+  <record id='bpmn_process_view_tree' model='ir.ui.view'>
+    <field name="name">process.tree</field>
+    <field name="model">bpmn.process</field>
+    <field name="arch" type="xml">
+      <tree string="BPMN Processes" editable="bottom" create="1" delete="1">
+      </tree>
+    </field>
+  </record>
+
+  <record id='bpmn_process_view_kanban' model='ir.ui.view'>
+    <field name="name">process.kanban</field>
+    <field name="model">bpmn.process</field>
+    <field name="arch" type="xml">
+      <kanban  class="o_kanban_small_column">
+
+      </kanban>
+    </field>
+  </record>
+
+  <record id='bpmn_process_action' model='ir.actions.act_window'>
+    <field name="name">process</field>
+        <field name="res_model">bpmn.process</field>
+        <field name="view_mode">kanban,tree,form</field>
+        <field name="help" type="html">
+          <p class="o_view_nocontent_smiling_face">
+            Create a new BPMN2 Processes
+          </p>
+        </field>
+    </record>
+
+    <menuitem id="menu_bpmn_process" name="Processes"
+      parent="marketing_bpmn.marketing_bpmn_menu_root"
+      action="bpmn_process_action" sequence="2"/>	
+
+    <!--Tasks-->
+
+  <record id='bpmn_task_view_form' model='ir.ui.view'>
+    <field name="name">task.form</field>
+    <field name="model">bpmn.task</field>
+    <field name="arch" type="xml">
+      <form string="BPMN Task">
+          <sheet>
+          </sheet>
+      </form>
+    </field>
+  </record>
+
+  <record id='bpmn_task_view_tree' model='ir.ui.view'>
+    <field name="name">task.tree</field>
+    <field name="model">bpmn.task</field>
+    <field name="arch" type="xml">
+      <tree string="BPMN Tasks" editable="bottom" create="1" delete="1">
+      </tree>
+    </field>
+  </record>
+
+  <record id='bpmn_task_view_kanban' model='ir.ui.view'>
+    <field name="name">task.kanban</field>
+    <field name="model">bpmn.task</field>
+    <field name="arch" type="xml">
+      <kanban  class="o_kanban_small_column">
+
+      </kanban>
+    </field>
+  </record>
+
+  <record id='bpmn_task_action' model='ir.actions.act_window'>
+    <field name="name">task</field>
+        <field name="res_model">bpmn.task</field>
+        <field name="view_mode">kanban,tree,form</field>
+        <field name="help" type="html">
+          <p class="o_view_nocontent_smiling_face">
+            Create a new BPMN2 Task
+          </p>
+        </field>
+    </record>
+
+    <menuitem id="menu_bpmn_task" name="Tasks"
+      parent="marketing_bpmn.marketing_bpmn_menu_root"
+      action="bpmn_task_action" sequence="3"/>	
+
+    <!--Gateways-->
+
+   <record id='bpmn_gateway_view_form' model='ir.ui.view'>
+    <field name="name">gateway.form</field>
+    <field name="model">bpmn.gateway</field>
+    <field name="arch" type="xml">
+      <form string="BPMN Gateway">
+          <sheet>
+          </sheet>
+      </form>
+    </field>
+  </record>
+
+  <record id='bpmn_gateway_view_tree' model='ir.ui.view'>
+    <field name="name">gateway.tree</field>
+    <field name="model">bpmn.gateway</field>
+    <field name="arch" type="xml">
+      <tree string="BPMN Gateways" editable="bottom" create="1" delete="1">
+      </tree>
+    </field>
+  </record>
+
+  <record id='bpmn_gateway_view_kanban' model='ir.ui.view'>
+    <field name="name">gateway.kanban</field>
+    <field name="model">bpmn.gateway</field>
+    <field name="arch" type="xml">
+      <kanban  class="o_kanban_small_column">
+
+      </kanban>
+    </field>
+  </record>
+
+  <record id='bpmn_gateway_action' model='ir.actions.act_window'>
+    <field name="name">gateway</field>
+        <field name="res_model">bpmn.gateway</field>
+        <field name="view_mode">kanban,tree,form</field>
+        <field name="help" type="html">
+          <p class="o_view_nocontent_smiling_face">
+            Create a new BPMN2 Gateway
+          </p>
+        </field>
+    </record>
+
+    <menuitem id="menu_bpmn_gateway" name="Gateways"
+      parent="marketing_bpmn.marketing_bpmn_menu_root"
+      action="bpmn_gateway_action" sequence="3"/>	
+
+
+    <!--Event-->
+
+  <record id='bpmn_event_view_form' model='ir.ui.view'>
+    <field name="name">event.form</field>
+    <field name="model">bpmn.event</field>
+    <field name="arch" type="xml">
+      <form string="BPMN Event">
+          <sheet>
+          </sheet>
+      </form>
+    </field>
+  </record>
+
+  <record id='bpmn_event_view_tree' model='ir.ui.view'>
+    <field name="name">event.tree</field>
+    <field name="model">bpmn.event</field>
+    <field name="arch" type="xml">
+      <tree string="BPMN Events" editable="bottom" create="1" delete="1">
+      </tree>
+    </field>
+  </record>
+
+  <record id='bpmn_event_view_kanban' model='ir.ui.view'>
+    <field name="name">event.kanban</field>
+    <field name="model">bpmn.event</field>
+    <field name="arch" type="xml">
+      <kanban  class="o_kanban_small_column">
+
+      </kanban>
+    </field>
+  </record>
+
+  <record id='bpmn_event_action' model='ir.actions.act_window'>
+    <field name="name">Event</field>
+        <field name="res_model">bpmn.event</field>
+        <field name="view_mode">kanban,tree,form</field>
+        <field name="help" type="html">
+          <p class="o_view_nocontent_smiling_face">
+            Create a new BPMN2 Event
+          </p>
+        </field>
+    </record>
+
+    <menuitem id="menu_bpmn_event" name="Events"
+      parent="marketing_bpmn.marketing_bpmn_menu_root"
+      action="bpmn_event_action" sequence="3"/>	
+
+
+  </data>
+</odoo>

@@ -25,7 +25,11 @@ access_bpmn_event_user,bpmn.event.user,model_bpmn_event,marketing_bpmn.group_bpm
 access_bpmn_event_manager,bpmn.event.manager,model_bpmn_event,marketing_bpmn.group_bpmn_manager,1,1,1,1
 access_bpmn_workitem_user,bpmn.workitem.user,model_bpmn_workitem,marketing_bpmn.group_bpmn_user,1,1,1,0
 access_bpmn_workitem_manager,bpmn.workitem.manager,model_bpmn_workitem,marketing_bpmn.group_bpmn_manager,1,1,1,1
-access_bpmn_sequence_flow_user,Bpmn.sequence_flow.user,model_bpmn_sequence_flow,marketing_bpmn.group_bpmn_user,1,1,1,0
-access_bpmn_sequence_flow_manager,Bpmn.sequence_flow.manager,model_bpmn_sequence_flow,marketing_bpmn.group_bpmn_manager,1,1,1,1
+access_bpmn_sequence_flow_user,bpmn.sequence_flow.user,model_bpmn_sequence_flow,marketing_bpmn.group_bpmn_user,1,1,1,0
+access_bpmn_sequence_flow_manager,bpmn.sequence_flow.manager,model_bpmn_sequence_flow,marketing_bpmn.group_bpmn_manager,1,1,1,1
 access_bpmn_flow_node_ref_user,bpmn.flow_node_ref.user,model_bpmn_flow_node_ref,marketing_bpmn.group_bpmn_user,1,1,1,0
 access_bpmn_flow_node_ref_manager,bpmn.flow_node_ref.manager,model_bpmn_flow_node_ref,marketing_bpmn.group_bpmn_manager,1,1,1,1
+access_bpmn_text_anotation_user,bpmn.text_anotation.user,model_bpmn_text_anotation,marketing_bpmn.group_bpmn_user,1,1,1,0
+access_bpmn_text_anotation_manager,bpmn.text_anotation.manager,model_bpmn_text_anotation,marketing_bpmn.group_bpmn_manager,1,1,1,1
+access_bpmn_association_user,bpmn.fassociation.user,model_bpmn_association,marketing_bpmn.group_bpmn_user,1,1,1,0
+access_bpmn_association_manager,bpmn.association.manager,model_bpmn_association,marketing_bpmn.group_bpmn_manager,1,1,1,1

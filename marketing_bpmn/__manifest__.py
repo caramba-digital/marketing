@@ -16,7 +16,7 @@
     'data': [
         'security/marketing_bpmn_security.xml',
         'security/ir.model.access.csv',
-        'views/views.xml',
+        'views/marketing_bpmn_views.xml',
         'views/templates.xml',
     ],
     'demo': [

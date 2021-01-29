@@ -31,9 +31,29 @@ class BpmnDefinitions(models.Model):
     _description = 'BPMN Definitions'
     _inherit = ['mail.thread', 'mail.activity.mixin','image.mixin']
 
-    name = fields.Char('Name', required=True, translate=True, default='bpmn')
+    def _expand_states(self, states, domain, order):
+        return ['draft', 'new', 'develop', 'approved', 'progress', 'done']
+    
+
+    name = fields.Char("Name", index=True, required=True, tracking=True)
+    summary = fields.Html()
+    state = fields.Selection([
+        ('draft', 'Draft'),
+        ('new', 'New ideas'),
+        ('develop', 'Develop Together'),
+        ('approved','Approved'),
+        ('progress','In progress'),
+        ('done', 'Completed'),
+        ('cancel', 'Cancelled'),
+        ],
+        string='Status', default='draft', required=True, copy=False,  group_expand='_expand_states')
+    active = fields.Boolean(default=True,
+        help="If the active field is set to False, it will allow you to hide the project without removing it.")
+    sequence = fields.Integer(default=10, help="Gives the sequence order when displaying a list of BPMNs.")
+    color = fields.Integer('Color Index')
+    user_id = fields.Many2one('res.users', string='BPMN Manager', default=lambda self: self.env.user, tracking=True)
+    partner_id = fields.Many2one('res.partner', string='Customer', auto_join=True, tracking=True, domain="['|', ('company_id', '=', False), ('company_id', '=', company_id)]")
     bpmn_id = fields.Char('BPMN Id', required=True, readonly=True)
-    description = fields.Text('Description')
     collaborations_ids = fields.One2many('bpmn.collaboration', 'definitions_id', string='Pools')
     process_ids = fields.One2many('bpmn.process', 'definitions_id', string='Process')
     diagrams_ids = fields.One2many('bpmn.diagram', 'definitions_id', string='Diagrams')
@@ -263,11 +283,28 @@ class BpmnSequenceFlow(models.Model):
     _name = 'bpmn.sequence_flow'
     _description = 'BPMN Sequence Flow' 
 
+    name =  fields.Char('Name',translate=True)
     bpmn_id = fields.Char('BPMN Id', required=True, readonly=True)
     process_id = fields.Many2one('bpmn.process', string='Process')
+    is_conditional = fields.Boolean('Is Conditional', default=False)
     source_ref = fields.Char(string='sourceRef')
     target_ref = fields.Char(string='targetRef')
     company_id = fields.Many2one('res.company', 'Company', required=True, index=True, default=lambda self: self.env.company) 
+
+class BpmnTextAnnotation(models.Model):
+    _name = "bpmn.text_anotation"
+    _description = "BPMN Text Annotation"
+
+    bpmn_id = fields.Char('BPMN Id', required=True, readonly=True)
+    text = fields.Char(string='Text')
+
+class Association(models.Model):
+    _name = "bpmn.association"
+    _description = "BPMN Association"
+
+    source_ref = fields.Char(string='sourceRef')
+    target_ref = fields.Char(string='targetRef')
+
 
 class BpmnWorkitem(models.Model):
     _name = "bpmn.workitem"
@@ -287,3 +324,5 @@ class BpmnWorkitem(models.Model):
         ], 'Status', readonly=True, copy=False, default='todo')
     error_msg = fields.Text('Error Message', readonly=True)
     company_id = fields.Many2one('res.company', 'Company', required=True, index=True, default=lambda self: self.env.company)
+
+
