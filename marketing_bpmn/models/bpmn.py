@@ -8,6 +8,8 @@ import re
 from datetime import datetime
 from sys import exc_info
 from traceback import format_exception
+import string
+import random
 
 from dateutil.relativedelta import relativedelta
 from odoo import _, api, fields, models
@@ -25,6 +27,11 @@ _intervalTypes = {
     'months': lambda interval: relativedelta(months=interval),
     'years': lambda interval: relativedelta(years=interval),
 }
+
+def _id_generator(prefix=''):
+    name_id = ''.join(random.choice(string.ascii_lowercase + string.digits) for _ in range(7))
+    bpmn_name = prefix + name_id
+    return bpmn_name
 
 class BpmnDefinitions(models.Model):
     _name = 'bpmn.definitions'
@@ -53,20 +60,33 @@ class BpmnDefinitions(models.Model):
     color = fields.Integer('Color Index')
     user_id = fields.Many2one('res.users', string='BPMN Manager', default=lambda self: self.env.user, tracking=True)
     partner_id = fields.Many2one('res.partner', string='Customer', auto_join=True, tracking=True, domain="['|', ('company_id', '=', False), ('company_id', '=', company_id)]")
-    bpmn_id = fields.Char('BPMN Id', required=True, readonly=True)
+    bpmn_id = fields.Char('BPMN Id', required=True, readonly=True, default =_id_generator('Definitions_'))
     collaborations_ids = fields.One2many('bpmn.collaboration', 'definitions_id', string='Pools')
     process_ids = fields.One2many('bpmn.process', 'definitions_id', string='Process')
     diagrams_ids = fields.One2many('bpmn.diagram', 'definitions_id', string='Diagrams')
     exporter = fields.Char(required=True,  default='bpmn-js (https://demo.bpmn.io)', readonly=True)
     exporter_version = fields.Char(required=True,  default='8.0.1', readonly=True)
+    bpmn_file = fields.Binary(string='BPMN2 File')
+    bpmn_file_name = fields.Char('File Name')
+    website_id = fields.Many2one('website', required=True)
     company_id = fields.Many2one('res.company', 'Company', required=True, index=True, default=lambda self: self.env.company)
+
+    def load_model(self):
+        _logger.warning('HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH{}'.format(self.bpmn_file.decode('utf-8')))
+        return False
+
+    def update_model(self):
+        return False
+
+    def reset_model(self):
+        return False
 
 class BpmnDiagram(models.Model):
     _name = 'bpmn.diagram'
     _description = 'BPMN Diagram'
 
     name = fields.Char('Name', required=True, translate=True)
-    bpmn_id = fields.Char('BPMN Id', required=True, readonly=True)
+    bpmn_id = fields.Char('BPMN Id', required=True, readonly=True, default =_id_generator('Definitions_'))
     planes_ids = fields.One2many('bpmn.plane', 'diagram_id', string='Planes')
     definitions_id = fields.Many2one('bpmn.definitions', string='BPMN2 Model', required=True)
     company_id = fields.Many2one('res.company', 'Company', required=True, index=True, default=lambda self: self.env.company)
@@ -76,7 +96,7 @@ class BpmnPlane(models.Model):
     _description = 'BPMN Plane'
 
     name = fields.Char('Name', required=True, translate=True)
-    bpmn_id = fields.Char('BPMN Id', required=True, readonly=True)
+    bpmn_id = fields.Char('BPMN Id', required=True, readonly=True, default =_id_generator('Definitions_'))
     bpmn_element = fields.Char(string='bpmnElement', required=True, readonly=True)
     diagram_id = fields.Many2one('bpmn.diagram', string='BPMN2 Model', required=True)
     shapes_ids = fields.One2many('bpmn.shape', 'plane_id', string='Shapes')
@@ -88,7 +108,7 @@ class BpmnShape(models.Model):
     _description = 'BPMN Shape'
 
     name = fields.Char('Name', required=True, translate=True)
-    bpmn_id = fields.Char('BPMN Id', required=True, readonly=True)
+    bpmn_id = fields.Char('BPMN Id', required=True, readonly=True, default =_id_generator('Definitions_'))
     bpmn_element = fields.Char(string='bpmnElement', required=True, readonly=True)
     is_horizontal = fields.Boolean(string='isHorizontal', default=False, readonly=False)
     x = fields.Integer(string='x', required=True, readonly=True)
@@ -103,7 +123,7 @@ class BpmnEdge(models.Model):
     _description = 'BPMN Edge'
 
     name = fields.Char('Name', required=True, translate=True)
-    bpmn_id = fields.Char('BPMN Id', required=True, readonly=True)
+    bpmn_id = fields.Char('BPMN Id', required=True, readonly=True, default =_id_generator('Definitions_'))
     x1 = fields.Integer(string='x', required=True, readonly=True)
     y1 = fields.Integer(string='y', required=True, readonly=True)
     x2 = fields.Integer(string='x', required=True, readonly=True)
@@ -117,7 +137,7 @@ class BpmnCollaboration(models.Model):
     _description = 'BPMN Collaboration'
 
     name = fields.Char('Name', required=True, translate=True, default='bpmn')
-    bpmn_id = fields.Char('BPMN Id', required=True)
+    bpmn_id = fields.Char('BPMN Id', required=True, default =_id_generator('Collaboration_'))
     definitions_id = fields.Many2one('bpmn.definitions', string='BPMN2 Model', required=True)
     participants_ids = fields.One2many('bpmn.participant', 'collaboration_id', string='Pools')
     company_id = fields.Many2one('res.company', 'Company', required=True, index=True, default=lambda self: self.env.company) 
@@ -128,7 +148,7 @@ class BpmnParticipant(models.Model):
     _description = 'BPMN Pool'
 
     name = fields.Char('Name',translate=True)
-    bpmn_id = fields.Char('BPMN Id', required=True, readonly=True)
+    bpmn_id = fields.Char('BPMN Id', required=True, readonly=True, default =_id_generator('Participant_'))
     process_ref = fields.Char('processRef')
     collaboration_id = fields.Many2one('bpmn.collaboration', string='Collaboration')
     proces_id = fields.Many2one('bpmn.process', string='Process')
@@ -139,7 +159,7 @@ class BpmnProcess(models.Model):
     _description = 'BPMN Process'
 
     name = fields.Char('Name', required=True, translate=True)
-    bpmn_id = fields.Char('BPMN Id', required=True, readonly=True)
+    bpmn_id = fields.Char('BPMN Id', required=True, readonly=True, default =_id_generator('Process_'))
     is_executable = fields.Boolean('isExecutable')
     definitions_id = fields.Many2one('bpmn.definitions', string='BPMN2 Model', required=True)
     lane_sets_ids = fields.One2many('bpmn.lane_set', 'process_id', string='Process')
@@ -149,7 +169,7 @@ class BpmnLaneSet(models.Model):
     _name = 'bpmn.lane_set'
     _description = 'BPMN Process'
 
-    bpmn_id = fields.Char('BPMN Id', required=True, readonly=True)
+    bpmn_id = fields.Char('BPMN Id', required=True, readonly=True, default =_id_generator('LaneSet_'))
     process_id = fields.Many2one('bpmn.process', string='Process')
     lanes_ids = fields.One2many('bpmn.lane', 'lane_set_id', string='Lanes')
     company_id = fields.Many2one('res.company', 'Company', required=True, index=True, default=lambda self: self.env.company) 
@@ -167,7 +187,7 @@ class BpmnLane(models.Model):
     _description = 'BPMN Lane'
 
     name = fields.Char('Name', required=True, translate=True)
-    bpmn_id = fields.Char('BPMN Id', required=True, readonly=True)
+    bpmn_id = fields.Char('BPMN Id', required=True, readonly=True, default =_id_generator('Lane_'))
     lane_set_id = fields.Many2one('bpmn.lane_set', string='Lane Set')
     flow_node_ref_ids = fields.One2many('bpmn.flow_node_ref', 'lane_id', string='Object Reference')
     company_id = fields.Many2one('res.company', 'Company', required=True, index=True, default=lambda self: self.env.company)
@@ -177,7 +197,7 @@ class BpmnTask(models.Model):
     _description = 'BPMN Task' 
 
     name = fields.Char('Name', required=True, translate=True)
-    bpmn_id = fields.Char('BPMN Id', required=True, readonly=True)
+    bpmn_id = fields.Char('BPMN Id', required=True, readonly=True, default =_id_generator('Activity_'))
     process_id = fields.Many2one('bpmn.process', string='Process')
     task_type = fields.Selection([
         ('task','Task'),
@@ -227,7 +247,7 @@ class BpmnGateway(models.Model):
     _description = 'BPMN Gateway' 
 
     name =  fields.Char('Name', required=True, translate=True)
-    bpmn_id = fields.Char('BPMN Id', required=True, readonly=True)
+    bpmn_id = fields.Char('BPMN Id', required=True, readonly=True, default =_id_generator('Gateway_'))
     process_id = fields.Many2one('bpmn.process', string='Process')
     gateway_type = fields.Selection([
         ('exclusiveGateway','Exclusive Gateway'),
@@ -250,7 +270,7 @@ class BpmnEvent(models.Model):
     _description = 'BPMN Event' 
 
     name =  fields.Char('Name', required=True, translate=True)
-    bpmn_id = fields.Char('BPMN Id', required=True, readonly=True)
+    bpmn_id = fields.Char('BPMN Id', required=True, readonly=True, default =_id_generator('Definitions_'))
     process_id = fields.Many2one('bpmn.process', string='Process')
     event_model = fields.Selection([('start_event','Start'),('start_event_sub_process','Start Sub Process'),('intermediate_event',''),('boundary_event',''),('end_event','')], string='BPMN Model')  
     event_type = fields.Selection([
@@ -284,7 +304,7 @@ class BpmnSequenceFlow(models.Model):
     _description = 'BPMN Sequence Flow' 
 
     name =  fields.Char('Name',translate=True)
-    bpmn_id = fields.Char('BPMN Id', required=True, readonly=True)
+    bpmn_id = fields.Char('BPMN Id', required=True, readonly=True, default =_id_generator('Definitions_'))
     process_id = fields.Many2one('bpmn.process', string='Process')
     is_conditional = fields.Boolean('Is Conditional', default=False)
     source_ref = fields.Char(string='sourceRef')
@@ -295,7 +315,7 @@ class BpmnTextAnnotation(models.Model):
     _name = "bpmn.text_anotation"
     _description = "BPMN Text Annotation"
 
-    bpmn_id = fields.Char('BPMN Id', required=True, readonly=True)
+    bpmn_id = fields.Char('BPMN Id', required=True, readonly=True, default =_id_generator('Definitions_'))
     text = fields.Char(string='Text')
 
 class Association(models.Model):
